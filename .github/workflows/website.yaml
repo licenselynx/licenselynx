@@ -1,0 +1,47 @@
+name: Website CI
+on:
+  push:
+    branches:
+      - pipeline
+#    paths:
+#      - website/**
+  pull_request:
+    branches:
+      - main
+    paths:
+      - website/**
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install mkdocs
+        run: |
+          pip install mkdocs
+          mkdocs --version
+      - name: Build website
+        run: |
+          python3 scripts/src/load/merge_data.py -o ./website/merged_data.json
+          cd website
+          mkdocs build
+          python3 ../scripts/src/web-api/generate_api_files.py -i ./merged_data.json
+          mkdir -p ./json/latest/mapping.json
+          mv ./merged_data.json ./json/latest/mapping.json
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+          
+
+#  deploy:
+#    environment:
+#      name: github-pages
+#      url: ${{ steps.deployment.outputs.page_url }}
+#    runs-on: ubuntu-latest
+#    needs: build
+#    steps:
+#      - name: Deploy to GitHub Pages
+#        id: deployment
+#        uses: actions/deploy-pages@v4
