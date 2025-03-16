@@ -1,0 +1,39 @@
+name: Data CI
+on:
+  push:
+    branches:
+      - pipeline
+#    paths:
+#      - data/**
+  pull_request:
+    branches:
+      - main
+    paths:
+      - data/**
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Poetry
+        run: |
+          pipx install poetry
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: poetry
+          cache-dependency-path: scripts/poetry.lock
+      - name: Set Poetry environment
+        run: |
+          cd scripts
+          poetry env use 3.11
+      - name: Install dependencies
+        run: |
+          cd scripts
+          poetry install --no-root
+      - name: Run data validation
+        run: |
+          cd scripts
+          poetry run data_validation
