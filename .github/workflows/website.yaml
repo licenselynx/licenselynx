@@ -19,6 +19,7 @@ jobs:
       - name: Install mkdocs
         run: |
           pip install mkdocs
+          python -m pip install mkdocs-material
           mkdocs --version
       - name: Build website
         run: |
