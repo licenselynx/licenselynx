@@ -39,7 +39,7 @@ jobs:
           poetry run pytest -vv
       - name: Test build
         run: |
-          mkdir -p python/licenselynx
+          mkdir -p python/licenselynx/resources
           python3 scripts/src/load/merge_data.py -o ./python/licenselynx/resources/merged_data.json
           cd python
           poetry build
