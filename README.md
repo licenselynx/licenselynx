@@ -1,4 +1,12 @@
 # LicenseLynx
+![python coverage](website/badges/coverage-python.svg)
+![java coverage](website/badges/coverage-java.svg)
+![typescript coverage](website/badges/coverage-typescript.svg)
+![scripts coverage](website/badges/coverage-scripts.svg)
+
+[![GitHub Tag](https://img.shields.io/github/v/tag/licenselynx/licenselynx)](https://github.com/licenselynx/licenselynx/releases/latest)
+
+[![license](https://img.shields.io/github/license/licenselynx/licenselynx)](LICENSE)
 
 ## License Mapping Statistics
 
