@@ -2,16 +2,16 @@ name: Data CI
 on:
   push:
     branches:
-      - pipeline
-#    paths:
-#      - data/**
+      - main
+    paths:
+      - data/**
   pull_request:
     branches:
       - main
     paths:
       - data/**
 jobs:
-  tests:
+  validation:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
