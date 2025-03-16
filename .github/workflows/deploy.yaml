@@ -1,0 +1,103 @@
+name: Deploy libraries
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
+jobs:
+  test-and-lint-python:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Poetry
+        run: |
+          pipx install poetry
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: poetry
+          cache-dependency-path: python/poetry.lock
+      - name: Set Poetry environment
+        run: |
+          cd python
+          poetry env use 3.11
+      - name: Install dependencies
+        run: |
+          cd python
+          poetry install --no-root
+      - name: Run the automated tests
+        run: |
+          cd python
+          poetry run pytest -vv
+      - name: Test build
+        run: |
+          mkdir -p python/licenselynx/resources
+          python3 scripts/src/load/merge_data.py -o ./python/licenselynx/resources/merged_data.json
+          cd python
+          poetry build
+          python3 check_files.py
+      - name: Run the linting
+        run: |
+          cd python
+          poetry run mypy licenselynx tests
+          poetry run flake8 licenselynx
+          poetry run flake8 tests
+
+  test-and-lint-java:
+    runs-on: ubuntu-latest
+
+  test-and-lint-typescript:
+    runs-on: ubuntu-latest
+
+
+
+
+  deploy-python:
+    runs-on: ubuntu-latest
+    needs: test-and-lint-python
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Poetry
+        run: |
+          pipx install poetry
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: poetry
+          cache-dependency-path: python/poetry.lock
+      - name: Set Poetry environment
+        run: |
+          cd python
+          poetry env use 3.11
+      - name: Install dependencies
+        run: |
+          cd python
+          poetry install --no-root
+      - name: Copy LICENSE file
+        run: |
+          cp LICENSE python/LICENSE
+      - name: Build and publish
+        run: |
+          mkdir -p python/licenselynx/resources
+          python3 scripts/src/load/merge_data.py -o ./python/licenselynx/resources/merged_data.json
+          cd python
+          poetry publish --build -vvv
+
+  deploy-java:
+    runs-on: ubuntu-latest
+    needs: test-and-lint-java
+    steps:
+
+
+  deploy-typescript:
+    runs-on: ubuntu-latest
+    needs: test-and-lint-typescript
+    steps:
+      - name: Copy LICENSE file
+        run: |
+          cp LICENSE typescript/LICENSE

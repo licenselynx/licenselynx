@@ -2,9 +2,9 @@ name: Java CI
 on:
   push:
     branches:
-      - pipeline
-#    paths:
-#      - java/**
+      - main
+    paths:
+      - java/**
   pull_request:
     branches:
       - main

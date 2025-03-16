@@ -2,7 +2,7 @@ name: TypeScript CI
 on:
   push:
     branches:
-      - pipeline
+      - main
     paths:
       - typescript/**
   pull_request:
