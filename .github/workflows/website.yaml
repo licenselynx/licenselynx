@@ -24,9 +24,9 @@ jobs:
       - name: Build website
         run: |
           python3 scripts/src/load/merge_data.py -o ./website/merged_data.json
-          python3 scripts/src/web_api/generate_api_files.py -i ./website/merged_data.json --dir website/public/api/license
           cd website
           mkdocs build -d public
+          python3 ../scripts/src/web_api/generate_api_files.py -i ./merged_data.json --dir ./public/api/license
           mkdir -p ./public/json/latest/
           mv ./merged_data.json ./public/json/latest/mapping.json
 
