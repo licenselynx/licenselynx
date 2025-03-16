@@ -1,0 +1,46 @@
+name: TypeScript CI
+on:
+  push:
+    branches:
+      - pipeline
+#    paths:
+#      - typescript/**
+  pull_request:
+    branches:
+      - main
+    paths:
+      - typescript/**
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Set up node
+        run: |
+          cd typescript
+          npm ci --prefer-offline -no-audit
+      - name: Run the automated tests
+        run: |
+          cd typescript
+          npm run test | grep "All files" | awk '{print $10}' > coverage.txt
+      - name: Run integration test
+        run: |
+          cd typescript
+          npm link
+          npm --version
+          npx --version
+          npm ls --global @licenselynx/licenselynx
+          mkdir -p ../../test-project && cd ../../test-project
+          echo "import {map} from '@licenselynx/licenselynx'; map('0BSD').then(value => console.log(value.canonical));" > run.mjs
+          npm link @licenselynx/licenselynx
+          result="$(npx ts-node run.mjs)"
+          echo $result
+          if [[ $result == "0BSD" ]]; then exit 0; else exit -1; fi
+      - name: Run linting
+        run: |
+          cd typescript
+          npm run lint
