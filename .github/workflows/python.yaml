@@ -39,7 +39,8 @@ jobs:
           poetry run pytest -vv
       - name: Test build
         run: |
-          python3 scripts/src/load/merge_data.py -o ./merged_data.json
+          mkdir -p python/licenselynx
+          python3 scripts/src/load/merge_data.py -o ./python/licenselynx/resources/merged_data.json
           cd python
           poetry build
           python3 check_files.py
@@ -69,6 +70,6 @@ jobs:
       - name: Run the linting
         run: |
           cd python
-          poetry run mypy src tests
-          poetry run flake8 src
+          poetry run mypy licenselynx tests
+          poetry run flake8 licenselynx
           poetry run flake8 tests
