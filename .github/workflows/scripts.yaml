@@ -20,7 +20,7 @@ jobs:
         with:
           python-version: '3.11'
           cache: poetry
-          cache-dependency-path: poetry.lock
+          cache-dependency-path: scripts/poetry.lock
       - name: Set Poetry environment
         run: |
           poetry env use 3.11
@@ -45,7 +45,7 @@ jobs:
         with:
           python-version: '3.11'
           cache: poetry
-          cache-dependency-path: poetry.lock
+          cache-dependency-path: scripts/poetry.lock
       - name: Set Poetry environment
         run: |
           poetry env use 3.11
