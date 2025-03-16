@@ -27,6 +27,20 @@ jobs:
         run: |
           cd typescript
           npm run test | grep "All files" | awk '{print $10}' > coverage.txt
+      
+
+  integration-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Set up node
+        run: |
+          cd typescript
+          npm ci --prefer-offline -no-audit
       - name: Run build
         run: |
           python3 scripts/src/load/merge_data.py -o ./typescript/resources/merged_data.json
@@ -45,6 +59,19 @@ jobs:
           result="$(npx ts-node run.mjs)"
           echo $result
           if [[ $result == "0BSD" ]]; then exit 0; else exit -1; fi
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Set up node
+        run: |
+          cd typescript
+          npm ci --prefer-offline -no-audit
       - name: Run linting
         run: |
           cd typescript
