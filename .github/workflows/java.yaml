@@ -1,0 +1,34 @@
+name: Java CI
+on:
+  push:
+    branches:
+      - pipeline
+#    paths:
+#      - java/**
+  pull_request:
+    branches:
+      - main
+    paths:
+      - java/**
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: 8
+      - name: Setup Gradle 8.9
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.9"
+      - name: Run automated tests
+        run: |
+          python3 scripts/src/load/merge_data.py -o ./java/src/main/resources/merged_data.json
+          cd java
+          ls src/main/resources
+          gradle ${GRADLE_ARGUMENTS} clean assemble test jacocoTestReport publishToMavenLocal -PisCI=true | tee job.log
+          cat job.log | grep -- " - Instruction Coverage: " | sed -e "s/.* //" > build/coverage.txt
