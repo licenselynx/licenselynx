@@ -46,6 +46,8 @@ jobs:
           poetry run coverage xml --omit="tests/*"
       - name: Run coverage badge
         run: |
+          pip install xq
+          pip install anybadge
           cov_value=$(xq --xpath "//coverage/@line-rate" scripts/coverage.xml)
           cov_rounded=$(printf "%.1f\n" $(bc <<< "100*${cov_value}"))
           echo "Coverage found: ${cov_rounded}%"
