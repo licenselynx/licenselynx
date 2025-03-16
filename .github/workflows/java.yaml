@@ -35,6 +35,8 @@ jobs:
           cat job.log | grep -- " - Instruction Coverage: " | sed -e "s/.* //" > build/coverage.txt
       - name: Run coverage badge job
         run: |
+          sudo apt-get install xq
+          pip install anybadge
           cov_value=$(cat java/build/coverage.txt)
           cov_value="${cov_value%\%}"
           JOB_COVERAGE=$(printf "%.1f\n" $(bc <<< "${cov_value}"))
