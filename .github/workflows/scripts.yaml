@@ -13,9 +13,13 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
       - name: Install Poetry
         run: |
           pipx install poetry
@@ -35,8 +39,18 @@ jobs:
           poetry install --no-root
       - name: Run the automated tests
         run: |
-          cd scripts
-          poetry run pytest -vv
+          cd python
+          poetry run coverage run --branch -m pytest -vv
+          poetry run coverage report --omit="tests/*"
+          poetry run coverage xml --omit="tests/*"
+      - name: Run coverage badge
+        run: |
+          cov_value=$(xq --xpath "//coverage/@line-rate" scripts/coverage.xml)
+          cov_rounded=$(printf "%.1f\n" $(bc <<< "100*${cov_value}"))
+          echo "Coverage found: ${cov_rounded}%"
+          anybadge --label scripts:coverage --value ${cov_rounded} --suffix "%" --file website/badges/coverage-scripts.svg --overwrite
+      - uses: stefanzweifel/git-auto-commit-action@v5
+
 
   lint:
     runs-on: ubuntu-latest
