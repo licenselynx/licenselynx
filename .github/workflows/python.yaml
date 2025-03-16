@@ -1,15 +1,15 @@
-name: Scripts CI
+name: Python CI
 on:
   push:
     branches:
       - pipeline
     paths:
-      - scripts/**
+      - python/**
   pull_request:
     branches:
       - main
     paths:
-      - scripts/**
+      - python/**
 jobs:
   tests:
     runs-on: ubuntu-latest
@@ -27,15 +27,15 @@ jobs:
           cache-dependency-path: scripts/poetry.lock
       - name: Set Poetry environment
         run: |
-          cd scripts
+          cd python
           poetry env use 3.11
       - name: Install dependencies
         run: |
-          cd scripts
+          cd python
           poetry install --no-root
       - name: Run the automated tests
         run: |
-          cd scripts
+          cd python
           poetry run pytest -vv
 
   lint:
@@ -54,15 +54,15 @@ jobs:
           cache-dependency-path: scripts/poetry.lock
       - name: Set Poetry environment
         run: |
-          cd scripts
+          cd python
           poetry env use 3.11
       - name: Install dependencies
         run: |
-          cd scripts
+          cd python
           poetry install --no-root
       - name: Run the linting
         run: |
-          cd scripts
+          cd python
           poetry run mypy src tests
           poetry run flake8 src
           poetry run flake8 tests
