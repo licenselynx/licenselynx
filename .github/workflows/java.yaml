@@ -27,6 +27,7 @@ jobs:
           gradle-version: "8.9"
       - name: Run automated tests
         run: |
+          mkdir ./java/src/main/resources/
           python3 scripts/src/load/merge_data.py -o ./java/src/main/resources/merged_data.json
           cd java
           ls src/main/resources
