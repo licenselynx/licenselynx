@@ -2,7 +2,7 @@ name: Scripts CI
 on:
   push:
     branches:
-      - pipeline
+      - main
     paths:
       - scripts/**
   pull_request:
