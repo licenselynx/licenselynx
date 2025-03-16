@@ -24,11 +24,11 @@ jobs:
       - name: Build website
         run: |
           python3 scripts/src/load/merge_data.py -o ./website/merged_data.json
-          python3 scripts/src/web_api/generate_api_files.py -i ./website/merged_data.json --dir website/api/license
+          python3 scripts/src/web_api/generate_api_files.py -i ./website/merged_data.json --dir website/public/api/license
           cd website
-          mkdocs build
-          mkdir -p ./json/latest/mapping.json
-          mv ./merged_data.json ./json/latest/mapping.json
+          mkdocs build -d public
+          mkdir -p ./public/json/latest/
+          mv ./merged_data.json ./public/json/latest/mapping.json
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
