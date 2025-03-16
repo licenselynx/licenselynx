@@ -36,10 +36,11 @@ jobs:
       - name: Install dependencies
         run: |
           cd scripts
+          poetry lock
           poetry install --no-root
       - name: Run the automated tests
         run: |
-          cd python
+          cd scripts
           poetry run coverage run --branch -m pytest -vv
           poetry run coverage report --omit="tests/*"
           poetry run coverage xml --omit="tests/*"
