@@ -40,6 +40,7 @@ jobs:
           sudo apt-get install xq
           pip install anybadge
           cov_value=$(cat java/build/coverage.txt)
+          rm -v java/build/coverage.txt
           cov_value="${cov_value%\%}"
           JOB_COVERAGE=$(printf "%.1f\n" $(bc <<< "${cov_value}"))
           echo Creating badge with coverage value ${JOB_COVERAGE}
