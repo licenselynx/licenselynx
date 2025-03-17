@@ -52,10 +52,10 @@ jobs:
         run: |
           sudo apt-get install xq
           pip install anybadge
-          cov_value=$(xq --xpath "//coverage/@line-rate" scripts/coverage.xml)
+          cov_value=$(xq --xpath "//coverage/@line-rate" python/coverage.xml)
           cov_rounded=$(printf "%.1f\n" $(bc <<< "100*${cov_value}"))
           echo "Coverage found: ${cov_rounded}%"
-          anybadge --label scripts:coverage --value ${cov_rounded} --suffix "%" --file website/badges/coverage-scripts.svg --overwrite
+          anybadge --label python:coverage --value ${cov_rounded} --suffix "%" --file website/badges/coverage-python.svg --overwrite
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update badge for python
