@@ -92,7 +92,7 @@ class SpdxDataUpdate(BaseDataUpdate):
                 self.update_non_spdx_license_file(license_id, data, license_filepath, aliases[0])
             return None
 
-    def _process_licenses(self, url: str, json_id: str, license_list_type: str) -> list[str]:
+    def _process_licenses(self, url: str, json_id: str, license_list_type: str):
         """
         Processes the SPDX license list with the given url, json ID and license list type and either update or create
         a license file
