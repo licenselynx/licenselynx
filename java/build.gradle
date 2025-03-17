@@ -328,7 +328,7 @@ publishing {
                 licenses {
                     license {
                         name = 'Apache-2.0'
-                        url = https://raw.githubusercontent.com/licenselynx/licenselynx/refs/tags/v' +
+                        url = 'https://raw.githubusercontent.com/licenselynx/licenselynx/refs/tags/v' +
                                 project.version + '/LICENSE'
                     }
                 }
