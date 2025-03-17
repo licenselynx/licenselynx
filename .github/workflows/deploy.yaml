@@ -74,7 +74,7 @@ jobs:
         uses: actions/checkout@v3
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
       - name: Set up node
         run: |
           cd typescript
@@ -121,54 +121,56 @@ jobs:
           mkdir -p python/licenselynx/resources
           python3 scripts/src/load/merge_data.py -o ./python/licenselynx/resources/merged_data.json
           cd python
-          poetry publish --build -vvv --dry-run
+          poetry publish --build -vvv
 
 
   deploy-java:
     runs-on: ubuntu-latest
     needs: test-and-lint-java
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: 8
+      - name: Setup Gradle 8.9
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.9"
+      - name: Run build
+        run: |
+          cd java
+          gradle --stacktrace --no-daemon clean build
+      - name: Run publish
+        run: |
+          mkdir ./java/src/main/resources/
+          python3 scripts/src/load/merge_data.py -o ./java/src/main/resources/merged_data.json
+          gradle --stacktrace --no-daemon publishMavenJavaPublicationToMavenCentralStagingRepository
+        env:
+          signingKey: ${{ secrets.SIGNINGKEY }}
+          signingPassword: ${{ secrets.SIGNINGPASSWORD }}
 
 
   deploy-typescript:
     runs-on: ubuntu-latest
     needs: test-and-lint-typescript
+    permissions:
+      contents: read
+      id-token: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
-      - name: Set up node
-        run: |
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org'
+      - run: |
+          python3 scripts/src/load/merge_data.py -o ./typescript/resources/merged_data.json
           cd typescript
-          npm ci --prefer-offline -no-audit
-      - name: Copy LICENSE file
-        run: |
-          cp LICENSE typescript/LICENSE
-      - name: Create .npmrc file
-        run: |
+          npm ci
+      - run: |
           cd typescript
-          if [[ ! -f .npmrc ]]; then
-              echo 'No .npmrc found! Creating one now.
-          else
-              echo '.npmrc found! Updating now.
-          fi
-          {
-              echo "${SCOPED_REGISTRY}"
-          } >> .npmrc
-          echo "Created/updated the following .npmrc:"; cat .npmrc
-          
-          export NPM_PACKAGE_NAME=$(node -p "require('./package.json').name")
-          export NPM_PACKAGE_VERSION=$(node -p "require('./package.json').version")
-      - name: Run publish
-        run: |
-          cd typescript
-          if [[ "$(npm view ${NPM_PACKAGE_NAME} versions)" != *"'${NPM_PACKAGE_VERSION}'"* ]]; then
-              npm run build
-              npm pack
-              npm publish --dry-run
-              echo "Successfully published version ${NPM_PACKAGE_VERSION} of ${NPM_PACKAGE_NAME} to GitLab's NPM registry: ${SCOPED_REGISTRY}"
-          else
-              echo "Version ${NPM_PACKAGE_VERSION} of ${NPM_PACKAGE_NAME} has already been published, so no new version has been published."
-          fi
+          npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
