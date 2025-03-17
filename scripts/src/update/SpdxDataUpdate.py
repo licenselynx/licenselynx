@@ -139,4 +139,3 @@ class SpdxDataUpdate(BaseDataUpdate):
         self._process_licenses(spdx_licenses_url, "licenseId", "licenses")
 
         self._process_licenses(spdx_exceptions_url, "licenseExceptionId", "exceptions")
-
