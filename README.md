@@ -4,6 +4,14 @@
 ![typescript coverage](website/badges/coverage-typescript.svg)
 ![scripts coverage](website/badges/coverage-scripts.svg)
 
+[![python pipeline](https://github.com/licenselynx/licenselynx/actions/workflows/python.yaml/badge.svg)](https://github.com/licenselynx/licenselynx/actions/workflows/python.yaml)
+[![java pipeline](https://github.com/licenselynx/licenselynx/actions/workflows/java.yaml/badge.svg)](https://github.com/licenselynx/licenselynx/actions/workflows/java.yaml)
+[![typescript pipeline](https://github.com/licenselynx/licenselynx/actions/workflows/typescript.yaml/badge.svg)](https://github.com/licenselynx/licenselynx/actions/workflows/typescript.yaml)
+[![scripts pipeline](https://github.com/licenselynx/licenselynx/actions/workflows/scripts.yaml/badge.svg)](https://github.com/licenselynx/licenselynx/actions/workflows/scripts.yaml)
+[![data pipeline](https://github.com/licenselynx/licenselynx/actions/workflows/data.yaml/badge.svg)](https://github.com/licenselynx/licenselynx/actions/workflows/data.yaml)
+
+
+
 [![GitHub Tag](https://img.shields.io/github/v/tag/licenselynx/licenselynx)](https://github.com/licenselynx/licenselynx/releases/latest)
 
 [![license](https://img.shields.io/github/license/licenselynx/licenselynx)](LICENSE)
