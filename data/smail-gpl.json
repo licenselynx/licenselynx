@@ -1,12 +1,15 @@
 {
-    "canonical": "smail-gpl",
+    "canonical": "SMAIL-GPL",
     "aliases": {
         "scancode-licensedb": [
-            "SMAIL General Public License",
             "SMAIL GPL",
-            "LicenseRef-scancode-smail-gpl"
+            "LicenseRef-scancode-smail-gpl",
+            "smail-gpl"
         ],
-        "custom": []
+        "custom": [],
+        "spdx": [
+            "SMAIL General Public License"
+        ]
     },
-    "src": "scancode-licensedb"
+    "src": "spdx"
 }
