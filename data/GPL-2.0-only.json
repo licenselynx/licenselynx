@@ -5,7 +5,11 @@
             "GNU General Public License v2.0 only",
             "GPL-2.0"
         ],
-        "custom": [],
+        "custom": [
+            "GPL-2",
+            "GPL2",
+            "GPLv2"
+        ],
         "scancode-licensedb": [
             "LicenseRef-GPL-2.0",
             "GPL 2.0",
