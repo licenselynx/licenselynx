@@ -13,7 +13,9 @@
             "MIT (Open License)",
             "bouncy-license",
             "mit-license",
-            "mit-licensed"
+            "mit-licensed",
+            "MIT-like",
+            "MIT-style"
         ],
         "scancode-licensedb": [
             "LicenseRef-MIT-Diehl",
