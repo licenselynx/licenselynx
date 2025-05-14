@@ -1,6 +1,6 @@
 # Data Quality
 
-Our goal with LicenseLynx is to provide a deterministic mean of license mappings.
+Our goal with LicenseLynx is to provide deterministic license mappings.
 Therefore, we aim for 100% correct mappings without ambiguity.
 That means, that the data mapping must not be **mostly correct** or **the AI says it is so**, and so on.
 If we can't be sure the mapping is correct, we don't provide that mapping.
