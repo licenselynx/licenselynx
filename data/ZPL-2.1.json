@@ -18,7 +18,8 @@
             "ZPL (Public License)",
             "ZPL 2.1 Open Source License",
             "ZPL 2.1 (Open Source)",
-            "Zope Public License v2.1 (ZPL)"
+            "Zope Public License v2.1 (ZPL)",
+            "zope"
         ],
         "scancode-licensedb": [
             "zpl-2.1",
