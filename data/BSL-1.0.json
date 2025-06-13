@@ -6,10 +6,8 @@
         ],
         "custom": [
             "Boost License 1.0",
-            "Boost License",
             "BSL 1.0",
             "BSL-1.0",
-            "Boost Software License",
             "Boost Software License, Version 1.0",
             "Boost Software License v1.0",
             "Boost v1.0",
@@ -28,5 +26,8 @@
     },
     "src": "spdx",
     "rejected": [],
-    "risky": []
+    "risky": [
+        "Boost License",
+        "Boost Software License"
+    ]
 }

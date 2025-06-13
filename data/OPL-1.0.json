@@ -6,11 +6,12 @@
         ],
         "custom": [],
         "scancode-licensedb": [
-            "open-public",
             "Open Public License 1.0"
         ]
     },
     "src": "spdx",
     "rejected": [],
-    "risky": []
+    "risky": [
+        "open-public"
+    ]
 }

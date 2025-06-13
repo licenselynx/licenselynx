@@ -2,12 +2,13 @@
     "canonical": "froala-owdl-1.0",
     "aliases": {
         "scancode-licensedb": [
-            "Froala Open Web Design License",
             "LicenseRef-scancode-froala-owdl-1.0"
         ],
         "custom": []
     },
     "src": "scancode-licensedb",
     "rejected": [],
-    "risky": []
+    "risky": [
+        "Froala Open Web Design License"
+    ]
 }

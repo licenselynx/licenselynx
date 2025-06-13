@@ -1,8 +1,9 @@
 {
-    "canonical": "bzip2-libbzip-1.0.5",
+    "canonical": "sonar-sal-1.0",
     "aliases": {
         "scancode-licensedb": [
-            "bzip2 License"
+            "Sonar Source-Available License v1.0",
+            "LicenseRef-scancode-sonar-sal-1.0"
         ],
         "custom": []
     },

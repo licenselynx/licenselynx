@@ -6,12 +6,13 @@
         ],
         "custom": [],
         "scancode-licensedb": [
-            "Public Domain Dedication & Licence (PDDL)",
             "pddl-1.0",
             "PDDL 1.0"
         ]
     },
     "src": "spdx",
     "rejected": [],
-    "risky": []
+    "risky": [
+        "Public Domain Dedication & Licence (PDDL)"
+    ]
 }

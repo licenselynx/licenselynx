@@ -6,11 +6,12 @@
         ],
         "custom": [],
         "scancode-licensedb": [
-            "GPL 2.0 or later with eCos Exception",
-            "ecos"
+            "GPL 2.0 or later with eCos Exception"
         ]
     },
     "src": "spdx",
     "rejected": [],
-    "risky": []
+    "risky": [
+        "ecos"
+    ]
 }

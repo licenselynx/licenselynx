@@ -6,11 +6,12 @@
         ],
         "custom": [],
         "scancode-licensedb": [
-            "Mulan PSL v2",
             "mulanpsl-2.0"
         ]
     },
     "src": "spdx",
     "rejected": [],
-    "risky": []
+    "risky": [
+        "Mulan PSL v2"
+    ]
 }

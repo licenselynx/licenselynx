@@ -6,12 +6,13 @@
         ],
         "custom": [],
         "scancode-licensedb": [
-            "LicenseRef-scancode-inria-linking-exception",
-            "inria-linking-exception",
             "INRIA Linking Exception to QPL 1.0"
         ]
     },
     "src": "spdx",
     "rejected": [],
-    "risky": []
+    "risky": [
+        "LicenseRef-scancode-inria-linking-exception",
+        "inria-linking-exception"
+    ]
 }
