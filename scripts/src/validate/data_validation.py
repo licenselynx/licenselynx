@@ -193,14 +193,14 @@ def flatten_aliases_dict(aliases_dict):
     return aliases_list
 
 
-def extract_version_tokens(identifier):
+def extract_version_tokens(identifier) -> set:
     """
     Extracts version tokens from an identifier.
     It looks for tokens that are either numeric or are recognized digit words.
     """
-    token_pattern = re.compile(r'(\d+\.\d+(.\d+)*)', re.IGNORECASE)
-    version_token = set(token_pattern.findall(identifier))
-    return version_token
+    token_pattern = re.compile(r'(\d+\.\d+(?:\.\d+)*)', re.IGNORECASE)
+    version_tokens = set(token_pattern.findall(identifier))
+    return version_tokens
 
 
 def check_version_between_canonical_and_alias():
@@ -232,8 +232,8 @@ def check_version_between_canonical_and_alias():
 def compare_versions(aliases_list, canonical_has_version, canonical_tokens, wrong_version):
     if canonical_has_version:
         for alias in aliases_list:
-            alias_token = extract_version_tokens(alias)
-            if not alias_token or alias_token != canonical_tokens:
+            alias_tokens = extract_version_tokens(alias)
+            if not alias_tokens & canonical_tokens:
                 wrong_version.append(alias)
 
 
