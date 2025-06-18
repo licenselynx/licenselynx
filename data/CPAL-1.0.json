@@ -4,7 +4,8 @@
         "spdx": [
             "Common Public Attribution License 1.0"
         ],
-        "custom": [],
+        "custom": [
+        ],
         "scancode-licensedb": [
             "cpal-1.0",
             "CPAL 1.0"
@@ -15,5 +16,7 @@
     },
     "src": "spdx",
     "rejected": [],
-    "risky": []
+    "risky": [
+        "cpal"
+    ]
 }

@@ -35,6 +35,8 @@
         "GPLv2 only",
         "GPLv2",
         "GPLv2 (only)",
-        "GPL v2 only"
+        "GPL v2 only",
+        "GPL-2",
+        "GPL2"
     ]
 }

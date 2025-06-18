@@ -4,7 +4,8 @@
         "spdx": [
             "Python Software Foundation License 2.0"
         ],
-        "custom": [],
+        "custom": [
+        ],
         "scancode-licensedb": [
             "PSF-2.0",
             "psf-2.0"
@@ -12,5 +13,7 @@
     },
     "src": "spdx",
     "rejected": [],
-    "risky": []
+    "risky": [
+        "PSF2"
+    ]
 }

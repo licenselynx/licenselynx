@@ -4,7 +4,8 @@
         "spdx": [
             "Open Data Commons Open Database License v1.0"
         ],
-        "custom": [],
+        "custom": [
+        ],
         "scancode-licensedb": [
             "ODbL 1.0",
             "odbl-1.0",
@@ -13,5 +14,7 @@
     },
     "src": "spdx",
     "rejected": [],
-    "risky": []
+    "risky": [
+        "ODBL"
+    ]
 }

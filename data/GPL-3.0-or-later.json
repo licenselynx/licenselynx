@@ -5,7 +5,8 @@
             "GNU General Public License v3.0 or later",
             "GPL-3.0+"
         ],
-        "custom": [],
+        "custom": [
+        ],
         "scancode-licensedb": [
             "GPL 3.0 or later",
             "GNU General Public License 3.0 or later",
@@ -15,5 +16,7 @@
     },
     "src": "spdx",
     "rejected": [],
-    "risky": []
+    "risky": [
+        "GPLv3+"
+    ]
 }
