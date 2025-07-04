@@ -56,8 +56,9 @@ The structure of a stored license looks like this:
             "lgpl-2.0"
         ]
     },
-    "src": "spdx"
-    "rejected": []
+    "src": "spdx",
+    "rejected": [],
+    "risky": []
 }
 
 ```
