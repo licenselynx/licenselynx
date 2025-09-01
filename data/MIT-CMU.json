@@ -5,7 +5,7 @@
       "CMU License"
     ],
     "custom": [],
-    "pypi-classifiers": [
+    "pypiClassifiers": [
       "License :: CMU License (MIT-CMU)",
       "OSI Approved :: CMU License (MIT-CMU)",
       "License :: OSI Approved :: CMU License",

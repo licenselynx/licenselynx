@@ -8,7 +8,7 @@
     "osi": [
       "Educational Community License, Version 2.0"
     ],
-    "pypi-classifiers": [
+    "pypiClassifiers": [
       "License :: Educational Community License, Version 2.0 (ECL-2.0)",
       "OSI Approved :: Educational Community License, Version 2.0 (ECL-2.0)",
       "License :: OSI Approved :: Educational Community License, Version 2.0",

@@ -7,7 +7,7 @@
     "custom": [
       "eupl1.2"
     ],
-    "pypi-classifiers": [
+    "pypiClassifiers": [
       "License :: European Union Public Licence 1.2 (EUPL 1.2)",
       "OSI Approved :: European Union Public Licence 1.2 (EUPL 1.2)",
       "License :: OSI Approved :: European Union Public Licence 1.2",
