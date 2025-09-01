@@ -8,7 +8,7 @@
     "osi": [
       "The PostgreSQL Licence"
     ],
-    "pypi-classifiers": [
+    "pypiClassifiers": [
       "License :: PostgreSQL License",
       "OSI Approved :: PostgreSQL License",
       "License :: OSI Approved :: PostgreSQL License"

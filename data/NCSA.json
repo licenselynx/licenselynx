@@ -8,7 +8,7 @@
     "osi": [
       "The University of Illinois/NCSA Open Source License"
     ],
-    "pypi-classifiers": [
+    "pypiClassifiers": [
       "License :: University of Illinois/NCSA Open Source License",
       "OSI Approved :: University of Illinois/NCSA Open Source License",
       "License :: OSI Approved :: University of Illinois/NCSA Open Source License"

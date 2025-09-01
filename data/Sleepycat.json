@@ -8,7 +8,7 @@
     "osi": [
       "The Sleepycat License"
     ],
-    "pypi-classifiers": [
+    "pypiClassifiers": [
       "License :: Sleepycat License",
       "OSI Approved :: Sleepycat License",
       "License :: OSI Approved :: Sleepycat License"

@@ -8,7 +8,7 @@
     "osi": [
       "The MirOS Licence (MirOS)"
     ],
-    "pypi-classifiers": [
+    "pypiClassifiers": [
       "License :: MirOS License (MirOS)",
       "OSI Approved :: MirOS License (MirOS)",
       "License :: OSI Approved :: MirOS License",

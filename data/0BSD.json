@@ -21,7 +21,7 @@
       "BSD Zero",
       "Zero-Clause BSD License (0BSD)"
     ],
-    "pypi-classifiers": [
+    "pypiClassifiers": [
       "License :: Zero-Clause BSD (0BSD)",
       "OSI Approved :: Zero-Clause BSD (0BSD)",
       "License :: OSI Approved :: Zero-Clause BSD",

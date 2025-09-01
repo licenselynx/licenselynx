@@ -8,7 +8,7 @@
     "osi": [
       "The Vovida Software License, Version 1.0"
     ],
-    "pypi-classifiers": [
+    "pypiClassifiers": [
       "License :: Vovida Software License 1.0",
       "OSI Approved :: Vovida Software License 1.0",
       "License :: OSI Approved :: Vovida Software License 1.0"

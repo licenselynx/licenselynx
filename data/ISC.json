@@ -17,7 +17,7 @@
     "osi": [
       "ISC License (ISC)"
     ],
-    "pypi-classifiers": [
+    "pypiClassifiers": [
       "License :: ISC License (ISCL)",
       "OSI Approved :: ISC License (ISCL)",
       "License :: OSI Approved :: ISC License",
