@@ -7,7 +7,7 @@
     "custom": [
       "Historical Permission"
     ],
-    "pypi-classifiers": [
+    "pypiClassifiers": [
       "License :: Historical Permission Notice and Disclaimer (HPND)",
       "OSI Approved :: Historical Permission Notice and Disclaimer (HPND)",
       "License :: OSI Approved :: Historical Permission Notice and Disclaimer",

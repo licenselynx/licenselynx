@@ -8,7 +8,7 @@
     "osi": [
       "Motosoto Open Source License, Version 0.9.1"
     ],
-    "pypi-classifiers": [
+    "pypiClassifiers": [
       "License :: Motosoto License",
       "OSI Approved :: Motosoto License",
       "License :: OSI Approved :: Motosoto License"

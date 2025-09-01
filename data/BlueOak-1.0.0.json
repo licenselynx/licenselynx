@@ -5,7 +5,7 @@
       "Blue Oak Model License 1.0.0"
     ],
     "custom": [],
-    "pypi-classifiers": [
+    "pypiClassifiers": [
       "License :: Blue Oak Model License (BlueOak-1.0.0)",
       "OSI Approved :: Blue Oak Model License (BlueOak-1.0.0)",
       "License :: OSI Approved :: BlueOak-1.0.0",
