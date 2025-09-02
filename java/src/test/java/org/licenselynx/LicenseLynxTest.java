@@ -61,6 +61,21 @@ class LicenseLynxTest
         Assertions.assertEquals(result.getSrc(), "testSrc");
     }
 
+    @Test
+    void testMapQuotesLicense()
+    {
+        // Arrange
+        String licenseName = "‚test-license‛";
+
+        // Act
+        LicenseObject result = LicenseLynx.map(licenseName);
+
+        // Assert
+        assert result != null;
+        Assertions.assertEquals("testCanonical", result.getCanonical());
+        Assertions.assertEquals("testSrc", result.getSrc());
+    }
+
 
     @Test
     void testMapRiskyLicense()
