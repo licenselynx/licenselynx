@@ -65,6 +65,21 @@ def test_map_with_existing_risky_license():
         assert result.canonical == "MIT License"
         assert result.src == "spdx"
 
+def test_map_with_quotes_license():
+    mock_data = json.dumps({"stable_map": {"'MIT'": {"canonical": "MIT License", "src": "spdx"}},
+                            "risky_map": {"MIT": {"canonical": "MIT License", "src": "spdx"}}})
+    mock_file = MagicMock()
+    mock_file.__enter__.return_value = mock_open(read_data=mock_data).return_value
+
+    with patch('importlib.resources.files') as mock_resources_files:
+        mock_resources_files.return_value.joinpath.return_value.open.return_value = mock_file
+        result = LicenseLynx.map("‚MIT‛", risky=True)
+
+        assert isinstance(result, LicenseObject)
+        assert result.canonical == "MIT License"
+        assert result.src == "spdx"
+
+
 
 def test_map_with_non_existing_license():
     mock_data = json.dumps({"stable_map": {"MIT": {"canonical": "MIT License", "src": "spdx"}}, "risky_map": {}})
