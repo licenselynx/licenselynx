@@ -205,8 +205,8 @@ class BaseDataUpdate:
         # Create a translation mapping from the Unicode code point of each quote character
         # to the desired replacement.
         translation_map = {ord(char): replacement for char in quote_characters}
-        normalized_text = input_string.translate(translation_map)
-        return normalized_text
+        normalized_input_string = input_string.translate(translation_map)
+        return normalized_input_string
 
     def _normalize_alias_list(self, aliases: list[str]) -> list[str]:
         """
