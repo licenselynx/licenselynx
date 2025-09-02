@@ -65,6 +65,7 @@ def test_map_with_existing_risky_license():
         assert result.canonical == "MIT License"
         assert result.src == "spdx"
 
+
 def test_map_with_quotes_license():
     mock_data = json.dumps({"stable_map": {"'MIT'": {"canonical": "MIT License", "src": "spdx"}},
                             "risky_map": {"MIT": {"canonical": "MIT License", "src": "spdx"}}})
@@ -78,7 +79,6 @@ def test_map_with_quotes_license():
         assert isinstance(result, LicenseObject)
         assert result.canonical == "MIT License"
         assert result.src == "spdx"
-
 
 
 def test_map_with_non_existing_license():

@@ -1,6 +1,4 @@
-
 class _QuotesHandler:
-
     # List of quote characters to replace with the default replacement.
     quote_characters = [
         # Single quotes

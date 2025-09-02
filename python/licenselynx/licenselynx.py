@@ -21,7 +21,7 @@ class LicenseLynx:
         or throws an exception if a runtime error occurs
         """
         try:
-            license_name = _QuotesHandler.normalize_quotes(license_name)
+            license_name = _QuotesHandler().normalize_quotes(license_name)
             instance = _LicenseMapSingleton()
 
             license_object: Optional[LicenseObject] = instance.merged_data.stable_map.get(license_name)
