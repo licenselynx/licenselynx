@@ -57,8 +57,8 @@ class LicenseLynxTest
 
         // Assert
         assert result != null;
-        Assertions.assertEquals(result.getCanonical(), "testCanonical");
-        Assertions.assertEquals(result.getSrc(), "testSrc");
+        Assertions.assertEquals("testCanonical", result.getCanonical());
+        Assertions.assertEquals("testSrc", result.getSrc());
     }
 
     @Test
@@ -88,8 +88,8 @@ class LicenseLynxTest
 
         // Assert
         assert result != null;
-        Assertions.assertEquals(result.getCanonical(), "testCanonical");
-        Assertions.assertEquals(result.getSrc(), "testSrc");
+        Assertions.assertEquals("testCanonical", result.getCanonical());
+        Assertions.assertEquals("testSrc", result.getSrc());
     }
 
 
