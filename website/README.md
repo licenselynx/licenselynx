@@ -15,7 +15,7 @@ To start the build-in server, use following command:
 mkdocs serve
 ```
 
-## License Lynx Web API
+## LicenseLynx Web API
 
 It is also possible to retrieve the whole license mapping as one json-file.
 To always get the most recent version, use `/json/latest/mapping.json`.
