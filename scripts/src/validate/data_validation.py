@@ -126,14 +126,14 @@ def check_length_and_characters():
         filepath = os.path.join(DATA_DIR, filename)
         with open(filepath, 'r') as f:
             data = json.load(f)
-            canonical_name = data.get("canonical")
+            canonical_id = data["canonical"]["id"]
             aliases = data.get("aliases")
             aliases = flatten_aliases_dict(aliases)
             src = data["canonical"]["src"]
 
             # Max length check
-            if len(canonical_name) > max_length:
-                logger.error(f"Canonical name '{canonical_name}' "
+            if len(canonical_id) > max_length:
+                logger.error(f"Canonical id '{canonical_id}' "
                              f"exceeds maximum length limit of {max_length} characters")
             if any(len(alias) > max_length for alias in aliases):
                 logger.error(f"At least one of the aliases exceeds maximum length limit of {max_length} characters "
@@ -142,8 +142,8 @@ def check_length_and_characters():
                 logger.error(f"Source {src} exceeds maximum length limit of {max_length} characters")
 
             # Forbidden char check
-            if any(char in forbidden_characters_canonical for char in canonical_name):
-                logger.error(f"Canonical name '{canonical_name}' contains forbidden characters")
+            if any(char in forbidden_characters_canonical for char in canonical_id):
+                logger.error(f"Canonical id '{canonical_id}' contains forbidden characters")
 
 
 def check_no_empty_field_except_custom():
@@ -153,14 +153,14 @@ def check_no_empty_field_except_custom():
             data = json.load(f)
 
             if not data["canonical"]["id"]:
-                logger.error(f"Field 'canonical' in '{filename}' is empty.")
+                logger.error(f"Field 'canonical.id' in '{filename}' is empty.")
             if not data["aliases"]:
                 logger.error(f"Field 'aliases' in '{filename}' is empty.")
             for key, value in data["aliases"].items():
                 if not value and key != "custom":
                     logger.error(f"Alias list in '{filename}' for field '{key}' is empty.")
             if not data["canonical"]["src"]:
-                logger.error(f"Field 'src' in '{filename}' is empty.")
+                logger.error(f"Field 'canonical.src' in '{filename}' is empty.")
 
 
 def check_rejected_field_exists():
