@@ -73,9 +73,9 @@ def check_json_filename():
             filepath = os.path.join(DATA_DIR, filename)
             with open(filepath, 'r') as f:
                 data = json.load(f)
-                canonical_name = data.get("canonical")
-                if canonical_name != filename[:-5]:
-                    logger.error(f"JSON filename '{filename}' does not match canonical name '{canonical_name}'")
+                canonical_id = data["canonical"]["id"]
+                if canonical_id != filename[:-5]:
+                    logger.error(f"JSON filename '{filename}' does not match canonical id '{canonical_id}'")
         else:
             logger.error(f"File '{filename}' is not a JSON file.")
 
@@ -114,7 +114,7 @@ def check_src_and_canonical(spdx_license_list: list, spdx_exception_list: list):
             if (canonical_name in spdx_license_list or canonical_name in spdx_exception_list) and data["canonical"]["src"] != "spdx":
                 logger.error(f"If src is SPDX, canonical name '{canonical_name}' must be in SPDX license list")
             elif (canonical_name not in spdx_license_list and
-                  canonical_name not in spdx_exception_list) and data["src"] == "spdx":
+                  canonical_name not in spdx_exception_list) and data["canonical"]["src"] == "spdx":
                 logger.error(f"Canonical name '{canonical_name}' is in SPDX license list but source is not 'spdx'.")
 
 
@@ -129,7 +129,7 @@ def check_length_and_characters():
             canonical_name = data.get("canonical")
             aliases = data.get("aliases")
             aliases = flatten_aliases_dict(aliases)
-            src = data.get("src")
+            src = data["canonical"]["src"]
 
             # Max length check
             if len(canonical_name) > max_length:
