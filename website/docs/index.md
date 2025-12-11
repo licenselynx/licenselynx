@@ -1,6 +1,24 @@
-<h1 align="center"><img src="assets/background.jpg" alt="LicenseLynx Hero Banner"></h1>
+<!-- <h1 align="center"><img src="assets/background.jpg" alt="LicenseLynx Hero Banner"></h1> -->
 
 # LicenseLynx
+
+<div class="code-carousel">
+  <div class="carousel-slides">
+    <div class="code-slide active" data-language="java">
+      <div class="language-label">Java</div>
+      <pre><code class="language-java"></code></pre>
+    </div>
+    <div class="code-slide" data-language="python">
+      <div class="language-label">Python</div>
+      <pre><code class="language-python"></code></pre>
+    </div>
+    <div class="code-slide" data-language="typescript">
+      <div class="language-label">TypeScript</div>
+      <pre><code class="language-typescript"></code></pre>
+    </div>
+  </div>
+</div>
+
 
 In today's software development landscape, managing licenses across various projects can be a daunting task.
 Different projects often refer to the same license in multiple ways, leading to confusion and potential legal risks.  

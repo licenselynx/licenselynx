@@ -63,3 +63,12 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+
+extra_javascript:
+  - scripts/tab-carousel.js
+
+extra_css:
+  - stylesheets/tab-carousel.css
