@@ -2,7 +2,8 @@
 
 <div align="center"><img src="assets/background.jpg" alt="LicenseLynx Hero Banner"></div>
 
-<div align="center"><img src="assets/licenselynx-simple-explanation.png" alt="LicenseLynx Hero Banner"></div>
+<div align="center"><img src="assets/licenselynx-simple-explanation-light.png#only-light" alt="LicenseLynx Workflow Explanation"></div>
+<div align="center"><img src="assets/licenselynx-simple-explanation-dark.png#only-dark" alt="LicenseLynx Workflow Explanation"></div>
 
 
 How can we map a license string found in the wild automatically and deterministically?
