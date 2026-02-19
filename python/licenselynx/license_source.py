@@ -6,3 +6,4 @@ class LicenseSource(StrEnum):
     SPDX = "spdx"
     SCANCODE_LICENSEDB = "scancode-licensedb"
     CUSTOM = "custom"
+    INTERNAL = "internal"

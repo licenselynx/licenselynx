@@ -219,4 +219,26 @@ class LicenseLynxTest
         // Act && Assert
         Assertions.assertThrows(IllegalArgumentException.class, () -> LicenseSource.fromValue("non-specified-source"));
     }
+
+    @Test
+    void testMapInternal()
+    {
+        // Arrange
+        String licenseName = "Internal License 1.1";
+        Map<String, LicenseObject> internalMap = new HashMap<>();
+        internalMap.put(licenseName, new LicenseObject("INTERNAL-1.1", LicenseSource.Internal));
+
+        Map<String, LicenseObject> stableMap = new HashMap<>();
+        Map<String, LicenseObject> riskyMap = new HashMap<>();
+        
+        LicenseMap licenseMap = new LicenseMap(stableMap, riskyMap);
+        licenseMap.addExtraMap("internalMap", internalMap);
+        
+        LicenseMapSingleton testInstance = new LicenseMapSingleton(licenseMap);
+        // We can't easily swap the global singleton without reflection or changing the API
+        // but we can test the LicenseMap/LicenseObject logic here.
+        
+        Assertions.assertEquals("INTERNAL-1.1", 
+            testInstance.getLicenseMap().getExtraLicenseMaps().get("internalMap").get(licenseName).getId());
+    }
 }

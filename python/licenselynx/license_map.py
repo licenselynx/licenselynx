@@ -11,3 +11,4 @@ from licenselynx.license_object import LicenseObject
 class _LicenseMap(object):
     stable_map: dict[str, LicenseObject]
     risky_map: dict[str, LicenseObject]
+    extra_maps: dict[str, dict[str, LicenseObject]]

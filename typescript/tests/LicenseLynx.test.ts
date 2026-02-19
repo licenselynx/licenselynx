@@ -2,7 +2,7 @@
  * SPDX-FileCopyrightText: Copyright 2025 Siemens AG
  * SPDX-License-Identifier: BSD-3-Clause
  */
-import {isScancodeLicensedbIdentifier, isSpdxIdentifier, isCustomIdentifier, LicenseSource, map} from "../index";
+import { isScancodeLicensedbIdentifier, isSpdxIdentifier, isCustomIdentifier, LicenseSource, map, Extra } from "../index";
 
 jest.mock('../resources/merged_data.json', () => {
     return require('./resources/merged_data.json');
@@ -90,5 +90,18 @@ describe('LicenseLynx tests', () => {
         await expect(map(input)).rejects.toEqual(new Error('License null not found.'));
         return expect(map(input, true)).rejects.toEqual(new Error('License null not found.'));
 
+    });
+
+    it('should return data when license exists in internal map', async () => {
+        return map("Internal License 1.1", false, Extra.Internal).then(licenseObject => {
+            expect(licenseObject).not.toBe(null);
+            expect(licenseObject!.id).toEqual('INTERNAL-1.1');
+            expect(licenseObject!.src).toEqual('internal');
+            expect(licenseObject!.src).toEqual(LicenseSource.Internal);
+        });
+    });
+
+    it('should fail when license exists in internal map but extra is not provided', async () => {
+        await expect(map("Internal License 1.1")).rejects.toEqual(new Error('License Internal License 1.1 not found.'));
     });
 });

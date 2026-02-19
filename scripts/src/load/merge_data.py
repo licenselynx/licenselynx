@@ -17,6 +17,10 @@ def read_data(data_dir: str) -> dict:
 
     for filename in os.listdir(data_dir):
         filepath = os.path.join(data_dir, filename)
+
+        if os.path.isdir(filepath):
+            continue
+
         with open(filepath, 'r') as f:
             license_data = json.load(f)
             canonical_id = license_data["canonical"]["id"]
@@ -38,6 +42,37 @@ def read_data(data_dir: str) -> dict:
     return data
 
 
+def read_extra_data(extra_dir: str) -> dict:
+    extra_maps = {}
+    if not os.path.exists(extra_dir):
+        return extra_maps
+
+    for org in os.listdir(extra_dir):
+        org_dir = os.path.join(extra_dir, org)
+        if not os.path.isdir(org_dir):
+            continue
+
+        org_map = {}
+        for filename in os.listdir(org_dir):
+            filepath = os.path.join(org_dir, filename)
+            if not os.path.isfile(filepath):
+                continue
+
+            with open(filepath, 'r') as f:
+                license_data = json.load(f)
+                canonical_object = license_data["canonical"]
+                canonical_id = canonical_object["id"]
+                aliases = license_data.get("aliases", [])
+
+                org_map[canonical_id] = canonical_object
+                for source in aliases:
+                    for alias in aliases[source]:
+                        org_map[alias] = canonical_object
+
+        extra_maps[f"{org}Map"] = org_map
+    return extra_maps
+
+
 def write_data(alias_mapping: dict, output_path: str):
     with open(output_path, 'w') as outfile:
         json.dump(alias_mapping, outfile, indent=4)
@@ -45,6 +80,9 @@ def write_data(alias_mapping: dict, output_path: str):
 
 def merge_data_to_paths(data_dir: str, output_path: str):
     data = read_data(data_dir)
+    extra_dir = os.path.join(data_dir, 'extra')
+    extra_data = read_extra_data(extra_dir)
+    data.update(extra_data)
 
     write_data(data, output_path)
 

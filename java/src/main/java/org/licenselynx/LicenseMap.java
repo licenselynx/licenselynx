@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import net.jcip.annotations.Immutable;
 
 import javax.annotation.Nonnull;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
@@ -26,6 +27,8 @@ class LicenseMap
     @JsonProperty
     private final Map<String, LicenseObject> riskyLicenseMap;
 
+    private final Map<String, Map<String, LicenseObject>> extraLicenseMaps = new HashMap<>();
+
 
 
     @JsonCreator
@@ -35,6 +38,19 @@ class LicenseMap
     {
         this.canonicalLicenseMap = Objects.requireNonNull(pCanonicalLicenseMap);
         this.riskyLicenseMap = Objects.requireNonNull(pRiskyLicenseMap);
+    }
+
+
+
+    /**
+     * Adds an extra license map. This is used by Jackson to load additional maps from the JSON file.
+     * @param pKey the name of the extra map (e.g., "acmeMap")
+     * @param pValue the license map
+     */
+    @com.fasterxml.jackson.annotation.JsonAnySetter
+    public void addExtraMap(final String pKey, final Map<String, LicenseObject> pValue)
+    {
+        extraLicenseMaps.put(pKey, pValue);
     }
 
 
@@ -59,5 +75,17 @@ class LicenseMap
     public Map<String, LicenseObject> getRiskyLicenseMap()
     {
         return riskyLicenseMap;
+    }
+
+
+
+    /**
+     * Gets the extra license maps.
+     * @return map of extra license maps
+     */
+    @Nonnull
+    public Map<String, Map<String, LicenseObject>> getExtraLicenseMaps()
+    {
+        return extraLicenseMaps;
     }
 }
