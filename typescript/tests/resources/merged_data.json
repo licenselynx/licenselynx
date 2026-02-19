@@ -22,5 +22,11 @@
             "id": "0BSD",
             "src": "spdx"
         }
+    },
+    "internalMap": {
+        "Internal License 1.1": {
+            "id": "INTERNAL-1.1",
+            "src": "internal"
+        }
     }
 }

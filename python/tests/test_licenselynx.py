@@ -134,6 +134,41 @@ def test_map_with_type_error():
     assert exit_code.type == TypeError
 
 
+def test_map_invalid_quote():
+    license_name = "‚test-license"
+    license_object = LicenseLynx.map(license_name)
+    assert license_object is None
+
+
+def test_map_internal():
+    # Mocking internal data for this specific test
+    internal_mock_data = {
+        "stableMap": {},
+        "riskyMap": {},
+        "internalMap": {
+            "Internal License 1.1": {"id": "INTERNAL-1.1", "src": LicenseSource.INTERNAL.value}
+        }
+    }
+    mock_file = MagicMock()
+    mock_file.__enter__.return_value = mock_open(read_data=json.dumps(internal_mock_data)).return_value
+
+    with patch('importlib.resources.files') as mock_resources_files:
+        mock_resources_files.return_value.joinpath.return_value.open.return_value = mock_file
+        _LicenseMapSingleton._instances = {} 
+        
+        from licenselynx.extra import Extra
+
+        license_name = "Internal License 1.1"
+        license_object = LicenseLynx.map(license_name, extra=Extra.INTERNAL)
+        
+        assert license_object is not None
+        assert license_object.id == "INTERNAL-1.1"
+        assert license_object.src == LicenseSource.INTERNAL
+        
+        # Should be None without extra=Extra.INTERNAL
+        assert LicenseLynx.map(license_name) is None
+
+
 def test_init_with_generic_exception():
     with patch('importlib.resources.files', side_effect=Exception("Generic error")):
         with pytest.raises(Exception) as e:

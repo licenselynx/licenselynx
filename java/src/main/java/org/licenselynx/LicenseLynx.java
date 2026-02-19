@@ -63,5 +63,37 @@ public final class LicenseLynx
 
         return licenseObject;
     }
+
+
+
+    /**
+     * Maps the given license name to its corresponding LicenseObject using an extra license map.
+     *
+     * @param pLicenseName the name of the license to map
+     * @param pExtra the extra license map to use
+     * @return the license data as a LicenseObject, or null if not found
+     */
+    @CheckForNull
+    public static LicenseObject map(@Nonnull final String pLicenseName, @Nonnull final Extra pExtra)
+    {
+        if (pExtra == Extra.NONE)
+        {
+            return map(pLicenseName);
+        }
+
+        LicenseMapSingleton licenseMapSingleton = LicenseMapSingleton.getInstance();
+        LicenseMap licenseMap = licenseMapSingleton.getLicenseMap();
+
+        String licenseNameNormalized = QuotesHandler.normalizeQuotes(pLicenseName);
+        String extraMapKey = pExtra.name().toLowerCase() + "Map";
+        Map<String, LicenseObject> extraMap = licenseMap.getExtraLicenseMaps().get(extraMapKey);
+
+        if (extraMap == null)
+        {
+            return null;
+        }
+
+        return extraMap.get(licenseNameNormalized);
+    }
 }
 

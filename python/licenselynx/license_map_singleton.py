@@ -36,7 +36,15 @@ class _LicenseMapSingleton(metaclass=_Singleton):
                 for key, value in data["riskyMap"].items():
                     risky_map[key] = LicenseObject(**value)
 
-                self._merged_data = _LicenseMap(stable_map, risky_map)
+                extra_maps = {}
+                for key, value in data.items():
+                    if key.endswith("Map") and key not in ["stableMap", "riskyMap"]:
+                        org_map = {}
+                        for map_key, map_value in value.items():
+                            org_map[map_key] = LicenseObject(**map_value)
+                        extra_maps[key] = org_map
+
+                self._merged_data = _LicenseMap(stable_map, risky_map, extra_maps)
         except Exception as e:
             raise e.with_traceback(sys.exc_info()[2])
 

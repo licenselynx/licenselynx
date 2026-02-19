@@ -17,11 +17,18 @@ export enum LicenseSource {
     Spdx = 'spdx',
     ScancodeLicensedb = 'scancode-licensedb',
     Custom = 'custom',
+    Internal = 'internal',
+}
+
+export enum Extra {
+    None = 'none',
+    Internal = 'internal',
 }
 
 interface LicenseRepository {
     stableMap: LicenseMap;
     riskyMap: LicenseMap;
+    [extraMap: string]: LicenseMap;
 }
 
 
@@ -30,9 +37,10 @@ interface LicenseRepository {
  *
  * @param licenseName the name of the license to map
  * @param risky enable risky mappings
+ * @param extra enable extra mappings for a specific company/org
  * @returns LicenseObject as promise or error if not found
  */
-export const map = function (licenseName: string, risky: boolean = false) {
+export const map = function (licenseName: string, risky: boolean = false, extra: Extra = Extra.None) {
     return new Promise<LicenseObject>((resolve, reject) => {
         const licenses = mergedData as LicenseRepository;
 
@@ -44,12 +52,20 @@ export const map = function (licenseName: string, risky: boolean = false) {
             licenseData = licenses.riskyMap[licenseName];
         }
 
+        if (!licenseData && extra !== Extra.None) {
+            const extraMapKey = `${extra}Map`;
+            const extraMap = licenses[extraMapKey];
+            if (extraMap) {
+                licenseData = extraMap[normalizedLicenseName];
+            }
+        }
+
         if (licenseData) {
             const canonical = licenseData.id;
             const src = licenseData.src;
 
             if (canonical && src) {
-                resolve(Object.freeze({id: canonical, src}));
+                resolve(Object.freeze({ id: canonical, src }));
             }
         }
 
@@ -57,15 +73,15 @@ export const map = function (licenseName: string, risky: boolean = false) {
     })
 }
 
-export const isSpdxIdentifier= function (licenseObject: LicenseObject): boolean {
+export const isSpdxIdentifier = function (licenseObject: LicenseObject): boolean {
     return licenseObject.src === LicenseSource.Spdx;
 }
 
-export const isScancodeLicensedbIdentifier= function (licenseObject: LicenseObject): boolean {
+export const isScancodeLicensedbIdentifier = function (licenseObject: LicenseObject): boolean {
     return licenseObject.src === LicenseSource.ScancodeLicensedb;
 }
 
-export const isCustomIdentifier= function (licenseObject: LicenseObject): boolean {
+export const isCustomIdentifier = function (licenseObject: LicenseObject): boolean {
     return licenseObject.src === LicenseSource.Custom;
 }
 
