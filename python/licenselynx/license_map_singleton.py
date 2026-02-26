@@ -29,14 +29,15 @@ class _LicenseMapSingleton(metaclass=_Singleton):
             with self._file_path.open() as file:
                 data = json.load(file)
 
-                stable_map = {}
-                for key, value in data["stableMap"].items():
-                    stable_map[key] = LicenseObject(**value)
-                risky_map = {}
-                for key, value in data["riskyMap"].items():
-                    risky_map[key] = LicenseObject(**value)
+                license_maps = {}
+                for map_key, map_data in data.items():
+                    if map_key.endswith("Map"):
+                        org_map = {}
+                        for lic_name, lic_data in map_data.items():
+                            org_map[lic_name] = LicenseObject(**lic_data)
+                        license_maps[map_key] = org_map
 
-                self._merged_data = _LicenseMap(stable_map, risky_map)
+                self._merged_data = _LicenseMap(license_maps)
         except Exception as e:
             raise e.with_traceback(sys.exc_info()[2])
 

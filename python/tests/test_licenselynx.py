@@ -49,11 +49,11 @@ def test_license_map_singleton(mock_data):
     instance2 = _LicenseMapSingleton()
 
     assert instance == instance2
-    assert instance.merged_data.risky_map.get(LICENSE_STRING_RISKY).id == CANONICAL_ID_RISKY
-    assert instance.merged_data.risky_map.get(LICENSE_STRING_RISKY).src == LicenseSource.CUSTOM
+    assert instance.merged_data.get_risky_map().get(LICENSE_STRING_RISKY).id == CANONICAL_ID_RISKY
+    assert instance.merged_data.get_risky_map().get(LICENSE_STRING_RISKY).src == LicenseSource.CUSTOM
 
-    assert instance.merged_data.stable_map.get(LICENSE_STRING_STABLE).id == CANONICAL_ID_STABLE
-    assert instance.merged_data.stable_map.get(LICENSE_STRING_STABLE).src == LicenseSource.SPDX
+    assert instance.merged_data.get_canonical_map().get(LICENSE_STRING_STABLE).id == CANONICAL_ID_STABLE
+    assert instance.merged_data.get_canonical_map().get(LICENSE_STRING_STABLE).src == LicenseSource.SPDX
 
 
 def test_map_with_existing_license(mock_data):
@@ -132,6 +132,37 @@ def test_map_with_type_error():
             mock_resources_files.return_value.joinpath.return_value.open.return_value = mock_file
             LicenseLynx.map(CANONICAL_ID_STABLE)
     assert exit_code.type == TypeError
+
+
+def test_map_invalid_quote():
+    license_name = "‚test-license"
+    license_object = LicenseLynx.map(license_name)
+    assert license_object is None
+
+
+def test_map_internal():
+    # Mappings for an extra organizational map
+    internal_mock_data = {
+        "stableMap": {},
+        "riskyMap": {},
+        "acmeMap": {
+            "Internal License 1.1": {"id": "INTERNAL-1.1", "src": LicenseSource.CUSTOM.value}
+        }
+    }
+    mock_file = MagicMock()
+    mock_file.__enter__.return_value = mock_open(read_data=json.dumps(internal_mock_data)).return_value
+
+    with patch('importlib.resources.files') as mock_resources_files:
+        mock_resources_files.return_value.joinpath.return_value.open.return_value = mock_file
+        _LicenseMapSingleton._instances = {}
+
+        instance = _LicenseMapSingleton()
+        # Verify the map is loaded into the internal structure
+        assert "acmeMap" in instance.merged_data.license_maps
+        assert instance.merged_data.license_maps["acmeMap"]["Internal License 1.1"].id == "INTERNAL-1.1"
+
+        # Verify map(extra=None) doesn't find it
+        assert LicenseLynx.map("Internal License 1.1") is None
 
 
 def test_init_with_generic_exception():

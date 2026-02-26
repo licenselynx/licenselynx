@@ -138,7 +138,11 @@ class LicenseLynxTest
         String testCanonicalRisky = "TestCanonicalRisky";
         testRiskyMap.put("testRisky", new LicenseObject(testCanonicalRisky, LicenseSource.Custom));
 
-        LicenseMap licenseMap = new LicenseMap(testMap, testRiskyMap);
+        Map<String, Map<String, LicenseObject>> maps = new HashMap<>();
+        maps.put("stableMap", testMap);
+        maps.put("riskyMap", testRiskyMap);
+
+        LicenseMap licenseMap = new LicenseMap(maps);
         LicenseMapSingleton testInstance = new LicenseMapSingleton(licenseMap);
 
         Assertions.assertEquals(CANONICAL_ID_SPDX,
@@ -218,5 +222,31 @@ class LicenseLynxTest
     {
         // Act && Assert
         Assertions.assertThrows(IllegalArgumentException.class, () -> LicenseSource.fromValue("non-specified-source"));
+    }
+
+    @Test
+    void testMapInternal()
+    {
+        // Arrange
+        String licenseName = "Internal License 1.1";
+        Map<String, LicenseObject> internalMap = new HashMap<>();
+        internalMap.put(licenseName, new LicenseObject("INTERNAL-1.1", LicenseSource.Custom));
+
+        Map<String, Map<String, LicenseObject>> maps = new HashMap<>();
+        maps.put("stableMap", new HashMap<>());
+        maps.put("riskyMap", new HashMap<>());
+        maps.put("acmeMap", internalMap);
+
+        LicenseMap licenseMap = new LicenseMap(maps);
+
+        // 1. Verify standard logic (mapping with null/stableMap)
+        Assertions.assertEquals(0, licenseMap.getCanonicalLicenseMap().size());
+        
+        // 2. Verify getMap with null returns stableMap
+        Assertions.assertEquals(licenseMap.getCanonicalLicenseMap(), licenseMap.getMap(null));
+
+        // 3. Verify internal structure contains the extra map
+        // Note: Since Extra enum is empty, we verify the underlying storage for future usage
+        Assertions.assertEquals("INTERNAL-1.1", maps.get("acmeMap").get(licenseName).getId());
     }
 }

@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import net.jcip.annotations.Immutable;
 
 import javax.annotation.Nonnull;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
@@ -20,21 +21,14 @@ import java.util.Objects;
 @Immutable
 class LicenseMap
 {
-    @JsonProperty
-    private final Map<String, LicenseObject> canonicalLicenseMap;
-
-    @JsonProperty
-    private final Map<String, LicenseObject> riskyLicenseMap;
+    private final Map<String, Map<String, LicenseObject>> licenseMaps;
 
 
 
     @JsonCreator
-    public LicenseMap(
-        @JsonProperty("stableMap") final Map<String, LicenseObject> pCanonicalLicenseMap,
-        @JsonProperty("riskyMap") final Map<String, LicenseObject> pRiskyLicenseMap)
+    public LicenseMap(final Map<String, Map<String, LicenseObject>> pLicenseMaps)
     {
-        this.canonicalLicenseMap = Objects.requireNonNull(pCanonicalLicenseMap);
-        this.riskyLicenseMap = Objects.requireNonNull(pRiskyLicenseMap);
+        this.licenseMaps = Objects.requireNonNull(pLicenseMaps);
     }
 
 
@@ -46,7 +40,7 @@ class LicenseMap
     @Nonnull
     public Map<String, LicenseObject> getCanonicalLicenseMap()
     {
-        return canonicalLicenseMap;
+        return licenseMaps.getOrDefault("stableMap", new HashMap<>());
     }
 
 
@@ -58,6 +52,25 @@ class LicenseMap
     @Nonnull
     public Map<String, LicenseObject> getRiskyLicenseMap()
     {
-        return riskyLicenseMap;
+        return licenseMaps.getOrDefault("riskyMap", new HashMap<>());
+    }
+
+
+
+    /**
+     * Gets the license map for a specific extra organization.
+     * @param pExtra the organization enum
+     * @return the license map, or null if not found
+     */
+    @CheckForNull
+    public Map<String, LicenseObject> getMap(final Extra pExtra)
+    {
+        if (pExtra == null)
+        {
+            return getCanonicalLicenseMap();
+        }
+
+        // The key is the lowercase name of the enum + "Map"
+        return licenseMaps.get(pExtra.name().toLowerCase() + "Map");
     }
 }

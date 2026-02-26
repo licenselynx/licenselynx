@@ -19,20 +19,36 @@ export enum LicenseSource {
     Custom = 'custom',
 }
 
+export enum Extra {
+}
+
 interface LicenseRepository {
     stableMap: LicenseMap;
     riskyMap: LicenseMap;
+    [extraMap: string]: LicenseMap;
 }
 
 
 /**
- * Maps the given license name to its corresponding data.
+ * Returns the license map for the given extra organization.
+ * @param licenses the merged license repository
+ * @param extra the organization enum
+ * @returns the organization's license map, or undefined if not found
+ */
+const getExtraMap = function (licenses: LicenseRepository, extra: Extra): LicenseMap | undefined {
+    return licenses[`${extra}Map` as keyof LicenseRepository] as LicenseMap | undefined;
+};
+
+
+/**
+ * Maps the given license name to its corresponding LicenseObject.
  *
  * @param licenseName the name of the license to map
- * @param risky enable risky mappings
+ * @param risky if true, also search in the risky map
+ * @param extra enable extra mappings for a specific company/org
  * @returns LicenseObject as promise or error if not found
  */
-export const map = function (licenseName: string, risky: boolean = false) {
+export const map = function (licenseName: string, risky: boolean = false, extra: Extra | null = null) {
     return new Promise<LicenseObject>((resolve, reject) => {
         const licenses = mergedData as LicenseRepository;
 
@@ -44,12 +60,19 @@ export const map = function (licenseName: string, risky: boolean = false) {
             licenseData = licenses.riskyMap[licenseName];
         }
 
+        if (!licenseData && extra) {
+            const extraMap = getExtraMap(licenses, extra);
+            if (extraMap) {
+                licenseData = extraMap[normalizedLicenseName];
+            }
+        }
+
         if (licenseData) {
             const canonical = licenseData.id;
             const src = licenseData.src;
 
             if (canonical && src) {
-                resolve(Object.freeze({id: canonical, src}));
+                resolve(Object.freeze({ id: canonical, src }));
             }
         }
 
@@ -57,15 +80,15 @@ export const map = function (licenseName: string, risky: boolean = false) {
     })
 }
 
-export const isSpdxIdentifier= function (licenseObject: LicenseObject): boolean {
+export const isSpdxIdentifier = function (licenseObject: LicenseObject): boolean {
     return licenseObject.src === LicenseSource.Spdx;
 }
 
-export const isScancodeLicensedbIdentifier= function (licenseObject: LicenseObject): boolean {
+export const isScancodeLicensedbIdentifier = function (licenseObject: LicenseObject): boolean {
     return licenseObject.src === LicenseSource.ScancodeLicensedb;
 }
 
-export const isCustomIdentifier= function (licenseObject: LicenseObject): boolean {
+export const isCustomIdentifier = function (licenseObject: LicenseObject): boolean {
     return licenseObject.src === LicenseSource.Custom;
 }
 
