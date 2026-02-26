@@ -359,6 +359,90 @@ def group_license_files_by_base_name():
     return group_by_base
 
 
+def _validate_org_file(filename: str, filepath: str, org_name: str,
+                       oss_ids: set, oss_aliases: dict,
+                       org_ids: dict[str, list[str]],
+                       org_aliases: dict[str, list[str]]):
+    with open(filepath, 'r') as f:
+        try:
+            data = json.load(f)
+        except json.JSONDecodeError:
+            logger.error(f"Invalid JSON in file {filename} (org: {org_name})")
+            return
+
+        canonical_id = data["canonical"]["id"]
+
+        # 1. ID matches filename
+        if canonical_id != filename[:-5]:
+            logger.error(f"Extra JSON filename '{filename}' (org: {org_name}) "
+                         f"does not match canonical id '{canonical_id}'")
+
+        # 2. ID unique against OSS
+        if canonical_id in oss_ids:
+            logger.error(f"Extra license ID '{canonical_id}' (org: {org_name}, file: {filename}) "
+                         f"collides with an OSS canonical ID")
+
+        # Collect ID for intra-org uniqueness check
+        org_ids.setdefault(canonical_id, []).append(filename)
+
+        # 3. Aliases unique against OSS and within THIS org
+        aliases = data.get("aliases", {})
+        for src_aliases in aliases.values():
+            for alias in src_aliases:
+                if alias in oss_aliases:
+                    logger.error(f"Extra license alias '{alias}' (org: {org_name}, file: {filename}) "
+                                 f"collides with OSS aliases in: {oss_aliases[alias]}")
+                org_aliases.setdefault(alias, []).append(filename)
+
+
+def _validate_org_data(org_name: str, org_path: str, oss_ids: set, oss_aliases: dict):
+    org_ids: dict[str, list[str]] = {}  # canonical_id -> [filename]
+    org_aliases: dict[str, list[str]] = {}  # alias -> [filename]
+
+    for filename in os.listdir(org_path):
+        if not filename.endswith(".json"):
+            continue
+
+        filepath = os.path.join(org_path, filename)
+        _validate_org_file(filename, filepath, org_name, oss_ids, oss_aliases, org_ids, org_aliases)
+
+    # 4. Intra-org ID uniqueness
+    for cid, files in org_ids.items():
+        if len(files) > 1:
+            logger.error(f"License ID '{cid}' is not unique within organization '{org_name}'. Files: {files}")
+
+    # 5. Intra-org Alias uniqueness
+    for alias, files in org_aliases.items():
+        if len(files) > 1:
+            logger.error(f"Alias '{alias}' is not unique within organization '{org_name}'. Files: {files}")
+
+
+def check_extra_data_validation():
+    extra_dir = os.path.join(DATA_DIR, 'extra')
+    if not os.path.exists(extra_dir):
+        return
+
+    # Collect OSS data for collision checks
+    oss_canonical_ids = set()
+    oss_aliases = {}
+    for filename in os.listdir(DATA_DIR):
+        if filename.endswith(".json"):
+            filepath = os.path.join(DATA_DIR, filename)
+            with open(filepath, 'r') as f:
+                data = json.load(f)
+                oss_canonical_ids.add(data["canonical"]["id"])
+                aliases = data.get("aliases", {})
+                for src_aliases in aliases.values():
+                    for alias in src_aliases:
+                        oss_aliases.setdefault(alias, []).append(filename)
+
+    # Validate each organization's extra data
+    for org_name in os.listdir(extra_dir):
+        org_path = os.path.join(extra_dir, org_name)
+        if os.path.isdir(org_path):
+            _validate_org_data(org_name, org_path, oss_canonical_ids, oss_aliases)
+
+
 def main():
     spdx_license_url = "https://raw.githubusercontent.com/spdx/license-list-data/main/json/licenses.json"
     spdx_license_file = "spdx_license_list.json"
@@ -394,6 +478,7 @@ def main():
 
     check_version_between_canonical_and_alias()
     check_major_version_flag()
+    check_extra_data_validation()
     # Check if error occurred
     if logger.handlers[1].error_occurred:
         exit(1)

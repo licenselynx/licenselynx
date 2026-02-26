@@ -2,14 +2,11 @@ name: TypeScript CI
 on:
   push:
     branches:
-      - main
-    paths:
-      - typescript/**
+      - '**'
   pull_request:
     branches:
-      - main
-    paths:
-      - typescript/**
+      - '**'
+  workflow_dispatch:
 jobs:
   tests:
     runs-on: ubuntu-latest
@@ -17,7 +14,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -29,24 +26,13 @@ jobs:
         run: |
           cd typescript
           npm run test | grep "All files" | awk '{print $10}' > coverage.txt
-      - name: Run coverage badge job
-        run: |
-          sudo apt-get install xq
-          pip install anybadge
-          cov_value=$(cat typescript/coverage.txt)
-          cov_rounded=$(printf "%.1f\n" $(bc <<< "${cov_value}"))
-          echo "Coverage found: ${cov_rounded}%"
-          anybadge --label typescript:coverage --value ${cov_rounded} --suffix "%" --file website/badges/coverage-typescript.svg --overwrite
-      - uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: Update badge for typescript
-      
+
 
   integration-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -77,7 +63,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 18

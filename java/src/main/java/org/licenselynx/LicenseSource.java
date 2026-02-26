@@ -13,8 +13,7 @@ public enum LicenseSource
 {
     Spdx("spdx"),
     ScancodeLicensedb("scancode-licensedb"),
-    Custom("custom"),
-    Internal("internal");
+    Custom("custom");
 
     private final String value;
 

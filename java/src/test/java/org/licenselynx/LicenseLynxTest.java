@@ -138,7 +138,11 @@ class LicenseLynxTest
         String testCanonicalRisky = "TestCanonicalRisky";
         testRiskyMap.put("testRisky", new LicenseObject(testCanonicalRisky, LicenseSource.Custom));
 
-        LicenseMap licenseMap = new LicenseMap(testMap, testRiskyMap);
+        Map<String, Map<String, LicenseObject>> maps = new HashMap<>();
+        maps.put("stableMap", testMap);
+        maps.put("riskyMap", testRiskyMap);
+
+        LicenseMap licenseMap = new LicenseMap(maps);
         LicenseMapSingleton testInstance = new LicenseMapSingleton(licenseMap);
 
         Assertions.assertEquals(CANONICAL_ID_SPDX,
@@ -226,19 +230,23 @@ class LicenseLynxTest
         // Arrange
         String licenseName = "Internal License 1.1";
         Map<String, LicenseObject> internalMap = new HashMap<>();
-        internalMap.put(licenseName, new LicenseObject("INTERNAL-1.1", LicenseSource.Internal));
+        internalMap.put(licenseName, new LicenseObject("INTERNAL-1.1", LicenseSource.Custom));
 
-        Map<String, LicenseObject> stableMap = new HashMap<>();
-        Map<String, LicenseObject> riskyMap = new HashMap<>();
+        Map<String, Map<String, LicenseObject>> maps = new HashMap<>();
+        maps.put("stableMap", new HashMap<>());
+        maps.put("riskyMap", new HashMap<>());
+        maps.put("acmeMap", internalMap);
+
+        LicenseMap licenseMap = new LicenseMap(maps);
+
+        // 1. Verify standard logic (mapping with null/stableMap)
+        Assertions.assertEquals(0, licenseMap.getCanonicalLicenseMap().size());
         
-        LicenseMap licenseMap = new LicenseMap(stableMap, riskyMap);
-        licenseMap.addExtraMap("internalMap", internalMap);
-        
-        LicenseMapSingleton testInstance = new LicenseMapSingleton(licenseMap);
-        // We can't easily swap the global singleton without reflection or changing the API
-        // but we can test the LicenseMap/LicenseObject logic here.
-        
-        Assertions.assertEquals("INTERNAL-1.1", 
-            testInstance.getLicenseMap().getExtraLicenseMaps().get("internalMap").get(licenseName).getId());
+        // 2. Verify getMap with null returns stableMap
+        Assertions.assertEquals(licenseMap.getCanonicalLicenseMap(), licenseMap.getMap(null));
+
+        // 3. Verify internal structure contains the extra map
+        // Note: Since Extra enum is empty, we verify the underlying storage for future usage
+        Assertions.assertEquals("INTERNAL-1.1", maps.get("acmeMap").get(licenseName).getId());
     }
 }

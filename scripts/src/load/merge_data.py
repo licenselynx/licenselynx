@@ -4,6 +4,7 @@
 import argparse
 import json
 import os
+from typing import Optional, Any
 
 # Set the working directory to the script's directory
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -11,9 +12,27 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.abspath(os.path.join(script_dir, '../../../data'))
 
 
-def read_data(data_dir: str) -> dict:
-    canonical_dict = {}
-    risky_dict = {}
+def _process_license_file(filepath: str, stable_map: dict[Any, Any], risky_map: Optional[dict[Any, Any]] = None):
+    with open(filepath, 'r') as f:
+        license_data = json.load(f)
+        canonical_id = license_data["canonical"]["id"]
+        canonical_object = license_data["canonical"]
+        aliases = license_data.get("aliases", {})
+
+        stable_map[canonical_id] = canonical_object
+        for source in aliases:
+            for alias in aliases[source]:
+                stable_map[alias] = canonical_object
+
+        if risky_map is not None:
+            risky_aliases = license_data.get("risky", [])
+            for element in risky_aliases:
+                risky_map[element] = canonical_object
+
+
+def read_data(data_dir: str) -> dict[str, Any]:
+    stable_map: dict[str, Any] = {}
+    risky_map: dict[str, Any] = {}
 
     for filename in os.listdir(data_dir):
         filepath = os.path.join(data_dir, filename)
@@ -21,29 +40,13 @@ def read_data(data_dir: str) -> dict:
         if os.path.isdir(filepath):
             continue
 
-        with open(filepath, 'r') as f:
-            license_data = json.load(f)
-            canonical_id = license_data["canonical"]["id"]
-            canonical_object = license_data["canonical"]
-            aliases = license_data.get("aliases", [])
+        _process_license_file(filepath, stable_map, risky_map)
 
-            canonical_dict[canonical_id] = canonical_object
-            for source in aliases:
-                for alias in aliases[source]:
-                    canonical_dict[alias] = canonical_object
-
-            risky_aliases = license_data.get("risky")
-            if not risky_aliases:
-                continue
-            for element in risky_aliases:
-                risky_dict[element] = canonical_object
-    data = {"stableMap": canonical_dict, "riskyMap": risky_dict}
-
-    return data
+    return {"stableMap": stable_map, "riskyMap": risky_map}
 
 
 def read_extra_data(extra_dir: str) -> dict:
-    extra_maps = {}
+    extra_maps: dict[str, dict] = {}
     if not os.path.exists(extra_dir):
         return extra_maps
 
@@ -52,22 +55,13 @@ def read_extra_data(extra_dir: str) -> dict:
         if not os.path.isdir(org_dir):
             continue
 
-        org_map = {}
+        org_map: dict[str, Any] = {}
         for filename in os.listdir(org_dir):
             filepath = os.path.join(org_dir, filename)
             if not os.path.isfile(filepath):
                 continue
 
-            with open(filepath, 'r') as f:
-                license_data = json.load(f)
-                canonical_object = license_data["canonical"]
-                canonical_id = canonical_object["id"]
-                aliases = license_data.get("aliases", [])
-
-                org_map[canonical_id] = canonical_object
-                for source in aliases:
-                    for alias in aliases[source]:
-                        org_map[alias] = canonical_object
+            _process_license_file(filepath, org_map)
 
         extra_maps[f"{org}Map"] = org_map
     return extra_maps

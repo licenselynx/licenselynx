@@ -9,6 +9,4 @@ package org.licenselynx;
  */
 public enum Extra
 {
-    NONE,
-    INTERNAL
 }

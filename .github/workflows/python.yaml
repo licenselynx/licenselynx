@@ -2,14 +2,11 @@ name: Python CI
 on:
   push:
     branches:
-      - main
-    paths:
-      - python/**
+      - '**'
   pull_request:
     branches:
-      - main
-    paths:
-      - python/**
+      - '**'
+  workflow_dispatch:
 jobs:
   tests:
     runs-on: ubuntu-latest
@@ -17,7 +14,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install Poetry
         run: |
           pipx install poetry
@@ -48,23 +45,13 @@ jobs:
           cd python
           poetry build
           python3 check_files.py
-      - name: Run coverage badge
-        run: |
-          sudo apt-get install xq
-          pip install anybadge
-          cov_value=$(xq --xpath "//coverage/@line-rate" python/coverage.xml)
-          cov_rounded=$(printf "%.1f\n" $(bc <<< "100*${cov_value}"))
-          echo "Coverage found: ${cov_rounded}%"
-          anybadge --label python:coverage --value ${cov_rounded} --suffix "%" --file website/badges/coverage-python.svg --overwrite
-      - uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: Update badge for python
+
 
   lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install Poetry
         run: |
           pipx install poetry
