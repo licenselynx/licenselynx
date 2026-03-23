@@ -9,13 +9,13 @@ To install the Java library, add it to your [Gradle](https://gradle.org/) or [Ma
 Gradle `build.gradle`:
 
 ```groovy
-implementation 'org.licenselynx:licenselynx:2.1.0'
+implementation 'org.licenselynx:licenselynx:2.1.1'
 ```
 
 Gradle `build.gradle.kts`:
 
 ```kotlin
-implementation("org.licenselynx:licenselynx:2.1.0")
+implementation("org.licenselynx:licenselynx:2.1.1")
 ```
 
 Maven `pom.xml`:
@@ -24,7 +24,7 @@ Maven `pom.xml`:
 <dependency>
     <groupId>org.licenselynx</groupId>
     <artifactId>licenselynx</artifactId>
-    <version>2.1.0</version>
+    <version>2.1.1</version>
 </dependency>
 ```
 
