@@ -19,7 +19,9 @@ from src.validate.data_validation import (
     check_no_empty_field_except_custom,
     check_rejected_field_exists,
     check_rejected_not_in_valid_fields,
-    check_version_between_canonical_and_alias
+    check_version_between_canonical_and_alias,
+    check_canonical_source_is_valid,
+    check_valid_alias_keys
 )
 
 # Mock setup_logger to avoid actual logging
@@ -655,6 +657,76 @@ def test_only_base_name_with_version_failure(caplog):
     with (mock.patch('src.validate.data_validation.DATA_DIR', "test_data")):
         with mock.patch('src.validate.data_validation.logger', mock_logger):
             check_version_between_canonical_and_alias()
+    assert mock_logger.error.call_count == 1
+
+
+def test_check_canonical_source_is_valid_success():
+    os.makedirs("test_data", exist_ok=True)
+
+    valid_data = {"canonical": {"id": "MIT", "src": "spdx"}, "aliases": {"spdx": ["MIT License"]}}
+
+    filepath = os.path.join("test_data", "MIT.json")
+
+    with open(filepath, 'w') as f:
+        json.dump(valid_data, f)
+
+    with mock.patch('src.validate.data_validation.DATA_DIR', "test_data"):
+        with mock.patch('src.validate.data_validation.logger', mock_logger):
+            check_canonical_source_is_valid()
+
+    assert mock_logger.error.call_count == 0
+
+
+def test_check_canonical_source_is_valid_failure():
+    os.makedirs("test_data", exist_ok=True)
+
+    invalid_data = {"canonical": {"id": "MIT", "src": "scancodeLicensedb"}, "aliases": {"spdx": ["MIT License"]}}
+
+    filepath = os.path.join("test_data", "MIT.json")
+
+    with open(filepath, 'w') as f:
+        json.dump(invalid_data, f)
+
+    with mock.patch('src.validate.data_validation.DATA_DIR', "test_data"):
+        with mock.patch('src.validate.data_validation.logger', mock_logger):
+            check_canonical_source_is_valid()
+
+    assert mock_logger.error.call_count == 1
+
+
+def test_check_valid_alias_keys_success():
+    os.makedirs("test_data", exist_ok=True)
+
+    valid_data = {"canonical": {"id": "MIT", "src": "spdx"},
+                  "aliases": {"spdx": ["MIT License"], "custom": ["mit"], "scancodeLicensedb": ["mit-license"]}}
+
+    filepath = os.path.join("test_data", "MIT.json")
+
+    with open(filepath, 'w') as f:
+        json.dump(valid_data, f)
+
+    with mock.patch('src.validate.data_validation.DATA_DIR', "test_data"):
+        with mock.patch('src.validate.data_validation.logger', mock_logger):
+            check_valid_alias_keys()
+
+    assert mock_logger.error.call_count == 0
+
+
+def test_check_valid_alias_keys_failure():
+    os.makedirs("test_data", exist_ok=True)
+
+    invalid_data = {"canonical": {"id": "MIT", "src": "spdx"},
+                    "aliases": {"spdx": ["MIT License"], "custom": ["mit"], "invalid_key": ["bad"]}}
+
+    filepath = os.path.join("test_data", "MIT.json")
+
+    with open(filepath, 'w') as f:
+        json.dump(invalid_data, f)
+
+    with mock.patch('src.validate.data_validation.DATA_DIR', "test_data"):
+        with mock.patch('src.validate.data_validation.logger', mock_logger):
+            check_valid_alias_keys()
+
     assert mock_logger.error.call_count == 1
 
 
