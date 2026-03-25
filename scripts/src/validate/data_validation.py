@@ -8,6 +8,7 @@ import re
 
 import requests
 from src.logger import setup_logger
+from src.update.canonical_source import CanonicalSource
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -359,6 +360,31 @@ def group_license_files_by_base_name():
     return group_by_base
 
 
+def check_canonical_source_is_valid():
+    valid_sources = {source.value for source in CanonicalSource}
+    for filename in os.listdir(DATA_DIR):
+        if filename.endswith(JSON_EXTENSION):
+            filepath = os.path.join(DATA_DIR, filename)
+            with open(filepath, 'r') as f:
+                data = json.load(f)
+                src = data["canonical"]["src"]
+                if src not in valid_sources:
+                    logger.error(f"File '{filename}' has invalid canonical source '{src}'. Must be one of {valid_sources}")
+
+
+def check_valid_alias_keys():
+    valid_alias_keys = {"custom", "scancodeLicensedb", "pypi", "osi", "spdx"}
+    for filename in os.listdir(DATA_DIR):
+        if filename.endswith(JSON_EXTENSION):
+            filepath = os.path.join(DATA_DIR, filename)
+            with open(filepath, 'r') as f:
+                data = json.load(f)
+                aliases = data.get("aliases", {})
+                for key in aliases:
+                    if key not in valid_alias_keys:
+                        logger.error(f"File '{filename}' has invalid alias key '{key}'. Valid keys are {valid_alias_keys}")
+
+
 def main():
     spdx_license_url = "https://raw.githubusercontent.com/spdx/license-list-data/main/json/licenses.json"
     spdx_license_file = "spdx_license_list.json"
@@ -388,9 +414,11 @@ def main():
 
     check_json_filename()
     check_unique_aliases()
+    check_valid_alias_keys()
     check_length_and_characters()
 
     check_no_empty_field_except_custom()
+    check_canonical_source_is_valid()
 
     check_version_between_canonical_and_alias()
     check_major_version_flag()
