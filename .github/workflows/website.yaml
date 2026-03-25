@@ -8,12 +8,14 @@ on:
     paths:
       - website/**
       - '!website/badges/**'
+      - data/**
   pull_request:
     branches:
       - main
     paths:
       - website/**
       - '!website/badges/**'
+      - data/**
 permissions:
   contents: read
   pages: write
