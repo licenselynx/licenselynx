@@ -9,15 +9,18 @@ from licenselynx.licenselynx import LicenseLynx
 from licenselynx.license_object import LicenseObject
 from licenselynx.license_map_singleton import _LicenseMapSingleton
 from licenselynx.license_source import LicenseSource
+from licenselynx.organization import Organization
 
 LICENSE_STRING_STABLE = "MIT License"
 LICENSE_STRING_RISKY = "GPL License"
-LICENSE_STRING_WITH_QUOTES = "‚MIT‛ License"
+LICENSE_STRING_WITH_QUOTES = "\u201AMIT\u201B License"
 LICENSE_STRING_WITH_NORMALIZED_QUOTES = "'MIT' License"
 LICENSE_STRING_SCANCODE = "Some License"
 CANONICAL_ID_SCANCODE = "SOME"
 CANONICAL_ID_STABLE = "MIT"
 CANONICAL_ID_RISKY = "GPL"
+LICENSE_STRING_ORG = "SISL-1.4"
+CANONICAL_ID_ORG = "SISL-1.4"
 
 
 @pytest.fixture(autouse=True)
@@ -34,7 +37,8 @@ def mock_data():
                                                                        "src": LicenseSource.SPDX.value},
                                LICENSE_STRING_SCANCODE: {"id": CANONICAL_ID_STABLE, "src": LicenseSource.SCANCODE_LICENSEDB.value},
                                },
-                 "riskyMap": {LICENSE_STRING_RISKY: {"id": CANONICAL_ID_RISKY, "src": LicenseSource.CUSTOM.value}}}
+                 "riskyMap": {LICENSE_STRING_RISKY: {"id": CANONICAL_ID_RISKY, "src": LicenseSource.CUSTOM.value}},
+                 "siemens": {LICENSE_STRING_ORG: {"id": CANONICAL_ID_ORG, "src": "siemens"}}}
     mock_file = MagicMock()
     mock_file.__enter__.return_value = mock_open(read_data=json.dumps(mock_data)).return_value
 
@@ -124,7 +128,7 @@ def test_init_with_json_decode_error():
 
 def test_map_with_type_error():
     mock_data = json.dumps(
-        {"stableMap": {CANONICAL_ID_STABLE: {"id": LICENSE_STRING_STABLE}}, "riskyMap": {}})  # Missing 'src' key
+        {"stableMap": {CANONICAL_ID_STABLE: {"id": LICENSE_STRING_STABLE}}, "riskyMap": {}, "siemens": {}})  # Missing 'src' key
     mock_file = MagicMock()
     mock_file.__enter__.return_value = mock_open(read_data=mock_data).return_value
     with pytest.raises(Exception) as exit_code:
@@ -139,6 +143,43 @@ def test_init_with_generic_exception():
         with pytest.raises(Exception) as e:
             LicenseLynx.map("")
         assert str(e.value) == "Generic error"
+
+
+def test_init_with_missing_org_in_data():
+    """Tests that a ValueError is raised when an Organization enum value is missing from merged_data.json."""
+    mock_data_missing_org = json.dumps(
+        {"stableMap": {}, "riskyMap": {}}  # Missing "siemens" key
+    )
+    mock_file = MagicMock()
+    mock_file.__enter__.return_value = mock_open(read_data=mock_data_missing_org).return_value
+    with pytest.raises(ValueError, match="Organization 'siemens' is defined in the Organization enum but missing from merged_data.json"):
+        with patch('importlib.resources.files') as mock_resources_files:
+            mock_resources_files.return_value.joinpath.return_value.open.return_value = mock_file
+            _LicenseMapSingleton()
+
+
+def test_map_with_org_license(mock_data):
+    result = LicenseLynx.map(LICENSE_STRING_ORG, org=Organization.SIEMENS)
+
+    assert isinstance(result, LicenseObject)
+    assert result.id == CANONICAL_ID_ORG
+    assert result.src == "siemens"
+
+
+def test_is_organization_source(mock_data):
+    org_result = LicenseLynx.map(LICENSE_STRING_ORG, org=Organization.SIEMENS)
+    non_org_result = LicenseLynx.map(LICENSE_STRING_STABLE)
+
+    assert org_result.is_organization_source() is True
+    assert non_org_result.is_organization_source() is False
+
+
+def test_is_organization_source_of(mock_data):
+    org_result = LicenseLynx.map(LICENSE_STRING_ORG, org=Organization.SIEMENS)
+    non_org_result = LicenseLynx.map(LICENSE_STRING_STABLE)
+
+    assert org_result.is_organization_source_of(Organization.SIEMENS) is True
+    assert non_org_result.is_organization_source_of(Organization.SIEMENS) is False
 
 
 if __name__ == '__main__':
