@@ -21,7 +21,12 @@ from src.validate.data_validation import (
     check_rejected_not_in_valid_fields,
     check_version_between_canonical_and_alias,
     check_canonical_source_is_valid,
-    check_valid_alias_keys
+    check_valid_alias_keys,
+    validate_license_data,
+    validate_orgs_licenses,
+    validate_unique_orgs,
+    validate_equal_source_and_org_names,
+    validate_org_names_not_forbidden
 )
 
 # Mock setup_logger to avoid actual logging
@@ -695,6 +700,179 @@ def test_check_valid_alias_keys_failure():
         check_valid_alias_keys("test_data")
 
     assert mock_logger.error.call_count == 1
+
+
+def test_validate_license_data_success():
+    os.makedirs("test_data", exist_ok=True)
+
+    valid_data = {
+        "canonical": {"id": "TestLic-1.0", "src": "acme"},
+        "aliases": {"custom": ["Test License v1.0"]},
+        "isMajorVersionOnly": True,
+        "rejected": [],
+        "risky": []
+    }
+
+    with open(os.path.join("test_data", "TestLic-1.0.json"), 'w') as f:
+        json.dump(valid_data, f)
+
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        validate_license_data("test_data")
+
+    assert mock_logger.error.call_count == 0
+
+
+def test_validate_orgs_licenses_success():
+    os.makedirs(os.path.join("test_data", "acme"), exist_ok=True)
+
+    license_a = {
+        "canonical": {"id": "OrgLic-1.0", "src": "acme"},
+        "aliases": {"custom": ["Org License v1.0"]},
+        "isMajorVersionOnly": True,
+        "rejected": [],
+        "risky": []
+    }
+    license_b = {
+        "canonical": {"id": "OrgLic-2.0", "src": "acme"},
+        "aliases": {"custom": ["Org License v2.0"]},
+        "isMajorVersionOnly": True,
+        "rejected": [],
+        "risky": []
+    }
+
+    with open(os.path.join("test_data", "acme", "OrgLic-1.0.json"), 'w') as f:
+        json.dump(license_a, f)
+    with open(os.path.join("test_data", "acme", "OrgLic-2.0.json"), 'w') as f:
+        json.dump(license_b, f)
+
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        validate_orgs_licenses("test_data")
+
+    assert mock_logger.error.call_count == 0
+
+
+def test_validate_orgs_licenses_multiple_orgs_success():
+    os.makedirs(os.path.join("test_data", "org1"), exist_ok=True)
+    os.makedirs(os.path.join("test_data", "org2"), exist_ok=True)
+
+    org1_license = {
+        "canonical": {"id": "Foo-1.0", "src": "org1"},
+        "aliases": {"custom": ["Foo v1.0"]},
+        "isMajorVersionOnly": True,
+        "rejected": [],
+        "risky": []
+    }
+    org2_license = {
+        "canonical": {"id": "Bar-1.0", "src": "org2"},
+        "aliases": {"custom": ["Bar v1.0"]},
+        "isMajorVersionOnly": True,
+        "rejected": [],
+        "risky": []
+    }
+
+    with open(os.path.join("test_data", "org1", "Foo-1.0.json"), 'w') as f:
+        json.dump(org1_license, f)
+    with open(os.path.join("test_data", "org2", "Bar-1.0.json"), 'w') as f:
+        json.dump(org2_license, f)
+
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        validate_orgs_licenses("test_data")
+
+    assert mock_logger.error.call_count == 0
+
+
+def test_validate_orgs_licenses_detects_errors_in_org():
+    os.makedirs(os.path.join("test_data", "org1"), exist_ok=True)
+
+    # Filename is "Wrong-1.0.json" but canonical id is "Mismatch-1.0" => triggers check_json_filename error
+    bad_license = {
+        "canonical": {"id": "Mismatch-1.0", "src": "acme"},
+        "aliases": {"custom": ["Mismatch License v1.0"]},
+        "isMajorVersionOnly": True,
+        "rejected": [],
+        "risky": []
+    }
+
+    with open(os.path.join("test_data", "org1", "Wrong-1.0.json"), 'w') as f:
+        json.dump(bad_license, f)
+
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        validate_orgs_licenses("test_data")
+
+    assert mock_logger.error.call_count >= 1
+
+
+def test_validate_unique_orgs_success():
+    os.makedirs(os.path.join("test_data", "org1"), exist_ok=True)
+    os.makedirs(os.path.join("test_data", "org2"), exist_ok=True)
+    os.makedirs(os.path.join("test_data", "org3"), exist_ok=True)
+
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        validate_unique_orgs("test_data")
+
+    assert mock_logger.error.call_count == 0
+
+
+def test_validate_unique_orgs_failure():
+    os.makedirs(os.path.join("test_data", "org1"), exist_ok=True)
+    os.makedirs(os.path.join("test_data", "org2"), exist_ok=True)
+
+    # Simulate duplicate orgs by patching os.listdir to return duplicates
+    with mock.patch('src.validate.data_validation.os.listdir', return_value=["org1", "org2", "org1"]):
+        with mock.patch('src.validate.data_validation.logger', mock_logger):
+            validate_unique_orgs("test_data")
+
+    mock_logger.error.assert_called_once_with("Organization 'org1' is already present in the orgs list.")
+
+
+def test_validate_equal_source_and_org_names_success():
+    os.makedirs(os.path.join("test_data", "siemens"), exist_ok=True)
+
+    license_a = {"canonical": {"id": "SISL-1.1", "src": "siemens"}, "aliases": {"custom": ["Siemens License v1.1"]}}
+    license_b = {"canonical": {"id": "SISL-1.2", "src": "siemens"}, "aliases": {"custom": ["Siemens License v1.2"]}}
+
+    with open(os.path.join("test_data", "siemens", "SISL-1.1.json"), 'w') as f:
+        json.dump(license_a, f)
+    with open(os.path.join("test_data", "siemens", "SISL-1.2.json"), 'w') as f:
+        json.dump(license_b, f)
+
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        validate_equal_source_and_org_names("siemens", "test_data/siemens")
+
+    assert mock_logger.error.call_count == 0
+
+
+def test_validate_equal_source_and_org_names_failure():
+    os.makedirs(os.path.join("test_data", "siemens"), exist_ok=True)
+
+    license_a = {"canonical": {"id": "SISL-1.1", "src": "wrong_org"}, "aliases": {"custom": ["Siemens License v1.1"]}}
+
+    with open(os.path.join("test_data", "siemens", "SISL-1.1.json"), 'w') as f:
+        json.dump(license_a, f)
+
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        validate_equal_source_and_org_names("siemens", "test_data/siemens")
+
+    assert mock_logger.error.call_count == 1
+    mock_logger.error.assert_called_with(
+        "File 'SISL-1.1.json' in organization 'siemens' has canonical source 'wrong_org' that does not match the organization name."
+    )
+
+
+def test_validate_org_names_not_forbidden_success():
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        validate_org_names_not_forbidden("siemens")
+
+    assert mock_logger.error.call_count == 0
+
+
+def test_validate_org_names_not_forbidden_failure():
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        validate_org_names_not_forbidden("stableMap")
+        validate_org_names_not_forbidden("riskyMap")
+
+
+    assert mock_logger.error.call_count == 2
 
 
 if __name__ == "__main__":
