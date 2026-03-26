@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 from dataclasses import dataclass
+
 from licenselynx.license_source import LicenseSource
 
 
@@ -11,7 +12,7 @@ class LicenseObject(object):
     """LicenseObject class represents a license with a canonical name and source."""
 
     id: str
-    src: LicenseSource
+    src: str
 
     def is_spdx_identifier(self):
         """
