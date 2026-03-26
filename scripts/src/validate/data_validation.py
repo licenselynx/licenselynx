@@ -12,7 +12,7 @@ from src.update.canonical_source import CanonicalSource
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
-DATA_DIR = os.path.abspath(os.path.join(script_dir, '../../../data'))
+DEFAULT_DATA_DIR = os.path.abspath(os.path.join(script_dir, '../../../data'))
 JSON_EXTENSION = ".json"
 
 logger = setup_logger(__name__)
@@ -24,10 +24,10 @@ class LicenseListType(Enum):
     SCANCODE_LICENSEDB = 3
 
 
-def extract_license_list_with_semver(licenses_list):
-    for filename in os.listdir(DATA_DIR):
+def extract_license_list_with_semver(licenses_list, data_dir: str):
+    for filename in os.listdir(data_dir):
         if filename.endswith(".json"):
-            filepath = os.path.join(DATA_DIR, filename)
+            filepath = os.path.join(data_dir, filename)
             with open(filepath, 'r') as f:
                 data = json.load(f)
                 canonical = data["canonical"]["id"]
@@ -98,10 +98,10 @@ def delete_file(filepath: str):
         logger.error(f"File '{filepath}' does not exist.")
 
 
-def check_json_filename():
-    for filename in os.listdir(DATA_DIR):
+def check_json_filename(data_dir: str):
+    for filename in os.listdir(data_dir):
         if filename.endswith(JSON_EXTENSION):
-            filepath = os.path.join(DATA_DIR, filename)
+            filepath = os.path.join(data_dir, filename)
             with open(filepath, 'r') as f:
                 data = json.load(f)
                 canonical_id = data["canonical"]["id"]
@@ -111,11 +111,11 @@ def check_json_filename():
             logger.error(f"File '{filename}' is not a JSON file.")
 
 
-def check_unique_aliases():
+def check_unique_aliases(data_dir: str):
     all_aliases = {}
-    for filename in os.listdir(DATA_DIR):
+    for filename in os.listdir(data_dir):
         if filename.endswith(".json"):
-            filepath = os.path.join(DATA_DIR, filename)
+            filepath = os.path.join(data_dir, filename)
             with open(filepath, 'r') as f:
                 data = json.load(f)
                 aliases = data.get("aliases", [])
@@ -136,9 +136,9 @@ def access_aliases(aliases: dict, all_aliases: dict, filename: str):
                 all_aliases[license_name] = [filename]
 
 
-def check_src_and_canonical(spdx_license_list: list, spdx_exception_list: list):
-    for filename in os.listdir(DATA_DIR):
-        filepath = os.path.join(DATA_DIR, filename)
+def check_src_and_canonical(spdx_license_list: list, spdx_exception_list: list, data_dir: str):
+    for filename in os.listdir(data_dir):
+        filepath = os.path.join(data_dir, filename)
         with (open(filepath, 'r') as f):
             data = json.load(f)
             canonical_name = data["canonical"]["id"]
@@ -149,12 +149,12 @@ def check_src_and_canonical(spdx_license_list: list, spdx_exception_list: list):
                 logger.error(f"Canonical name '{canonical_name}' is in SPDX license list but source is not 'spdx'.")
 
 
-def check_length_and_characters():
+def check_length_and_characters(data_dir: str):
     forbidden_characters_canonical = {"#", "$", "%", "=", "[", "]", "?", "<", ">", ":", "/", "\\", "|", "*", " "}
 
     max_length = 100  # Adjust the maximum length limit as needed
-    for filename in os.listdir(DATA_DIR):
-        filepath = os.path.join(DATA_DIR, filename)
+    for filename in os.listdir(data_dir):
+        filepath = os.path.join(data_dir, filename)
         with open(filepath, 'r') as f:
             data = json.load(f)
             canonical_id = data["canonical"]["id"]
@@ -177,9 +177,9 @@ def check_length_and_characters():
                 logger.error(f"Canonical id '{canonical_id}' contains forbidden characters")
 
 
-def check_no_empty_field_except_custom():
-    for filename in os.listdir(DATA_DIR):
-        filepath = os.path.join(DATA_DIR, filename)
+def check_no_empty_field_except_custom(data_dir: str):
+    for filename in os.listdir(data_dir):
+        filepath = os.path.join(data_dir, filename)
         with open(filepath, 'r') as f:
             data = json.load(f)
 
@@ -194,18 +194,18 @@ def check_no_empty_field_except_custom():
                 logger.error(f"Field 'canonical.src' in '{filename}' is empty.")
 
 
-def check_rejected_field_exists():
-    for filename in os.listdir(DATA_DIR):
-        filepath = os.path.join(DATA_DIR, filename)
+def check_rejected_field_exists(data_dir: str):
+    for filename in os.listdir(data_dir):
+        filepath = os.path.join(data_dir, filename)
         with open(filepath, 'r') as f:
             data = json.load(f)
             if "rejected" not in data:
                 logger.error(f"rejected field '{filename}' does not exist.")
 
 
-def check_rejected_not_in_valid_fields():
-    for filename in os.listdir(DATA_DIR):
-        filepath = os.path.join(DATA_DIR, filename)
+def check_rejected_not_in_valid_fields(data_dir: str):
+    for filename in os.listdir(data_dir):
+        filepath = os.path.join(data_dir, filename)
         with open(filepath, 'r') as f:
             data = json.load(f)
             aliases = data.get("aliases", [])
@@ -233,14 +233,14 @@ def extract_version_tokens(identifier) -> set:
     return version_tokens
 
 
-def check_version_between_canonical_and_alias():
+def check_version_between_canonical_and_alias(data_dir: str):
     affected_licenses = {}
     licenses_with_version = []
-    extract_license_list_with_semver(licenses_with_version)
+    extract_license_list_with_semver(licenses_with_version, data_dir)
     base_name_license_dict = build_dict_with_base_name_license(licenses_with_version)
 
-    for filename in os.listdir(DATA_DIR):
-        filepath = os.path.join(DATA_DIR, filename)
+    for filename in os.listdir(data_dir):
+        filepath = os.path.join(data_dir, filename)
         with open(filepath, 'r') as f:
             data = json.load(f)
             aliases = data.get("aliases", [])
@@ -292,18 +292,18 @@ def compare_versions(aliases_list, canonical_tokens, wrong_version, is_major_ver
             wrong_version.append(alias)
 
 
-def check_major_version_flag():
+def check_major_version_flag(data_dir: str):
     """
-    Validates that for each JSON file in DATA_DIR with a canonical name containing a single version token
+    Validates that for each JSON file in data_dir with a canonical name containing a single version token
     (e.g. "Apache-2.0"), the 'isMajorVersionOnly' flag has been set correctly.
 
     For each group of licenses (grouped by base name, i.e. canonical with the version removed) that contains more than one file,
-    if a license’s major version occurs only once then its expected 'isMajorVersionOnly' flag is True.
+    if a license's major version occurs only once then its expected 'isMajorVersionOnly' flag is True.
     Otherwise (if the major version appears for more than one file) the flag should be False.
 
     Files that do not have a semver in the canonical field or that belong to a group of one are skipped.
     """
-    group_by_base = group_license_files_by_base_name()
+    group_by_base = group_license_files_by_base_name(data_dir)
 
     # Now, for each group with more than one file, perform the check
     for base, files in group_by_base.items():
@@ -322,10 +322,10 @@ def check_major_version_flag():
                 )
 
 
-def group_license_files_by_base_name():
+def group_license_files_by_base_name(data_dir: str):
     group_by_base = {}
-    for filename in os.listdir(DATA_DIR):
-        filepath = os.path.join(DATA_DIR, filename)
+    for filename in os.listdir(data_dir):
+        filepath = os.path.join(data_dir, filename)
         try:
             with open(filepath, 'r') as f:
                 data = json.load(f)
@@ -360,11 +360,11 @@ def group_license_files_by_base_name():
     return group_by_base
 
 
-def check_canonical_source_is_valid():
+def check_canonical_source_is_valid(data_dir: str):
     valid_sources = {source.value for source in CanonicalSource}
-    for filename in os.listdir(DATA_DIR):
+    for filename in os.listdir(data_dir):
         if filename.endswith(JSON_EXTENSION):
-            filepath = os.path.join(DATA_DIR, filename)
+            filepath = os.path.join(data_dir, filename)
             with open(filepath, 'r') as f:
                 data = json.load(f)
                 src = data["canonical"]["src"]
@@ -372,11 +372,11 @@ def check_canonical_source_is_valid():
                     logger.error(f"File '{filename}' has invalid canonical source '{src}'. Must be one of {valid_sources}")
 
 
-def check_valid_alias_keys():
+def check_valid_alias_keys(data_dir: str):
     valid_alias_keys = {"custom", "scancodeLicensedb", "pypi", "osi", "spdx"}
-    for filename in os.listdir(DATA_DIR):
+    for filename in os.listdir(data_dir):
         if filename.endswith(JSON_EXTENSION):
-            filepath = os.path.join(DATA_DIR, filename)
+            filepath = os.path.join(data_dir, filename)
             with open(filepath, 'r') as f:
                 data = json.load(f)
                 aliases = data.get("aliases", {})
@@ -385,7 +385,13 @@ def check_valid_alias_keys():
                         logger.error(f"File '{filename}' has invalid alias key '{key}'. Valid keys are {valid_alias_keys}")
 
 
-def main():
+def validate_oss_licenses(data_dir: str):
+    """
+    Validates OSS licenses data against various criteria.
+
+    Args:
+        data_dir: The directory containing the license JSON files to validate
+    """
     spdx_license_url = "https://raw.githubusercontent.com/spdx/license-list-data/main/json/licenses.json"
     spdx_license_file = "spdx_license_list.json"
 
@@ -403,28 +409,33 @@ def main():
 
     download_license_list(scancode_licensedb_url, scancode_licensedb_file, "ScanCode LicenseDB license list")
 
-    check_src_and_canonical(spdx_licenses, spdx_exception)
+    check_src_and_canonical(spdx_licenses, spdx_exception, data_dir)
 
-    check_rejected_field_exists()
-    check_rejected_not_in_valid_fields()
+    check_rejected_field_exists(data_dir)
+    check_rejected_not_in_valid_fields(data_dir)
 
     delete_file(spdx_license_file)
     delete_file(spdx_exception_file)
     delete_file(scancode_licensedb_file)
 
-    check_json_filename()
-    check_unique_aliases()
-    check_valid_alias_keys()
-    check_length_and_characters()
+    check_json_filename(data_dir)
+    check_unique_aliases(data_dir)
+    check_valid_alias_keys(data_dir)
+    check_length_and_characters(data_dir)
 
-    check_no_empty_field_except_custom()
-    check_canonical_source_is_valid()
+    check_no_empty_field_except_custom(data_dir)
+    check_canonical_source_is_valid(data_dir)
 
-    check_version_between_canonical_and_alias()
-    check_major_version_flag()
+    check_version_between_canonical_and_alias(data_dir)
+    check_major_version_flag(data_dir)
+
     # Check if error occurred
     if logger.handlers[1].error_occurred:
         exit(1)
+
+
+def main():
+    validate_oss_licenses(DEFAULT_DATA_DIR)
 
 
 if __name__ == "__main__":
