@@ -172,9 +172,8 @@ def test_check_json_filename():
     with open(filepath, 'w') as f:
         json.dump(test_data, f)
 
-    with mock.patch('src.validate.data_validation.DATA_DIR', "test_data"):
-        with mock.patch('src.validate.data_validation.logger', mock_logger):
-            check_json_filename()
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_json_filename("test_data")
 
     mock_logger.error.assert_not_called()
 
@@ -190,9 +189,8 @@ def test_check_json_filename_failure():
     with open(filepath, 'w') as f:
         json.dump(test_data, f)
 
-    with mock.patch('src.validate.data_validation.DATA_DIR', "test_data"):
-        with mock.patch('src.validate.data_validation.logger', mock_logger):
-            check_json_filename()
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_json_filename("test_data")
 
     mock_logger.error.assert_called_with(f"JSON filename '{filename}' does not match canonical id '{canonical_name}'")
 
@@ -215,9 +213,8 @@ def test_check_unique_aliases():
 
     dump_files(filepath1, filepath2, test_data1, test_data2)
 
-    with mock.patch('src.validate.data_validation.DATA_DIR', "test_data"):
-        with mock.patch('src.validate.data_validation.logger', mock_logger):
-            check_unique_aliases()
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_unique_aliases("test_data")
 
     mock_logger.error.assert_not_called()
 
@@ -233,9 +230,8 @@ def test_check_unique_aliases_failure():
 
     dump_files(filepath1, filepath2, test_data1, test_data2)
 
-    with mock.patch('src.validate.data_validation.DATA_DIR', "test_data"):
-        with mock.patch('src.validate.data_validation.logger', mock_logger):
-            check_unique_aliases()
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_unique_aliases("test_data")
 
     mock_logger.mock_calls.__contains__(f"Alias '{alias_duplicate}' is not unique globally.")
 
@@ -250,9 +246,8 @@ def test_check_src_and_canonical():
     with open(filepath, 'w') as f:
         json.dump(test_data, f)
 
-    with mock.patch('src.validate.data_validation.DATA_DIR', "test_data"):
-        with mock.patch('src.validate.data_validation.logger', mock_logger):
-            check_src_and_canonical(spdx_licenses, [])
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_src_and_canonical(spdx_licenses, [], "test_data")
 
     mock_logger.error.assert_not_called()
 
@@ -266,9 +261,8 @@ def test_check_src_and_canonical_failure_source_not_spdx():
     with open(filepath, 'w') as f:
         json.dump(test_data, f)
 
-    with mock.patch('src.validate.data_validation.DATA_DIR', "test_data"):
-        with mock.patch('src.validate.data_validation.logger', mock_logger):
-            check_src_and_canonical(spdx_licenses, [])
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_src_and_canonical(spdx_licenses, [], "test_data")
 
     mock_logger.error.assert_called_with(
         "If src is SPDX, canonical name 'MIT' must be in SPDX license list")
@@ -284,9 +278,8 @@ def test_check_src_and_canonical_failure_source_is_spdx():
     with open(filepath, 'w') as f:
         json.dump(test_data, f)
 
-    with mock.patch('src.validate.data_validation.DATA_DIR', "test_data"):
-        with mock.patch('src.validate.data_validation.logger', mock_logger):
-            check_src_and_canonical(spdx_licenses, [])
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_src_and_canonical(spdx_licenses, [], "test_data")
 
     mock_logger.error.assert_called_with(
         f"Canonical name '{canonical_name}' is in SPDX license list but source is not 'spdx'.")
@@ -302,9 +295,8 @@ def test_check_length_and_characters():
     with open(filepath_valid, 'w') as f:
         json.dump(valid_data, f)
 
-    with (mock.patch('src.validate.data_validation.DATA_DIR', "test_data")):
-        with mock.patch('src.validate.data_validation.logger', mock_logger):
-            check_length_and_characters()
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_length_and_characters("test_data")
 
     assert mock_logger.error.call_count == 0
 
@@ -328,27 +320,22 @@ def test_check_length_and_characters_failure():
     with open(filepath_forbidden, 'w') as f:
         json.dump(forbidden_data, f)
 
-    with mock.patch('src.validate.data_validation.DATA_DIR', "test_data"):
-        with mock.patch('src.validate.data_validation.logger', mock_logger):
-            check_length_and_characters()
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_length_and_characters("test_data")
 
-            # Check for long strings
-            mock_logger.error.assert_any_call(f"Canonical id '{long_data['canonical']['id']}' exceeds maximum length "
-                                              f"limit of {max_length} characters")
+    # Check for long strings
+    mock_logger.error.assert_any_call(f"Canonical id '{long_data['canonical']['id']}' exceeds maximum length "
+                                      f"limit of {max_length} characters")
 
-            mock_logger.error.assert_any_call(f"At least one of the aliases exceeds maximum length limit of "
-                                              f"{max_length} characters in the file long.json")
+    mock_logger.error.assert_any_call(f"At least one of the aliases exceeds maximum length limit of "
+                                      f"{max_length} characters in the file long.json")
 
-            mock_logger.error.assert_any_call(
-                f"Source {src_too_long} exceeds maximum length limit of {max_length} characters")
+    mock_logger.error.assert_any_call(
+        f"Source {src_too_long} exceeds maximum length limit of {max_length} characters")
 
-            # Check for forbidden characters
-            mock_logger.error.assert_any_call(
-                f"Canonical id '{forbidden_data['canonical']['id']}' contains forbidden characters")
-
-    os.remove(filepath_long)
-    os.remove(filepath_forbidden)
-    os.rmdir("test_data")
+    # Check for forbidden characters
+    mock_logger.error.assert_any_call(
+        f"Canonical id '{forbidden_data['canonical']['id']}' contains forbidden characters")
 
 
 def test_check_no_empty_field_except_custom_success():
@@ -362,9 +349,8 @@ def test_check_no_empty_field_except_custom_success():
     with open(filepath_valid, 'w') as f:
         json.dump(valid_data, f)
 
-    with (mock.patch('src.validate.data_validation.DATA_DIR', "test_data")):
-        with mock.patch('src.validate.data_validation.logger', mock_logger):
-            check_no_empty_field_except_custom()
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_no_empty_field_except_custom("test_data")
 
     assert mock_logger.error.call_count == 0
 
@@ -380,9 +366,8 @@ def test_check_no_empty_field_except_custom_failure():
     with open(filepath_valid, 'w') as f:
         json.dump(valid_data, f)
 
-    with (mock.patch('src.validate.data_validation.DATA_DIR', "test_data")):
-        with mock.patch('src.validate.data_validation.logger', mock_logger):
-            check_no_empty_field_except_custom()
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_no_empty_field_except_custom("test_data")
 
     assert mock_logger.error.call_count == 1
 
@@ -397,9 +382,8 @@ def test_check_rejected_field_exists_success():
     with open(filepath_valid, 'w') as f:
         json.dump(valid_data, f)
 
-    with (mock.patch('src.validate.data_validation.DATA_DIR', "test_data")):
-        with mock.patch('src.validate.data_validation.logger', mock_logger):
-            check_rejected_field_exists()
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_rejected_field_exists("test_data")
 
     assert mock_logger.error.call_count == 0
 
@@ -414,9 +398,8 @@ def test_check_rejected_field_exists_failure():
     with open(filepath_valid, 'w') as f:
         json.dump(valid_data, f)
 
-    with (mock.patch('src.validate.data_validation.DATA_DIR', "test_data")):
-        with mock.patch('src.validate.data_validation.logger', mock_logger):
-            check_rejected_field_exists()
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_rejected_field_exists("test_data")
 
     assert mock_logger.error.call_count == 1
 
@@ -432,9 +415,8 @@ def test_check_rejected_not_in_valid_fields_success():
     with open(filepath_valid, 'w') as f:
         json.dump(valid_data, f)
 
-    with (mock.patch('src.validate.data_validation.DATA_DIR', "test_data")):
-        with mock.patch('src.validate.data_validation.logger', mock_logger):
-            check_rejected_not_in_valid_fields()
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_rejected_not_in_valid_fields("test_data")
 
     assert mock_logger.error.call_count == 0
 
@@ -450,9 +432,8 @@ def test_check_rejected_not_in_valid_fields_failure():
     with open(filepath_valid, 'w') as f:
         json.dump(valid_data, f)
 
-    with (mock.patch('src.validate.data_validation.DATA_DIR', "test_data")):
-        with mock.patch('src.validate.data_validation.logger', mock_logger):
-            check_rejected_not_in_valid_fields()
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_rejected_not_in_valid_fields("test_data")
 
     assert mock_logger.error.call_count == 1
 
@@ -468,9 +449,8 @@ def test_check_version_between_canonical_and_alias_success():
     with open(filepath_valid, 'w') as f:
         json.dump(valid_data, f)
 
-    with (mock.patch('src.validate.data_validation.DATA_DIR', "test_data")):
-        with mock.patch('src.validate.data_validation.logger', mock_logger):
-            check_version_between_canonical_and_alias()
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_version_between_canonical_and_alias("test_data")
 
     assert mock_logger.error.call_count == 0
 
@@ -490,9 +470,9 @@ def test_check_version_between_canonical_and_alias_failure(caplog):
         json.dump(invalid_data, f)
     with open(filepath_valid2, 'w') as f:
         json.dump(valid_data, f)
-    with (mock.patch('src.validate.data_validation.DATA_DIR', "test_data")):
-        with mock.patch('src.validate.data_validation.logger', mock_logger):
-            check_version_between_canonical_and_alias()
+
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_version_between_canonical_and_alias("test_data")
 
     assert mock_logger.error.call_count == 1
     assert str(mock_logger.method_calls).__contains__(
@@ -510,9 +490,8 @@ def test_check_version_between_canonical_and_alias_major_version_only_flag_is_fa
     with open(filepath_valid, 'w') as f:
         json.dump(valid_data, f)
 
-    with (mock.patch('src.validate.data_validation.DATA_DIR', "test_data")):
-        with mock.patch('src.validate.data_validation.logger', mock_logger):
-            check_version_between_canonical_and_alias()
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_version_between_canonical_and_alias("test_data")
 
     assert mock_logger.error.call_count == 1
     assert str(mock_logger.method_calls).__contains__("valid.json has wrong versions for aliases: ['wrong_version_1']")
@@ -529,14 +508,13 @@ def test_check_version_between_canonical_and_alias_major_version_only_flag_is_tr
     with open(filepath_valid, 'w') as f:
         json.dump(valid_data, f)
 
-    with (mock.patch('src.validate.data_validation.DATA_DIR', "test_data")):
-        with mock.patch('src.validate.data_validation.logger', mock_logger):
-            check_version_between_canonical_and_alias()
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_version_between_canonical_and_alias("test_data")
 
     assert mock_logger.error.call_count == 0
 
 
-def test_check_major_version_flag(caplog, monkeypatch):
+def test_check_major_version_flag(caplog):
     test_dir = "test_data"
     os.makedirs(test_dir, exist_ok=True)
 
@@ -578,11 +556,9 @@ def test_check_major_version_flag(caplog, monkeypatch):
     with open(os.path.join(test_dir, "MIT-4.0.json"), "w") as f:
         json.dump(mit_4_0, f)
 
-    monkeypatch.setattr(data_validation, "DATA_DIR", test_dir)
-
     caplog.clear()
 
-    data_validation.check_major_version_flag()
+    data_validation.check_major_version_flag(test_dir)
 
     error_messages = [record.message for record in caplog.records if record.levelname == "ERROR"]
 
@@ -598,9 +574,6 @@ def test_extract_license_list_with_semver(tmp_path, monkeypatch):
     json_file = tmp_path / "test_file.json"
     json_file.write_text(json.dumps(file_content))
 
-    monkeypatch.setattr(data_validation, "DATA_DIR", str(tmp_path))
-    monkeypatch.setattr(data_validation, "JSON_EXTENSION", ".json")
-
     monkeypatch.setattr(
         data_validation,
         "extract_version_tokens",
@@ -608,7 +581,7 @@ def test_extract_license_list_with_semver(tmp_path, monkeypatch):
     )
 
     licenses_list = []
-    data_validation.extract_license_list_with_semver(licenses_list)
+    data_validation.extract_license_list_with_semver(licenses_list, str(tmp_path))
 
     assert licenses_list == [("license1.0", ["1.0"])]
 
@@ -631,9 +604,8 @@ def test_only_base_name_with_version_success(caplog):
     with open(filepath_valid2, 'w') as f:
         json.dump(other_base_name_data, f)
 
-    with (mock.patch('src.validate.data_validation.DATA_DIR', "test_data")):
-        with mock.patch('src.validate.data_validation.logger', mock_logger):
-            check_version_between_canonical_and_alias()
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_version_between_canonical_and_alias("test_data")
     assert mock_logger.error.call_count == 0
 
 
@@ -654,9 +626,8 @@ def test_only_base_name_with_version_failure(caplog):
     with open(filepath_valid2, 'w') as f:
         json.dump(other_base_name_data, f)
 
-    with (mock.patch('src.validate.data_validation.DATA_DIR', "test_data")):
-        with mock.patch('src.validate.data_validation.logger', mock_logger):
-            check_version_between_canonical_and_alias()
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_version_between_canonical_and_alias("test_data")
     assert mock_logger.error.call_count == 1
 
 
@@ -670,9 +641,8 @@ def test_check_canonical_source_is_valid_success():
     with open(filepath, 'w') as f:
         json.dump(valid_data, f)
 
-    with mock.patch('src.validate.data_validation.DATA_DIR', "test_data"):
-        with mock.patch('src.validate.data_validation.logger', mock_logger):
-            check_canonical_source_is_valid()
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_canonical_source_is_valid("test_data")
 
     assert mock_logger.error.call_count == 0
 
@@ -687,9 +657,8 @@ def test_check_canonical_source_is_valid_failure():
     with open(filepath, 'w') as f:
         json.dump(invalid_data, f)
 
-    with mock.patch('src.validate.data_validation.DATA_DIR', "test_data"):
-        with mock.patch('src.validate.data_validation.logger', mock_logger):
-            check_canonical_source_is_valid()
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_canonical_source_is_valid("test_data")
 
     assert mock_logger.error.call_count == 1
 
@@ -705,9 +674,8 @@ def test_check_valid_alias_keys_success():
     with open(filepath, 'w') as f:
         json.dump(valid_data, f)
 
-    with mock.patch('src.validate.data_validation.DATA_DIR', "test_data"):
-        with mock.patch('src.validate.data_validation.logger', mock_logger):
-            check_valid_alias_keys()
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_valid_alias_keys("test_data")
 
     assert mock_logger.error.call_count == 0
 
@@ -723,9 +691,8 @@ def test_check_valid_alias_keys_failure():
     with open(filepath, 'w') as f:
         json.dump(invalid_data, f)
 
-    with mock.patch('src.validate.data_validation.DATA_DIR', "test_data"):
-        with mock.patch('src.validate.data_validation.logger', mock_logger):
-            check_valid_alias_keys()
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_valid_alias_keys("test_data")
 
     assert mock_logger.error.call_count == 1
 
