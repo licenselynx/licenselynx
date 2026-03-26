@@ -107,12 +107,14 @@ def check_json_filename(data_dir: str):
                 canonical_id = data["canonical"]["id"]
                 if canonical_id != filename[:-5]:
                     logger.error(f"JSON filename '{filename}' does not match canonical id '{canonical_id}'")
+        elif filename == "orgs":
+            continue
         else:
             logger.error(f"File '{filename}' is not a JSON file.")
 
 
 def check_unique_aliases(data_dir: str):
-    all_aliases = {}
+    all_aliases: dict[str, list[str]] = {}
     for filename in os.listdir(data_dir):
         if filename.endswith(".json"):
             filepath = os.path.join(data_dir, filename)
@@ -138,6 +140,8 @@ def access_aliases(aliases: dict, all_aliases: dict, filename: str):
 
 def check_src_and_canonical(spdx_license_list: list, spdx_exception_list: list, data_dir: str):
     for filename in os.listdir(data_dir):
+        if not filename.endswith(JSON_EXTENSION):
+            continue
         filepath = os.path.join(data_dir, filename)
         with (open(filepath, 'r') as f):
             data = json.load(f)
@@ -154,6 +158,8 @@ def check_length_and_characters(data_dir: str):
 
     max_length = 100  # Adjust the maximum length limit as needed
     for filename in os.listdir(data_dir):
+        if not filename.endswith(JSON_EXTENSION):
+            continue
         filepath = os.path.join(data_dir, filename)
         with open(filepath, 'r') as f:
             data = json.load(f)
@@ -179,6 +185,8 @@ def check_length_and_characters(data_dir: str):
 
 def check_no_empty_field_except_custom(data_dir: str):
     for filename in os.listdir(data_dir):
+        if not filename.endswith(JSON_EXTENSION):
+            continue
         filepath = os.path.join(data_dir, filename)
         with open(filepath, 'r') as f:
             data = json.load(f)
@@ -196,6 +204,8 @@ def check_no_empty_field_except_custom(data_dir: str):
 
 def check_rejected_field_exists(data_dir: str):
     for filename in os.listdir(data_dir):
+        if not filename.endswith(JSON_EXTENSION):
+            continue
         filepath = os.path.join(data_dir, filename)
         with open(filepath, 'r') as f:
             data = json.load(f)
@@ -205,6 +215,8 @@ def check_rejected_field_exists(data_dir: str):
 
 def check_rejected_not_in_valid_fields(data_dir: str):
     for filename in os.listdir(data_dir):
+        if not filename.endswith(JSON_EXTENSION):
+            continue
         filepath = os.path.join(data_dir, filename)
         with open(filepath, 'r') as f:
             data = json.load(f)
@@ -235,11 +247,13 @@ def extract_version_tokens(identifier) -> set:
 
 def check_version_between_canonical_and_alias(data_dir: str):
     affected_licenses = {}
-    licenses_with_version = []
+    licenses_with_version: list[tuple[str, set[str]]] = []
     extract_license_list_with_semver(licenses_with_version, data_dir)
     base_name_license_dict = build_dict_with_base_name_license(licenses_with_version)
 
     for filename in os.listdir(data_dir):
+        if not filename.endswith(JSON_EXTENSION):
+            continue
         filepath = os.path.join(data_dir, filename)
         with open(filepath, 'r') as f:
             data = json.load(f)
@@ -255,7 +269,7 @@ def check_version_between_canonical_and_alias(data_dir: str):
 
             is_major_version_only = data.get("isMajorVersionOnly")
 
-            wrong_version = []
+            wrong_version: list[str] = []
 
             canonical_tokens = extract_version_tokens(canonical_id)
 
@@ -323,15 +337,13 @@ def check_major_version_flag(data_dir: str):
 
 
 def group_license_files_by_base_name(data_dir: str):
-    group_by_base = {}
+    group_by_base: dict[str, list[dict[str, object]]] = {}
     for filename in os.listdir(data_dir):
-        filepath = os.path.join(data_dir, filename)
-        try:
-            with open(filepath, 'r') as f:
-                data = json.load(f)
-        except json.JSONDecodeError:
-            logger.error(f"Invalid JSON in file {filename}")
+        if not filename.endswith(JSON_EXTENSION):
             continue
+        filepath = os.path.join(data_dir, filename)
+        with open(filepath, 'r') as f:
+            data = json.load(f)
 
         canonical_id = data["canonical"]["id"]
         if not canonical_id:
@@ -385,6 +397,21 @@ def check_valid_alias_keys(data_dir: str):
                         logger.error(f"File '{filename}' has invalid alias key '{key}'. Valid keys are {valid_alias_keys}")
 
 
+def validate_license_data(data_dir: str):
+    check_rejected_field_exists(data_dir)
+    check_rejected_not_in_valid_fields(data_dir)
+
+    check_json_filename(data_dir)
+    check_unique_aliases(data_dir)
+    check_valid_alias_keys(data_dir)
+    check_length_and_characters(data_dir)
+
+    check_no_empty_field_except_custom(data_dir)
+
+    check_version_between_canonical_and_alias(data_dir)
+    check_major_version_flag(data_dir)
+
+
 def validate_oss_licenses(data_dir: str):
     """
     Validates OSS licenses data against various criteria.
@@ -411,31 +438,61 @@ def validate_oss_licenses(data_dir: str):
 
     check_src_and_canonical(spdx_licenses, spdx_exception, data_dir)
 
-    check_rejected_field_exists(data_dir)
-    check_rejected_not_in_valid_fields(data_dir)
-
     delete_file(spdx_license_file)
     delete_file(spdx_exception_file)
     delete_file(scancode_licensedb_file)
 
-    check_json_filename(data_dir)
-    check_unique_aliases(data_dir)
-    check_valid_alias_keys(data_dir)
-    check_length_and_characters(data_dir)
+    validate_license_data(data_dir)
 
-    check_no_empty_field_except_custom(data_dir)
     check_canonical_source_is_valid(data_dir)
 
-    check_version_between_canonical_and_alias(data_dir)
-    check_major_version_flag(data_dir)
 
-    # Check if error occurred
-    if logger.handlers[1].error_occurred:
-        exit(1)
+def validate_unique_orgs(data_dir: str):
+    orgs_list = os.listdir(data_dir)
+    orgs_set = set()
+    for org in orgs_list:
+        if org not in orgs_set:
+            orgs_set.add(org)
+        else:
+            logger.error(f"Organization '{org}' is already present in the orgs list.")
+
+
+def validate_org_names_not_forbidden(org_dir: str) -> int:
+    forbidden_org_names = {"stableMap", "riskyMap"}
+
+    if org_dir in forbidden_org_names:
+        logger.error(f"Organization folder '{org_dir}' uses a reserved name. Reserved names are {forbidden_org_names}")
+
+
+def validate_equal_source_and_org_names(org_name, org_dir_path):
+    for filename in os.listdir(org_dir_path):
+        with open(os.path.join(org_dir_path, filename), 'r') as f:
+            data = json.load(f)
+            src = data["canonical"]["src"]
+            if src != org_name:
+                logger.error(
+                    f"File '{filename}' in organization '{org_name}' has canonical source '{src}' "
+                    f"that does not match the organization name.")
+
+
+def validate_orgs_licenses(data_dir: str):
+    validate_unique_orgs(data_dir)
+    for org_dir in os.listdir(data_dir):
+        org_dir_path = os.path.join(data_dir, org_dir)
+        validate_license_data(org_dir_path)
+        validate_equal_source_and_org_names(org_dir, org_dir_path)
+        validate_org_names_not_forbidden(org_dir)
 
 
 def main():
     validate_oss_licenses(DEFAULT_DATA_DIR)
+
+    orgs_dir = os.path.join(DEFAULT_DATA_DIR, "orgs")
+    validate_orgs_licenses(orgs_dir)
+
+    # Check if error occurred
+    if logger.handlers[1].error_occurred:
+        exit(1)
 
 
 if __name__ == "__main__":
