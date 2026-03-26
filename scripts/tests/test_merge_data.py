@@ -6,7 +6,7 @@ import os
 import tempfile
 
 import pytest
-from src.load.merge_data import read_data, write_data, main
+from src.load.merge_data import read_data, write_data, main, _build_maps_from_dir, read_org_data
 
 
 @pytest.fixture
@@ -157,6 +157,188 @@ def test_main_integration(temp_data_dir, temp_output_file, monkeypatch):
     }
 
     assert output_data == expected_output
+
+
+def test_build_maps_from_dir(tmpdir):
+    license1 = {
+        "canonical": {"id": "MIT"},
+        "aliases": {"spdx": ["MIT License"]},
+        "risky": ["mit-risky"]
+    }
+    license2 = {
+        "canonical": {"id": "Apache-2.0"},
+        "aliases": {"spdx": ["Apache License 2.0"], "custom": ["Apache2"]},
+        "risky": ["apache-risky"]
+    }
+    with open(tmpdir.join("MIT.json"), 'w') as f:
+        json.dump(license1, f)
+    with open(tmpdir.join("Apache-2.0.json"), 'w') as f:
+        json.dump(license2, f)
+
+    canonical_dict, risky_dict = _build_maps_from_dir(str(tmpdir))
+
+    # Canonical IDs present
+    assert "MIT" in canonical_dict
+    assert "Apache-2.0" in canonical_dict
+
+    # Aliases present
+    assert "MIT License" in canonical_dict
+    assert "Apache License 2.0" in canonical_dict
+    assert "Apache2" in canonical_dict
+
+    # Canonical dict maps to correct objects
+    assert canonical_dict["MIT"] == {"id": "MIT"}
+    assert canonical_dict["MIT License"] == {"id": "MIT"}
+    assert canonical_dict["Apache-2.0"] == {"id": "Apache-2.0"}
+
+    # Risky entries
+    assert "mit-risky" in risky_dict
+    assert risky_dict["mit-risky"] == {"id": "MIT"}
+    assert "apache-risky" in risky_dict
+    assert risky_dict["apache-risky"] == {"id": "Apache-2.0"}
+
+
+def test_build_maps_from_dir_skips_non_json(tmpdir):
+    license1 = {
+        "canonical": {"id": "MIT"},
+        "aliases": {"spdx": ["MIT License"]},
+        "risky": []
+    }
+    with open(tmpdir.join("MIT.json"), 'w') as f:
+        json.dump(license1, f)
+    with open(tmpdir.join("README.txt"), 'w') as f:
+        f.write("This is not a JSON file")
+
+    canonical_dict, risky_dict = _build_maps_from_dir(str(tmpdir))
+
+    # Only JSON file processed
+    assert "MIT" in canonical_dict
+    assert "MIT License" in canonical_dict
+    assert len(canonical_dict) == 2
+    assert len(risky_dict) == 0
+
+
+def test_read_org_data_single_org(tmpdir):
+    org_dir = tmpdir.mkdir("orgs").mkdir("siemens")
+    license1 = {
+        "canonical": {"id": "SISL-1.1", "src": "siemens"},
+        "aliases": {"custom": ["Siemens Inner Source License v1.1"]},
+        "isMajorVersionOnly": False,
+        "rejected": [],
+        "risky": ["sisl-risky"]
+    }
+    with open(org_dir.join("SISL-1.1.json"), 'w') as f:
+        json.dump(license1, f)
+
+    result = read_org_data(str(tmpdir))
+
+    assert "siemens" in result
+    siemens_map = result["siemens"]
+
+    # Canonical ID present
+    assert "SISL-1.1" in siemens_map
+    assert siemens_map["SISL-1.1"] == {"id": "SISL-1.1", "src": "siemens"}
+
+    # Alias present
+    assert "Siemens Inner Source License v1.1" in siemens_map
+    assert siemens_map["Siemens Inner Source License v1.1"] == {"id": "SISL-1.1", "src": "siemens"}
+
+    # Risky entries merged into org map
+    assert "sisl-risky" in siemens_map
+    assert siemens_map["sisl-risky"] == {"id": "SISL-1.1", "src": "siemens"}
+
+
+def test_read_org_data_multiple_orgs(tmpdir):
+    orgs_dir = tmpdir.mkdir("orgs")
+    siemens_dir = orgs_dir.mkdir("siemens")
+    acme_dir = orgs_dir.mkdir("acme")
+
+    siemens_license = {
+        "canonical": {"id": "SISL-1.1", "src": "siemens"},
+        "aliases": {"custom": ["Siemens License"]},
+        "risky": []
+    }
+    acme_license = {
+        "canonical": {"id": "ACME-1.0", "src": "acme"},
+        "aliases": {"custom": ["ACME License"]},
+        "risky": []
+    }
+    with open(siemens_dir.join("SISL-1.1.json"), 'w') as f:
+        json.dump(siemens_license, f)
+    with open(acme_dir.join("ACME-1.0.json"), 'w') as f:
+        json.dump(acme_license, f)
+
+    result = read_org_data(str(tmpdir))
+
+    assert "siemens" in result
+    assert "acme" in result
+
+
+def test_read_org_data_no_orgs_dir(tmpdir):
+    result = read_org_data(str(tmpdir))
+    assert result == {}
+
+
+def test_read_org_data_empty_org(tmpdir):
+    tmpdir.mkdir("orgs").mkdir("siemens")
+
+    result = read_org_data(str(tmpdir))
+
+    assert "siemens" in result
+    assert result["siemens"] == {}
+
+
+def test_main_integration_with_orgs(monkeypatch):
+    with tempfile.TemporaryDirectory() as temp_dir:
+        # Create main license files
+        main_license = {
+            "canonical": {"id": "MIT", "src": "spdx"},
+            "aliases": {"source1": ["MIT License"]},
+            "risky": ["mit-risky"]
+        }
+        with open(os.path.join(temp_dir, "MIT.json"), 'w') as f:
+            json.dump(main_license, f)
+
+        # Create org subdir with org license files
+        org_dir = os.path.join(temp_dir, "orgs", "siemens")
+        os.makedirs(org_dir)
+        org_license = {
+            "canonical": {"id": "SISL-1.1", "src": "siemens"},
+            "aliases": {"custom": ["Siemens Inner Source License v1.1"]},
+            "risky": ["sisl-risky"]
+        }
+        with open(os.path.join(org_dir, "SISL-1.1.json"), 'w') as f:
+            json.dump(org_license, f)
+
+        # Create temp output file
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".json") as tmp_out:
+            output_path = tmp_out.name
+
+        try:
+            monkeypatch.setattr('src.load.merge_data.DATA_DIR', temp_dir)
+            monkeypatch.setattr('sys.argv', ['merge_data', '--output', output_path])
+            main()
+
+            with open(output_path, 'r') as f:
+                output_data = json.load(f)
+
+            assert "stableMap" in output_data
+            assert "riskyMap" in output_data
+            assert "siemens" in output_data
+
+            # Verify stableMap content
+            assert "MIT" in output_data["stableMap"]
+            assert "MIT License" in output_data["stableMap"]
+
+            # Verify riskyMap content
+            assert "mit-risky" in output_data["riskyMap"]
+
+            # Verify siemens content (canonical + aliases + risky merged)
+            assert "SISL-1.1" in output_data["siemens"]
+            assert "Siemens Inner Source License v1.1" in output_data["siemens"]
+            assert "sisl-risky" in output_data["siemens"]
+        finally:
+            os.remove(output_path)
 
 
 if __name__ == '__main__':
