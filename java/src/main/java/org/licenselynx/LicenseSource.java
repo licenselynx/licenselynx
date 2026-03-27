@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * Enum representing the possible sources of a license.
  */
-public enum LicenseSource
+public enum LicenseSource implements CanonicalSource
 {
     Spdx("spdx"),
     ScancodeLicensedb("scancode-licensedb"),
@@ -22,6 +22,7 @@ public enum LicenseSource
         this.value = pValue;
     }
 
+    @Override
     @JsonValue
     public String getValue()
     {
