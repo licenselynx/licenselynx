@@ -5,7 +5,6 @@
 package org.licenselynx;
 
 import javax.annotation.CheckForNull;
-
 import javax.annotation.Nonnull;
 
 
@@ -31,13 +30,11 @@ public final class LicenseLynx
     @CheckForNull
     public static LicenseObject map(@Nonnull final String pLicenseName)
     {
-        LicenseMapSingleton licenseMapSingleton = LicenseMapSingleton.getInstance();
-        LicenseMap licenseMap = licenseMapSingleton.getLicenseMap();
+        LicenseMap licenseMap = getLicenseMap();
 
         String licenseNameNormalized = QuotesHandler.normalizeQuotes(pLicenseName);
         return licenseMap.getCanonicalLicenseMap().get(licenseNameNormalized);
     }
-
 
 
     /**
@@ -51,17 +48,77 @@ public final class LicenseLynx
     @CheckForNull
     public static LicenseObject map(@Nonnull final String pLicenseName, final boolean pRisky)
     {
-        LicenseMapSingleton licenseMapSingleton = LicenseMapSingleton.getInstance();
-        LicenseMap licenseMap = licenseMapSingleton.getLicenseMap();
+        LicenseMap licenseMap = getLicenseMap();
 
         String licenseNameNormalized = QuotesHandler.normalizeQuotes(pLicenseName);
         LicenseObject licenseObject = licenseMap.getCanonicalLicenseMap().get(licenseNameNormalized);
 
-        if (licenseObject == null && pRisky) {
+        if (licenseObject == null && pRisky)
+        {
             licenseObject = licenseMap.getRiskyLicenseMap().get(licenseNameNormalized);
         }
 
         return licenseObject;
     }
-}
 
+
+    /**
+     * Maps the given license name to its corresponding LicenseObject.
+     * Searches through stable mappings and an organization-specific mapping.
+     *
+     * @param pLicenseName the name of the license to map
+     * @param pOrganization the organization to search in
+     * @return the license data as a LicenseObject, or null if not found
+     */
+    @CheckForNull
+    public static LicenseObject map(@Nonnull final String pLicenseName,
+                                    @Nonnull final Organization pOrganization)
+    {
+        return map(pLicenseName, false, pOrganization);
+    }
+
+
+    /**
+     * Maps the given license name to its corresponding LicenseObject.
+     * Searches through stable mappings, optionally risky mappings, and optionally
+     * an organization-specific mapping.
+     *
+     * @param pLicenseName the name of the license to map
+     * @param pRisky boolean flag to enable risky mappings
+     * @param pOrganization the organization to search in, or null to skip org lookup
+     * @return the license data as a LicenseObject, or null if not found
+     */
+    @CheckForNull
+    public static LicenseObject map(@Nonnull final String pLicenseName, final boolean pRisky,
+                                    @CheckForNull final Organization pOrganization)
+    {
+        LicenseMap licenseMap = getLicenseMap();
+
+        String licenseNameNormalized = QuotesHandler.normalizeQuotes(pLicenseName);
+        LicenseObject licenseObject = licenseMap.getCanonicalLicenseMap().get(licenseNameNormalized);
+
+        if (licenseObject == null && pRisky)
+        {
+            licenseObject = licenseMap.getRiskyLicenseMap().get(licenseNameNormalized);
+        }
+
+        if (licenseObject == null && pOrganization != null)
+        {
+            licenseObject = licenseMap.getOrganizationMap(pOrganization).get(licenseNameNormalized);
+        }
+
+        return licenseObject;
+    }
+
+
+    /**
+     * Get the LicenseMap instance by calling LicenseMapSingleton.getLicenseMao().
+     * @return the LicenseMap instance (never null)
+     */
+    @Nonnull
+    private static LicenseMap getLicenseMap()
+    {
+        LicenseMapSingleton licenseMapSingleton = LicenseMapSingleton.getInstance();
+        return licenseMapSingleton.getLicenseMap();
+    }
+}

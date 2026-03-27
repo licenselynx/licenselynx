@@ -14,5 +14,11 @@
             "id": "testCanonicalScanCode",
             "src": "scancode-licensedb"
         }
+    },
+    "siemens": {
+        "test-org-license": {
+            "id": "testCanonicalSiemens",
+            "src": "siemens"
+        }
     }
 }

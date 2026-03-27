@@ -4,37 +4,64 @@
  */
 package org.licenselynx;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import net.jcip.annotations.Immutable;
 
 import javax.annotation.Nonnull;
+import java.util.Collections;
+import java.util.EnumMap;
 import java.util.Map;
 import java.util.Objects;
 
 
 /**
- * LicenseMap represents the two JSON Objects for the canonical license map and the risky license map
+ * LicenseMap represents the JSON structure containing the canonical license map,
+ * the risky license map, and organization-specific license maps.
  * It provides getters to access these properties.
  */
 @Immutable
+@JsonDeserialize(using = LicenseMapDeserializer.class)
 class LicenseMap
 {
-    @JsonProperty
     private final Map<String, LicenseObject> canonicalLicenseMap;
 
-    @JsonProperty
     private final Map<String, LicenseObject> riskyLicenseMap;
 
+    private final Map<Organization, Map<String, LicenseObject>> organizationMaps;
 
 
-    @JsonCreator
-    public LicenseMap(
-        @JsonProperty("stableMap") final Map<String, LicenseObject> pCanonicalLicenseMap,
-        @JsonProperty("riskyMap") final Map<String, LicenseObject> pRiskyLicenseMap)
+
+    /**
+     * Constructor for LicenseMap with stable and risky maps only.
+     * Organization maps will be empty.
+     *
+     * @param pCanonicalLicenseMap the stable/canonical license map
+     * @param pRiskyLicenseMap the risky license map
+     */
+    LicenseMap(
+        @Nonnull final Map<String, LicenseObject> pCanonicalLicenseMap,
+        @Nonnull final Map<String, LicenseObject> pRiskyLicenseMap)
+    {
+        this(pCanonicalLicenseMap, pRiskyLicenseMap, new EnumMap<>(Organization.class));
+    }
+
+
+
+    /**
+     * Constructor for LicenseMap with stable, risky, and organization maps.
+     *
+     * @param pCanonicalLicenseMap the stable/canonical license map
+     * @param pRiskyLicenseMap the risky license map
+     * @param pOrganizationMaps the organization-specific license maps
+     */
+    LicenseMap(
+        @Nonnull final Map<String, LicenseObject> pCanonicalLicenseMap,
+        @Nonnull final Map<String, LicenseObject> pRiskyLicenseMap,
+        @Nonnull final Map<Organization, Map<String, LicenseObject>> pOrganizationMaps)
     {
         this.canonicalLicenseMap = Objects.requireNonNull(pCanonicalLicenseMap);
         this.riskyLicenseMap = Objects.requireNonNull(pRiskyLicenseMap);
+        this.organizationMaps = Objects.requireNonNull(pOrganizationMaps);
     }
 
 
@@ -44,7 +71,7 @@ class LicenseMap
      * @return canonical license map
      */
     @Nonnull
-    public Map<String, LicenseObject> getCanonicalLicenseMap()
+    Map<String, LicenseObject> getCanonicalLicenseMap()
     {
         return canonicalLicenseMap;
     }
@@ -56,8 +83,35 @@ class LicenseMap
      * @return risky license map
      */
     @Nonnull
-    public Map<String, LicenseObject> getRiskyLicenseMap()
+    Map<String, LicenseObject> getRiskyLicenseMap()
     {
         return riskyLicenseMap;
+    }
+
+
+
+    /**
+     * Gets the license map for a specific organization.
+     *
+     * @param pOrganization the organization to look up
+     * @return the organization's license map, or an empty map if the organization has no entries
+     */
+    @Nonnull
+    Map<String, LicenseObject> getOrganizationMap(@Nonnull final Organization pOrganization)
+    {
+        return organizationMaps.getOrDefault(pOrganization, Collections.emptyMap());
+    }
+
+
+
+    /**
+     * Gets all organization license maps.
+     *
+     * @return unmodifiable map of organization to their license maps
+     */
+    @Nonnull
+    Map<Organization, Map<String, LicenseObject>> getOrganizationMaps()
+    {
+        return Collections.unmodifiableMap(organizationMaps);
     }
 }
