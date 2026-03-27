@@ -24,16 +24,16 @@ public class LicenseObject
     private final String id;
 
     @JsonProperty
-    private final LicenseSource src;
+    private final CanonicalSource src;
 
 
 
     /**
      * Constructor for LicenseObject.
-     * @deprecated Use {@link #LicenseObject(String pId, LicenseSource licenseSource)} instead
+     * @deprecated Use {@link #LicenseObject(String, CanonicalSource)} instead
      *
      * @param pId The canonical id of the license.
-     * @param pSrc The source of the license.
+     * @param pSrc The source of the license as a string.
      */
     @Deprecated
     public LicenseObject(
@@ -41,7 +41,24 @@ public class LicenseObject
         @JsonProperty("src") final String pSrc)
     {
         this.id = Objects.requireNonNull(pId);
-        this.src = LicenseSource.fromValue(Objects.requireNonNull(pSrc));
+        this.src = CanonicalSourceDeserializer.fromValue(Objects.requireNonNull(pSrc));
+    }
+
+
+    /**
+     * Constructor for LicenseObject.
+     * @deprecated Use {@link #LicenseObject(String, CanonicalSource)} instead
+     *
+     * @param pId The canonical id of the license.
+     * @param pLicenseSrc The source of the license.
+     */
+    @Deprecated
+    public LicenseObject(
+            @JsonProperty("id") final String pId,
+            @JsonProperty("src") final LicenseSource pLicenseSrc)
+    {
+        this.id = Objects.requireNonNull(pId);
+        this.src = Objects.requireNonNull(pLicenseSrc);
     }
 
 
@@ -49,15 +66,15 @@ public class LicenseObject
      * Constructor for LicenseObject.
      *
      * @param pId The canonical id of the license.
-     * @param pLicenseSrc The source of the license.
+     * @param pCanonicalSrc The canonical source of the license.
      */
     @JsonCreator
     public LicenseObject(
             @JsonProperty("id") final String pId,
-            @JsonProperty("src") final LicenseSource pLicenseSrc)
+            @JsonProperty("src") final CanonicalSource pCanonicalSrc)
     {
         this.id = Objects.requireNonNull(pId);
-        this.src = Objects.requireNonNull(pLicenseSrc);
+        this.src = Objects.requireNonNull(pCanonicalSrc);
     }
 
 
@@ -75,10 +92,10 @@ public class LicenseObject
 
 
     /**
-     * Gets the source of the license.
-     * @deprecated Use {@link #getLicenseSource} instead
+     * Gets the source of the license as a string.
+     * @deprecated Use {@link #getCanonicalSource()} instead
      *
-     * @return The source URL.
+     * @return The source string value.
      */
     @Nonnull
     @Deprecated
@@ -90,12 +107,32 @@ public class LicenseObject
 
 
     /**
-     * Gets the source of the license.
+     * Gets the source of the license as a LicenseSource enum.
+     * @deprecated Use {@link #getCanonicalSource()} instead
      *
-     * @return The source URL.
+     * @return The LicenseSource.
+     * @throws ClassCastException if the source is not a LicenseSource (e.g. it's an Organization).
      */
     @Nonnull
+    @Deprecated
     public LicenseSource getLicenseSource()
+    {
+        if (src instanceof LicenseSource)
+        {
+            return (LicenseSource) src;
+        }
+        throw new ClassCastException(
+            "Source '" + src.getValue() + "' is not a LicenseSource. Use getCanonicalSource() instead.");
+    }
+
+
+    /**
+     * Gets the canonical source of the license.
+     *
+     * @return The canonical source (either a {@link LicenseSource} or an {@link Organization}).
+     */
+    @Nonnull
+    public CanonicalSource getCanonicalSource()
     {
         return src;
     }
@@ -134,5 +171,28 @@ public class LicenseObject
     public boolean isCustomSource()
     {
         return this.src.equals(LicenseSource.Custom);
+    }
+
+
+    /**
+     * Checks if the canonical identifier used in this <code>LicenseObject</code> is from an organization source.
+     *
+     * @return true if source of LicenseObject is an Organization, false otherwise.
+     */
+    public boolean isOrganizationSource()
+    {
+        return this.src instanceof Organization;
+    }
+
+
+    /**
+     * Checks if the canonical identifier used in this <code>LicenseObject</code> is from a specific organization.
+     *
+     * @param pOrganization The organization to check against.
+     * @return true if source matches the given organization, false otherwise.
+     */
+    public boolean isOrganizationSource(@Nonnull final Organization pOrganization)
+    {
+        return this.src.equals(pOrganization);
     }
 }
