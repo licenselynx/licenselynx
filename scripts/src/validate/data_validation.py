@@ -447,6 +447,48 @@ def validate_oss_licenses(data_dir: str):
     check_canonical_source_is_valid(data_dir)
 
 
+def collect_identifiers_from_dir(data_dir: str) -> set[str]:
+    """
+    Collects all canonical IDs and aliases from JSON files in the given directory.
+    Returns a set of all identifiers (canonical IDs + flattened aliases).
+    """
+    identifiers: set[str] = set()
+    for filename in os.listdir(data_dir):
+        if not filename.endswith(JSON_EXTENSION):
+            continue
+        filepath = os.path.join(data_dir, filename)
+        with open(filepath, 'r') as f:
+            data = json.load(f)
+            canonical_id = data["canonical"]["id"]
+            identifiers.add(canonical_id)
+            aliases = data.get("aliases", {})
+            identifiers.update(flatten_aliases_dict(aliases))
+    return identifiers
+
+
+def check_no_overlap_between_oss_and_orgs(oss_dir: str, orgs_dir: str):
+    """
+    Validates that no alias or canonical identifier from any organization
+    subfolder is present in the OSS license files, and vice versa.
+    Within different orgs, the same aliases and canonical names can occur,
+    but not between orgs and OSS license data.
+    """
+    oss_identifiers = collect_identifiers_from_dir(oss_dir)
+
+    org_identifiers: set[str] = set()
+    for org_name in os.listdir(orgs_dir):
+        org_dir_path = os.path.join(orgs_dir, org_name)
+        if not os.path.isdir(org_dir_path):
+            continue
+        org_identifiers.update(collect_identifiers_from_dir(org_dir_path))
+
+    overlap = oss_identifiers & org_identifiers
+    for identifier in sorted(overlap):
+        logger.error(
+            f"Identifier '{identifier}' is present in both OSS and organization license data."
+        )
+
+
 def validate_unique_orgs(data_dir: str):
     orgs_list = os.listdir(data_dir)
     orgs_set = set()
@@ -457,7 +499,7 @@ def validate_unique_orgs(data_dir: str):
             logger.error(f"Organization '{org}' is already present in the orgs list.")
 
 
-def validate_org_names_not_forbidden(org_dir: str) -> int:
+def validate_org_names_not_forbidden(org_dir: str) -> None:
     forbidden_org_names = {"stableMap", "riskyMap"}
 
     if org_dir in forbidden_org_names:
@@ -489,6 +531,8 @@ def main():
 
     orgs_dir = os.path.join(DEFAULT_DATA_DIR, "orgs")
     validate_orgs_licenses(orgs_dir)
+
+    check_no_overlap_between_oss_and_orgs(DEFAULT_DATA_DIR, orgs_dir)
 
     # Check if error occurred
     if logger.handlers[1].error_occurred:
