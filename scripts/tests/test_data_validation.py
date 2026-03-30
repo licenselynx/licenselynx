@@ -26,7 +26,9 @@ from src.validate.data_validation import (
     validate_orgs_licenses,
     validate_unique_orgs,
     validate_equal_source_and_org_names,
-    validate_org_names_not_forbidden
+    validate_org_names_not_forbidden,
+    check_no_overlap_between_oss_and_orgs,
+    collect_identifiers_from_dir
 )
 
 # Mock setup_logger to avoid actual logging
@@ -871,8 +873,172 @@ def test_validate_org_names_not_forbidden_failure():
         validate_org_names_not_forbidden("stableMap")
         validate_org_names_not_forbidden("riskyMap")
 
+    assert mock_logger.error.call_count == 2
+
+
+def test_collect_identifiers_from_dir():
+    os.makedirs("test_data", exist_ok=True)
+
+    data = {
+        "canonical": {"id": "MIT", "src": "spdx"},
+        "aliases": {"spdx": ["MIT License"], "custom": ["mit"]}
+    }
+
+    with open(os.path.join("test_data", "MIT.json"), 'w') as f:
+        json.dump(data, f)
+
+    result = collect_identifiers_from_dir("test_data")
+
+    assert result == {"MIT", "MIT License", "mit"}
+
+
+def test_check_no_overlap_between_oss_and_orgs_success():
+    os.makedirs(os.path.join("test_data", "oss"), exist_ok=True)
+    os.makedirs(os.path.join("test_data", "orgs", "org1"), exist_ok=True)
+
+    oss_license = {
+        "canonical": {"id": "MIT", "src": "spdx"},
+        "aliases": {"spdx": ["MIT License"], "custom": ["mit"]}
+    }
+    org_license = {
+        "canonical": {"id": "OrgLic-1.0", "src": "org1"},
+        "aliases": {"custom": ["Org License v1.0"]}
+    }
+
+    with open(os.path.join("test_data", "oss", "MIT.json"), 'w') as f:
+        json.dump(oss_license, f)
+    with open(os.path.join("test_data", "orgs", "org1", "OrgLic-1.0.json"), 'w') as f:
+        json.dump(org_license, f)
+
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_no_overlap_between_oss_and_orgs("test_data/oss", "test_data/orgs")
+
+    assert mock_logger.error.call_count == 0
+
+
+def test_check_no_overlap_between_oss_and_orgs_detects_org_canonical_in_oss():
+    os.makedirs(os.path.join("test_data", "oss"), exist_ok=True)
+    os.makedirs(os.path.join("test_data", "orgs", "org1"), exist_ok=True)
+
+    oss_license = {
+        "canonical": {"id": "SharedId", "src": "custom"},
+        "aliases": {"custom": ["oss-alias"]}
+    }
+    org_license = {
+        "canonical": {"id": "OrgLic", "src": "org1"},
+        "aliases": {"custom": ["SharedId"]}
+    }
+
+    with open(os.path.join("test_data", "oss", "SharedId.json"), 'w') as f:
+        json.dump(oss_license, f)
+    with open(os.path.join("test_data", "orgs", "org1", "OrgLic.json"), 'w') as f:
+        json.dump(org_license, f)
+
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_no_overlap_between_oss_and_orgs("test_data/oss", "test_data/orgs")
+
+    assert mock_logger.error.call_count == 1
+    mock_logger.error.assert_called_with(
+        "Identifier 'SharedId' is present in both OSS and organization license data."
+    )
+
+
+def test_check_no_overlap_between_oss_and_orgs_detects_org_alias_in_oss_and_oss_alias_in_org():
+    os.makedirs(os.path.join("test_data", "oss"), exist_ok=True)
+    os.makedirs(os.path.join("test_data", "orgs", "org1"), exist_ok=True)
+
+    oss_license = {
+        "canonical": {"id": "MIT", "src": "spdx"},
+        "aliases": {"custom": ["shared-org-alias"]}
+    }
+    org_license = {
+        "canonical": {"id": "OrgLic", "src": "org1"},
+        "aliases": {"custom": ["MIT", "shared-org-alias"]}
+    }
+
+    with open(os.path.join("test_data", "oss", "MIT.json"), 'w') as f:
+        json.dump(oss_license, f)
+    with open(os.path.join("test_data", "orgs", "org1", "OrgLic.json"), 'w') as f:
+        json.dump(org_license, f)
+
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_no_overlap_between_oss_and_orgs("test_data/oss", "test_data/orgs")
 
     assert mock_logger.error.call_count == 2
+    mock_logger.error.assert_any_call(
+        "Identifier 'MIT' is present in both OSS and organization license data."
+    )
+    mock_logger.error.assert_any_call(
+        "Identifier 'shared-org-alias' is present in both OSS and organization license data."
+    )
+
+
+def test_check_no_overlap_between_oss_and_orgs_allows_same_across_orgs():
+    os.makedirs(os.path.join("test_data", "oss"), exist_ok=True)
+    os.makedirs(os.path.join("test_data", "orgs", "org1"), exist_ok=True)
+    os.makedirs(os.path.join("test_data", "orgs", "org2"), exist_ok=True)
+
+    oss_license = {
+        "canonical": {"id": "MIT", "src": "spdx"},
+        "aliases": {"custom": ["mit"]}
+    }
+    org1_license = {
+        "canonical": {"id": "SharedOrgId", "src": "org1"},
+        "aliases": {"custom": ["shared-alias"]}
+    }
+    org2_license = {
+        "canonical": {"id": "SharedOrgId", "src": "org2"},
+        "aliases": {"custom": ["shared-alias"]}
+    }
+
+    with open(os.path.join("test_data", "oss", "MIT.json"), 'w') as f:
+        json.dump(oss_license, f)
+    with open(os.path.join("test_data", "orgs", "org1", "SharedOrgId.json"), 'w') as f:
+        json.dump(org1_license, f)
+    with open(os.path.join("test_data", "orgs", "org2", "SharedOrgId.json"), 'w') as f:
+        json.dump(org2_license, f)
+
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_no_overlap_between_oss_and_orgs("test_data/oss", "test_data/orgs")
+
+    assert mock_logger.error.call_count == 0
+
+
+def test_check_no_overlap_between_oss_and_orgs_multiple_orgs_with_overlap():
+    os.makedirs(os.path.join("test_data", "oss"), exist_ok=True)
+    os.makedirs(os.path.join("test_data", "orgs", "org1"), exist_ok=True)
+    os.makedirs(os.path.join("test_data", "orgs", "org2"), exist_ok=True)
+
+    oss_license = {
+        "canonical": {"id": "MIT", "src": "spdx"},
+        "aliases": {"custom": ["overlap-from-org2"]}
+    }
+    org1_license = {
+        "canonical": {"id": "MIT", "src": "org1"},
+        "aliases": {"custom": ["org1-alias"]}
+    }
+    org2_license = {
+        "canonical": {"id": "OrgLic", "src": "org2"},
+        "aliases": {"custom": ["overlap-from-org2"]}
+    }
+
+    with open(os.path.join("test_data", "oss", "MIT.json"), 'w') as f:
+        json.dump(oss_license, f)
+    with open(os.path.join("test_data", "orgs", "org1", "MIT.json"), 'w') as f:
+        json.dump(org1_license, f)
+    with open(os.path.join("test_data", "orgs", "org2", "OrgLic.json"), 'w') as f:
+        json.dump(org2_license, f)
+
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_no_overlap_between_oss_and_orgs("test_data/oss", "test_data/orgs")
+
+    assert mock_logger.error.call_count == 2
+    mock_logger.error.assert_any_call(
+        "Identifier 'MIT' is present in both OSS and organization license data."
+    )
+    mock_logger.error.assert_any_call(
+        "Identifier 'overlap-from-org2' is present in both OSS and organization license data."
+    )
 
 
 if __name__ == "__main__":
