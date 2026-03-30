@@ -26,6 +26,7 @@ typically represented by SPDX IDs.
 The folders **Java**, **Python**, and **TypeScript** are providing libraries to use in code.
 The folder **scripts** contains several useful scripts to update, transform, and verify data.
 In the folder **website** we host a static website to introduce the community to the LicenseLynx project.
+The folder **data/orgs/** contains organization-specific (internal) license mappings, organized by organization name (e.g., `data/orgs/siemens/`).
 
 ## Data structure
 
@@ -71,6 +72,12 @@ The structure of a stored license looks like this:
 | aliases   | Dictionary of sources, where each source is list of aliases of license (e.g. "spdx", "custom", etc.) |
 | rejected  | List of rejected aliases                                                                             |
 | risky     | List of risky aliases                                                                                |
+
+### Organization Licenses
+
+Organization-specific (internal) license files are stored in `data/orgs/<org_name>/` and use the same JSON format as OSS license files. The key difference is that `canonical.src` must match the organization folder name (e.g., `"siemens"` for files in `data/orgs/siemens/`).
+
+There must be no overlap between OSS and organization license identifiers. Organization licenses are isolated from the main dataset and only resolve when explicitly requested via the `org` parameter in the SDK `map()` functions.
 
 ## Data Quality
 
