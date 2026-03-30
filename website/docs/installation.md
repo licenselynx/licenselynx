@@ -15,7 +15,7 @@ To install the Java library, add it to Gradle or Maven build.
 build.gradle:
 
 ```groovy
-implementation 'org.licenselynx:licenselynx:2.1.2'
+implementation 'org.licenselynx:licenselynx:2.1.3'
 ```
 
 pom.xml:
@@ -25,7 +25,7 @@ pom.xml:
 <dependency>
     <groupId>org.licenselynx</groupId>
     <artifactId>licenselynx</artifactId>
-    <version>2.1.2</version>
+    <version>2.1.3</version>
 </dependency>
 ```
 
