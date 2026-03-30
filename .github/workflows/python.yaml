@@ -60,6 +60,61 @@ jobs:
         with:
           commit_message: Update badge for python
 
+  integration-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Poetry
+        run: |
+          pipx install poetry
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: poetry
+          cache-dependency-path: python/poetry.lock
+      - name: Set Poetry environment
+        run: |
+          cd python
+          poetry env use 3.11
+      - name: Build package with real data
+        run: |
+          mkdir -p python/licenselynx/resources
+          python3 scripts/src/load/merge_data.py -o ./python/licenselynx/resources/merged_data.json
+          cd python
+          poetry build
+      - name: Run integration test
+        run: |
+          pip install python/dist/*.whl
+
+          # Test 1: Basic stable map lookup
+          result="$(python3 -c "from licenselynx import LicenseLynx; r = LicenseLynx.map('0BSD'); print(r.id)")"
+          echo "Test 1 (stable map): $result"
+          if [[ $result != "0BSD" ]]; then echo "FAIL: expected 0BSD"; exit 1; fi
+
+          # Test 2: Risky map lookup with risky=True
+          result="$(python3 -c "from licenselynx import LicenseLynx; r = LicenseLynx.map('LIbpng License v2', risky=True); print(r.id)")"
+          echo "Test 2 (risky=True): $result"
+          if [[ $result != "libpng-2.0" ]]; then echo "FAIL: expected libpng-2.0"; exit 1; fi
+
+          # Test 3: Risky entry must NOT resolve without risky flag
+          result="$(python3 -c "from licenselynx import LicenseLynx; r = LicenseLynx.map('LIbpng License v2'); print(r.id if r else 'NOT_FOUND')")"
+          echo "Test 3 (risky=False should return None): $result"
+          if [[ $result != "NOT_FOUND" ]]; then echo "FAIL: expected NOT_FOUND"; exit 1; fi
+
+          # Test 4: Organization map lookup
+          result="$(python3 -c "from licenselynx import LicenseLynx, Organization; r = LicenseLynx.map('Siemens Inner Source License v1.5', org=Organization.SIEMENS); print(r.id + '|' + r.src)")"
+          echo "Test 4 (organization): $result"
+          if [[ $result != "SISL-1.5|siemens" ]]; then echo "FAIL: expected SISL-1.5|siemens"; exit 1; fi
+
+          # Test 5: Organization entry must NOT resolve without org parameter
+          result="$(python3 -c "from licenselynx import LicenseLynx; r = LicenseLynx.map('Siemens Inner Source License v1.5'); print(r.id if r else 'NOT_FOUND')")"
+          echo "Test 5 (org missing should return None): $result"
+          if [[ $result != "NOT_FOUND" ]]; then echo "FAIL: expected NOT_FOUND"; exit 1; fi
+
+          echo "All integration tests passed."
+
   lint:
     runs-on: ubuntu-latest
     steps:
