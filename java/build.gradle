@@ -167,6 +167,16 @@ tasks.named("processResources") {
     }
 }
 
+tasks.register("exportRuntimeClasspath") {
+    dependsOn("assemble")
+    doLast {
+        def cp = sourceSets.main.runtimeClasspath.asPath
+        def outFile = new File(project.buildDir, "runtime-classpath.txt")
+        outFile.text = cp
+        println "Runtime classpath written to ${outFile}"
+    }
+}
+
 /*
  * - - - -  TESTS  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  */
