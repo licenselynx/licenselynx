@@ -46,6 +46,36 @@ public class LicenseExample {
 }
 ```
 
+## Organization Licenses
+
+Organizations can register internal/proprietary license identifiers that are kept separate from OSS licenses.
+The `Organization` enum is available from `org.licenselynx.*`.
+
+```java
+import org.licenselynx.*;
+
+// Map a license name within an organization
+LicenseObject licenseObject = LicenseLynx.map("licenseName", Organization.Siemens);
+
+// Map with risky mappings enabled and an organization
+LicenseObject licenseObject = LicenseLynx.map("licenseName", true, Organization.Siemens);
+```
+
+Helper methods on `LicenseObject`:
+
+```java
+// Check if the license comes from any organization
+licenseObject.isOrganizationSource(); // returns true if from any org
+
+// Check if the license comes from a specific organization
+licenseObject.isOrganizationSource(Organization.Siemens); // returns true if from Siemens
+
+// Get the canonical source (preferred over getSrc() and getLicenseSource())
+CanonicalSource source = licenseObject.getCanonicalSource();
+```
+
+> **Note:** `getSrc()` and `getLicenseSource()` are deprecated in favor of `getCanonicalSource()`.
+
 ## License
 
 This project is licensed under the [BSD 3-Clause "New" or "Revised" License](../LICENSE) (SPDX-License-Identifier: BSD-3-Clause).
