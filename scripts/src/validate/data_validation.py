@@ -447,43 +447,6 @@ def validate_oss_licenses(data_dir: str):
     check_canonical_source_is_valid(data_dir)
 
 
-def validate_unique_orgs(data_dir: str):
-    orgs_list = os.listdir(data_dir)
-    orgs_set = set()
-    for org in orgs_list:
-        if org not in orgs_set:
-            orgs_set.add(org)
-        else:
-            logger.error(f"Organization '{org}' is already present in the orgs list.")
-
-
-def validate_org_names_not_forbidden(org_dir: str) -> int:
-    forbidden_org_names = {"stableMap", "riskyMap"}
-
-    if org_dir in forbidden_org_names:
-        logger.error(f"Organization folder '{org_dir}' uses a reserved name. Reserved names are {forbidden_org_names}")
-
-
-def validate_equal_source_and_org_names(org_name, org_dir_path):
-    for filename in os.listdir(org_dir_path):
-        with open(os.path.join(org_dir_path, filename), 'r') as f:
-            data = json.load(f)
-            src = data["canonical"]["src"]
-            if src != org_name:
-                logger.error(
-                    f"File '{filename}' in organization '{org_name}' has canonical source '{src}' "
-                    f"that does not match the organization name.")
-
-
-def validate_orgs_licenses(data_dir: str):
-    validate_unique_orgs(data_dir)
-    for org_dir in os.listdir(data_dir):
-        org_dir_path = os.path.join(data_dir, org_dir)
-        validate_license_data(org_dir_path)
-        validate_equal_source_and_org_names(org_dir, org_dir_path)
-        validate_org_names_not_forbidden(org_dir)
-
-
 def collect_identifiers_from_dir(data_dir: str) -> set[str]:
     """
     Collects all canonical IDs and aliases from JSON files in the given directory.
@@ -524,6 +487,43 @@ def check_no_overlap_between_oss_and_orgs(oss_dir: str, orgs_dir: str):
         logger.error(
             f"Identifier '{identifier}' is present in both OSS and organization license data."
         )
+
+
+def validate_unique_orgs(data_dir: str):
+    orgs_list = os.listdir(data_dir)
+    orgs_set = set()
+    for org in orgs_list:
+        if org not in orgs_set:
+            orgs_set.add(org)
+        else:
+            logger.error(f"Organization '{org}' is already present in the orgs list.")
+
+
+def validate_org_names_not_forbidden(org_dir: str) -> None:
+    forbidden_org_names = {"stableMap", "riskyMap"}
+
+    if org_dir in forbidden_org_names:
+        logger.error(f"Organization folder '{org_dir}' uses a reserved name. Reserved names are {forbidden_org_names}")
+
+
+def validate_equal_source_and_org_names(org_name, org_dir_path):
+    for filename in os.listdir(org_dir_path):
+        with open(os.path.join(org_dir_path, filename), 'r') as f:
+            data = json.load(f)
+            src = data["canonical"]["src"]
+            if src != org_name:
+                logger.error(
+                    f"File '{filename}' in organization '{org_name}' has canonical source '{src}' "
+                    f"that does not match the organization name.")
+
+
+def validate_orgs_licenses(data_dir: str):
+    validate_unique_orgs(data_dir)
+    for org_dir in os.listdir(data_dir):
+        org_dir_path = os.path.join(data_dir, org_dir)
+        validate_license_data(org_dir_path)
+        validate_equal_source_and_org_names(org_dir, org_dir_path)
+        validate_org_names_not_forbidden(org_dir)
 
 
 def main():
