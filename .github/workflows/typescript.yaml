@@ -63,15 +63,41 @@ jobs:
         run: |
           cd typescript
           npm link
-          npm --version
-          npx --version
           npm ls --global @licenselynx/licenselynx
           mkdir -p ../../test-project && cd ../../test-project
-          echo "import {map} from '@licenselynx/licenselynx'; map('0BSD').then(value => console.log(value.id));" > run.mjs
           npm link @licenselynx/licenselynx
+
+          # Test 1: Basic stable map lookup
+          echo "import {map} from '@licenselynx/licenselynx'; map('0BSD').then(value => console.log(value.id));" > run.mjs
           result="$(npx ts-node run.mjs)"
-          echo $result
-          if [[ $result == "0BSD" ]]; then exit 0; else exit -1; fi
+          echo "Test 1 (stable map): $result"
+          if [[ $result != "0BSD" ]]; then echo "FAIL: expected 0BSD"; exit 1; fi
+
+          # Test 2: Risky map lookup with risky=true
+          echo "import {map} from '@licenselynx/licenselynx'; map('LIbpng License v2', true).then(value => console.log(value.id));" > run.mjs
+          result="$(npx ts-node run.mjs)"
+          echo "Test 2 (risky=true): $result"
+          if [[ $result != "libpng-2.0" ]]; then echo "FAIL: expected libpng-2.0"; exit 1; fi
+
+          # Test 3: Risky entry must NOT resolve without risky flag
+          echo "import {map} from '@licenselynx/licenselynx'; map('LIbpng License v2').then(value => console.log(value.id)).catch(e => console.log('NOT_FOUND'));" > run.mjs
+          result="$(npx ts-node run.mjs)"
+          echo "Test 3 (risky=false should reject): $result"
+          if [[ $result != "NOT_FOUND" ]]; then echo "FAIL: expected NOT_FOUND"; exit 1; fi
+
+          # Test 4: Organization map lookup
+          echo "import {map} from '@licenselynx/licenselynx'; map('Siemens Inner Source License v1.5', false, 'siemens').then(value => console.log(value.id + '|' + value.src));" > run.mjs
+          result="$(npx ts-node run.mjs)"
+          echo "Test 4 (organization): $result"
+          if [[ $result != "SISL-1.5|siemens" ]]; then echo "FAIL: expected SISL-1.5|siemens"; exit 1; fi
+
+          # Test 5: Organization entry must NOT resolve without org parameter
+          echo "import {map} from '@licenselynx/licenselynx'; map('Siemens Inner Source License v1.5').then(value => console.log(value.id)).catch(e => console.log('NOT_FOUND'));" > run.mjs
+          result="$(npx ts-node run.mjs)"
+          echo "Test 5 (org missing should reject): $result"
+          if [[ $result != "NOT_FOUND" ]]; then echo "FAIL: expected NOT_FOUND"; exit 1; fi
+
+          echo "All integration tests passed."
 
   lint:
     runs-on: ubuntu-latest
