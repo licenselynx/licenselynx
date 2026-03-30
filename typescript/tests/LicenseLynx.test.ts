@@ -2,7 +2,7 @@
  * SPDX-FileCopyrightText: Copyright 2025 Siemens AG
  * SPDX-License-Identifier: BSD-3-Clause
  */
-import {isScancodeLicensedbIdentifier, isSpdxIdentifier, isCustomIdentifier, LicenseSource, map} from "../index";
+import {isScancodeLicensedbIdentifier, isSpdxIdentifier, isCustomIdentifier, isOrganizationSource, isOrganizationSourceOf, LicenseSource, Organization, map} from "../index";
 
 jest.mock('../resources/merged_data.json', () => {
     return require('./resources/merged_data.json');
@@ -62,7 +62,7 @@ describe('LicenseLynx tests', () => {
 
 
     it('should return normalized quotes when license exists', async () => {
-        return map("BSD ‚Zero‛ Clause").then(licenseObject => {
+        return map("BSD \u201AZero\u201B Clause").then(licenseObject => {
             expect(licenseObject).not.toBe(null);
             expect(licenseObject!.id).toEqual('0BSD');
             expect(licenseObject!.src).toEqual('spdx');
@@ -90,5 +90,52 @@ describe('LicenseLynx tests', () => {
         await expect(map(input)).rejects.toEqual(new Error('License null not found.'));
         return expect(map(input, true)).rejects.toEqual(new Error('License null not found.'));
 
+    });
+
+    it('should return organization license when org is provided', async () => {
+        return map("test-org-license", false, Organization.Siemens).then(licenseObject => {
+            expect(licenseObject).not.toBe(null);
+            expect(licenseObject!.id).toEqual('SISL-1.5');
+            expect(licenseObject!.src).toEqual('siemens');
+            expect(licenseObject!.src).toEqual(Organization.Siemens);
+            expect(isOrganizationSource(licenseObject)).toBe(true);
+            expect(isOrganizationSourceOf(licenseObject, Organization.Siemens)).toBe(true);
+            expect(isSpdxIdentifier(licenseObject)).toBe(false);
+            expect(isScancodeLicensedbIdentifier(licenseObject)).toBe(false);
+            expect(isCustomIdentifier(licenseObject)).toBe(false);
+        });
+    });
+
+    it('should return organization license with risky enabled', async () => {
+        return map("test-org-license", true, Organization.Siemens).then(licenseObject => {
+            expect(licenseObject).not.toBe(null);
+            expect(licenseObject!.id).toEqual('SISL-1.5');
+            expect(licenseObject!.src).toEqual(Organization.Siemens);
+        });
+    });
+
+    it('should not return organization license without org parameter', async () => {
+        await expect(map('test-org-license')).rejects.toEqual(new Error('License test-org-license not found.'));
+        return expect(map('test-org-license', true)).rejects.toEqual(new Error('License test-org-license not found.'));
+    });
+
+    it('should reject when organization license does not exist', async () => {
+        return expect(map('nonExistingOrgLicense', false, Organization.Siemens)).rejects.toEqual(new Error('License nonExistingOrgLicense not found.'));
+    });
+
+    it('should return false for isOrganizationSource on spdx license', async () => {
+        return map("BSD Zero Clause").then(licenseObject => {
+            expect(isOrganizationSource(licenseObject)).toBe(false);
+            expect(isOrganizationSourceOf(licenseObject, Organization.Siemens)).toBe(false);
+        });
+    });
+
+    it('should reject when organization map does not exist in data', async () => {
+        const unknownOrg = 'unknown-org' as Organization;
+        return expect(map('test-org-license', false, unknownOrg)).rejects.toEqual(new Error('License test-org-license not found.'));
+    });
+
+    it('should reject when license data has empty id', async () => {
+        return expect(map('Incomplete License')).rejects.toEqual(new Error('License Incomplete License not found.'));
     });
 });
