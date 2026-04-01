@@ -5,8 +5,13 @@
     },
     "aliases": {
         "custom": [
+            "Siemens Inner Source License 1.4",
             "Siemens Inner Source License v1.4",
-            "Siemens_Inner_Source_License_v1.4"
+            "Siemens_Inner_Source_License_v1.4",
+            "Siemens_Inner_Source_License_v1.4.md",
+            "SISL 1.4",
+            "SISL_1.4",
+            "The Siemens Inner Source License - 1.4"
         ]
     },
     "isMajorVersionOnly": false,
