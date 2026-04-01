@@ -27,10 +27,10 @@
             "src": "spdx"
         }
     },
-    "siemens": {
+    "testOrg": {
         "test-org-license": {
-            "id": "SISL-1.5",
-            "src": "siemens"
+            "id": "testOrgId",
+            "src": "testOrg"
         }
     }
 }

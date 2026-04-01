@@ -4,6 +4,9 @@
  */
 import {isScancodeLicensedbIdentifier, isSpdxIdentifier, isCustomIdentifier, isOrganizationSource, isOrganizationSourceOf, LicenseSource, Organization, map} from "../index";
 
+const TEST_ORG = 'testOrg' as Organization;
+const organizationValues = Organization as unknown as Record<string, string>;
+
 jest.mock('../resources/merged_data.json', () => {
     return require('./resources/merged_data.json');
 });
@@ -13,11 +16,14 @@ describe('LicenseLynx tests', () => {
         jest.spyOn(global.console, 'error').mockImplementation(() => {
         });
 
+        organizationValues.TestOrg = TEST_ORG;
+
         // Mock process.cwd to point to the ./tests directory
         jest.spyOn(process, 'cwd').mockReturnValue(require('path').resolve(__dirname, './tests'));
     });
 
     afterAll(() => {
+        delete organizationValues.TestOrg;
         jest.restoreAllMocks();
     });
 
@@ -93,13 +99,12 @@ describe('LicenseLynx tests', () => {
     });
 
     it('should return organization license when org is provided', async () => {
-        return map("test-org-license", false, Organization.Siemens).then(licenseObject => {
+        return map("test-org-license", false, TEST_ORG).then(licenseObject => {
             expect(licenseObject).not.toBe(null);
-            expect(licenseObject!.id).toEqual('SISL-1.5');
-            expect(licenseObject!.src).toEqual('siemens');
-            expect(licenseObject!.src).toEqual(Organization.Siemens);
+            expect(licenseObject!.id).toEqual('testOrgId');
+            expect(licenseObject!.src).toEqual(TEST_ORG);
             expect(isOrganizationSource(licenseObject)).toBe(true);
-            expect(isOrganizationSourceOf(licenseObject, Organization.Siemens)).toBe(true);
+            expect(isOrganizationSourceOf(licenseObject, TEST_ORG)).toBe(true);
             expect(isSpdxIdentifier(licenseObject)).toBe(false);
             expect(isScancodeLicensedbIdentifier(licenseObject)).toBe(false);
             expect(isCustomIdentifier(licenseObject)).toBe(false);
@@ -107,10 +112,10 @@ describe('LicenseLynx tests', () => {
     });
 
     it('should return organization license with risky enabled', async () => {
-        return map("test-org-license", true, Organization.Siemens).then(licenseObject => {
+        return map("test-org-license", true, TEST_ORG).then(licenseObject => {
             expect(licenseObject).not.toBe(null);
-            expect(licenseObject!.id).toEqual('SISL-1.5');
-            expect(licenseObject!.src).toEqual(Organization.Siemens);
+            expect(licenseObject!.id).toEqual('testOrgId');
+            expect(licenseObject!.src).toEqual(TEST_ORG);
         });
     });
 
@@ -120,13 +125,13 @@ describe('LicenseLynx tests', () => {
     });
 
     it('should reject when organization license does not exist', async () => {
-        return expect(map('nonExistingOrgLicense', false, Organization.Siemens)).rejects.toEqual(new Error('License nonExistingOrgLicense not found.'));
+        return expect(map('nonExistingOrgLicense', false, TEST_ORG)).rejects.toEqual(new Error('License nonExistingOrgLicense not found.'));
     });
 
     it('should return false for isOrganizationSource on spdx license', async () => {
         return map("BSD Zero Clause").then(licenseObject => {
             expect(isOrganizationSource(licenseObject)).toBe(false);
-            expect(isOrganizationSourceOf(licenseObject, Organization.Siemens)).toBe(false);
+            expect(isOrganizationSourceOf(licenseObject, TEST_ORG)).toBe(false);
         });
     });
 

@@ -219,43 +219,43 @@ def test_build_maps_from_dir_skips_non_json(tmpdir):
 
 
 def test_read_org_data_single_org(tmpdir):
-    org_dir = tmpdir.mkdir("orgs").mkdir("siemens")
+    org_dir = tmpdir.mkdir("orgs").mkdir("testOrg")
     license1 = {
-        "canonical": {"id": "SISL-1.1", "src": "siemens"},
-        "aliases": {"custom": ["Siemens Inner Source License v1.1"]},
+        "canonical": {"id": "testOrgId", "src": "testOrg"},
+        "aliases": {"custom": ["testOrg License"]},
         "isMajorVersionOnly": False,
         "rejected": [],
-        "risky": ["sisl-risky"]
+        "risky": ["testOrg-risky"]
     }
-    with open(org_dir.join("SISL-1.1.json"), 'w') as f:
+    with open(org_dir.join("testOrgId.json"), 'w') as f:
         json.dump(license1, f)
 
     result = read_org_data(str(tmpdir))
 
-    assert "siemens" in result
-    siemens_map = result["siemens"]
+    assert "testOrg" in result
+    test_org_map = result["testOrg"]
 
     # Canonical ID present
-    assert "SISL-1.1" in siemens_map
-    assert siemens_map["SISL-1.1"] == {"id": "SISL-1.1", "src": "siemens"}
+    assert "testOrgId" in test_org_map
+    assert test_org_map["testOrgId"] == {"id": "testOrgId", "src": "testOrg"}
 
     # Alias present
-    assert "Siemens Inner Source License v1.1" in siemens_map
-    assert siemens_map["Siemens Inner Source License v1.1"] == {"id": "SISL-1.1", "src": "siemens"}
+    assert "testOrg License" in test_org_map
+    assert test_org_map["testOrg License"] == {"id": "testOrgId", "src": "testOrg"}
 
     # Risky entries merged into org map
-    assert "sisl-risky" in siemens_map
-    assert siemens_map["sisl-risky"] == {"id": "SISL-1.1", "src": "siemens"}
+    assert "testOrg-risky" in test_org_map
+    assert test_org_map["testOrg-risky"] == {"id": "testOrgId", "src": "testOrg"}
 
 
 def test_read_org_data_multiple_orgs(tmpdir):
     orgs_dir = tmpdir.mkdir("orgs")
-    siemens_dir = orgs_dir.mkdir("siemens")
+    test_org_dir = orgs_dir.mkdir("testOrg")
     acme_dir = orgs_dir.mkdir("acme")
 
-    siemens_license = {
-        "canonical": {"id": "SISL-1.1", "src": "siemens"},
-        "aliases": {"custom": ["Siemens License"]},
+    test_org_license = {
+        "canonical": {"id": "testOrgId", "src": "testOrg"},
+        "aliases": {"custom": ["testOrg License"]},
         "risky": []
     }
     acme_license = {
@@ -263,14 +263,14 @@ def test_read_org_data_multiple_orgs(tmpdir):
         "aliases": {"custom": ["ACME License"]},
         "risky": []
     }
-    with open(siemens_dir.join("SISL-1.1.json"), 'w') as f:
-        json.dump(siemens_license, f)
+    with open(test_org_dir.join("testOrgId.json"), 'w') as f:
+        json.dump(test_org_license, f)
     with open(acme_dir.join("ACME-1.0.json"), 'w') as f:
         json.dump(acme_license, f)
 
     result = read_org_data(str(tmpdir))
 
-    assert "siemens" in result
+    assert "testOrg" in result
     assert "acme" in result
 
 
@@ -280,12 +280,12 @@ def test_read_org_data_no_orgs_dir(tmpdir):
 
 
 def test_read_org_data_empty_org(tmpdir):
-    tmpdir.mkdir("orgs").mkdir("siemens")
+    tmpdir.mkdir("orgs").mkdir("testOrg")
 
     result = read_org_data(str(tmpdir))
 
-    assert "siemens" in result
-    assert result["siemens"] == {}
+    assert "testOrg" in result
+    assert result["testOrg"] == {}
 
 
 def test_main_integration_with_orgs(monkeypatch):
@@ -300,14 +300,14 @@ def test_main_integration_with_orgs(monkeypatch):
             json.dump(main_license, f)
 
         # Create org subdir with org license files
-        org_dir = os.path.join(temp_dir, "orgs", "siemens")
+        org_dir = os.path.join(temp_dir, "orgs", "testOrg")
         os.makedirs(org_dir)
         org_license = {
-            "canonical": {"id": "SISL-1.1", "src": "siemens"},
-            "aliases": {"custom": ["Siemens Inner Source License v1.1"]},
-            "risky": ["sisl-risky"]
+            "canonical": {"id": "testOrgId", "src": "testOrg"},
+            "aliases": {"custom": ["testOrg License"]},
+            "risky": ["testOrg-risky"]
         }
-        with open(os.path.join(org_dir, "SISL-1.1.json"), 'w') as f:
+        with open(os.path.join(org_dir, "testOrgId.json"), 'w') as f:
             json.dump(org_license, f)
 
         # Create temp output file
@@ -324,7 +324,7 @@ def test_main_integration_with_orgs(monkeypatch):
 
             assert "stableMap" in output_data
             assert "riskyMap" in output_data
-            assert "siemens" in output_data
+            assert "testOrg" in output_data
 
             # Verify stableMap content
             assert "MIT" in output_data["stableMap"]
@@ -333,10 +333,10 @@ def test_main_integration_with_orgs(monkeypatch):
             # Verify riskyMap content
             assert "mit-risky" in output_data["riskyMap"]
 
-            # Verify siemens content (canonical + aliases + risky merged)
-            assert "SISL-1.1" in output_data["siemens"]
-            assert "Siemens Inner Source License v1.1" in output_data["siemens"]
-            assert "sisl-risky" in output_data["siemens"]
+            # Verify testOrg content (canonical + aliases + risky merged)
+            assert "testOrgId" in output_data["testOrg"]
+            assert "testOrg License" in output_data["testOrg"]
+            assert "testOrg-risky" in output_data["testOrg"]
         finally:
             os.remove(output_path)
 

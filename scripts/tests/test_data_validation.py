@@ -828,42 +828,42 @@ def test_validate_unique_orgs_failure():
 
 
 def test_validate_equal_source_and_org_names_success():
-    os.makedirs(os.path.join("test_data", "siemens"), exist_ok=True)
+    os.makedirs(os.path.join("test_data", "testOrg"), exist_ok=True)
 
-    license_a = {"canonical": {"id": "SISL-1.1", "src": "siemens"}, "aliases": {"custom": ["Siemens License v1.1"]}}
-    license_b = {"canonical": {"id": "SISL-1.2", "src": "siemens"}, "aliases": {"custom": ["Siemens License v1.2"]}}
+    license_a = {"canonical": {"id": "testOrgId", "src": "testOrg"}, "aliases": {"custom": ["testOrg License"]}}
+    license_b = {"canonical": {"id": "testOrgIdAlt", "src": "testOrg"}, "aliases": {"custom": ["testOrg License Alt"]}}
 
-    with open(os.path.join("test_data", "siemens", "SISL-1.1.json"), 'w') as f:
+    with open(os.path.join("test_data", "testOrg", "testOrgId.json"), 'w') as f:
         json.dump(license_a, f)
-    with open(os.path.join("test_data", "siemens", "SISL-1.2.json"), 'w') as f:
+    with open(os.path.join("test_data", "testOrg", "testOrgIdAlt.json"), 'w') as f:
         json.dump(license_b, f)
 
     with mock.patch('src.validate.data_validation.logger', mock_logger):
-        validate_equal_source_and_org_names("siemens", "test_data/siemens")
+        validate_equal_source_and_org_names("testOrg", "test_data/testOrg")
 
     assert mock_logger.error.call_count == 0
 
 
 def test_validate_equal_source_and_org_names_failure():
-    os.makedirs(os.path.join("test_data", "siemens"), exist_ok=True)
+    os.makedirs(os.path.join("test_data", "testOrg"), exist_ok=True)
 
-    license_a = {"canonical": {"id": "SISL-1.1", "src": "wrong_org"}, "aliases": {"custom": ["Siemens License v1.1"]}}
+    license_a = {"canonical": {"id": "testOrgId", "src": "wrong_org"}, "aliases": {"custom": ["testOrg License"]}}
 
-    with open(os.path.join("test_data", "siemens", "SISL-1.1.json"), 'w') as f:
+    with open(os.path.join("test_data", "testOrg", "testOrgId.json"), 'w') as f:
         json.dump(license_a, f)
 
     with mock.patch('src.validate.data_validation.logger', mock_logger):
-        validate_equal_source_and_org_names("siemens", "test_data/siemens")
+        validate_equal_source_and_org_names("testOrg", "test_data/testOrg")
 
     assert mock_logger.error.call_count == 1
     mock_logger.error.assert_called_with(
-        "File 'SISL-1.1.json' in organization 'siemens' has canonical source 'wrong_org' that does not match the organization name."
+        "File 'testOrgId.json' in organization 'testOrg' has canonical source 'wrong_org' that does not match the organization name."
     )
 
 
 def test_validate_org_names_not_forbidden_success():
     with mock.patch('src.validate.data_validation.logger', mock_logger):
-        validate_org_names_not_forbidden("siemens")
+        validate_org_names_not_forbidden("testOrg")
 
     assert mock_logger.error.call_count == 0
 
