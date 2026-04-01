@@ -4,6 +4,7 @@
  */
 package org.licenselynx;
 
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -27,7 +28,7 @@ class LicenseLynxTest
 {
     private final String CANONICAL_ID_SPDX = "testCanonicalSpdx";
     private final String CANONICAL_ID_SCANCODE = "testCanonicalScanCode";
-    private final String CANONICAL_ID_SIEMENS = "testCanonicalSiemens";
+    private final String CANONICAL_ID_TEST_ORG = "testOrgId";
 
     /**
      * Tests mapping of a non-existing license name.
@@ -230,13 +231,13 @@ class LicenseLynxTest
     void testOrganizationSource()
     {
         // Arrange
-        LicenseObject orgLicense = new LicenseObject("SISL-1.5", Organization.Siemens);
+        LicenseObject orgLicense = new LicenseObject(CANONICAL_ID_TEST_ORG, Organization.TestOrg);
 
         // Act && Assert
-        Assertions.assertEquals("SISL-1.5", orgLicense.getId());
-        Assertions.assertEquals(Organization.Siemens, orgLicense.getCanonicalSource());
+        Assertions.assertEquals(CANONICAL_ID_TEST_ORG, orgLicense.getId());
+        Assertions.assertEquals(Organization.TestOrg, orgLicense.getCanonicalSource());
         Assertions.assertTrue(orgLicense.isOrganizationSource());
-        Assertions.assertTrue(orgLicense.isOrganizationSource(Organization.Siemens));
+        Assertions.assertTrue(orgLicense.isOrganizationSource(Organization.TestOrg));
         Assertions.assertFalse(orgLicense.isSpdxIdentifier());
         Assertions.assertFalse(orgLicense.isScanCodeLicenseDbIdentifier());
         Assertions.assertFalse(orgLicense.isCustomSource());
@@ -247,13 +248,13 @@ class LicenseLynxTest
     void testOrganizationSourceFromString()
     {
         // Arrange && Act
-        LicenseObject orgLicense = new LicenseObject("SISL-1.5", "siemens");
+        LicenseObject orgLicense = new LicenseObject(CANONICAL_ID_TEST_ORG, "testOrg");
 
         // Assert
-        Assertions.assertEquals("SISL-1.5", orgLicense.getId());
-        Assertions.assertEquals(Organization.Siemens, orgLicense.getCanonicalSource());
+        Assertions.assertEquals(CANONICAL_ID_TEST_ORG, orgLicense.getId());
+        Assertions.assertEquals(Organization.TestOrg, orgLicense.getCanonicalSource());
         Assertions.assertTrue(orgLicense.isOrganizationSource());
-        Assertions.assertEquals("siemens", orgLicense.getSrc());
+        Assertions.assertEquals("testOrg", orgLicense.getSrc());
     }
 
     @Test
@@ -272,7 +273,7 @@ class LicenseLynxTest
     void testDeprecatedGetLicenseSourceWithOrganization()
     {
         // Arrange
-        LicenseObject orgLicense = new LicenseObject("SISL-1.5", Organization.Siemens);
+        LicenseObject orgLicense = new LicenseObject(CANONICAL_ID_TEST_ORG, Organization.TestOrg);
 
         // Act && Assert
         Assertions.assertThrows(ClassCastException.class, orgLicense::getLicenseSource);
@@ -287,7 +288,7 @@ class LicenseLynxTest
 
         // Assert
         Assertions.assertFalse(spdxLicense.isOrganizationSource());
-        Assertions.assertFalse(spdxLicense.isOrganizationSource(Organization.Siemens));
+        Assertions.assertFalse(spdxLicense.isOrganizationSource(Organization.TestOrg));
     }
 
     @Test
@@ -302,7 +303,7 @@ class LicenseLynxTest
     void testOrganizationFromValue()
     {
         // Act & Assert
-        Assertions.assertEquals(Organization.Siemens, Organization.fromValue("siemens"));
+        Assertions.assertEquals(Organization.TestOrg, Organization.fromValue("testOrg"));
         Assertions.assertThrows(IllegalArgumentException.class, () -> Organization.fromValue("unknown-org"));
     }
 
@@ -317,18 +318,18 @@ class LicenseLynxTest
 
         testMap.put("test", new LicenseObject(CANONICAL_ID_SPDX, LicenseSource.Spdx));
 
-        Map<String, LicenseObject> siemensMap = new HashMap<>();
-        siemensMap.put("test-org-license", new LicenseObject("SISL-1.5", Organization.Siemens));
-        testOrgMaps.put(Organization.Siemens, siemensMap);
+        Map<String, LicenseObject> testOrgMap = new HashMap<>();
+        testOrgMap.put("test-org-license", new LicenseObject(CANONICAL_ID_TEST_ORG, Organization.TestOrg));
+        testOrgMaps.put(Organization.TestOrg, testOrgMap);
 
         LicenseMap licenseMap = new LicenseMap(testMap, testRiskyMap, testOrgMaps);
 
         // Act && Assert
-        Assertions.assertEquals("SISL-1.5",
-            licenseMap.getOrganizationMap(Organization.Siemens).get("test-org-license").getId());
-        Assertions.assertEquals(Organization.Siemens,
-            licenseMap.getOrganizationMap(Organization.Siemens).get("test-org-license").getCanonicalSource());
-        Assertions.assertTrue(licenseMap.getOrganizationMaps().containsKey(Organization.Siemens));
+        Assertions.assertEquals(CANONICAL_ID_TEST_ORG,
+            licenseMap.getOrganizationMap(Organization.TestOrg).get("test-org-license").getId());
+        Assertions.assertEquals(Organization.TestOrg,
+            licenseMap.getOrganizationMap(Organization.TestOrg).get("test-org-license").getCanonicalSource());
+        Assertions.assertTrue(licenseMap.getOrganizationMaps().containsKey(Organization.TestOrg));
     }
 
     @Test
@@ -340,8 +341,8 @@ class LicenseLynxTest
         LicenseMap licenseMap = new LicenseMap(testMap, testRiskyMap);
 
         // Act && Assert
-        Assertions.assertNotNull(licenseMap.getOrganizationMap(Organization.Siemens));
-        Assertions.assertTrue(licenseMap.getOrganizationMap(Organization.Siemens).isEmpty());
+        Assertions.assertNotNull(licenseMap.getOrganizationMap(Organization.TestOrg));
+        Assertions.assertTrue(licenseMap.getOrganizationMap(Organization.TestOrg).isEmpty());
     }
 
     @Test
@@ -351,14 +352,14 @@ class LicenseLynxTest
         String licenseName = "test-org-license";
 
         // Act
-        LicenseObject result = LicenseLynx.map(licenseName, Organization.Siemens);
+        LicenseObject result = LicenseLynx.map(licenseName, Organization.TestOrg);
 
         // Assert
         Assertions.assertNotNull(result);
-        Assertions.assertEquals(CANONICAL_ID_SIEMENS, result.getId());
-        Assertions.assertEquals(Organization.Siemens, result.getCanonicalSource());
+        Assertions.assertEquals(CANONICAL_ID_TEST_ORG, result.getId());
+        Assertions.assertEquals(Organization.TestOrg, result.getCanonicalSource());
         Assertions.assertTrue(result.isOrganizationSource());
-        Assertions.assertTrue(result.isOrganizationSource(Organization.Siemens));
+        Assertions.assertTrue(result.isOrganizationSource(Organization.TestOrg));
     }
 
     @Test
@@ -368,12 +369,12 @@ class LicenseLynxTest
         String licenseName = "test-org-license";
 
         // Act
-        LicenseObject result = LicenseLynx.map(licenseName, true, Organization.Siemens);
+        LicenseObject result = LicenseLynx.map(licenseName, true, Organization.TestOrg);
 
         // Assert
         Assertions.assertNotNull(result);
-        Assertions.assertEquals(CANONICAL_ID_SIEMENS, result.getId());
-        Assertions.assertEquals(Organization.Siemens, result.getCanonicalSource());
+        Assertions.assertEquals(CANONICAL_ID_TEST_ORG, result.getId());
+        Assertions.assertEquals(Organization.TestOrg, result.getCanonicalSource());
     }
 
     @Test
@@ -398,9 +399,41 @@ class LicenseLynxTest
         String licenseName = "nonExistingOrgLicense";
 
         // Act
-        LicenseObject result = LicenseLynx.map(licenseName, Organization.Siemens);
+        LicenseObject result = LicenseLynx.map(licenseName, Organization.TestOrg);
 
         // Assert
         Assertions.assertNull(result);
+    }
+}
+
+
+enum Organization implements CanonicalSource
+{
+    TestOrg("testOrg");
+
+    private final String value;
+
+    Organization(final String pValue)
+    {
+        this.value = pValue;
+    }
+
+    @Override
+    @JsonValue
+    public String getValue()
+    {
+        return value;
+    }
+
+    static Organization fromValue(final String pValue)
+    {
+        for (Organization organization : values())
+        {
+            if (organization.value.equals(pValue))
+            {
+                return organization;
+            }
+        }
+        throw new IllegalArgumentException("Unknown organization: " + pValue);
     }
 }

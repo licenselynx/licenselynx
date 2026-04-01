@@ -15,10 +15,10 @@
             "src": "scancode-licensedb"
         }
     },
-    "siemens": {
+    "testOrg": {
         "test-org-license": {
-            "id": "testCanonicalSiemens",
-            "src": "siemens"
+            "id": "testOrgId",
+            "src": "testOrg"
         }
     }
 }
