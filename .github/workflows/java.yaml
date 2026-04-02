@@ -34,7 +34,7 @@ jobs:
           python3 scripts/src/load/merge_data.py -o ./java/src/main/resources/merged_data.json
           cd java
           ls src/main/resources
-          ./gradlew ${GRADLE_ARGUMENTS} clean assemble test jacocoTestReport publishToMavenLocal | tee job.log
+          ./gradlew ${GRADLE_ARGUMENTS} clean assemble test jacocoTestReport smokeTest publishToMavenLocal | tee job.log
           cat job.log | grep -- " - Instruction Coverage: " | sed -e "s/.* //" > build/coverage.txt
       - name: Run coverage badge job
         run: |
@@ -49,64 +49,3 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update badge for java
-
-  integration-test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'temurin'
-          java-version: 8
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
-      - name: Build library with real data
-        run: |
-          mkdir -p ./java/src/main/resources/
-          python3 scripts/src/load/merge_data.py -o ./java/src/main/resources/merged_data.json
-          cd java
-          ./gradlew clean assemble exportRuntimeClasspath publishToMavenLocal
-      - name: Create integration test source
-        run: |
-          mkdir -p /tmp/integration-test
-          cat > /tmp/integration-test/IntegrationTest.java << 'JAVAEOF'
-          import org.licenselynx.LicenseLynx;
-          import org.licenselynx.LicenseObject;
-          import org.licenselynx.Organization;
-          public class IntegrationTest {
-              static int pass = 0;
-              static int fail = 0;
-              static void check(String testName, String expected, String actual) {
-                  if (expected.equals(actual)) {
-                      System.out.println(testName + ": " + actual + " PASS");
-                      pass++;
-                  } else {
-                      System.out.println(testName + ": " + actual + " FAIL (expected " + expected + ")");
-                      fail++;
-                  }
-              }
-              public static void main(String[] args) {
-                  LicenseObject r1 = LicenseLynx.map("0BSD");
-                  check("Test 1 (stable map)", "0BSD", r1 != null ? r1.getId() : "NULL");
-                  LicenseObject r2 = LicenseLynx.map("LIbpng License v2", true);
-                  check("Test 2 (risky=true)", "libpng-2.0", r2 != null ? r2.getId() : "NULL");
-                  LicenseObject r3 = LicenseLynx.map("LIbpng License v2");
-                  check("Test 3 (risky=false should be null)", "NULL", r3 != null ? r3.getId() : "NULL");
-                  LicenseObject r4 = LicenseLynx.map("Siemens Inner Source License v1.5", Organization.Siemens);
-                  check("Test 4 (organization)", "SISL-1.5|siemens", r4 != null ? r4.getId() + "|" + r4.getSrc() : "NULL");
-                  LicenseObject r5 = LicenseLynx.map("Siemens Inner Source License v1.5");
-                  check("Test 5 (org missing should be null)", "NULL", r5 != null ? r5.getId() : "NULL");
-                  System.out.println("\nResults: " + pass + " passed, " + fail + " failed");
-                  if (fail > 0) System.exit(1);
-                  System.out.println("All integration tests passed.");
-              }
-          }
-          JAVAEOF
-      - name: Compile and run integration test
-        run: |
-          CP=$(cat java/build/runtime-classpath.txt)
-
-          javac -cp "$CP" /tmp/integration-test/IntegrationTest.java
-          java -cp "$CP:/tmp/integration-test" IntegrationTest
