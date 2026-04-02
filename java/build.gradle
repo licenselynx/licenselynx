@@ -202,6 +202,11 @@ tasks.named('jacocoTestReport').configure {
         xml.required = true
         csv.required = false
     }
+    // Organization is shadowed by a test-local enum (same package) for
+    // test-specific merged_data.json, so the production class is never loaded.
+    classDirectories.setFrom(files(classDirectories.files.collect {
+        fileTree(dir: it, exclude: ['**/Organization.class'])
+    }))
 }
 tasks.named('check').configure { t ->
     t.dependsOn tasks.named('jacocoTestReport')

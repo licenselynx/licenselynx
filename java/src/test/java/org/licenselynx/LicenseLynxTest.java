@@ -43,11 +43,13 @@ class LicenseLynxTest
         LicenseObject result1 = LicenseLynx.map(licenseName);
         LicenseObject result2 = LicenseLynx.map(licenseName, true);
         LicenseObject result3 = LicenseLynx.map(licenseName, false);
+        LicenseObject result4 = LicenseLynx.map(licenseName, true, null);
 
         // Assert
         Assertions.assertNull(result1);
         Assertions.assertNull(result2);
         Assertions.assertNull(result3);
+        Assertions.assertNull(result4);
 
     }
 
@@ -62,10 +64,13 @@ class LicenseLynxTest
         // Act
         LicenseObject result_spdx = LicenseLynx.map(licenseNameSpdx);
         LicenseObject result_scancode = LicenseLynx.map(licenseNameScancode, true);
+        LicenseObject result_spdx_risky = LicenseLynx.map(licenseNameSpdx, true);
 
         // Assert
         assert result_spdx != null;
         assert result_scancode != null;
+        Assertions.assertNotNull(result_spdx_risky);
+        Assertions.assertEquals(CANONICAL_ID_SPDX, result_spdx_risky.getId());
         Assertions.assertEquals(CANONICAL_ID_SPDX, result_spdx.getId());
         Assertions.assertEquals(CANONICAL_ID_SCANCODE, result_scancode.getId());
 
@@ -95,6 +100,16 @@ class LicenseLynxTest
         assert result != null;
         Assertions.assertEquals(CANONICAL_ID_SPDX, result.getId());
         Assertions.assertEquals(LicenseSource.Spdx, result.getCanonicalSource());
+    }
+
+    @Test
+    void testNormalizeQuotesNullInput()
+    {
+        // Arrange && Act
+        String result = QuotesHandler.normalizeQuotes(null, "'");
+
+        // Assert
+        Assertions.assertNull(result);
     }
 
 
@@ -218,6 +233,15 @@ class LicenseLynxTest
 
         // Act && Assert
         Assertions.assertThrows(UncheckedIOException.class, loader::loadLicenses);
+    }
+
+    @Test
+    void testLicenseSourceFromValue()
+    {
+        // Act && Assert
+        Assertions.assertEquals(LicenseSource.Spdx, LicenseSource.fromValue("spdx"));
+        Assertions.assertEquals(LicenseSource.ScancodeLicensedb, LicenseSource.fromValue("scancode-licensedb"));
+        Assertions.assertEquals(LicenseSource.Custom, LicenseSource.fromValue("custom"));
     }
 
     @Test
