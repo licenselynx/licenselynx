@@ -44,7 +44,7 @@ ext {
         }
     }
     website = 'https://licenselynx.org/'
-    codeRepo = 'https://github.org/licenselynx/licenselynx'
+    codeRepo = 'https://github.com/licenselynx/licenselynx'
 }
 
 group = 'org.licenselynx'
@@ -81,6 +81,30 @@ dependencies {
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+sourceSets {
+    smokeTest {
+        java.srcDir 'src/smokeTest/java'
+        compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+        runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
+    }
+}
+
+dependencies {
+    smokeTestImplementation 'org.junit.jupiter:junit-jupiter:5.10.1'
+    smokeTestRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    smokeTestRuntimeOnly 'org.slf4j:slf4j-simple:2.0.16'
+}
+
+tasks.register('smokeTest', Test) {
+    useJUnitPlatform {
+        includeTags 'smoke'
+    }
+    testClassesDirs = sourceSets.smokeTest.output.classesDirs
+    classpath = sourceSets.smokeTest.runtimeClasspath
+    description = 'Runs smoke integration tests against the built jar with real data.'
+    group = 'verification'
 }
 
 /*
@@ -126,7 +150,7 @@ tasks.register('createVersionFile') {
         props.setProperty('libGroup', project.group)
         props.setProperty('libName', project.name)
         props.setProperty('libVersion', project.getVersion().toString())
-        props.setProperty('libWebsite', "${project.ext.codeRepo}/-/tree/main/java")
+        props.setProperty('libWebsite', "${project.ext.codeRepo}/tree/main/java")
         props.setProperty('libDescription', project.description)
         props.setProperty('specName', project.name)
         props.setProperty('specWebsite', project.ext.website)
@@ -167,15 +191,6 @@ tasks.named("processResources") {
     }
 }
 
-tasks.register("exportRuntimeClasspath") {
-    dependsOn("assemble")
-    doLast {
-        def cp = sourceSets.main.runtimeClasspath.asPath
-        def outFile = new File(project.buildDir, "runtime-classpath.txt")
-        outFile.text = cp
-        println "Runtime classpath written to ${outFile}"
-    }
-}
 
 /*
  * - - - -  TESTS  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -279,8 +294,8 @@ tasks.named('javadoc').configure {
     }
 
     // workaround for JDK 9+: https://github.com/gradle/gradle/issues/11182
-    def currentJavaVersion = JavaVersion.current()
-    if (currentJavaVersion >= JavaVersion.VERSION_1_9) {
+    def toolchainVersion = java.toolchain.languageVersion.get().asInt()
+    if (toolchainVersion >= 9) {
         options.addStringOption("-release", "8")
     }
 }
@@ -295,9 +310,13 @@ checkstyle {
     ignoreFailures = false
 }
 project.extensions.findByName('checkstyle').sourceSets.each { SourceSet s ->
+    if (s.name == 'smokeTest') return
     Checkstyle task = (Checkstyle) tasks.findByName(s.getTaskName('checkstyle', null))
     task.setSource(s.allSource)
     getLogger().info('Reconfigured task \'' + task.name + '\' to include all files in sourceSet \'' + s.name + '\'')
+}
+tasks.matching { it.name == 'checkstyleSmokeTest' }.configureEach {
+    enabled = false
 }
 
 dependencies {

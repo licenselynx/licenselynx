@@ -19,6 +19,7 @@
         "clean": "rimraf --no-interactive --verbose dist",
         "build": "esbuild index.ts --bundle --platform=node --target=node10 --outdir=dist && tsc --emitDeclarationOnly --outDir dist",
         "test": "jest --coverage",
+        "test:smoke": "jest tests/smoke.test.ts",
         "lint": "eslint *.ts "
     },
     "repository": {
