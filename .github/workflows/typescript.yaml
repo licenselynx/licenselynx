@@ -30,6 +30,7 @@ jobs:
           npm ci --prefer-offline -no-audit
       - name: Run the automated tests
         run: |
+          set -o pipefail
           cd typescript
           npm run test | grep "All files" | awk '{print $10}' > coverage.txt
       - name: Run coverage badge job
