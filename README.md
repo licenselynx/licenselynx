@@ -77,7 +77,45 @@ The structure of a stored license looks like this:
 
 Organization-specific (internal) license files are stored in `data/orgs/<org_name>/` and use the same JSON format as OSS license files. The key difference is that `canonical.src` must match the organization folder name (e.g., `"siemens"` for files in `data/orgs/siemens/`).
 
-There must be no overlap between OSS and organization license identifiers. Organization licenses are isolated from the main dataset and only resolve when explicitly requested via the `org` parameter in the SDK `map()` functions.
+There must be no overlap between OSS and organization license identifiers. Organization licenses are isolated from the main dataset and only resolve when explicitly requested via the `org` parameter in the library `map()` functions.
+
+### Adding Your Organization
+
+To have LicenseLynx support your organization's internal licenses, follow these steps:
+
+1. **Create a folder** for your organization under `data/orgs/` using a lowercase name, e.g. `data/orgs/myorg/`.
+2. **Add license JSON files** for each internal license. Each file must follow the same format as OSS license files. For example, a file `data/orgs/myorg/MYORG-ISL-1.0.json` would look like:
+
+    ```json
+    {
+        "canonical": {
+            "id": "MYORG-ISL-1.0",
+            "src": "myorg"
+        },
+        "aliases": {
+            "custom": [
+                "My Org Inner Source License 1.0",
+                "MYORG ISL 1.0"
+            ]
+        },
+        "rejected": [],
+        "risky": []
+    }
+    ```
+
+    Key rules:
+    - `canonical.src` must match the organization folder name exactly.
+    - `canonical.id` must match the filename without the `.json` extension.
+    - Aliases must use the `custom` key.
+    - Canonical IDs must be at most 100 characters and must not contain forbidden characters (`#$%=[]?<>:/\|*` or spaces).
+
+3. **Ensure no overlap** between your organization's license identifiers/aliases and existing OSS license data. The CI pipeline will reject any collisions.
+4. **Submit a Pull Request**. The data validation pipeline will automatically verify the structure, naming, and uniqueness constraints of your contribution.
+5. **Library update**. In the same PR, the `Organization` enum in the Python, Java, and TypeScript libraries must be updated to include your new organization.
+6. **Verify your identity**. To confirm that you are a valid representative of the organization, you must either have a verified email address from that organization or have the organization listed officially on your GitHub profile.
+
+
+Once added, organization licenses can be resolved by passing the `org` parameter to the library `map()` functions.
 
 ## Data Quality
 
