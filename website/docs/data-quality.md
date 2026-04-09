@@ -10,5 +10,13 @@ But it's open and can be fixed by everyone, reviewed by us.
 Data quality is already very high, but it will improve over time.
 
 Since we automatically update the data with some external sources (e.g. the [SPDX License List](https://github.com/spdx/license-list-data/blob/main/json/licenses.json){:target="_blank"}) without review, new errors may be introduced.
-We try to mitigate these with some [data validation rules](https://licenselynx.org/licenselynxworks/#data-import), but semantic errors may not be detectable by these criteria.
+We try to mitigate these with some [data validation rules](data-validation.md), but semantic errors may not be detectable by these criteria.
 Those semantic errors can be found and remedied via the rejected lists.
+
+Mappings that are plausible but not certain are placed in the [risky map](risky-mappings.md) instead of being discarded. This keeps the default (stable) output deterministic while still making lower-confidence data available to callers who explicitly opt in.
+
+## Related Pages
+
+- [Data Specification](data-specification.md)
+- [Data Validation](data-validation.md)
+- [Risky Mappings](risky-mappings.md)
