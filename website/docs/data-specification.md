@@ -60,6 +60,7 @@ Each license has its own JSON file in the `data/` folder, named after its canoni
 | `isMajorVersionOnly`        | `boolean`  | Whether the canonical identifier has only a major version, relevant for the version matching validation.   |
 
 For validation rules applied to these files, see [Data Validation](data-validation.md).
+For how external sources populate these alias groups, see [Automated Data Retrieval](data-retrieval.md).
 
 ### isMajorVersionOnly
 
@@ -135,3 +136,5 @@ Each entry in any map is keyed by the alias string and contains:
 | PyPI Classifiers   | N/A                    | License classifier strings from PyPI packages. Does not define canonical names.           |
 | Custom/Community   | `"custom"`             | Community-contributed aliases added to the `custom` list.                                 |
 | Organizations      | e.g., `"siemens"`      | Organization-maintained internal licenses.                                                |
+
+For the retrieval scripts behind the automated sources, see [Automated Data Retrieval](data-retrieval.md).

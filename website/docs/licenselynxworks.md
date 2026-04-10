@@ -31,6 +31,8 @@ During the build pipeline, all individual files are merged into a single `merged
 - a **risky map**
 - any **organization-specific maps**
 
+For the source-specific update scripts that populate the data before this merge step, see [Automated Data Retrieval](data-retrieval.md).
+
 All licenses are stored in single JSON files within the **data** folder. For example:
 
 ```json
@@ -64,6 +66,7 @@ For the full field reference and merged format, see the [Data Specification](dat
 
 - [Data Quality](data-quality.md)
 - [Data Specification](data-specification.md)
+- [Automated Data Retrieval](data-retrieval.md)
 - [Matching Behavior](matching-behavior.md)
 - [Data Validation](data-validation.md)
 - [Risky Mappings](risky-mappings.md)

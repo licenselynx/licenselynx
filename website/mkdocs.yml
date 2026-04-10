@@ -46,6 +46,7 @@ nav:
   - Data:
       - Data Quality: data-quality.md
       - Data Specification: data-specification.md
+      - Automated Data Retrieval: data-retrieval.md
       - Matching Behavior: matching-behavior.md
       - Data Validation: data-validation.md
       - Risky Mappings: risky-mappings.md
