@@ -8,7 +8,9 @@
             "GNU Library General Public License v2 or later",
             "LGPL-2.0+"
         ],
-        "custom": [],
+        "custom": [
+            "\"LGPL-2.0-or-later\""
+        ],
         "scancodeLicensedb": [
             "GNU Library General Public License 2.0 or later",
             "LGPL 2.0 or later",

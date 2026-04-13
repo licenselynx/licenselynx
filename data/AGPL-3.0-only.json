@@ -7,7 +7,9 @@
         "spdx": [
             "GNU Affero General Public License v3.0 only"
         ],
-        "custom": [],
+        "custom": [
+            "\"AGPL-3.0-only\""
+        ],
         "scancodeLicensedb": [
             "AGPL 3.0",
             "AGPL-3.0",
