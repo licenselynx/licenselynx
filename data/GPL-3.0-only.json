@@ -9,6 +9,12 @@
             "GPL-3.0"
         ],
         "custom": [
+            "\"GNU General Public License v3\",",
+            "\"GNU GPLv3\"",
+            "\"GPL-3\",",
+            "\"GPL-3.0\"",
+            "'GNU (GPLv3)",
+            "'Gnu GPL3 (Gnu Public License)",
             "GENERAL PUBLIC LICENSE, version 3 (GPL-3.0)",
             "GPL v3",
             "GPL3"
