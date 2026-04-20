@@ -65,7 +65,7 @@ Choose a starting point:
 - Install a library: [Installation](installation.md)
 - Map license strings in code: [Usage](usage.md)
 - Understand where the mappings come from: [How LicenseLynx works](licenselynxworks.md)
-- Work with the raw mapping data: [Data Specification](data-specification.md)
+- Work with the raw mapping data: [Data Specification](data/data-specification.md)
 - Contribute mappings or docs: [Contributing](contribution.md)
 
 ## Key Features

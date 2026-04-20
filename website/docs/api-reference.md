@@ -284,4 +284,4 @@ Methods to classify a `LicenseObject` by its source. All return `boolean`.
 All libraries automatically normalize 14 Unicode quotation mark characters to ASCII `'` before lookup. This means license strings copied
 from PDFs, Word documents, or web pages with typographic quotes will still match.
 
-For the full list and examples, see [Matching Behavior](matching-behavior.md).
+For the full list and examples, see [Matching Behavior](data/matching-behavior.md).

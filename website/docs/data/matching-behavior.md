@@ -51,6 +51,6 @@ quote_characters = [
 
 ## Related Pages
 
-- [Usage](usage.md)
-- [API Reference](api-reference.md)
+- [Usage](../usage.md)
+- [API Reference](../api-reference.md)
 - [Risky Mappings](risky-mappings.md)

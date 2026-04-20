@@ -23,7 +23,7 @@ Organization-specific mappings use the same structure, but live under `data/orgs
 ## Build Output
 
 Before the JSON files are pushed to the main branch, they are validated for filename consistency, alias uniqueness, source correctness, version consistency, and organization-specific constraints.
-See [Data Validation](data-validation.md) for the full list.
+See [Data Validation](data/data-validation.md) for the full list.
 
 During the build pipeline, all individual files are merged into a single `merged_data.json` that separates aliases into:
 
@@ -31,7 +31,7 @@ During the build pipeline, all individual files are merged into a single `merged
 - a **risky map**
 - any **organization-specific maps**
 
-For the source-specific update scripts that populate the data before this merge step, see [Automated Data Retrieval](data-retrieval.md).
+For the source-specific update scripts that populate the data before this merge step, see [Automated Data Retrieval](data/data-retrieval.md).
 
 All licenses are stored in single JSON files within the **data** folder. For example:
 
@@ -60,13 +60,13 @@ All licenses are stored in single JSON files within the **data** folder. For exa
 }
 ```
 
-For the full field reference and merged format, see the [Data Specification](data-specification.md).
+For the full field reference and merged format, see the [Data Specification](data/data-specification.md).
 
 ## Related Pages
 
-- [Data Quality](data-quality.md)
-- [Data Specification](data-specification.md)
-- [Automated Data Retrieval](data-retrieval.md)
-- [Matching Behavior](matching-behavior.md)
-- [Data Validation](data-validation.md)
-- [Risky Mappings](risky-mappings.md)
+- [Data Quality](data/data-quality.md)
+- [Data Specification](data/data-specification.md)
+- [Automated Data Retrieval](data/data-retrieval.md)
+- [Matching Behavior](data/matching-behavior.md)
+- [Data Validation](data/data-validation.md)
+- [Risky Mappings](data/risky-mappings.md)

@@ -45,7 +45,7 @@ Not every alias group is maintained by the current automated update pipeline.
 
 ## Related Pages
 
-- [How LicenseLynx Works](licenselynxworks.md)
+- [How LicenseLynx Works](../licenselynxworks.md)
 - [Data Specification](data-specification.md)
 - [Data Validation](data-validation.md)
-- [Adding Mappings](contributing/adding-mappings.md)
+- [Adding Mappings](../contributing/adding-mappings.md)

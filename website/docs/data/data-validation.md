@@ -38,5 +38,5 @@ These checks catch structural problems early. They do not guarantee semantic cor
 ## Related Pages
 
 - [Data Specification](data-specification.md)
-- [Adding Mappings](contributing/adding-mappings.md)
-- [Organization Mappings](contributing/organization-mappings.md)
+- [Adding Mappings](../contributing/adding-mappings.md)
+- [Organization Mappings](../contributing/organization-mappings.md)
