@@ -44,12 +44,12 @@ nav:
   - How LicenseLynx works: licenselynxworks.md
   - API Reference: api-reference.md
   - Data:
-      - Data Quality: data-quality.md
-      - Data Specification: data-specification.md
-      - Automated Data Retrieval: data-retrieval.md
-      - Matching Behavior: matching-behavior.md
-      - Data Validation: data-validation.md
-      - Risky Mappings: risky-mappings.md
+      - Data Quality: data/data-quality.md
+      - Data Specification: data/data-specification.md
+      - Automated Data Retrieval: data/data-retrieval.md
+      - Matching Behavior: data/matching-behavior.md
+      - Data Validation: data/data-validation.md
+      - Risky Mappings: data/risky-mappings.md
   - FAQ: faq.md
   - Contributing:
       - Overview: contribution.md

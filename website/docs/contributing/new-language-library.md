@@ -11,7 +11,7 @@ This keeps the scope aligned early and avoids building a library that does not m
 Read these pages first:
 
 - [API Reference](../api-reference.md)
-- [Matching Behavior](../matching-behavior.md)
+- [Matching Behavior](../data/matching-behavior.md)
 - [How LicenseLynx works](../licenselynxworks.md)
 
 ## What a Library Needs to Do

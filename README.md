@@ -120,7 +120,7 @@ Once added, organization licenses can be resolved by passing the `org` parameter
 ## Data Quality
 
 With LicenseLynx we aim to have a deterministic mean of license mappings.
-For more details, head to our [website](https://licenselynx.org/data-quality) to find out more.
+For more details, head to our [website](https://licenselynx.org/data/data-quality) to find out more.
 
 ## Contributing
 

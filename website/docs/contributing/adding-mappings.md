@@ -21,7 +21,7 @@ Use this checklist when adding or updating an OSS license mapping under `data/`.
 8. Keep version numbers consistent.
    Aliases should match the canonical version unless the data rules explicitly allow broader major-version matching.
 9. Set `isMajorVersionOnly` correctly when it applies.
-   See [Data Specification](../data-specification.md#ismajorversiononly).
+   See [Data Specification](../data/data-specification.md#ismajorversiononly).
 10. Run or expect validation.
     Structural problems such as wrong keys, duplicate aliases, invalid sources, or version mismatches are rejected by the validator.
 
@@ -35,6 +35,6 @@ Use this checklist when adding or updating an OSS license mapping under `data/`.
 
 ## Before Opening a Merge Request
 
-- Check the file against [Data Specification](../data-specification.md).
-- Check the rules in [Data Validation](../data-validation.md).
+- Check the file against [Data Specification](../data/data-specification.md).
+- Check the rules in [Data Validation](../data/data-validation.md).
 - Keep the change as small as possible.

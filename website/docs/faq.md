@@ -38,7 +38,7 @@ For more information, refer to [Contributing](contribution.md).
 
 Some license names are ambiguous or cannot be mapped with full confidence. Instead of guessing, LicenseLynx puts these into a separate **risky map** that is not queried by default.
 You opt in explicitly by passing `risky=True` (Python), `true` (Java/TypeScript) as a parameter.
-See [Risky Mappings](risky-mappings.md) for a full explanation.
+See [Risky Mappings](data/risky-mappings.md) for a full explanation.
 
 ## What are organization-specific mappings?
 

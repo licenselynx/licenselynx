@@ -5,7 +5,7 @@ The `map` method is the core of every LicenseLynx library. It takes a license na
 For the full method signatures, parameters, and error handling, see the [API Reference](api-reference.md).
 
 If no match is found, Python returns `None`, Java returns `null`, and TypeScript rejects the `Promise`.
-For quote normalization and lookup order, see [Matching Behavior](matching-behavior.md).
+For quote normalization and lookup order, see [Matching Behavior](data/matching-behavior.md).
 
 ## Python
 
@@ -42,7 +42,7 @@ console.log(result.src);  // "spdx"
 
 ## Risky Mappings
 
-All languages support an optional `risky` parameter. When enabled, the lookup falls back to lower-confidence mappings if no match is found in the stable map. See [Risky Mappings](risky-mappings.md) for details.
+All languages support an optional `risky` parameter. When enabled, the lookup falls back to lower-confidence mappings if no match is found in the stable map. See [Risky Mappings](data/risky-mappings.md) for details.
 
 === "Python"
 
@@ -93,4 +93,4 @@ All languages support an optional `org` parameter for looking up organization-sp
 ## Data Mapping
 
 The full license mapping is also available as a JSON file at [`/json/latest/mapping.json`](https://licenselynx.org/json/latest/mapping.json).
-See the [Data Specification](data-specification.md) for the format.
+See the [Data Specification](data/data-specification.md) for the format.
