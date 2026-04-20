@@ -14,15 +14,13 @@ Use this checklist when adding or updating an OSS license mapping under `data/`.
    The allowed keys are `spdx`, `scancodeLicensedb`, `pypi`, `osi`, and `custom`.
 5. Keep aliases globally unique.
    An alias must not appear in another OSS license file.
-6. Put known-wrong aliases into `rejected`.
-   Use this when a string looks related but should never resolve to this license.
-7. Put plausible-but-uncertain aliases into `risky`.
+6. Put plausible-but-uncertain aliases into `risky`.
    Use this when the alias may resolve here, but the mapping is not deterministic enough for the stable map.
-8. Keep version numbers consistent.
+7. Keep version numbers consistent.
    Aliases should match the canonical version unless the data rules explicitly allow broader major-version matching.
-9. Set `isMajorVersionOnly` correctly when it applies.
+8. Set `isMajorVersionOnly` correctly when it applies.
    See [Data Specification](../data/data-specification.md#ismajorversiononly).
-10. Run or expect validation.
+9. Run or expect validation.
     Structural problems such as wrong keys, duplicate aliases, invalid sources, or version mismatches are rejected by the validator.
 
 ## When to Use Each Alias Group

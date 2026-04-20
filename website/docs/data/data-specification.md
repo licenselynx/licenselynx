@@ -55,7 +55,7 @@ Each license has its own JSON file in the `data/` folder, named after its canoni
 | `aliases.pypi`              | `string[]` | PyPI classifier strings (e.g., `"License :: OSI Approved :: MIT License"`).                                |
 | `aliases.osi`               | `string[]` | Names from the OSI license list.                                                                           |
 | `aliases.custom`            | `string[]` | Community-contributed aliases. This is where your contributions go.                                        |
-| `rejected`                  | `string[]` | Strings explicitly excluded from mapping. These will never resolve to this license.                        |
+| `rejected`                  | `string[]` | Aliases that automated sources (SPDX, ScanCode, OSI) would otherwise pull in, but map incorrectly. Listing them here prevents re-import on update. Strings that no automated source imports don't need to be listed. |
 | `risky`                     | `string[]` | Ambiguous strings that could plausibly map here but lack certainty. Only returned when the caller opts in. |
 | `isMajorVersionOnly`        | `boolean`  | Whether the canonical identifier has only a major version, relevant for the version matching validation.   |
 
