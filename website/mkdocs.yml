@@ -50,6 +50,7 @@ nav:
       - Matching Behavior: data/matching-behavior.md
       - Data Validation: data/data-validation.md
       - Risky Mappings: data/risky-mappings.md
+      - Alias Decisions: data/alias-decisions.md
   - FAQ: faq.md
   - Contributing:
       - Overview: contribution.md
