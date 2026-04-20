@@ -23,6 +23,8 @@ A mapping is placed in the `risky` list of a license file when:
 - The mapping is based on common usage rather than an authoritative source
 - The relationship between the alias and the canonical license is not fully verified
 
+For family-specific conventions (for example the GNU `-or-later` default), see [Alias Decisions](alias-decisions.md).
+
 
 ## How to Enable
 
@@ -35,7 +37,7 @@ A mapping is placed in the `risky` list of a license file when:
     result = LicenseLynx.map("gpl3")          # None
 
     # With risky mappings
-    result = LicenseLynx.map("gpl3", risky=True)  # LicenseObject(id="GPL-3.0-only", src="spdx")
+    result = LicenseLynx.map("gpl3", risky=True)  # LicenseObject(id="GPL-3.0-or-later", src="spdx")
     ```
 
 === "Java"
@@ -59,7 +61,7 @@ A mapping is placed in the `risky` list of a license file when:
     await map('gpl3');                // rejects
 
     // With risky mappings
-    await map('gpl3', true);          // resolves to GPL-3.0-only
+    await map('gpl3', true);          // resolves to GPL-3.0-or-later
     ```
 
 ## Relationship to Rejected Mappings
