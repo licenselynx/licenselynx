@@ -146,14 +146,14 @@ tasks.register('createVersionFile') {
     outputs.file(outFile)
     doLast {
         Properties props = new Properties()
-        props.setProperty('clean', String.valueOf(project.ext.gitCleanBuild))
-        props.setProperty('libGroup', project.group)
-        props.setProperty('libName', project.name)
-        props.setProperty('libVersion', project.getVersion().toString())
-        props.setProperty('libWebsite', "${project.ext.codeRepo}/tree/main/java")
-        props.setProperty('libDescription', project.description)
-        props.setProperty('specName', project.name)
-        props.setProperty('specWebsite', project.ext.website)
+        props.setProperty('clean', String.valueOf(rootProject.ext.gitCleanBuild))
+        props.setProperty('libGroup', rootProject.group)
+        props.setProperty('libName', rootProject.name)
+        props.setProperty('libVersion', rootProject.getVersion().toString())
+        props.setProperty('libWebsite', "${rootProject.ext.codeRepo}/tree/main/java")
+        props.setProperty('libDescription', rootProject.description)
+        props.setProperty('specName', rootProject.name)
+        props.setProperty('specWebsite', rootProject.ext.website)
         outFile.withPrintWriter('UTF-8', {
             props.store(it, rootProject.name + ' version information')
         })
@@ -223,26 +223,26 @@ tasks.named('jar').configure {
     manifest {
         attributes = [
             'Manifest-Version'           : '1.0',
-            'Specification-Title'        : project.name,
+            'Specification-Title'        : rootProject.name,
             'Specification-Vendor'       : 'The LicenseLynx OSS Project',
             'Specification-Vendor-Id'    : 'org.licenselynx',
-            'Specification-Version'      : project.version,
-            'Implementation-Title'       : project.name,
+            'Specification-Version'      : rootProject.version,
+            'Implementation-Title'       : rootProject.name,
             'Implementation-Vendor'      : 'The LicenseLynx OSS Project',
             'Implementation-Vendor-Id'   : 'org.licenselynx',
-            'Implementation-Version'     : project.version,
-            'Implementation-SCM-Revision': project.ext.gitHash,
+            'Implementation-Version'     : rootProject.version,
+            'Implementation-SCM-Revision': rootProject.ext.gitHash,
             'Automatic-Module-Name'      : 'org.licenselynx',
-            'Website'                    : project.ext.website,
+            'Website'                    : rootProject.ext.website,
             'Created-By'                 : "Gradle ${gradle.gradleVersion}",
             'Built-By'                   : System.getProperty('user.name'),
             'Build-Jdk'                  : Jvm.current().toString(),
-            'Build-Clean'                : project.ext.gitCleanBuild
+            'Build-Clean'                : rootProject.ext.gitCleanBuild
         ]
     }
     doFirst {
         manifest {
-            attributes 'Build-Timestamp': project.ext.buildTimestamp.toString()
+            attributes 'Build-Timestamp': rootProject.ext.buildTimestamp.toString()
         }
     }
 }
@@ -310,7 +310,7 @@ tasks.named('javadoc').configure {
  * - - - -  CHECKSTYLE  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  */
 checkstyle {
-    toolVersion '8.27'
+    toolVersion = '8.27'
     showViolations = true
     ignoreFailures = false
 }
