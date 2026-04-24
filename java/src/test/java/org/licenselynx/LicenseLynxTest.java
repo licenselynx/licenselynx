@@ -189,30 +189,16 @@ public class LicenseLynxTest
         testRiskyMap.put("testRisky", new LicenseObject(testCanonicalRisky, LicenseSource.Custom));
 
         LicenseMap licenseMap = new LicenseMap(testMap, testRiskyMap, new EnumMap<>(Organization.class));
-        LicenseMapSingleton testInstance = new LicenseMapSingleton(licenseMap);
 
         // Act && Assert
         Assertions.assertEquals(CANONICAL_ID_SPDX,
-            testInstance.getLicenseMap().getCanonicalLicenseMap().get("test").getId());
+            licenseMap.getCanonicalLicenseMap().get("test").getId());
         Assertions.assertEquals(LicenseSource.Spdx,
-            testInstance.getLicenseMap().getCanonicalLicenseMap().get("test").getCanonicalSource());
+            licenseMap.getCanonicalLicenseMap().get("test").getCanonicalSource());
 
         Assertions.assertEquals(LicenseSource.Custom,
-            testInstance.getLicenseMap().getRiskyLicenseMap().get("testRisky").getCanonicalSource());
-        Assertions.assertTrue(testInstance.getLicenseMap().getRiskyLicenseMap().get("testRisky").isCustomSource());
-    }
-
-
-
-    @Test
-    void testValidSingletonInstance()
-    {
-        // Arrange && Act
-        LicenseMapSingleton instance1 = LicenseMapSingleton.getInstance();
-        LicenseMapSingleton instance2 = LicenseMapSingleton.getInstance();
-
-        // Assert
-        Assertions.assertSame(instance1, instance2, "getInstance() should always return the same instance");
+            licenseMap.getRiskyLicenseMap().get("testRisky").getCanonicalSource());
+        Assertions.assertTrue(licenseMap.getRiskyLicenseMap().get("testRisky").isCustomSource());
     }
 
 

@@ -86,31 +86,12 @@ sourceSets {
     main {
         java.srcDir(tasks.named('generateJava').flatMap { it.generatedJavaDir })
     }
-    smokeTest {
-        compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
-        runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
-    }
     templates {
         compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
         runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
     }
 }
 
-dependencies {
-    smokeTestImplementation 'org.junit.jupiter:junit-jupiter:5.10.1'
-    smokeTestRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-    smokeTestRuntimeOnly 'org.slf4j:slf4j-simple:2.0.16'
-}
-
-tasks.register('smokeTest', Test) {
-    useJUnitPlatform {
-        includeTags 'smoke'
-    }
-    testClassesDirs = sourceSets.smokeTest.output.classesDirs
-    classpath = sourceSets.smokeTest.runtimeClasspath
-    description = 'Runs smoke integration tests against the built jar with real data.'
-    group = 'verification'
-}
 
 /*
  * - - - -  INTELLIJ CONFIG  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -287,13 +268,9 @@ checkstyle {
     ignoreFailures = false
 }
 project.extensions.findByName('checkstyle').sourceSets.each { SourceSet s ->
-    if (s.name == 'smokeTest') return
     Checkstyle task = (Checkstyle) tasks.findByName(s.getTaskName('checkstyle', null))
     task.setSource(s.allSource)
     getLogger().info('Reconfigured task \'' + task.name + '\' to include all files in sourceSet \'' + s.name + '\'')
-}
-tasks.matching { it.name == 'checkstyleSmokeTest' }.configureEach {
-    enabled = false
 }
 
 dependencies {

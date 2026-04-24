@@ -105,15 +105,9 @@ public final class LicenseLynx
 
 
 
-    /**
-     * Get the LicenseMap instance by calling LicenseMapSingleton.getLicenseMap().
-     *
-     * @return the LicenseMap instance (never null)
-     */
     @Nonnull
     private static LicenseMap getLicenseMap()
     {
-        LicenseMapSingleton licenseMapSingleton = LicenseMapSingleton.getInstance();
-        return licenseMapSingleton.getLicenseMap();
+        return new LicenseMap();
     }
 }
