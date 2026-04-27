@@ -4,25 +4,21 @@
  */
 package org.licenselynx;
 
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.JsonDeserializer;
+import javax.annotation.Nonnull;
 
-import java.io.IOException;
 
 /**
- * Custom Jackson deserializer for {@link CanonicalSource}.
- * Attempts to resolve the JSON string value first as a {@link LicenseSource},
- * then as an {@link Organization}.
+ * Deserializer for {@link CanonicalSource}.
+ * Attempts to resolve the value first as a {@link LicenseSource}, then as an {@link Organization}.
  */
-class CanonicalSourceDeserializer extends JsonDeserializer<CanonicalSource>
+final class CanonicalSourceDeserializer
 {
-    @Override
-    public CanonicalSource deserialize(final JsonParser pParser, final DeserializationContext pContext)
-        throws IOException
+    private CanonicalSourceDeserializer()
     {
-        return fromValue(pParser.getText());
+        // utility class
     }
+
+
 
     /**
      * Parses a string value to a CanonicalSource.
@@ -32,7 +28,8 @@ class CanonicalSourceDeserializer extends JsonDeserializer<CanonicalSource>
      * @return The corresponding CanonicalSource.
      * @throws IllegalArgumentException if the value is unknown.
      */
-    static CanonicalSource fromValue(final String pValue)
+    @Nonnull
+    public static CanonicalSource fromValue(@Nonnull final String pValue)
     {
         // Try LicenseSource first
         for (LicenseSource source : LicenseSource.values())

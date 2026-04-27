@@ -55,13 +55,13 @@ jobs:
           distribution: 'temurin'
           java-version: 8
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
+        uses: gradle/actions/setup-gradle@v6
       - name: Run build release
         run: |
-          mkdir ./java/src/main/resources/
-          python3 scripts/src/load/merge_data.py -o ./java/src/main/resources/merged_data.json
+          mkdir -p java/build/licenselynx/data
+          python3 scripts/src/load/merge_data.py -o ./java/build/licenselynx/data/merged_data.json
           cd java
-          ./gradlew ${GRADLE_ARGUMENTS} clean assemble test jacocoTestReport
+          ./gradlew ${GRADLE_ARGUMENTS} build
 
   test-and-lint-typescript:
     runs-on: ubuntu-latest

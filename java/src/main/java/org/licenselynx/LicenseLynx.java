@@ -13,10 +13,9 @@ import javax.annotation.Nonnull;
  */
 public final class LicenseLynx
 {
-
-    // Private constructor to prevent instantiation
     private LicenseLynx()
     {
+        // Private constructor to prevent instantiation
     }
 
 
@@ -30,11 +29,9 @@ public final class LicenseLynx
     @CheckForNull
     public static LicenseObject map(@Nonnull final String pLicenseName)
     {
-        LicenseMap licenseMap = getLicenseMap();
-
-        String licenseNameNormalized = QuotesHandler.normalizeQuotes(pLicenseName);
-        return licenseMap.getCanonicalLicenseMap().get(licenseNameNormalized);
+        return map(pLicenseName, false, null, getLicenseMap());
     }
+
 
 
     /**
@@ -48,18 +45,9 @@ public final class LicenseLynx
     @CheckForNull
     public static LicenseObject map(@Nonnull final String pLicenseName, final boolean pRisky)
     {
-        LicenseMap licenseMap = getLicenseMap();
-
-        String licenseNameNormalized = QuotesHandler.normalizeQuotes(pLicenseName);
-        LicenseObject licenseObject = licenseMap.getCanonicalLicenseMap().get(licenseNameNormalized);
-
-        if (licenseObject == null && pRisky)
-        {
-            licenseObject = licenseMap.getRiskyLicenseMap().get(licenseNameNormalized);
-        }
-
-        return licenseObject;
+        return map(pLicenseName, pRisky, null, getLicenseMap());
     }
+
 
 
     /**
@@ -71,11 +59,11 @@ public final class LicenseLynx
      * @return the license data as a LicenseObject, or null if not found
      */
     @CheckForNull
-    public static LicenseObject map(@Nonnull final String pLicenseName,
-                                    @Nonnull final Organization pOrganization)
+    public static LicenseObject map(@Nonnull final String pLicenseName, @Nonnull final Organization pOrganization)
     {
-        return map(pLicenseName, false, pOrganization);
+        return map(pLicenseName, false, pOrganization, getLicenseMap());
     }
+
 
 
     /**
@@ -90,29 +78,36 @@ public final class LicenseLynx
      */
     @CheckForNull
     public static LicenseObject map(@Nonnull final String pLicenseName, final boolean pRisky,
-                                    @CheckForNull final Organization pOrganization)
+        @CheckForNull final Organization pOrganization)
     {
-        LicenseMap licenseMap = getLicenseMap();
+        return map(pLicenseName, pRisky, pOrganization, getLicenseMap());
+    }
 
+
+
+    @CheckForNull
+    static LicenseObject map(@Nonnull final String pLicenseName, final boolean pRisky,
+        @CheckForNull final Organization pOrganization, @Nonnull final LicenseMap pLicenseMap)
+    {
         String licenseNameNormalized = QuotesHandler.normalizeQuotes(pLicenseName);
-        LicenseObject licenseObject = licenseMap.getCanonicalLicenseMap().get(licenseNameNormalized);
+        LicenseObject licenseObject = pLicenseMap.getCanonicalLicenseMap().get(licenseNameNormalized);
 
-        if (licenseObject == null && pRisky)
-        {
-            licenseObject = licenseMap.getRiskyLicenseMap().get(licenseNameNormalized);
+        if (licenseObject == null && pRisky) {
+            licenseObject = pLicenseMap.getRiskyLicenseMap().get(licenseNameNormalized);
         }
 
-        if (licenseObject == null && pOrganization != null)
-        {
-            licenseObject = licenseMap.getOrganizationMap(pOrganization).get(licenseNameNormalized);
+        if (licenseObject == null && pOrganization != null) {
+            licenseObject = pLicenseMap.getOrganizationMap(pOrganization).get(licenseNameNormalized);
         }
 
         return licenseObject;
     }
 
 
+
     /**
      * Get the LicenseMap instance by calling LicenseMapSingleton.getLicenseMap().
+     *
      * @return the LicenseMap instance (never null)
      */
     @Nonnull

@@ -4,30 +4,37 @@
  */
 package org.licenselynx;
 
-import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  * Enum representing the possible sources of a license.
  */
-public enum LicenseSource implements CanonicalSource
+public enum LicenseSource
+    implements CanonicalSource
 {
     Spdx("spdx"),
+
     ScancodeLicensedb("scancode-licensedb"),
+
     Custom("custom");
 
     private final String value;
+
+
 
     LicenseSource(final String pValue)
     {
         this.value = pValue;
     }
 
+
+
     @Override
-    @JsonValue
     public String getValue()
     {
         return value;
     }
+
+
 
     /**
      * Parses a string value to a LicenseSource enum.
@@ -38,10 +45,8 @@ public enum LicenseSource implements CanonicalSource
      */
     public static LicenseSource fromValue(final String pValue)
     {
-        for (LicenseSource source : values())
-        {
-            if (source.value.equals(pValue))
-            {
+        for (LicenseSource source : values()) {
+            if (source.value.equals(pValue)) {
                 return source;
             }
         }

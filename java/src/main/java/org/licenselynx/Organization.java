@@ -4,28 +4,34 @@
  */
 package org.licenselynx;
 
-import com.fasterxml.jackson.annotation.JsonValue;
-
 /**
  * Enum representing organizations which can also be canonical sources for license identifiers.
  */
-public enum Organization implements CanonicalSource
+public enum Organization
+    implements CanonicalSource
 {
     Siemens("siemens");
 
+    // NOTE: For each enum value, an entry must be present in CustomOrgMap.
+
     private final String value;
+
+
 
     Organization(final String pValue)
     {
         this.value = pValue;
     }
 
+
+
     @Override
-    @JsonValue
     public String getValue()
     {
         return value;
     }
+
+
 
     /**
      * Parses a string value to an Organization enum.
@@ -36,10 +42,8 @@ public enum Organization implements CanonicalSource
      */
     public static Organization fromValue(final String pValue)
     {
-        for (Organization organization : values())
-        {
-            if (organization.value.equals(pValue))
-            {
+        for (Organization organization : values()) {
+            if (organization.value.equals(pValue)) {
                 return organization;
             }
         }

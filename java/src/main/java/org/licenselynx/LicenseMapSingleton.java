@@ -42,7 +42,7 @@ class LicenseMapSingleton
             throw new InstantiationError("Instance already exists!");
         }
 
-        this.licenseMap = new LicenseDataLoader().loadLicenses();
+        this.licenseMap = new LicenseMap();
     }
 
 
