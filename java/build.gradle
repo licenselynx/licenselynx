@@ -14,14 +14,15 @@ plugins {
     id 'org.ajoberstar.grgit' version '4.1.1'
     id 'org.barfuin.gradle.jacocolog' version '3.1.0'
     id 'org.barfuin.gradle.taskinfo' version '2.2.0'
+    id 'org.licenselynx.build'
 }
 
 repositories {
     mavenCentral()
 }
 
-
 import org.gradle.internal.jvm.Jvm
+
 
 /*
  * - - - -  PROJECT METADATA  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -71,11 +72,9 @@ dependencies {
     testRuntimeOnly 'org.slf4j:slf4j-simple:2.0.16'
 
     implementation 'org.slf4j:slf4j-api:2.0.17'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.21.0'
 
     compileOnly group: 'net.jcip', name: 'jcip-annotations', version: '1.0'
     compileOnly group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2'
-    compileOnly 'javax.annotation:javax.annotation-api:1.3.2'
 }
 
 
@@ -84,8 +83,14 @@ tasks.named('test') {
 }
 
 sourceSets {
+    main {
+        java.srcDir(tasks.named('generateJava').flatMap { it.generatedJavaDir })
+    }
     smokeTest {
-        java.srcDir 'src/smokeTest/java'
+        compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+        runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
+    }
+    templates {
         compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
         runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
     }
@@ -113,6 +118,7 @@ tasks.register('smokeTest', Test) {
 idea.module {
     downloadSources = true
     downloadJavadoc = true
+    generatedSourceDirs += layout.buildDirectory.dir('licenselynx/java')
     excludeDirs += file('.idea')
     excludeDirs += file('_support')
     excludeDirs += file('bin')
@@ -162,35 +168,6 @@ tasks.register('createVersionFile') {
 tasks.named('processResources').configure { it.dependsOn(tasks.createVersionFile) }
 sourceSets.main.resources.srcDir(tasks.createVersionFile.temporaryDir)
 
-tasks.register("checkAndDownloadJson") {
-    def resourcesDir = file("src/main/resources")
-    def jsonFile = file("$resourcesDir/merged_data.json")
-    def downloadUrl = "https://licenselynx.org/json/latest/mapping.json"
-
-    doLast {
-        if (!jsonFile.exists()) {
-            println "merged_data.json not found. Downloading from $downloadUrl..."
-            resourcesDir.mkdirs()
-            jsonFile.withOutputStream { output ->
-                new URL(downloadUrl).withInputStream { input ->
-                    output << input
-                }
-            }
-            println "Downloaded data.json to $jsonFile"
-        } else {
-            println "merged_data.json already exists. Skipping download."
-        }
-    }
-}
-
-tasks.named("processResources") {
-    def isCI = System.getenv("CI")
-
-    if (!isCI) {
-        dependsOn("checkAndDownloadJson")
-    }
-}
-
 
 /*
  * - - - -  TESTS  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -202,11 +179,6 @@ tasks.named('jacocoTestReport').configure {
         xml.required = true
         csv.required = false
     }
-    // Organization is shadowed by a test-local enum (same package) for
-    // test-specific merged_data.json, so the production class is never loaded.
-    classDirectories.setFrom(files(classDirectories.files.collect {
-        fileTree(dir: it, exclude: ['**/Organization.class'])
-    }))
 }
 tasks.named('check').configure { t ->
     t.dependsOn tasks.named('jacocoTestReport')

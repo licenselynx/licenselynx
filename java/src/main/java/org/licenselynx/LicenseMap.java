@@ -4,14 +4,11 @@
  */
 package org.licenselynx;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import net.jcip.annotations.Immutable;
-
-import javax.annotation.Nonnull;
 import java.util.Collections;
-import java.util.EnumMap;
 import java.util.Map;
-import java.util.Objects;
+import javax.annotation.Nonnull;
+
+import net.jcip.annotations.Immutable;
 
 
 /**
@@ -20,7 +17,6 @@ import java.util.Objects;
  * It provides getters to access these properties.
  */
 @Immutable
-@JsonDeserialize(using = LicenseMapDeserializer.class)
 class LicenseMap
 {
     private final Map<String, LicenseObject> canonicalLicenseMap;
@@ -31,43 +27,28 @@ class LicenseMap
 
 
 
-    /**
-     * Constructor for LicenseMap with stable and risky maps only.
-     * Organization maps will be empty.
-     *
-     * @param pCanonicalLicenseMap the stable/canonical license map
-     * @param pRiskyLicenseMap the risky license map
-     */
-    LicenseMap(
-        @Nonnull final Map<String, LicenseObject> pCanonicalLicenseMap,
-        @Nonnull final Map<String, LicenseObject> pRiskyLicenseMap)
+    LicenseMap()
     {
-        this(pCanonicalLicenseMap, pRiskyLicenseMap, new EnumMap<>(Organization.class));
+        this(StableMap.getLicenseMap(), RiskyMap.getLicenseMap(), CustomOrgMap.getOrgMaps());
     }
 
 
 
-    /**
-     * Constructor for LicenseMap with stable, risky, and organization maps.
-     *
-     * @param pCanonicalLicenseMap the stable/canonical license map
-     * @param pRiskyLicenseMap the risky license map
-     * @param pOrganizationMaps the organization-specific license maps
-     */
-    LicenseMap(
-        @Nonnull final Map<String, LicenseObject> pCanonicalLicenseMap,
-        @Nonnull final Map<String, LicenseObject> pRiskyLicenseMap,
-        @Nonnull final Map<Organization, Map<String, LicenseObject>> pOrganizationMaps)
+    LicenseMap(@Nonnull final Map<String, LicenseObject> pStableMap,
+        @Nonnull final Map<String, LicenseObject> pRiskyMap,
+        @Nonnull final Map<Organization, Map<String, LicenseObject>> pOrgMaps)
     {
-        this.canonicalLicenseMap = Objects.requireNonNull(pCanonicalLicenseMap);
-        this.riskyLicenseMap = Objects.requireNonNull(pRiskyLicenseMap);
-        this.organizationMaps = Objects.requireNonNull(pOrganizationMaps);
+        super();
+        canonicalLicenseMap = pStableMap;
+        riskyLicenseMap = pRiskyMap;
+        organizationMaps = pOrgMaps;
     }
 
 
 
     /**
      * Gets the canonical license map.
+     *
      * @return canonical license map
      */
     @Nonnull
@@ -80,6 +61,7 @@ class LicenseMap
 
     /**
      * Gets the risky license map.
+     *
      * @return risky license map
      */
     @Nonnull

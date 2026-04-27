@@ -4,13 +4,10 @@
  */
 package org.licenselynx;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Objects;
+import javax.annotation.Nonnull;
 
 import net.jcip.annotations.Immutable;
-
-import javax.annotation.Nonnull;
-import java.util.Objects;
 
 
 /**
@@ -20,46 +17,40 @@ import java.util.Objects;
 @Immutable
 public class LicenseObject
 {
-    @JsonProperty
     private final String id;
 
-    @JsonProperty
     private final CanonicalSource src;
 
 
 
     /**
      * Constructor for LicenseObject.
-     * @deprecated Use {@link #LicenseObject(String, CanonicalSource)} instead
      *
      * @param pId The canonical id of the license.
      * @param pSrc The source of the license as a string.
+     * @deprecated Use {@link #LicenseObject(String, CanonicalSource)} instead
      */
     @Deprecated
-    public LicenseObject(
-        @JsonProperty("id") final String pId,
-        @JsonProperty("src") final String pSrc)
+    public LicenseObject(final String pId, final String pSrc)
     {
         this.id = Objects.requireNonNull(pId);
         this.src = CanonicalSourceDeserializer.fromValue(Objects.requireNonNull(pSrc));
     }
 
 
+
     /**
      * Constructor for LicenseObject.
-     * @deprecated Use {@link #LicenseObject(String, CanonicalSource)} instead
      *
      * @param pId The canonical id of the license.
      * @param pLicenseSrc The source of the license.
      */
-    @Deprecated
-    public LicenseObject(
-            @JsonProperty("id") final String pId,
-            @JsonProperty("src") final LicenseSource pLicenseSrc)
+    public LicenseObject(final String pId, final LicenseSource pLicenseSrc)
     {
         this.id = Objects.requireNonNull(pId);
         this.src = Objects.requireNonNull(pLicenseSrc);
     }
+
 
 
     /**
@@ -68,14 +59,12 @@ public class LicenseObject
      * @param pId The canonical id of the license.
      * @param pCanonicalSrc The canonical source of the license.
      */
-    @JsonCreator
-    public LicenseObject(
-            @JsonProperty("id") final String pId,
-            @JsonProperty("src") final CanonicalSource pCanonicalSrc)
+    public LicenseObject(final String pId, final CanonicalSource pCanonicalSrc)
     {
         this.id = Objects.requireNonNull(pId);
         this.src = Objects.requireNonNull(pCanonicalSrc);
     }
+
 
 
     /**
@@ -93,9 +82,10 @@ public class LicenseObject
 
     /**
      * Gets the source of the license as a string.
-     * @deprecated Use {@link #getCanonicalSource()} instead
      *
      * @return The source string value.
+     *
+     * @deprecated Use {@link #getCanonicalSource()} instead
      */
     @Nonnull
     @Deprecated
@@ -108,22 +98,23 @@ public class LicenseObject
 
     /**
      * Gets the source of the license as a LicenseSource enum.
-     * @deprecated Use {@link #getCanonicalSource()} instead
      *
      * @return The LicenseSource.
+     *
      * @throws ClassCastException if the source is not a LicenseSource (e.g. it's an Organization).
+     * @deprecated Use {@link #getCanonicalSource()} instead
      */
     @Nonnull
     @Deprecated
     public LicenseSource getLicenseSource()
     {
-        if (src instanceof LicenseSource)
-        {
+        if (src instanceof LicenseSource) {
             return (LicenseSource) src;
         }
         throw new ClassCastException(
             "Source '" + src.getValue() + "' is not a LicenseSource. Use getCanonicalSource() instead.");
     }
+
 
 
     /**
@@ -136,6 +127,7 @@ public class LicenseObject
     {
         return src;
     }
+
 
 
     /**
@@ -174,6 +166,7 @@ public class LicenseObject
     }
 
 
+
     /**
      * Checks if the canonical identifier used in this <code>LicenseObject</code> is from an organization source.
      *
@@ -183,6 +176,7 @@ public class LicenseObject
     {
         return this.src instanceof Organization;
     }
+
 
 
     /**
