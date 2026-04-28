@@ -30,11 +30,11 @@ jobs:
         uses: gradle/actions/setup-gradle@v6
       - name: Run automated tests
         run: |
-          mkdir -p java/build/licenselynx/data
-          python3 scripts/src/load/merge_data.py -o ./java/build/licenselynx/data/merged_data.json
+          mkdir _support
+          python3 scripts/src/load/merge_data.py -o _support/merged_data.build.json
+          ls -l _support || true
           cd java
-          ls -l build/licenselynx/data || true
-          ./gradlew ${GRADLE_ARGUMENTS} build publishToMavenLocal | tee job.log
+          ./gradlew -Plicenselynx.datafile=../_support/merged_data.build.json ${GRADLE_ARGUMENTS} clean build publishAllPublicationsToLocalBuildDirRepository | tee job.log
           cat job.log | grep -- " - Instruction Coverage: " | sed -e "s/.* //" > build/coverage.txt
       - name: Run coverage badge job
         run: |

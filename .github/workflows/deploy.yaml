@@ -58,10 +58,10 @@ jobs:
         uses: gradle/actions/setup-gradle@v6
       - name: Run build release
         run: |
-          mkdir -p java/build/licenselynx/data
-          python3 scripts/src/load/merge_data.py -o ./java/build/licenselynx/data/merged_data.json
+          mkdir _support
+          python3 scripts/src/load/merge_data.py -o _support/merged_data.build.json
           cd java
-          ./gradlew ${GRADLE_ARGUMENTS} build
+          ./gradlew -Plicenselynx.datafile=../_support/merged_data.build.json ${GRADLE_ARGUMENTS} clean build
 
   test-and-lint-typescript:
     runs-on: ubuntu-latest
