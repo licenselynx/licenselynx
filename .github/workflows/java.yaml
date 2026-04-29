@@ -16,15 +16,9 @@ concurrency:
 jobs:
   tests:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.PUSH_TOKEN || github.token }}
-          ref: main
-          fetch-depth: 0
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
@@ -39,19 +33,9 @@ jobs:
           ls -l _support || true
           cd java
           ./gradlew -Plicenselynx.datafile=../_support/merged_data.build.json ${GRADLE_ARGUMENTS} clean build publishAllPublicationsToLocalBuildDirRepository | tee job.log
-          cat job.log | grep -- " - Instruction Coverage: " | sed -e "s/.* //" > build/coverage.txt
-      - name: Run coverage badge job
-        run: |
-          sudo apt-get install xq
-          pip install anybadge
-          cov_value=$(cat java/build/coverage.txt)
-          rm -v java/build/coverage.txt
-          cov_value="${cov_value%\%}"
-          JOB_COVERAGE=$(printf "%.1f\n" $(bc <<< "${cov_value}"))
-          echo Creating badge with coverage value ${JOB_COVERAGE}
-          anybadge --label java:coverage --value ${JOB_COVERAGE} --suffix "%" --file website/badges/coverage-java.svg --overwrite
-      - uses: stefanzweifel/git-auto-commit-action@v5
-        if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@75cd11691c0faa626561e295848008c8a7dddffe  # v5.5.4
         with:
-          commit_message: 'chore(badges): update coverage badge for java'
-          file_pattern: 'website/badges/coverage-java.svg'
+          files: java/build/reports/jacoco/test/jacocoTestReport.xml
+          flags: java
+          fail_ci_if_error: false
