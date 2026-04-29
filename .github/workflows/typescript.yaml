@@ -20,7 +20,11 @@ jobs:
       contents: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PUSH_TOKEN || github.token }}
+          ref: main
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -42,8 +46,10 @@ jobs:
           echo "Coverage found: ${cov_rounded}%"
           anybadge --label typescript:coverage --value ${cov_rounded} --suffix "%" --file website/badges/coverage-typescript.svg --overwrite
       - uses: stefanzweifel/git-auto-commit-action@v5
+        if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
         with:
-          commit_message: Update badge for typescript
+          commit_message: 'chore(badges): update coverage badge for typescript'
+          file_pattern: 'website/badges/coverage-typescript.svg'
       
 
   integration-test:
