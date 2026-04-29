@@ -21,6 +21,7 @@ implementation("org.licenselynx:licenselynx:2.2.0")
 Maven `pom.xml`:
 
 ```xml
+
 <dependency>
     <groupId>org.licenselynx</groupId>
     <artifactId>licenselynx</artifactId>
@@ -78,6 +79,7 @@ CanonicalSource source = licenseObject.getCanonicalSource();
 
 ## License
 
-This project is licensed under the [BSD 3-Clause "New" or "Revised" License](../LICENSE) (SPDX-License-Identifier: BSD-3-Clause).
+This project is licensed under the [BSD 3-Clause "New" or "Revised" License](../LICENSE) (SPDX-License-Identifier:
+BSD-3-Clause).
 
 Copyright (c) Siemens AG 2025 ALL RIGHTS RESERVED
