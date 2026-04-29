@@ -16,13 +16,9 @@ concurrency:
 jobs:
   tests:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref }}
       - name: Install Poetry
         run: |
           pipx install poetry
@@ -47,19 +43,12 @@ jobs:
           poetry run coverage run --branch -m pytest -vv
           poetry run coverage report --omit="tests/*"
           poetry run coverage xml --omit="tests/*"
-      - name: Run coverage badge
-        run: |
-          sudo apt-get install xq
-          pip install anybadge
-          cov_value=$(xq --xpath "//coverage/@line-rate" scripts/coverage.xml)
-          cov_rounded=$(printf "%.1f\n" $(bc <<< "100*${cov_value}"))
-          echo "Coverage found: ${cov_rounded}%"
-          anybadge --label scripts:coverage --value ${cov_rounded} --suffix "%" --file website/badges/coverage-scripts.svg --overwrite
-      - uses: stefanzweifel/git-auto-commit-action@v5
-        if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@75cd11691c0faa626561e295848008c8a7dddffe  # v5.5.4
         with:
-          commit_message: 'chore(badges): update coverage badge for scripts'
-          file_pattern: website/badges/coverage-scripts.svg
+          files: scripts/coverage.xml
+          flags: scripts
+          fail_ci_if_error: false
 
 
   lint:

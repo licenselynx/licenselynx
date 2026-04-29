@@ -2,10 +2,10 @@
 [![GitHub Tag](https://img.shields.io/github/v/tag/licenselynx/licenselynx)](https://github.com/licenselynx/licenselynx/releases/latest)
 [![license](https://img.shields.io/github/license/licenselynx/licenselynx)](LICENSE)
 
-![python coverage](website/badges/coverage-python.svg)
-![java coverage](website/badges/coverage-java.svg)
-![typescript coverage](website/badges/coverage-typescript.svg)
-![scripts coverage](website/badges/coverage-scripts.svg)
+![python coverage](https://codecov.io/gh/licenselynx/licenselynx/branch/main/graph/badge.svg?flag=python)
+![java coverage](https://codecov.io/gh/licenselynx/licenselynx/branch/main/graph/badge.svg?flag=java)
+![typescript coverage](https://codecov.io/gh/licenselynx/licenselynx/branch/main/graph/badge.svg?flag=typescript)
+![scripts coverage](https://codecov.io/gh/licenselynx/licenselynx/branch/main/graph/badge.svg?flag=scripts)
 
 [![python pipeline](https://github.com/licenselynx/licenselynx/actions/workflows/python.yaml/badge.svg)](https://github.com/licenselynx/licenselynx/actions/workflows/python.yaml)
 [![java pipeline](https://github.com/licenselynx/licenselynx/actions/workflows/java.yaml/badge.svg)](https://github.com/licenselynx/licenselynx/actions/workflows/java.yaml)

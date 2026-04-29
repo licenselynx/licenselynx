@@ -16,15 +16,9 @@ concurrency:
 jobs:
   tests:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.PUSH_TOKEN || github.token }}
-          ref: main
-          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -34,22 +28,14 @@ jobs:
           npm ci --prefer-offline -no-audit
       - name: Run the automated tests
         run: |
-          set -o pipefail
           cd typescript
-          npm run test | grep "All files" | awk '{print $10}' > coverage.txt
-      - name: Run coverage badge job
-        run: |
-          sudo apt-get install xq
-          pip install anybadge
-          cov_value=$(cat typescript/coverage.txt)
-          cov_rounded=$(printf "%.1f\n" $(bc <<< "${cov_value}"))
-          echo "Coverage found: ${cov_rounded}%"
-          anybadge --label typescript:coverage --value ${cov_rounded} --suffix "%" --file website/badges/coverage-typescript.svg --overwrite
-      - uses: stefanzweifel/git-auto-commit-action@v5
-        if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+          npm test
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@75cd11691c0faa626561e295848008c8a7dddffe  # v5.5.4
         with:
-          commit_message: 'chore(badges): update coverage badge for typescript'
-          file_pattern: 'website/badges/coverage-typescript.svg'
+          files: typescript/coverage/lcov.info
+          flags: typescript
+          fail_ci_if_error: false
       
 
   integration-test:

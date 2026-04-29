@@ -16,15 +16,9 @@ concurrency:
 jobs:
   tests:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.PUSH_TOKEN || github.token }}
-          ref: main
-          fetch-depth: 0
       - name: Install Poetry
         run: |
           pipx install poetry
@@ -55,19 +49,12 @@ jobs:
           cd python
           poetry build
           python3 check_files.py
-      - name: Run coverage badge
-        run: |
-          sudo apt-get install xq
-          pip install anybadge
-          cov_value=$(xq --xpath "//coverage/@line-rate" python/coverage.xml)
-          cov_rounded=$(printf "%.1f\n" $(bc <<< "100*${cov_value}"))
-          echo "Coverage found: ${cov_rounded}%"
-          anybadge --label python:coverage --value ${cov_rounded} --suffix "%" --file website/badges/coverage-python.svg --overwrite
-      - uses: stefanzweifel/git-auto-commit-action@v5
-        if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@75cd11691c0faa626561e295848008c8a7dddffe  # v5.5.4
         with:
-          commit_message: 'chore(badges): update coverage badge for python'
-          file_pattern: 'website/badges/coverage-python.svg'
+          files: python/coverage.xml
+          flags: python
+          fail_ci_if_error: false
 
   integration-test:
     runs-on: ubuntu-latest
