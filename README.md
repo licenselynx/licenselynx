@@ -2,10 +2,10 @@
 [![GitHub Tag](https://img.shields.io/github/v/tag/licenselynx/licenselynx)](https://github.com/licenselynx/licenselynx/releases/latest)
 [![license](https://img.shields.io/github/license/licenselynx/licenselynx)](LICENSE)
 
-![python coverage](https://codecov.io/gh/licenselynx/licenselynx/branch/main/graph/badge.svg?flag=python)
-![java coverage](https://codecov.io/gh/licenselynx/licenselynx/branch/main/graph/badge.svg?flag=java)
-![typescript coverage](https://codecov.io/gh/licenselynx/licenselynx/branch/main/graph/badge.svg?flag=typescript)
-![scripts coverage](https://codecov.io/gh/licenselynx/licenselynx/branch/main/graph/badge.svg?flag=scripts)
+[![python coverage](https://img.shields.io/codecov/c/github/licenselynx/licenselynx/main?flag=python&label=python%20coverage)](https://codecov.io/gh/licenselynx/licenselynx)
+[![java coverage](https://img.shields.io/codecov/c/github/licenselynx/licenselynx/main?flag=java&label=java%20coverage)](https://codecov.io/gh/licenselynx/licenselynx)
+[![typescript coverage](https://img.shields.io/codecov/c/github/licenselynx/licenselynx/main?flag=typescript&label=typescript%20coverage)](https://codecov.io/gh/licenselynx/licenselynx)
+[![scripts coverage](https://img.shields.io/codecov/c/github/licenselynx/licenselynx/main?flag=scripts&label=scripts%20coverage)](https://codecov.io/gh/licenselynx/licenselynx)
 
 [![python pipeline](https://github.com/licenselynx/licenselynx/actions/workflows/python.yaml/badge.svg)](https://github.com/licenselynx/licenselynx/actions/workflows/python.yaml)
 [![java pipeline](https://github.com/licenselynx/licenselynx/actions/workflows/java.yaml/badge.svg)](https://github.com/licenselynx/licenselynx/actions/workflows/java.yaml)

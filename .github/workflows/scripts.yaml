@@ -5,11 +5,16 @@ on:
       - main
     paths:
       - scripts/**
+      - .github/workflows/scripts.yaml
+      - codecov.yml
   pull_request:
     branches:
       - main
     paths:
       - scripts/**
+      - .github/workflows/scripts.yaml
+      - codecov.yml
+  workflow_dispatch:
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
