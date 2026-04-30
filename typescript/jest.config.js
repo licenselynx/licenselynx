@@ -10,6 +10,7 @@ module.exports = {
     moduleNameMapper: {
         "<rootDir>/resources/merged_data.json": "<rootDir>/tests/resources/merged_data.json",
     },
+    coverageDirectory: 'coverage',
     coverageReporters: ['text', 'lcov'],
-    collectCoverageFrom: ['index.ts', '!**/tests/**', '!**/dist/**'],
+    collectCoverageFrom: ['**/*.ts', '!**/tests/**', '!**/dist/**', '!jest.config.js'],
 };
