@@ -4,25 +4,12 @@ codecov:
     wait_for_ci: true
 
 coverage:
+  precision: 2
+  round: down
+  range: "70...100"
   status:
     project:
       default:
-        informational: true
-      python:
-        flags:
-          - python
-        informational: true
-      java:
-        flags:
-          - java
-        informational: true
-      typescript:
-        flags:
-          - typescript
-        informational: true
-      scripts:
-        flags:
-          - scripts
         informational: true
     patch:
       default:

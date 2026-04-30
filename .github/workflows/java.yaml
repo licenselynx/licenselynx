@@ -37,10 +37,13 @@ jobs:
           python3 scripts/src/load/merge_data.py -o _support/merged_data.build.json
           ls -l _support || true
           cd java
-          ./gradlew -Plicenselynx.datafile=../_support/merged_data.build.json ${GRADLE_ARGUMENTS} clean build publishAllPublicationsToLocalBuildDirRepository | tee job.log
+          ./gradlew -Plicenselynx.datafile=../_support/merged_data.build.json ${GRADLE_ARGUMENTS} clean build jacocoTestReport publishAllPublicationsToLocalBuildDirRepository | tee job.log
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@75cd11691c0faa626561e295848008c8a7dddffe  # v5.5.4
+        uses: codecov/codecov-action@57e3a136b779b570ffcdbf80b3bdc90e7fab3de2  # v6.0.0
         with:
           files: java/build/reports/jacoco/test/jacocoTestReport.xml
           flags: java
-          fail_ci_if_error: false
+          fail_ci_if_error: true
+          disable_search: true
+          verbose: true
+          token: ${{ secrets.CODECOV_TOKEN }}
