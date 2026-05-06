@@ -11,6 +11,11 @@ coverage:
     project:
       default:
         informational: true
+      go:
+        flags:
+          - go
+        target: 90%
+        informational: false
     patch:
       default:
         informational: true
@@ -31,6 +36,10 @@ flag_management:
       paths:
         - typescript/
       carryforward: true
+    - name: go
+      paths:
+        - go/
+      carryforward: true
     - name: scripts
       paths:
         - scripts/
@@ -50,6 +59,10 @@ component_management:
       name: TypeScript
       paths:
         - typescript/**
+    - component_id: go
+      name: Go
+      paths:
+        - go/**
     - component_id: scripts
       name: Scripts
       paths:
