@@ -59,7 +59,16 @@ licenseObject.IsOrganizationSourceOf(licenselynx.OrgSiemens)
 
 ## Development
 
-Generated lookup tables are committed to git. To regenerate them locally:
+### Regenrating mapping tables
+
+One important caveat for the go library, compared to the other library implementations, is that the generated mapping tables are checked into the repository.  
+This is necessary as go, unlike the other ecosystems, does not have a concept of publishing packages to some registry and, instead, the git repo housing the go module itself is the ground truth.  
+As a result the repo must contain the generated files.
+
+This also means that, if a new mapping is added in `data/` the go files MUST be regenrated and committed.  
+The actions workflow has a check in place that verifies that the checked in generated files are not stale.
+
+Generating the lookup tables can be done like so:
 
 ```shell
 mkdir -p _support
@@ -68,8 +77,18 @@ cd go
 go generate ./...
 ```
 
+### Local validation  
+
+In order to run pre-flight checks locally before passing to CI, you can run the following commands:  
+
+1. Run `golangci-lint run ./...` - this requires you to install `golangci-lint` first, see details for your environment [here](https://golangci-lint.run/docs/welcome/install/local/)
+2. Run go static checks: `go vet ./...`
+3. Execute the test suite: `go test -race ./...`
+
+
+
 ## License
 
 This project is licensed under the [BSD 3-Clause "New" or "Revised" License](../LICENSE) (SPDX-License-Identifier: BSD-3-Clause).
 
-Copyright (c) Siemens AG 2025 ALL RIGHTS RESERVED
+Copyright (c) Siemens AG 2026 ALL RIGHTS RESERVED

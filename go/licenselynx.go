@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: Copyright 2025 Siemens AG
+// SPDX-FileCopyrightText: Copyright 2026 Siemens AG
 // SPDX-License-Identifier: BSD-3-Clause
 
 package licenselynx
@@ -28,10 +28,18 @@ func WithOrganization(org Organization) Option {
 }
 
 // Map resolves a license name or identifier to its canonical representation.
+// The lookup is performed in the following order:
+// 1. Stable mappings (always)
+// 2. Risky mappings (if WithRisky() is provided)
+// 3. Organization-specific mappings (if WithOrganization(org) is provided)
+//
+// The function returns the resolved LicenseObject and a boolean indicating whether the mapping was successful.
+// If the boolean is false, no suitable mapping was found and the returned LicenseObject will be empty.
 func Map(licenseName string, opts ...Option) (LicenseObject, bool) {
 	return mapWithLicenseMaps(licenseName, defaultLicenseMaps(), opts...)
 }
 
+// mapWithLicenseMaps is an internal helper that evaluates the provided options and performs the lookup in the provided license maps.
 func mapWithLicenseMaps(licenseName string, maps licenseMaps, opts ...Option) (LicenseObject, bool) {
 	resolvedOptions := options{}
 	for _, opt := range opts {

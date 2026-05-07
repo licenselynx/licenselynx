@@ -59,6 +59,7 @@ jobs:
         run: |
           cd go
           go vet ./...
+      # we only want one of the tests jobs to generate coverage reports to avoid conflicts when uploading to codecov
       - name: Run tests with coverage
         if: matrix.go-version == '1.26'
         run: |
