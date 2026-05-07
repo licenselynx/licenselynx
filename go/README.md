@@ -1,6 +1,6 @@
 # LicenseLynx for Go
 
-In Go, you can call `Map` from the `licenselynx` package to map a license name to its canonical form.
+The Go library for LicenseLynx provides a `Map` function that allows mapping of strings to canonical license identifiers.
 The return value is a `LicenseObject` together with a boolean indicating whether a match was found.
 
 ## Installation
@@ -84,8 +84,6 @@ In order to run pre-flight checks locally before passing to CI, you can run the 
 1. Run `golangci-lint run ./...` - this requires you to install `golangci-lint` first, see details for your environment [here](https://golangci-lint.run/docs/welcome/install/local/)
 2. Run go static checks: `go vet ./...`
 3. Execute the test suite: `go test -race ./...`
-
-
 
 ## License
 
