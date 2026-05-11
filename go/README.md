@@ -59,13 +59,13 @@ licenseObject.IsOrganizationSourceOf(licenselynx.OrgSiemens)
 
 ## Development
 
-### Regenrating mapping tables
+### Regenerating mapping tables
 
 One important caveat for the go library, compared to the other library implementations, is that the generated mapping tables are checked into the repository.  
 This is necessary as go, unlike the other ecosystems, does not have a concept of publishing packages to some registry and, instead, the git repo housing the go module itself is the ground truth.  
 As a result the repo must contain the generated files.
 
-This also means that, if a new mapping is added in `data/` the go files MUST be regenrated and committed.  
+This also means that, if a new mapping is added in `data/` the go files MUST be regenerated and committed.  
 The actions workflow has a check in place that verifies that the checked in generated files are not stale.
 
 Generating the lookup tables can be done like so:
