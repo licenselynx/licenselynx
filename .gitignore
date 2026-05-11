@@ -81,4 +81,6 @@ _support/
 !typescript/package-lock.json
 !data/*
 
+!go/testdata/*
+
 .DS_Store

@@ -4,11 +4,13 @@
 
 [![python coverage](https://img.shields.io/codecov/c/github/licenselynx/licenselynx/main?flag=python&label=python%20coverage)](https://codecov.io/gh/licenselynx/licenselynx)
 [![java coverage](https://img.shields.io/codecov/c/github/licenselynx/licenselynx/main?flag=java&label=java%20coverage)](https://codecov.io/gh/licenselynx/licenselynx)
+[![go coverage](https://img.shields.io/codecov/c/github/licenselynx/licenselynx/main?flag=go&label=go%20coverage)](https://codecov.io/gh/licenselynx/licenselynx)
 [![typescript coverage](https://img.shields.io/codecov/c/github/licenselynx/licenselynx/main?flag=typescript&label=typescript%20coverage)](https://codecov.io/gh/licenselynx/licenselynx)
 [![scripts coverage](https://img.shields.io/codecov/c/github/licenselynx/licenselynx/main?flag=scripts&label=scripts%20coverage)](https://codecov.io/gh/licenselynx/licenselynx)
 
 [![python pipeline](https://github.com/licenselynx/licenselynx/actions/workflows/python.yaml/badge.svg)](https://github.com/licenselynx/licenselynx/actions/workflows/python.yaml)
 [![java pipeline](https://github.com/licenselynx/licenselynx/actions/workflows/java.yaml/badge.svg)](https://github.com/licenselynx/licenselynx/actions/workflows/java.yaml)
+[![go pipeline](https://github.com/licenselynx/licenselynx/actions/workflows/go.yaml/badge.svg)](https://github.com/licenselynx/licenselynx/actions/workflows/go.yaml)
 [![typescript pipeline](https://github.com/licenselynx/licenselynx/actions/workflows/typescript.yaml/badge.svg)](https://github.com/licenselynx/licenselynx/actions/workflows/typescript.yaml)
 [![scripts pipeline](https://github.com/licenselynx/licenselynx/actions/workflows/scripts.yaml/badge.svg)](https://github.com/licenselynx/licenselynx/actions/workflows/scripts.yaml)
 [![data pipeline](https://github.com/licenselynx/licenselynx/actions/workflows/data.yaml/badge.svg)](https://github.com/licenselynx/licenselynx/actions/workflows/data.yaml)
@@ -18,12 +20,12 @@
 ## Overview
 
 LicenseLynx is a project focused on deterministically map unknown or ambiguous license names and their canonical license names.
-Additionally, we offer libraries for Python, Java, and TypeScript to streamline the process of mapping licenses to their canonical names,
+Additionally, we offer libraries for Python, Java, Go, and TypeScript to streamline the process of mapping licenses to their canonical names,
 typically represented by SPDX IDs.
 
 ## Folder Structure
 
-The folders **Java**, **Python**, and **TypeScript** are providing libraries to use in code.
+The folders **Go**, **Java**, **Python**, and **TypeScript** are providing libraries to use in code.
 The folder **scripts** contains several useful scripts to update, transform, and verify data.
 In the folder **website** we host a static website to introduce the community to the LicenseLynx project.
 The folder **data/orgs/** contains organization-specific (internal) license mappings, organized by organization name (e.g., `data/orgs/siemens/`).
