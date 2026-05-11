@@ -9,11 +9,11 @@ plugins {
     id 'jacoco'
     id 'idea'
     id 'checkstyle'
-    id 'signing'
     id 'maven-publish'
     id 'org.ajoberstar.grgit' version '4.1.1'
     id 'org.barfuin.gradle.jacocolog' version '3.1.0'
     id 'org.barfuin.gradle.taskinfo' version '2.2.0'
+    id 'org.jreleaser' version '1.24.0'
     id 'org.licenselynx.build'
 }
 
@@ -282,24 +282,13 @@ dependencies {
 /*
  * - - - -  PUBLISHING  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  */
+
+
 publishing {
     repositories {
         maven {
-            name = 'localBuildDir'
-            url = project.layout.buildDirectory.dir('maven-repo-test')
-        }
-        if (project.hasProperty('licenselynx_publish_credentials')) {
-            maven {
-                name = 'mavenSonatypeCentral'
-                url = 'https://central.sonatype.com/api/v1/publisher'
-                credentials(HttpHeaderCredentials) {
-                    name = "Authorization"
-                    value = "Bearer ${licenselynx_publish_credentials}"
-                }
-                authentication {
-                    header(HttpHeaderAuthentication)
-                }
-            }
+            name = 'stagingDeploy'
+            url = project.layout.buildDirectory.dir('staging-deploy')
         }
     }
     publications {
@@ -327,22 +316,43 @@ publishing {
                 scm {
                     connection = 'scm:git:git@github.com:' + ga
                     developerConnection = 'scm:git:git@github.com:' + ga
-                    url = 'https://github.com/' +ga
+                    url = 'https://github.com/' + ga
                 }
             }
         }
     }
 }
 
-if (!Boolean.parseBoolean(System.getenv('CI')) || project.hasProperty('signingKey')) {
-    signing {
-        if (Boolean.parseBoolean(System.getenv('CI'))) {
-            def signingKey = project.getProperty('signingKey')
-            def signingPassword = project.getProperty('signingPassword')
-            useInMemoryPgpKeys(signingKey, signingPassword)
-        } else {
-            useGpgCmd()   // use local GPG installation and agent
+
+/*
+ * - - - -  JRELEASER  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ */
+
+
+jreleaser {
+    gitRootSearch = true
+    project {
+        copyright = 'Copyright (c) Siemens AG 2025 ALL RIGHTS RESERVED'
+    }
+    release {
+        github {
+            skipTag = true
+            skipRelease = true
         }
-        sign publishing.publications.mavenJava
+    }
+    signing {
+        active = 'ALWAYS'
+        armored = true
+    }
+    deploy {
+        maven {
+            mavenCentral {
+                sonatype {
+                    active = 'RELEASE'
+                    url = 'https://central.sonatype.com/api/v1/publisher'
+                    stagingRepository(layout.buildDirectory.dir('staging-deploy').get())
+                }
+            }
+        }
     }
 }
