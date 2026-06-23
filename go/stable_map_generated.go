@@ -5542,7 +5542,7 @@ var generatedStableMap = map[string]LicenseObject{
 	"Nokia Open Source License 1.0a":                        {ID: "Nokia", Src: "spdx"},
 	"Nokia Open Source License, Version 1.0a":               {ID: "Nokia", Src: "spdx"},
 	"Nokia Qt LGPL exception 1.1":                           {ID: "Nokia-Qt-exception-1.1", Src: "spdx"},
-	"Nokia-Qt-exception-1.1":                                {ID: "Qt-LGPL-exception-1.1", Src: "spdx"},
+	"Nokia-Qt-exception-1.1":                                {ID: "Nokia-Qt-exception-1.1", Src: "spdx"},
 	"Non White Heterosexual Male":                           {ID: "nwhm", Src: "scancode-licensedb"},
 	"Non-Commercial Government Licence":                     {ID: "NCGL-UK-2.0", Src: "spdx"},
 	"Non-Profit OSL 3.0":                                    {ID: "NPOSL-3.0", Src: "spdx"},
