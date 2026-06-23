@@ -9,7 +9,6 @@
         ],
         "custom": [],
         "scancodeLicensedb": [
-            "Nokia-Qt-exception-1.1",
             "qt-lgpl-exception-1.1"
         ]
     },
