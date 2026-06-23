@@ -39,7 +39,7 @@ jobs:
           cd java
           ./gradlew -Plicenselynx.datafile=../_support/merged_data.build.json ${GRADLE_ARGUMENTS} clean build jacocoTestReport publishAllPublicationsToStagingDeployRepository | tee job.log
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@57e3a136b779b570ffcdbf80b3bdc90e7fab3de2  # v6.0.0
+        uses: codecov/codecov-action@8cad3ba95e5920c42f44492e54bc9639cba47959  # v6.0.2
         with:
           files: java/build/reports/jacoco/test/jacocoTestReport.xml
           flags: java
