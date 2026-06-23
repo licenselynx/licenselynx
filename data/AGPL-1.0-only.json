@@ -11,11 +11,11 @@
         ],
         "custom": []
     },
-    "rejected": [
+    "rejected": [],
+    "risky": [
         "Affero General Public License 1.0",
-        "AGPL 1.0",
-        "agpl-1.0"
+        "agpl-1.0",
+        "AGPL 1.0"
     ],
-    "risky": [],
     "isMajorVersionOnly": true
 }
