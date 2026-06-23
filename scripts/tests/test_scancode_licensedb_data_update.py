@@ -44,6 +44,23 @@ def scancode_licensedb_update():
     return class_instance
 
 
+@patch("os.path.exists")
+def test_filter_existing_canonical_ids(mock_exists, scancode_licensedb_update):
+    def exists_side_effect(path):
+        return path.endswith("existing-canonical.json")
+
+    mock_exists.side_effect = exists_side_effect
+
+    aliases = ["existing-canonical", "current-canonical", "regular-alias"]
+
+    filtered_aliases = scancode_licensedb_update._filter_existing_canonical_ids(aliases, "current-canonical")
+
+    assert filtered_aliases == ["current-canonical", "regular-alias"]
+    scancode_licensedb_update._LOGGER.debug.assert_called_once_with(
+        "Skipping alias 'existing-canonical' because it is an existing canonical id"
+    )
+
+
 def test_process_license(scancode_licensedb_update, capsys):
     mock_license_list = [
         {
@@ -101,6 +118,7 @@ def test_process_license(scancode_licensedb_update, capsys):
     scancode_licensedb_update.update_license_file = MagicMock()
     scancode_licensedb_update.create_license_file = MagicMock()
     scancode_licensedb_update.handle_data = MagicMock()
+    scancode_licensedb_update._filter_existing_canonical_ids = MagicMock(side_effect=lambda aliases, canonical_id: aliases)
     scancode_licensedb_update.delete_file = MagicMock()
 
     scancode_licensedb_update.process_licenses()
@@ -108,6 +126,10 @@ def test_process_license(scancode_licensedb_update, capsys):
     assert scancode_licensedb_update.download_json_file.call_count == 4
     assert scancode_licensedb_update.load_json_file.call_count == 4
     assert scancode_licensedb_update.handle_data.call_count == 2
+    filter_aliases, filter_canonical_id = scancode_licensedb_update._filter_existing_canonical_ids.call_args.args
+    assert set(filter_aliases) == {"LicenseRef-LGPL-2.0", "GNU Library General Public License 2.0", "LGPL-2.0",
+                                   "lgpl-2.0", "LicenseRef-LGPL-2", "LGPL 2.0"}
+    assert filter_canonical_id == "LGPL-2.0-only"
     assert scancode_licensedb_update.delete_file.call_count == 4
 
     scancode_licensedb_update._LOGGER.debug.assert_any_call("Starts with 'LicenseRef' as SPDX key")
@@ -133,12 +155,14 @@ def test_handle_data_update(mock_exists, scancode_licensedb_update):
     # Define input arguments
     aliases = ["Alias1", "Alias2"]
     license_key = "test_license"
+    scancode_licensedb_update._filter_existing_canonical_ids = MagicMock(return_value=["Alias2"])
 
     # Call the method under test
     scancode_licensedb_update.handle_data(aliases, license_key)
 
     # Assert that update_license_file was called with the correct arguments
-    scancode_licensedb_update.update_license_file.assert_called_once_with(license_key, aliases, alias_key="scancodeLicensedb")
+    scancode_licensedb_update._filter_existing_canonical_ids.assert_called_once_with(aliases, license_key)
+    scancode_licensedb_update.update_license_file.assert_called_once_with(license_key, ["Alias2"], alias_key="scancodeLicensedb")
     scancode_licensedb_update.create_license_file.assert_not_called()
 
     # Assert that create_license_file was NOT called
@@ -164,12 +188,14 @@ def test_handle_data_create(mock_exists, scancode_licensedb_update):
     aliases = ["Alias1", "Alias2"]
     license_key = "test_license"
     alias_key = "scancodeLicensedb"
+    instance._filter_existing_canonical_ids = MagicMock(return_value=["Alias2"])
 
     # Call the method under test
     instance.handle_data(aliases, license_key)
 
     # Assert that create_license_file was called with the correct arguments
-    instance.create_license_file.assert_called_once_with(license_key, aliases, alias_key)
+    instance._filter_existing_canonical_ids.assert_called_once_with(aliases, license_key)
+    instance.create_license_file.assert_called_once_with(license_key, ["Alias2"], alias_key)
 
     # Assert that update_license_file was NOT called
     instance.update_license_file.assert_not_called()
@@ -193,9 +219,12 @@ def test_handle_data_not_create(mock_exists, scancode_licensedb_update):
     # Define input arguments
     aliases = ["Alias1", "Alias2"]
     license_key = "test_license"
+    instance._filter_existing_canonical_ids = MagicMock(return_value=["Alias2"])
 
     # Call the method under test
     instance.handle_data(aliases, license_key)
+
+    instance._filter_existing_canonical_ids.assert_called_once_with(aliases, license_key)
 
     # Assert that create_license_file was called with the correct arguments
     instance.create_license_file.assert_not_called()

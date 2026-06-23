@@ -22,7 +22,7 @@ def _build_maps_from_dir(data_dir: str) -> tuple[dict, dict]:
     canonical_dict = {}
     risky_dict = {}
 
-    for filename in os.listdir(data_dir):
+    for filename in sorted(os.listdir(data_dir)):
         if not filename.endswith('.json'):
             continue
         filepath = os.path.join(data_dir, filename)
@@ -67,7 +67,7 @@ def read_org_data(data_dir: str) -> dict:
         return {}
 
     org_maps: dict = {}
-    for org_name in os.listdir(orgs_path):
+    for org_name in sorted(os.listdir(orgs_path)):
         org_dir_path = os.path.join(orgs_path, org_name)
         if not os.path.isdir(org_dir_path):
             continue

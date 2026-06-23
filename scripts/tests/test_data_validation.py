@@ -210,8 +210,8 @@ def dump_files(filepath1, filepath2, test_data1, test_data2):
 
 
 def test_check_unique_aliases():
-    test_data1 = {"aliases": {"SPDX": ["alias1", "alias2"]}}
-    test_data2 = {"aliases": {"SPDX": ["alias3", "alias4"]}}
+    test_data1 = {"canonical": {"id": "license1"}, "aliases": {"SPDX": ["alias1", "alias2"]}}
+    test_data2 = {"canonical": {"id": "license2"}, "aliases": {"SPDX": ["alias3", "alias4"]}}
 
     os.makedirs("test_data", exist_ok=True)
 
@@ -228,8 +228,8 @@ def test_check_unique_aliases():
 
 def test_check_unique_aliases_failure():
     alias_duplicate = "alias1"
-    test_data1 = {"aliases": {"SPDX": [alias_duplicate, "alias2"]}}
-    test_data2 = {"aliases": {"SPDX": [alias_duplicate, "alias4"]}}
+    test_data1 = {"canonical": {"id": "license1"}, "aliases": {"SPDX": [alias_duplicate, "alias2"]}}
+    test_data2 = {"canonical": {"id": "license2"}, "aliases": {"SPDX": [alias_duplicate, "alias4"]}}
 
     filenames = ["file1.json", "file2.json"]
     filepath1 = os.path.join("test_data", filenames[0])
@@ -241,6 +241,25 @@ def test_check_unique_aliases_failure():
         check_unique_aliases("test_data")
 
     mock_logger.mock_calls.__contains__(f"Alias '{alias_duplicate}' is not unique globally.")
+
+
+def test_check_unique_aliases_fails_for_canonical_alias_collision():
+    duplicate_identifier = "license1"
+    test_data1 = {"canonical": {"id": duplicate_identifier}, "aliases": {"SPDX": ["alias1"]}}
+    test_data2 = {"canonical": {"id": "license2"}, "aliases": {"SPDX": [duplicate_identifier]}}
+
+    filenames = ["file1.json", "file2.json"]
+    filepath1 = os.path.join("test_data", filenames[0])
+    filepath2 = os.path.join("test_data", filenames[1])
+
+    dump_files(filepath1, filepath2, test_data1, test_data2)
+
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_unique_aliases("test_data")
+
+    mock_logger.error.assert_called_with(
+        f"Alias '{duplicate_identifier}' is not unique globally. Affected file: {filenames}"
+    )
 
 
 def test_check_src_and_canonical():
