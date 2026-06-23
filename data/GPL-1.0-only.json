@@ -12,11 +12,12 @@
     },
     "rejected": [
         "GNU General Public License (GPL)",
+        "GPL"
+    ],
+    "risky": [
         "GNU General Public License 1.0",
-        "GPL",
         "GPL 1.0",
         "gpl-1.0"
     ],
-    "risky": [],
     "isMajorVersionOnly": true
 }
