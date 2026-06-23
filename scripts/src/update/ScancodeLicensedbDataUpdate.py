@@ -48,6 +48,15 @@ class ScancodeLicensedbDataUpdate(BaseDataUpdate):
 
         return list(aliases)
 
+    def _filter_existing_canonical_ids(self, aliases: list[str], canonical_id: str) -> list[str]:
+        filtered_aliases = []
+        for alias in aliases:
+            if alias != canonical_id and os.path.exists(os.path.join(self._DATA_DIR, f"{alias}.json")):
+                self._LOGGER.debug(f"Skipping alias '{alias}' because it is an existing canonical id")
+                continue
+            filtered_aliases.append(alias)
+        return filtered_aliases
+
     def process_unrecognized_license_id(self, aliases: list[str], license_id: str) -> str | None:
         """
         Process unrecognized license to either find the license file with all the  license name variations or return the
@@ -82,6 +91,7 @@ class ScancodeLicensedbDataUpdate(BaseDataUpdate):
             license_key: ScanCode LicenseDB's license key
         """
         alias_key = "scancodeLicensedb"
+        aliases = self._filter_existing_canonical_ids(aliases, license_key)
 
         if os.path.exists(os.path.join(self._DATA_DIR, f"{license_key}.json")):
             self.update_license_file(license_key, aliases,  alias_key=alias_key)
@@ -124,6 +134,7 @@ class ScancodeLicensedbDataUpdate(BaseDataUpdate):
                 if not spdx_id.startswith("LicenseRef"):
                     self._LOGGER.debug(f"{license_key} is already a spdx license")
                     aliases = self.get_aliases(license_data, is_spdx=True)
+                    aliases = self._filter_existing_canonical_ids(aliases, spdx_id)
                     self.update_license_file(spdx_id, aliases, alias_key="scancodeLicensedb")
                 else:
                     self._LOGGER.debug("Starts with 'LicenseRef' as SPDX key")

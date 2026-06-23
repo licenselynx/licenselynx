@@ -114,28 +114,34 @@ def check_json_filename(data_dir: str):
 
 
 def check_unique_aliases(data_dir: str):
-    all_aliases: dict[str, list[str]] = {}
-    for filename in os.listdir(data_dir):
+    all_aliases: dict[str, set[str]] = {}
+    for filename in sorted(os.listdir(data_dir)):
         if filename.endswith(".json"):
             filepath = os.path.join(data_dir, filename)
             with open(filepath, 'r') as f:
                 data = json.load(f)
+                canonical_id = data["canonical"]["id"]
+                add_identifier(canonical_id, all_aliases, filename)
                 aliases = data.get("aliases", [])
                 access_aliases(aliases, all_aliases, filename)
 
     for alias, filenames in all_aliases.items():
         if len(filenames) > 1:
-            logger.error(f"Alias '{alias}' is not unique globally. Affected file: {filenames}")
+            logger.error(f"Alias '{alias}' is not unique globally. Affected file: {sorted(filenames)}")
+
+
+def add_identifier(identifier: str, all_aliases: dict, filename: str):
+    if identifier in all_aliases:
+        all_aliases[identifier].add(filename)
+    else:
+        all_aliases[identifier] = {filename}
 
 
 def access_aliases(aliases: dict, all_aliases: dict, filename: str):
     for alias in aliases:
         source = aliases[alias]
         for license_name in source:
-            if license_name in all_aliases:
-                all_aliases[license_name].append(filename)
-            else:
-                all_aliases[license_name] = [filename]
+            add_identifier(license_name, all_aliases, filename)
 
 
 def check_src_and_canonical(spdx_license_list: list, spdx_exception_list: list, data_dir: str):
