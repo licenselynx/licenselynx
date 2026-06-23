@@ -71,9 +71,8 @@ The actions workflow has a check in place that verifies that the checked in gene
 Generating the lookup tables can be done like so:
 
 ```shell
-mkdir -p _support
-python3 scripts/src/load/merge_data.py -o _support/merged_data.build.json
-cd go
+mkdir -p ../_support
+python3 ../scripts/src/load/merge_data.py -o ../_support/merged_data.build.json
 go generate ./...
 ```
 
