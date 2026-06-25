@@ -8,7 +8,7 @@ The return value is a `LicenseObject` together with a boolean indicating whether
 To install the library, run the following command:
 
 ```shell
-go get github.com/licenselynx/licenselynx/go
+go get github.com/licenselynx/licenselynx/v2
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/licenselynx/licenselynx/go"
+	"github.com/licenselynx/licenselynx/v2/go"
 )
 
 func main() {
@@ -71,18 +71,18 @@ The actions workflow has a check in place that verifies that the checked in gene
 Generating the lookup tables can be done like so:
 
 ```shell
-mkdir -p ../_support
-python3 ../scripts/src/load/merge_data.py -o ../_support/merged_data.build.json
-go generate ./...
+mkdir -p _support
+python3 scripts/src/load/merge_data.py -o _support/merged_data.build.json
+go generate ./go/...
 ```
 
 ### Local validation  
 
 In order to run pre-flight checks locally before passing to CI, you can run the following commands:  
 
-1. Run `golangci-lint run ./...` - this requires you to install `golangci-lint` first, see details for your environment [here](https://golangci-lint.run/docs/welcome/install/local/)
-2. Run go static checks: `go vet ./...`
-3. Execute the test suite: `go test -race ./...`
+1. Run `golangci-lint run ./go/...` - this requires you to install `golangci-lint` first, see details for your environment [here](https://golangci-lint.run/docs/welcome/install/local/)
+2. Run go static checks: `go vet ./go/...`
+3. Execute the test suite: `go test -race ./go/...`
 
 ## License
 
