@@ -63,6 +63,38 @@ jobs:
           cd java
           ./gradlew -Plicenselynx.datafile=../_support/merged_data.build.json ${GRADLE_ARGUMENTS} clean build
 
+  test-and-lint-go:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
+      - name: Setup Go
+        uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
+        with:
+          go-version: '1.25'
+      - name: Generate merged data
+        run: |
+          mkdir -p _support
+          python3 scripts/src/load/merge_data.py -o ./_support/merged_data.build.json
+      - name: Regenerate Go sources
+        run: go generate ./go/...
+      - name: Verify generated files are committed
+        run: |
+          git diff --exit-code -- go
+          if [ -n "$(git status --short --untracked-files=all -- go)" ]; then
+            git status --short --untracked-files=all -- go
+            exit 1
+          fi
+      - name: Run go vet
+        run: go vet ./go/...
+      - name: Run golangci-lint
+        uses: golangci/golangci-lint-action@82606bf257cbaff209d206a39f5134f0cfbfd2ee # v9.2.1
+        with:
+          version: v2.12.2
+          args: ./go/...
+      - name: Run tests
+        run: go test ./go/...
+
   test-and-lint-typescript:
     runs-on: ubuntu-latest
     steps:
@@ -155,6 +187,30 @@ jobs:
           npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+
+  test-go-module-resolution:
+    name: Publish Go module to proxy
+    runs-on: ubuntu-latest
+    needs: test-and-lint-go
+    steps:
+      - name: Checkout
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
+      - name: Setup Go
+        uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
+        with:
+          go-version: '1.25'
+      - name: Verify module path
+        run: test "$(go list -m)" = "github.com/licenselynx/licenselynx/v2"
+      - name: Request module from Go proxy
+        run: |
+          for attempt in 1 2 3 4 5; do
+            if GOPROXY=proxy.golang.org go list -m github.com/licenselynx/licenselynx/v2@${GITHUB_REF_NAME}; then
+              exit 0
+            fi
+            sleep 15
+          done
+          GOPROXY=proxy.golang.org go list -m github.com/licenselynx/licenselynx/v2@${GITHUB_REF_NAME}
 
 
   deploy-java:

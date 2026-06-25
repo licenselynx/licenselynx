@@ -4,6 +4,7 @@ on:
     branches:
       - main
     paths:
+      - go.mod
       - go/**
       - data/**
       - .github/workflows/go.yaml
@@ -12,6 +13,7 @@ on:
     branches:
       - main
     paths:
+      - go.mod
       - go/**
       - data/**
       - .github/workflows/go.yaml
@@ -25,13 +27,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
       - name: Setup Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version: '3.13'
       - name: Setup Go
-        uses: actions/setup-go@v6
+        uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
         with:
           go-version: '1.26'
       - name: Generate merged data
@@ -40,8 +42,7 @@ jobs:
           python3 scripts/src/load/merge_data.py -o ./_support/merged_data.build.json
       - name: Regenerate Go sources
         run: |
-          cd go
-          go generate ./...
+          go generate ./go/...
       - name: Verify generated files are committed
         run: |
           git diff --exit-code -- go
@@ -59,26 +60,23 @@ jobs:
           - '1.26'
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
       - name: Setup Go
-        uses: actions/setup-go@v6
+        uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
         with:
           go-version: ${{ matrix.go-version }}
       - name: Run go vet
         run: |
-          cd go
-          go vet ./...
+          go vet ./go/...
       # we only want one of the tests jobs to generate coverage reports to avoid conflicts when uploading to codecov
       - name: Run tests with coverage
         if: matrix.go-version == '1.26'
         run: |
-          cd go
-          go test -race -coverprofile=coverage.out ./...
+          go test -coverprofile=go/coverage.out ./go/...
       - name: Run tests
         if: matrix.go-version != '1.26'
         run: |
-          cd go
-          go test -race ./...
+          go test -race ./go/...
       - name: Upload coverage to Codecov
         if: matrix.go-version == '1.26'
         uses: codecov/codecov-action@8cad3ba95e5920c42f44492e54bc9639cba47959  # v6.0.2
@@ -93,13 +91,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
       - name: Setup Go
-        uses: actions/setup-go@v6
+        uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
         with:
-          go-version: '1.26'
+          go-version: '1.25'
       - name: Run golangci-lint
-        uses: golangci/golangci-lint-action@v9
+        uses: golangci/golangci-lint-action@82606bf257cbaff209d206a39f5134f0cfbfd2ee # v9.2.1
         with:
           version: v2.12.2
-          working-directory: go
+          args: ./go/...

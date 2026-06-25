@@ -65,6 +65,10 @@ _support/
 /typescript/_support/
 /typescript/coverage/
 
+# --- GO ---
+/go/coverage.out
+*.cover
+
 /**/*.txt
 /**/*.js
 /**/*.xml
