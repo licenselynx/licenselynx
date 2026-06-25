@@ -5,6 +5,7 @@
     "keywords": [],
     "license": "BSD-3-Clause",
     "description": "Deterministically map license strings to its canonical identifier",
+    "homepage": "https://github.com/licenselynx/licenselynx/tree/main/typescript",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "directories": {
@@ -24,8 +25,8 @@
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/licenselynx/licenselynx.git",
-        "directory": "typescript/"
+        "url": "git+https://github.com/licenselynx/licenselynx.git",
+        "directory": "typescript"
     },
     "devDependencies": {
         "@babel/preset-typescript": "^7.28.5",
