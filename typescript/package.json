@@ -17,10 +17,10 @@
         "README.md"
     ],
     "scripts": {
-        "clean": "rimraf --no-interactive --verbose dist",
+        "clean": "rm -rf dist coverage",
         "build": "esbuild index.ts --bundle --platform=node --target=node10 --outdir=dist && tsc --emitDeclarationOnly --outDir dist",
-        "test": "jest --coverage --testPathIgnorePatterns='smoke'",
-        "test:smoke": "jest tests/smoke.test.ts",
+        "test": "node tests/run-suite.mjs unit",
+        "test:smoke": "node tests/run-suite.mjs smoke",
         "lint": "eslint *.ts "
     },
     "repository": {
@@ -29,20 +29,21 @@
         "directory": "typescript"
     },
     "devDependencies": {
-        "@babel/preset-typescript": "^7.28.5",
-        "@eslint/eslintrc": "^3.3.3",
-        "@eslint/js": "^9.39.1",
-        "@jest/globals": "^30.2.0",
-        "@types/jest": "^30.0.0",
-        "@types/node": "^24.10.1",
-        "@typescript-eslint/eslint-plugin": "^8.47.0",
-        "@typescript-eslint/parser": "^8.47.0",
-        "eslint": "^9.39.1",
-        "globals": "^16.5.0",
-        "jest": "^30.2.0",
-        "rimraf": "^6.1.0",
-        "ts-jest": "^29.4.5",
-        "typescript": "^5.9.3",
-        "esbuild": "0.27.0"
+        "@babel/preset-typescript": "7.28.5",
+        "c8": "11.0.0",
+        "@eslint/eslintrc": "3.3.3",
+        "@eslint/js": "9.39.1",
+        "@types/node": "24.10.1",
+        "@typescript-eslint/eslint-plugin": "8.47.0",
+        "@typescript-eslint/parser": "8.47.0",
+        "esbuild": "0.28.1",
+        "eslint": "9.39.1",
+        "globals": "16.5.0",
+        "typescript": "5.9.3"
+    },
+    "allowScripts": {
+        "esbuild": true,
+        "fsevents": true,
+        "unrs-resolver": true
     }
 }
