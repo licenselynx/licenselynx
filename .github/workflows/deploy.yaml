@@ -110,7 +110,7 @@ jobs:
       - name: Run the automated tests
         run: |
           cd typescript
-          npx jest --coverage --testPathIgnorePatterns='smoke'
+          npm test
       - name: Run linting
         run: |
           cd typescript
