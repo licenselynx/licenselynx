@@ -15,7 +15,7 @@ Requires Java **8** or higher.
 === "Gradle"
 
     ```groovy
-    implementation 'org.licenselynx:licenselynx:2.2.0'
+    implementation 'org.licenselynx:licenselynx:2.3.0'
     ```
 
 === "Maven"
@@ -24,7 +24,7 @@ Requires Java **8** or higher.
     <dependency>
         <groupId>org.licenselynx</groupId>
         <artifactId>licenselynx</artifactId>
-        <version>2.2.0</version>
+        <version>2.3.0</version>
     </dependency>
     ```
 
