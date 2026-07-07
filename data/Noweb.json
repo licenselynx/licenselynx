@@ -7,7 +7,9 @@
         "spdx": [
             "Noweb License"
         ],
-        "custom": [],
+        "custom": [
+            "Noweb Licence"
+        ],
         "scancodeLicensedb": [
             "noweb"
         ]

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Open Government License Toronto 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-can-ogl-toronto-1.0",
             "OGL Toronto 1.0",

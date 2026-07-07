@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "scanlogd Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-scanlogd-license",
             "scanlogd License"

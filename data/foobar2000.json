@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "foobar2000 Licence"
+        ],
         "scancodeLicensedb": [
             "foobar2000 License",
             "LicenseRef-scancode-foobar2000"

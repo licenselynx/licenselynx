@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "LumiSoft Mail Server Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-lumisoft-mail-server",
             "LumiSoft Mail Server License"

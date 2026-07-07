@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Sun CC-PP Processing Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-sun-cc-pp-1.0",
             "Sun CC-PP Processing License 1.0"

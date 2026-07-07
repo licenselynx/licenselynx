@@ -7,7 +7,9 @@
         "spdx": [
             "BSD 3-Clause No Nuclear License 2014"
         ],
-        "custom": [],
+        "custom": [
+            "BSD 3-Clause No Nuclear Licence 2014"
+        ],
         "scancodeLicensedb": [
             "Oracle BSD-Style with Nuclear Restrictions",
             "oracle-bsd-no-nuclear"

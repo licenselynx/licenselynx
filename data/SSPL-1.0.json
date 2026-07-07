@@ -7,7 +7,10 @@
         "spdx": [
             "Server Side Public License, v 1"
         ],
-        "custom": [],
+        "custom": [
+            "Server Side Public Licence (SSPL) 1.0",
+            "Server Side Public Licence, v 1"
+        ],
         "scancodeLicensedb": [
             "mongodb-sspl-1.0",
             "Server Side Public License (SSPL) 1.0",

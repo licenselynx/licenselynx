@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Gretel.AI Source Available Licence Agreement v1.0"
+        ],
         "scancodeLicensedb": [
             "Gretel.AI SAL 1.0",
             "Gretel.AI Source Available License Agreement v1.0",

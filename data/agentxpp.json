@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "AgentX++ Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "AgentX++ License Agreement",
             "LicenseRef-scancode-agentxpp"

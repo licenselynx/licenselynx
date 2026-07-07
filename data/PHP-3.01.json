@@ -7,7 +7,10 @@
         "spdx": [
             "PHP License v3.01"
         ],
-        "custom": [],
+        "custom": [
+            "PHP Licence 3.01",
+            "PHP Licence v3.01"
+        ],
         "scancodeLicensedb": [
             "PHP License 3.01",
             "php-3.01"

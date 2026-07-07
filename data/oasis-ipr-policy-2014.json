@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Oasis IPR Policy Licence 2014",
+            "Oasis IPR Policy Licence 2014-10-15"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-oasis-ipr-policy-2014",
             "Oasis IPR Policy License 2014",

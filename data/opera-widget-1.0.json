@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Opera Widget Licence 1.0",
+            "Opera Widget Licence v1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-opera-widget-1.0",
             "Opera Widget License 1.0",

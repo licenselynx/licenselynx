@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft ASP.NET MVC 3 Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-asp-net-mvc3",
             "Microsoft ASP.NET MVC 3 License",

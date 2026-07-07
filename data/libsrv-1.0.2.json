@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "libsrv Licence v1.0.2"
+        ],
         "scancodeLicensedb": [
             "libsrv License v1.0.2",
             "LicenseRef-scancode-libsrv-1.0.2"

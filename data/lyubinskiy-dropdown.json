@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Lyubinskiy dropdown Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-lyubinskiy-dropdown",
             "Lyubinskiy dropdown License"

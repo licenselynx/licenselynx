@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "CppCoreGuidelines Licence"
+        ],
         "scancodeLicensedb": [
             "CppCoreGuidelines License",
             "LicenseRef-scancode-cpp-core-guidelines"

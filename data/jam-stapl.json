@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Jam STAPL Software Licence"
+        ],
         "scancodeLicensedb": [
             "Jam STAPL Software License",
             "LicenseRef-scancode-jam-stapl"

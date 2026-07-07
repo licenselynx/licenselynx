@@ -7,7 +7,9 @@
         "spdx": [
             "EPICS Open License"
         ],
-        "custom": [],
+        "custom": [
+            "EPICS Open Licence"
+        ],
         "scancodeLicensedb": [
             "epics"
         ]

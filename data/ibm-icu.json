@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "ICU Composite Licence"
+        ],
         "scancodeLicensedb": [
             "ICU Composite License",
             "LicenseRef-scancode-ibm-icu"

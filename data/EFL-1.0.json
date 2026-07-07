@@ -7,7 +7,11 @@
         "spdx": [
             "Eiffel Forum License v1.0"
         ],
-        "custom": [],
+        "custom": [
+            "Eiffel Forum Licence 1.0",
+            "Eiffel Forum Licence v1.0",
+            "The Eiffel Forum Licence, Version 1"
+        ],
         "osi": [
             "The Eiffel Forum License, Version 1"
         ],

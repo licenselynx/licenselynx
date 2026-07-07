@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "NVIDIA APEX SDK End User Licence Agreement 2011"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-nvidia-apex-sdk-eula-2011",
             "NVIDIA APEX SDK End User License Agreement 2011",

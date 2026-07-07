@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Matthew Welch Font Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-matthew-welch-font-license",
             "Matthew Welch Font License"

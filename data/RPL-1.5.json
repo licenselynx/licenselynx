@@ -7,7 +7,10 @@
         "spdx": [
             "Reciprocal Public License 1.5"
         ],
-        "custom": [],
+        "custom": [
+            "Reciprocal Public Licence 1.5",
+            "Reciprocal Public Licence, Version 1.5"
+        ],
         "osi": [
             "Reciprocal Public License, Version 1.5"
         ],

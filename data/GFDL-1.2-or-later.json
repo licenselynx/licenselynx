@@ -7,7 +7,9 @@
         "spdx": [
             "GNU Free Documentation License v1.2 or later"
         ],
-        "custom": [],
+        "custom": [
+            "GNU Free Documentation Licence v1.2 or later"
+        ],
         "scancodeLicensedb": [
             "GFDL 1.2 or later",
             "GFDL-1.2+",

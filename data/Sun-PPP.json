@@ -7,7 +7,9 @@
         "spdx": [
             "Sun PPP License"
         ],
-        "custom": [],
+        "custom": [
+            "Sun PPP Licence"
+        ],
         "scancodeLicensedb": [
             "sun-ppp"
         ]

@@ -7,7 +7,10 @@
         "spdx": [
             "OpenPBS v2.3 Software License"
         ],
-        "custom": [],
+        "custom": [
+            "OpenPBS Software Licence v2.3",
+            "OpenPBS v2.3 Software Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-openpbs-2.3",
             "OpenPBS 2.3",

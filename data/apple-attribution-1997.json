@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Apple Attribution Licence 1997"
+        ],
         "scancodeLicensedb": [
             "Apple Attribution 1997",
             "Apple Attribution License 1997",

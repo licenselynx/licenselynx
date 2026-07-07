@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Uthmanic Script Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-kfgqpc-uthmanic-script-hafs",
             "Uthmanic Script License"

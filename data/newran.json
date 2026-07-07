@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Newran Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-newran",
             "Newran License"

@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft Software Supplemental Licence - ASP.NET 2.0 AJAX EXTENSIONS",
+            "MS Supplemental Licence - ASP.NET 2.0 AJAX EXT"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-asp-net-ajax-supp-terms",
             "LicenseRef-scancode-ms-asp-net-ajax-supplemental-terms",

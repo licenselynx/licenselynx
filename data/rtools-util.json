@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "RTools.Util Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-rtools-util",
             "RTools.Util License"

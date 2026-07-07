@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Amplication EE Licence 2022",
+            "Amplication Enterprise Edition licence 2022"
+        ],
         "scancodeLicensedb": [
             "Amplication EE License 2022",
             "Amplication Enterprise Edition license 2022",

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "IBM Derivative Works Licence"
+        ],
         "scancodeLicensedb": [
             "IBM Derivative Works License",
             "LicenseRef-scancode-x11-ibm"

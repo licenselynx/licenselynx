@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Functional Source Licence, Version 1.0, MIT Change Licence"
+        ],
         "scancodeLicensedb": [
             "FSL-1.0-MIT",
             "Functional Source License, Version 1.0, MIT Change License",

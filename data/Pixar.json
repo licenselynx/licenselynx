@@ -7,7 +7,9 @@
         "spdx": [
             "Pixar License"
         ],
-        "custom": [],
+        "custom": [
+            "Pixar Licence"
+        ],
         "scancodeLicensedb": [
             "pixar"
         ]

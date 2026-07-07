@@ -8,7 +8,9 @@
             "LicenseRef-scancode-ltxv-owl-2025-05-05",
             "LTXV Open Weights License 2025-05-05"
         ],
-        "custom": []
+        "custom": [
+            "LTXV Open Weights Licence 2025-05-05"
+        ]
     },
     "rejected": [],
     "risky": []

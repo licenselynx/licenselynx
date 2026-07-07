@@ -7,7 +7,10 @@
         "spdx": [
             "Trusster Open Source License"
         ],
-        "custom": [],
+        "custom": [
+            "Trusster Open Source Licence",
+            "Trusster Open Source Licence 1.0a"
+        ],
         "scancodeLicensedb": [
             "tosl",
             "TOSL 1.0a",

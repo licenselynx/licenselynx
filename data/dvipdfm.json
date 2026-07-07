@@ -7,7 +7,9 @@
         "spdx": [
             "dvipdfm License"
         ],
-        "custom": [],
+        "custom": [
+            "dvipdfm Licence"
+        ],
         "scancodeLicensedb": [
             "dvipdfm"
         ]

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Blender Licence 2010"
+        ],
         "scancodeLicensedb": [
             "Blender License 2010",
             "LicenseRef-scancode-blender-2010"

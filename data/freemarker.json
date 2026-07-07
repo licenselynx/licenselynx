@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "FreeMarker Licence"
+        ],
         "scancodeLicensedb": [
             "FreeMarker License",
             "LicenseRef-scancode-freemarker"

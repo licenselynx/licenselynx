@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft Systems Journal Sample Code Licence",
+            "MS Systems Journal Sample Code Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-msj-sample-code",
             "Microsoft Systems Journal Sample Code License",

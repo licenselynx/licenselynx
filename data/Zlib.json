@@ -8,9 +8,15 @@
             "zlib License"
         ],
         "custom": [
+            "Licence :: OSI Approved :: zlib/libpng Licence",
+            "Licence :: zlib/libpng Licence",
+            "OSI Approved :: zlib/libpng Licence",
+            "The zlib/libpng Licence (Zlib)",
             "Zlib (Open License)",
             "Zlib (Open Source)",
             "Zlib Compression License",
+            "ZLIB Licence",
+            "zlib Licence",
             "Zlib License",
             "zlib License (Open License)",
             "Zlib License (Open Source Software)",

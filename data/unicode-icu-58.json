@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "ICU Licence 58 and later"
+        ],
         "scancodeLicensedb": [
             "ICU License 58 and later",
             "LicenseRef-scancode-unicode-icu-58"

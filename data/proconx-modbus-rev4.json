@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "proconX Modbus Driver Licence rev4"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-proconx-modbus-rev4",
             "proconX Modbus Driver License rev4"

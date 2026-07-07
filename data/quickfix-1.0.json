@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "The QuickFIX Software Licence, Version 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-quickfix-1.0",
             "QuickFix 1.0",

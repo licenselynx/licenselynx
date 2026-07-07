@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Software for Open Models Licence (SOM) 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-soml-1.0",
             "Software for Open Models License (SOM) 1.0",

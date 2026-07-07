@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Atmel Linux Firmware Licence"
+        ],
         "scancodeLicensedb": [
             "Atmel Linux Firmware License",
             "LicenseRef-scancode-atmel-linux-firmware"

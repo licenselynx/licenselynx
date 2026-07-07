@@ -7,7 +7,9 @@
         "spdx": [
             "GL2PS License"
         ],
-        "custom": [],
+        "custom": [
+            "GL2PS Licence"
+        ],
         "scancodeLicensedb": [
             "gl2ps"
         ]

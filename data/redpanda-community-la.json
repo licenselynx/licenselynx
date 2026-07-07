@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Redpanda Community Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-redpanda-community-la",
             "Redpanda Community License Agreement"

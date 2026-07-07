@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "AMD Linux Firmware Export Licence"
+        ],
         "scancodeLicensedb": [
             "AMD Linux Firmware Export License",
             "LicenseRef-scancode-amd-linux-firmware-export"

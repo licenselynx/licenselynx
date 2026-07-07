@@ -7,7 +7,9 @@
         "spdx": [
             "UnixCrypt License"
         ],
-        "custom": [],
+        "custom": [
+            "UnixCrypt Licence"
+        ],
         "scancodeLicensedb": [
             "unixcrypt"
         ]

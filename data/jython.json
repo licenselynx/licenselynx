@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Jython Licence"
+        ],
         "scancodeLicensedb": [
             "Jython License",
             "LicenseRef-scancode-jython"

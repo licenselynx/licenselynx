@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "INRIA Non-Commercial Licence Agreement for the CompCert verified compiler"
+        ],
         "scancodeLicensedb": [
             "INRIA NCLA CompCert",
             "INRIA Non-Commercial License Agreement for the CompCert verified compiler",

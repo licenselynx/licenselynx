@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Cloudera Express Licence"
+        ],
         "scancodeLicensedb": [
             "Cloudera Express License",
             "LicenseRef-scancode-cloudera-express"

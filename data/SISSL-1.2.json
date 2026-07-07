@@ -7,7 +7,10 @@
         "spdx": [
             "Sun Industry Standards Source License v1.2"
         ],
-        "custom": [],
+        "custom": [
+            "Sun Industry Standards Source Licence 1.2",
+            "Sun Industry Standards Source Licence v1.2"
+        ],
         "scancodeLicensedb": [
             "Sun Industry Standards Source License 1.2",
             "sun-sissl-1.2"

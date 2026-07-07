@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "gSOAP Public Licence v1.3a"
+        ],
         "scancodeLicensedb": [
             "gSOAP Public License v1.3a",
             "LicenseRef-scancode-gsoap-1.3a"

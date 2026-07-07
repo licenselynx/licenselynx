@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "GridGain Community Edition Licence 2022"
+        ],
         "scancodeLicensedb": [
             "GCEL 2022",
             "GridGain Community Edition License 2022",

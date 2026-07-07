@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "eGenix Public Licence 1.0.0"
+        ],
         "scancodeLicensedb": [
             "eGenix Public License 1.0.0",
             "LicenseRef-scancode-egenix-1.0.0"

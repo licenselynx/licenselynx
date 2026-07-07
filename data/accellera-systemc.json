@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "SystemC Open Source Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-accellera-systemc",
             "SystemC Open Source License Agreement"

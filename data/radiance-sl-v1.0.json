@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Radiance Software Licence v1.0",
+            "Radiance Software Licence, Version 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-radiance-sl-v1.0",
             "Radiance Software License v1.0",

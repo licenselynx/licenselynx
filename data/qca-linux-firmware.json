@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "QCA Linux Firmware Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-qca-linux-firmware",
             "QCA Linux Firmware License"

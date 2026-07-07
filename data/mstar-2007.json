@@ -8,7 +8,9 @@
             "LicenseRef-scancode-mstar-2007",
             "MStar Proprietary License 2007"
         ],
-        "custom": []
+        "custom": [
+            "MStar Proprietary Licence 2007"
+        ]
     },
     "rejected": [],
     "risky": []

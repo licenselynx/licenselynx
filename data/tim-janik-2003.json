@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Tim Janik Licence 2003"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-tim-janik-2003",
             "Tim Janik License 2003"

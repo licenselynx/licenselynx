@@ -8,7 +8,9 @@
             "BSD GNU EFI License 2000",
             "LicenseRef-scancode-bsd-gnu-efi"
         ],
-        "custom": []
+        "custom": [
+            "BSD GNU EFI Licence 2000"
+        ]
     },
     "rejected": [],
     "risky": []

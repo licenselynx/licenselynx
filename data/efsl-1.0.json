@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Eclipse Foundation Specification Licence - v1.0"
+        ],
         "scancodeLicensedb": [
             "Eclipse Foundation Specification License - v1.0",
             "EFSL 1.0",

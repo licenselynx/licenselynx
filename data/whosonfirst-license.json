@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "whosonfirst licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-whosonfirst-license",
             "whosonfirst license"

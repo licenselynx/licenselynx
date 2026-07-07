@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Z Shell Licence",
+            "zsh Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-zsh",
             "Z Shell License",

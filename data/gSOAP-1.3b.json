@@ -7,7 +7,9 @@
         "spdx": [
             "gSOAP Public License v1.3b"
         ],
-        "custom": [],
+        "custom": [
+            "gSOAP Public Licence v1.3b"
+        ],
         "scancodeLicensedb": [
             "gsoap-1.3b"
         ]

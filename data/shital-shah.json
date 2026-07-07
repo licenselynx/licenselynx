@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Shital Shah Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-shital-shah",
             "Shital Shah License"

@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "IBM International Licence Agreement for Non-Warranted Sample Code",
+            "IBM Non-Warranted Sample Code Licence"
+        ],
         "scancodeLicensedb": [
             "IBM International License Agreement for Non-Warranted Sample Code",
             "IBM Non-Warranted Sample Code License",

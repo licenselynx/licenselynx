@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft Visual C++ 2010 Runtime Libraries Licence",
+            "MS Visual C++ 2010 Runtime Libraries Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-visual-2010-runtime",
             "Microsoft Visual C++ 2010 Runtime Libraries License",

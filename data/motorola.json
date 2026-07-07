@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Motorola Microprocessor & Memory Technology Group Licence",
+            "Motorola Microprocessor Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-motorola",
             "Motorola Microprocessor & Memory Technology Group License",

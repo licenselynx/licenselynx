@@ -7,7 +7,9 @@
         "spdx": [
             "Symlinks License"
         ],
-        "custom": [],
+        "custom": [
+            "Symlinks Licence"
+        ],
         "scancodeLicensedb": [
             "symlinks"
         ]

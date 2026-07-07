@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Nice Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-nice",
             "Nice License"

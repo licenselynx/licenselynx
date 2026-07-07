@@ -7,7 +7,10 @@
         "spdx": [
             "Giftware License"
         ],
-        "custom": [],
+        "custom": [
+            "Allegro 4 Licence",
+            "Giftware Licence"
+        ],
         "scancodeLicensedb": [
             "Allegro 4 License",
             "allegro-4"

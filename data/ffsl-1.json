@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Floodgap Free Software Licence v1"
+        ],
         "scancodeLicensedb": [
             "FFSL v1",
             "Floodgap Free Software License v1",

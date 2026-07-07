@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "QLogic Firmware Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-qlogic-firmware",
             "QLogic Firmware License"

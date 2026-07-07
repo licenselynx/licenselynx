@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "ACM Software Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "ACM SLA",
             "ACM Software License Agreement",

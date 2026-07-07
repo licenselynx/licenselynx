@@ -7,7 +7,9 @@
         "spdx": [
             "Aspell Russian License"
         ],
-        "custom": [],
+        "custom": [
+            "Aspell Russian Licence"
+        ],
         "scancodeLicensedb": [
             "aspell-ru"
         ]

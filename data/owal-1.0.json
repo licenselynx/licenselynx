@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Opera Web Applications Licence 1.0",
+            "Opera Web Applications Licence v1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-owal-1.0",
             "Opera Web Applications License 1.0",

@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Sun JTA Specification Licence 1.0.1B",
+            "Sun JTA Specification Licence v1.0.1B"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-sun-jta-spec-1.0.1b",
             "Sun JTA Specification License 1.0.1B",

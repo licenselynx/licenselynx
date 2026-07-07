@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Snowplow Personal & Academic Licence Agreement 1.0",
+            "Snowplow Personal-Academic Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-snowplow-person-academic-1.0",
             "Snowplow Personal & Academic License Agreement 1.0",

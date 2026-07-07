@@ -7,7 +7,9 @@
         "spdx": [
             "Jove License"
         ],
-        "custom": []
+        "custom": [
+            "Jove Licence"
+        ]
     },
     "rejected": [],
     "risky": []

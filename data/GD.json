@@ -7,7 +7,10 @@
         "spdx": [
             "GD License"
         ],
-        "custom": [],
+        "custom": [
+            "GD Licence",
+            "libgd Licence 2018"
+        ],
         "scancodeLicensedb": [
             "libgd License 2018",
             "libgd-2018",

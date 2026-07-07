@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Oracle Technology Network Free Developer Licence 2009",
+            "OTN Licence 2009"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-otn-dev-dist-2009",
             "Oracle Technology Network Free Developer License 2009",

@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "HTML 5 spec Licence",
+            "HTML 5 specification Licence"
+        ],
         "scancodeLicensedb": [
             "HTML 5 spec License",
             "HTML 5 specification License",

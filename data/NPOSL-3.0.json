@@ -7,7 +7,10 @@
         "spdx": [
             "Non-Profit Open Software License 3.0"
         ],
-        "custom": [],
+        "custom": [
+            "Non-Profit Open Software Licence 3.0",
+            "The Non-Profit Open Software Licence, Version 3.0"
+        ],
         "osi": [
             "The Non-Profit Open Software License, Version 3.0"
         ],

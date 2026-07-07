@@ -7,7 +7,11 @@
         "spdx": [
             "Academic Free License v3.0"
         ],
-        "custom": [],
+        "custom": [
+            "Academic Free Licence 3.0",
+            "Academic Free Licence v3.0",
+            "Academic Free Licence, Version 3.0"
+        ],
         "osi": [
             "Academic Free License, Version 3.0"
         ],

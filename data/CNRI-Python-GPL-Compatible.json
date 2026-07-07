@@ -7,7 +7,10 @@
         "spdx": [
             "CNRI Python Open Source GPL Compatible License Agreement"
         ],
-        "custom": [],
+        "custom": [
+            "CNRI Open Source Licence Agreement for Python 1.6.1",
+            "CNRI Python Open Source GPL Compatible Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "CNRI Open Source License Agreement for Python 1.6.1",
             "CNRI Python 1.6.1",

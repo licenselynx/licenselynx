@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Canonical Entity Contributor Licence Agreement v1.2"
+        ],
         "scancodeLicensedb": [
             "Canonical Entity Contributor License Agreement v1.2",
             "Canonical-HA-CLA-ANY-E_v1.2",

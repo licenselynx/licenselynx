@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "NetApp Manageability SDK Licence Agreement rev. Aug2020",
+            "NetApp SDK Licence Agreement rev. Aug2020"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-netapp-sdk-aug2020",
             "NetApp Manageability SDK License Agreement rev. Aug2020",

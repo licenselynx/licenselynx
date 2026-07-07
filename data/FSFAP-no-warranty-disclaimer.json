@@ -7,7 +7,9 @@
         "spdx": [
             "FSF All Permissive License (without Warranty)"
         ],
-        "custom": [],
+        "custom": [
+            "FSF All Permissive Licence (without Warranty)"
+        ],
         "scancodeLicensedb": [
             "fsfap-no-warranty-disclaimer"
         ]

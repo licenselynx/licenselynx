@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Apple Example Code Licence"
+        ],
         "scancodeLicensedb": [
             "Apple Example Code License",
             "LicenseRef-scancode-apple-excl"

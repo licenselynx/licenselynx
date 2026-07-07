@@ -7,7 +7,9 @@
         "spdx": [
             "threeparttable License"
         ],
-        "custom": [],
+        "custom": [
+            "threeparttable Licence"
+        ],
         "scancodeLicensedb": [
             "threeparttable"
         ]

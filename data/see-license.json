@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "See Licence mention"
+        ],
         "scancodeLicensedb": [
             "See License mention"
         ]

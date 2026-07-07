@@ -7,7 +7,9 @@
         "spdx": [
             "bcrypt Solar Designer License"
         ],
-        "custom": [],
+        "custom": [
+            "bcrypt Solar Designer Licence"
+        ],
         "scancodeLicensedb": [
             "bcrypt-solar-designer"
         ]

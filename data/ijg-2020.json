@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Independent JPEG Group Licence 2020",
+            "JPEG Licence 2020"
+        ],
         "scancodeLicensedb": [
             "Independent JPEG Group License 2020",
             "JPEG License 2020",

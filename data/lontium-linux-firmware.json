@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Lontium Linux Firmware Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-lontium-linux-firmware",
             "Lontium Linux Firmware License"

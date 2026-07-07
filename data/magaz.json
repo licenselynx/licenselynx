@@ -7,7 +7,9 @@
         "spdx": [
             "magaz License"
         ],
-        "custom": [],
+        "custom": [
+            "magaz Licence"
+        ],
         "scancodeLicensedb": [
             "magaz"
         ]

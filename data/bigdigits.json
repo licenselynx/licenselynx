@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "BigDigits Licence"
+        ],
         "scancodeLicensedb": [
             "BigDigits License",
             "LicenseRef-scancode-bigdigits"

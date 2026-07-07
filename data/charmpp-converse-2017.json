@@ -8,7 +8,9 @@
             "Charm++/Converse License 2017",
             "LicenseRef-scancode-charmpp-converse-2017"
         ],
-        "custom": []
+        "custom": [
+            "Charm++/Converse Licence 2017"
+        ]
     },
     "rejected": [],
     "risky": []

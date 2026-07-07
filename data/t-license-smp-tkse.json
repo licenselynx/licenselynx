@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "T-Licence for SMP T-Kernel Standard Extension",
+            "T-Licence for SMP TKSE"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-t-license-smp-tkse",
             "T-License for SMP T-Kernel Standard Extension",

@@ -8,7 +8,9 @@
             "ECL graph converter license 2019",
             "LicenseRef-scancode-ecl-gcl-2019"
         ],
-        "custom": []
+        "custom": [
+            "ECL graph converter licence 2019"
+        ]
     },
     "rejected": [],
     "risky": []

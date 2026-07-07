@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "IBM Java Portlet Specification 2.0 Licence"
+        ],
         "scancodeLicensedb": [
             "IBM Java Portlet Specification 2.0",
             "IBM Java Portlet Specification 2.0 License",

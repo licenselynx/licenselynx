@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "FtpBean Licence"
+        ],
         "scancodeLicensedb": [
             "FtpBean License",
             "LicenseRef-scancode-ftpbean"

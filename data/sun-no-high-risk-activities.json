@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Sun No High Risk Activities Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-sun-no-high-risk-activities",
             "Sun No High Risk Activities License"

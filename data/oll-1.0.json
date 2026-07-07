@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Open Logistics Licence Version 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-oll-1.0",
             "OLL-1.0",

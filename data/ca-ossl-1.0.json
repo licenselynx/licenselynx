@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "CA Open Source Software Licence 1.0",
+            "Computer Associates Open Source Software Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "CA Open Source Software License 1.0",
             "Computer Associates Open Source Software License 1.0",

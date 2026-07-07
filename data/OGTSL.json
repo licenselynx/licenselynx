@@ -7,7 +7,13 @@
         "spdx": [
             "Open Group Test Suite License"
         ],
-        "custom": [],
+        "custom": [
+            "Licence :: Open Group Test Suite Licence",
+            "Licence :: OSI Approved :: Open Group Test Suite Licence",
+            "Open Group Test Suite Licence",
+            "OSI Approved :: Open Group Test Suite Licence",
+            "The Open Group Test Suite Licence (OGTSL)"
+        ],
         "osi": [
             "The Open Group Test Suite License (OGTSL)"
         ],

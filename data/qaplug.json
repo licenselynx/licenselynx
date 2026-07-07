@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "QAPlug Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-qaplug",
             "QAPlug License"

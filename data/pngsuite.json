@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "PngSuite Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-pngsuite",
             "PngSuite License"

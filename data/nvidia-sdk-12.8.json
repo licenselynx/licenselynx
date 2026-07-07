@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Licence Agreement for NVIDIA Software Development Kits v12.8"
+        ],
         "scancodeLicensedb": [
             "License Agreement for NVIDIA Software Development Kits v12.8",
             "LicenseRef-scancode-nvidia-sdk-12.8",

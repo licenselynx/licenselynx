@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Cypress Linux Firmware Licence"
+        ],
         "scancodeLicensedb": [
             "Cypress Linux Firmware License",
             "LicenseRef-scancode-cypress-linux-firmware"

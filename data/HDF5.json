@@ -4,7 +4,10 @@
         "src": "spdx"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "HDF5 Licence",
+            "HDF5Licence"
+        ],
         "spdx": [
             "HDF5 License"
         ],

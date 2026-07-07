@@ -8,7 +8,9 @@
             "GFDL-1.1",
             "GNU Free Documentation License v1.1 only"
         ],
-        "custom": []
+        "custom": [
+            "GNU Free Documentation Licence v1.1 only"
+        ]
     },
     "rejected": [],
     "risky": [

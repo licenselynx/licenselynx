@@ -7,7 +7,9 @@
         "spdx": [
             "TCP Wrappers License"
         ],
-        "custom": [],
+        "custom": [
+            "TCP Wrappers Licence"
+        ],
         "scancodeLicensedb": [
             "tcp-wrappers"
         ]

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Phil Bunce Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-phil-bunce",
             "Phil Bunce License"

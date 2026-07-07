@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Stable Diffusion Licence 2022-08-22"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-stable-diffusion-2022-08-22",
             "Stable Diffusion License 2022-08-22"

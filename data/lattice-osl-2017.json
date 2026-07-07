@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Lattice Open Source Licence 2017"
+        ],
         "scancodeLicensedb": [
             "Lattice Open Source License 2017",
             "LicenseRef-scancode-lattice-osl-2017"

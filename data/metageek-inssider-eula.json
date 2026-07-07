@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "inSSIDer End User Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "inSSIDer End User License Agreement",
             "inSSIDer EULA",

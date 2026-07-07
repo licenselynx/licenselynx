@@ -7,7 +7,9 @@
         "spdx": [
             "Bitstream Vera Font License"
         ],
-        "custom": [],
+        "custom": [
+            "Bitstream Vera Font Licence"
+        ],
         "scancodeLicensedb": [
             "bitstream",
             "LicenseRef-scancode-bitstream"

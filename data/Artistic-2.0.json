@@ -7,7 +7,10 @@
         "spdx": [
             "Artistic License 2.0"
         ],
-        "custom": [],
+        "custom": [
+            "Artistic Licence 2.0",
+            "Artistic Licence, Version 2.0"
+        ],
         "osi": [
             "Artistic License, Version 2.0"
         ],

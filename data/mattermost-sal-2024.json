@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Mattermost Source Available Licence 2024"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-mattermost-sal-2024",
             "Mattermost Source Available License 2024"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Matt Gallagher Attribution Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-matt-gallagher-attribution",
             "Matt Gallagher Attribution License"

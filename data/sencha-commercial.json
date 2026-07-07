@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Sencha Commercial Licence 1.1",
+            "Sencha Commercial Licence v1.1"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-sencha-commercial",
             "Sencha Commercial License 1.1",

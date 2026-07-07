@@ -7,7 +7,9 @@
         "spdx": [
             "Leptonica License"
         ],
-        "custom": [],
+        "custom": [
+            "Leptonica Licence"
+        ],
         "scancodeLicensedb": [
             "leptonica"
         ]

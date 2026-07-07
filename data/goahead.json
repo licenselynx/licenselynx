@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "GoAhead Licence"
+        ],
         "scancodeLicensedb": [
             "GoAhead License",
             "LicenseRef-scancode-goahead"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "MaxMind Open Data Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-maxmind-odl",
             "MaxMind Open Data License"

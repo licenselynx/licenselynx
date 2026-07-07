@@ -7,7 +7,9 @@
         "spdx": [
             "Clarified Artistic License"
         ],
-        "custom": [],
+        "custom": [
+            "Clarified Artistic Licence"
+        ],
         "scancodeLicensedb": [
             "artistic-clarified"
         ]

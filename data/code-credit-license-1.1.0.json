@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Code Credit Licence v1.1.0"
+        ],
         "scancodeLicensedb": [
             "Code Credit License v1.1.0",
             "LicenseRef-scancode-code-credit-license-1.1.0"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Google Software Grant and Corporate Contributor Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "Google Corporate CLA",
             "Google Software Grant and Corporate Contributor License Agreement",

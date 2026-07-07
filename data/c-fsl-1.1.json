@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Convertible Free Software Licence 1.1"
+        ],
         "scancodeLicensedb": [
             "C-FSL 1.1",
             "Convertible Free Software License 1.1",

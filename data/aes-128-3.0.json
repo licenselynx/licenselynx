@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "AES-128 3.0 Licence",
+            "AES-128 v3.0 Licence"
+        ],
         "scancodeLicensedb": [
             "AES-128 3.0 License",
             "AES-128 v3.0 License",

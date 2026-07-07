@@ -7,7 +7,9 @@
         "spdx": [
             "MakeIndex License"
         ],
-        "custom": [],
+        "custom": [
+            "MakeIndex Licence"
+        ],
         "scancodeLicensedb": [
             "makeindex",
             "MakeIndex Distribution Notice"

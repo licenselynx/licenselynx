@@ -7,7 +7,10 @@
         "spdx": [
             "feh License"
         ],
-        "custom": [],
+        "custom": [
+            "feh Licence",
+            "MIT Acknowledgment Licence"
+        ],
         "scancodeLicensedb": [
             "MIT Acknowledgment License",
             "mit-ack"

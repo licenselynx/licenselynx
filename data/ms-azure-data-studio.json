@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft Azure Data Studio Licence Terms",
+            "MS Azure Data Studio Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-azure-data-studio",
             "Microsoft Azure Data Studio License Terms",

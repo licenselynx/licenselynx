@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Paul Hsieh Derivative Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-paul-hsieh-derivative",
             "Paul Hsieh Derivative License"

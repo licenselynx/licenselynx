@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "ChartDirector 6.0 Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "ChartDirector 6.0 License Agreement",
             "LicenseRef-scancode-chartdirector-6.0"

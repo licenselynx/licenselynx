@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Java App Stub Licence",
+            "Java Application Stub Binary Module Licence"
+        ],
         "scancodeLicensedb": [
             "Java App Stub License",
             "Java Application Stub Binary Module License",

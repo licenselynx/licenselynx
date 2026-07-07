@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Cougaar Open Source Licence"
+        ],
         "scancodeLicensedb": [
             "Cougaar Open Source License",
             "LicenseRef-scancode-cosl"

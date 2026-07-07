@@ -7,7 +7,20 @@
         "spdx": [
             "Sun Industry Standards Source License v1.1"
         ],
-        "custom": [],
+        "custom": [
+            "Licence :: OSI Approved :: SISSL",
+            "Licence :: OSI Approved :: Sun Industry Standards Source Licence",
+            "Licence :: OSI Approved :: Sun Industry Standards Source Licence (SISSL)",
+            "Licence :: SISSL",
+            "Licence :: Sun Industry Standards Source Licence",
+            "Licence :: Sun Industry Standards Source Licence (SISSL)",
+            "OSI Approved :: Sun Industry Standards Source Licence",
+            "OSI Approved :: Sun Industry Standards Source Licence (SISSL)",
+            "Sun Industry Standards Source Licence",
+            "Sun Industry Standards Source Licence (SISSL)",
+            "Sun Industry Standards Source Licence 1.1",
+            "Sun Industry Standards Source Licence v1.1"
+        ],
         "osi": [
             "Sun Industry Standards Source License"
         ],

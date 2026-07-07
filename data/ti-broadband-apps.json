@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Texas Instruments Broadband Applications Licence",
+            "TI Broadband Applications Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ti-broadband-apps",
             "Texas Instruments Broadband Applications License",

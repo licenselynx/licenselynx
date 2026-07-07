@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Paulo Soares Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-paulo-soares",
             "Paulo Soares License"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "CRCalc licence"
+        ],
         "scancodeLicensedb": [
             "CRCalc license",
             "LicenseRef-scancode-crcalc"

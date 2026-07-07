@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "LibMib Licence"
+        ],
         "scancodeLicensedb": [
             "LibMib License",
             "LicenseRef-scancode-libmib"

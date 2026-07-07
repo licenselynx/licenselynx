@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Slint Royalty-free Desktop and Web Applications Licence, version 1.0.1",
+            "Slint Royalty-free Licence 1.0.1"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-slint-royalty-free-1.0",
             "Slint Royalty-free Desktop and Web Applications License, version 1.0.1",

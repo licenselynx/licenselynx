@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Gitpod Self-Hosted Free Licence Terms 2020"
+        ],
         "scancodeLicensedb": [
             "Gitpod Self-Hosted Free License Terms 2020",
             "LicenseRef-scancode-gitpod-self-hosted-free-2020"

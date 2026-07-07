@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Sencha Open Source Licence Exception for Applications"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-sencha-app-floss-exception",
             "Sencha GPL 3.0 Exception for Applications",

@@ -7,7 +7,11 @@
         "spdx": [
             "Technische Universitaet Berlin License 1.0"
         ],
-        "custom": [],
+        "custom": [
+            "Technische Universitaet Berlin Attribution Licence 1.0",
+            "Technische Universitaet Berlin Licence 1.0",
+            "TU Berlin Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "Technische Universitaet Berlin Attribution License 1.0",
             "TU Berlin License 1.0"

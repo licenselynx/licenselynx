@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "LLaMA Licence Agreement 2023"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-llama-license-2023",
             "LLaMA License Agreement 2023"

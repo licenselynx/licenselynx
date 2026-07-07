@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "bpmn.io Licence"
+        ],
         "scancodeLicensedb": [
             "bpmn.io License",
             "LicenseRef-scancode-bpmn-io"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Agere Systems BSD Software licence"
+        ],
         "scancodeLicensedb": [
             "Agere BSD",
             "Agere Systems BSD Software license",

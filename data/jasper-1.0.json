@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Jasper Reports Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "Jasper 1.0",
             "Jasper Reports License 1.0",

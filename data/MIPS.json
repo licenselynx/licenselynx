@@ -7,7 +7,9 @@
         "spdx": [
             "MIPS License"
         ],
-        "custom": [],
+        "custom": [
+            "MIPS Licence"
+        ],
         "scancodeLicensedb": [
             "mips"
         ]

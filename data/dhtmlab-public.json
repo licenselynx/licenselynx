@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "dhtmlab Public Licence",
+            "Dynamic HTML Lab Public Licence"
+        ],
         "scancodeLicensedb": [
             "dhtmlab Public License",
             "Dynamic HTML Lab Public License",

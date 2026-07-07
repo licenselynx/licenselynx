@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "ScanSoft Public Licence 1.2",
+            "ScanSoft Public Licence v1.2"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-scansoft-1.2",
             "ScanSoft Public License 1.2",

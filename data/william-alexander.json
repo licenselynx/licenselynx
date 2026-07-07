@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "William Alexander Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-william-alexander",
             "William Alexander License"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Brocade Firmware Licence"
+        ],
         "scancodeLicensedb": [
             "Brocade Firmware License",
             "LicenseRef-scancode-brocade-firmware"

@@ -7,7 +7,9 @@
         "spdx": [
             "BSD 1-Clause License"
         ],
-        "custom": [],
+        "custom": [
+            "BSD 1-Clause Licence"
+        ],
         "scancodeLicensedb": [
             "BSD-1-Clause",
             "bsd-1-clause"

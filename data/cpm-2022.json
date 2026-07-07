@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "CP/M Licence 2022"
+        ],
         "scancodeLicensedb": [
             "CP/M License 2022",
             "LicenseRef-scancode-cpm-2022"

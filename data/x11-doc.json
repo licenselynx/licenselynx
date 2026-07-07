@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "X11 Documentation Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-x11-doc",
             "X11 Documentation License"

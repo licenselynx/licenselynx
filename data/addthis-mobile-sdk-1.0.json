@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "AddThis Mobile Application SDK Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "AddThis Mobile Application SDK License 1.0",
             "LicenseRef-scancode-addthis-mobile-sdk-1.0"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Anepokis Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "Anepokis License 1.0",
             "LicenseRef-scancode-anepokis-1.0"

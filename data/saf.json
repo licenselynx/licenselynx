@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Service Availability Forum Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-saf",
             "Service Availability Forum License"

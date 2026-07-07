@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Collaborative Virtual Workspace Licence"
+        ],
         "scancodeLicensedb": [
             "Collaborative Virtual Workspace License",
             "LicenseRef-scancode-cvwl"

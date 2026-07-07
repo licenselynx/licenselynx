@@ -7,7 +7,9 @@
         "spdx": [
             "Unicode License Agreement - Data Files and Software (2016)"
         ],
-        "custom": [],
+        "custom": [
+            "Unicode Licence Agreement - Data Files and Software (2016)"
+        ],
         "scancodeLicensedb": [
             "Unicode DFS 2016",
             "unicode-dfs-2016"

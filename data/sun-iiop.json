@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Sun IIOP Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-sun-iiop",
             "Sun IIOP License"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Stefano Apostolico MIT Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-saxix-mit",
             "Stefano Apostolico MIT License"

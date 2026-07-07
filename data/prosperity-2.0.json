@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Prosperity Public Licence 2.0",
+            "The Prosperity Public Licence 2.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-prosperity-2.0",
             "Prosperity Public License 2.0",

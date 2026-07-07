@@ -7,7 +7,14 @@
         "spdx": [
             "X.Net License"
         ],
-        "custom": [],
+        "custom": [
+            "Altera Licence",
+            "Licence :: OSI Approved :: X.Net Licence",
+            "Licence :: X.Net Licence",
+            "OSI Approved :: X.Net Licence",
+            "The X.Net, Inc. Licence",
+            "X.Net Licence"
+        ],
         "osi": [
             "The X.Net, Inc. License"
         ],

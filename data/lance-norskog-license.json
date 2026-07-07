@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Lance Norskog Licence"
+        ],
         "scancodeLicensedb": [
             "Lance Norskog License",
             "LicenseRef-scancode-lance-norskog-license"

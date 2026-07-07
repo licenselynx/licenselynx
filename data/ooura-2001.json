@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "OOURA Licence 2001"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ooura-2001",
             "OOURA License 2001"

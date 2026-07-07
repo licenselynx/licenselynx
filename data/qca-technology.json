@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "QCA Technology Licence",
+            "Qualcomm Atheros Technology Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-qca-technology",
             "QCA Technology License",

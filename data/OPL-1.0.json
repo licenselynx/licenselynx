@@ -7,7 +7,10 @@
         "spdx": [
             "Open Public License v1.0"
         ],
-        "custom": [],
+        "custom": [
+            "Open Public Licence 1.0",
+            "Open Public Licence v1.0"
+        ],
         "scancodeLicensedb": [
             "Open Public License 1.0",
             "open-public"

@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Oculus SDK Licence Agreement v3.5",
+            "Oculus Software Development Kit Licence Agreement v3.5"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-oculus-sdk-3.5",
             "Oculus SDK License Agreement v3.5",

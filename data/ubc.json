@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "University of British Columbia Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ubc",
             "University of British Columbia License"

@@ -8,7 +8,9 @@
             "LicenseRef-scancode-microchip-pk2cmd-2009",
             "Microchip pk2cmd License 2009"
         ],
-        "custom": []
+        "custom": [
+            "Microchip pk2cmd Licence 2009"
+        ]
     },
     "rejected": [],
     "risky": []

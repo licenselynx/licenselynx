@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "FastCGI Licence for Spec Implementation"
+        ],
         "scancodeLicensedb": [
             "FastCGI License for Spec Implementation",
             "LicenseRef-scancode-openmarket-fastcgi"

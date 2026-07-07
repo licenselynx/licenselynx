@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "JDBM Licence v1.00"
+        ],
         "scancodeLicensedb": [
             "JDBM License v1.00",
             "LicenseRef-scancode-jdbm-1.00"

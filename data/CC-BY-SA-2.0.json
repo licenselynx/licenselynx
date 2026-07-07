@@ -7,7 +7,9 @@
         "spdx": [
             "Creative Commons Attribution Share Alike 2.0 Generic"
         ],
-        "custom": [],
+        "custom": [
+            "Creative Commons Attribution Share Alike Licence 2.0"
+        ],
         "scancodeLicensedb": [
             "CC-BY-SA-2.0",
             "cc-by-sa-2.0",

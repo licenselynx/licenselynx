@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "DivX Open Licence 1.0",
+            "DivX Open Licence v1.0"
+        ],
         "scancodeLicensedb": [
             "DivX Open License 1.0",
             "DivX Open License v1.0",

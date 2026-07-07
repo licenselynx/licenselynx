@@ -7,7 +7,11 @@
         "spdx": [
             "Elastic License 2.0"
         ],
-        "custom": [],
+        "custom": [
+            "Elastic Licence 2.0",
+            "Elastic Licence 2.0 (ELv2)",
+            "elastic-licence-v2"
+        ],
         "scancodeLicensedb": [
             "Elastic License 2.0 (ELv2)",
             "elastic-license-v2",

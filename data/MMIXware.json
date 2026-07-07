@@ -7,7 +7,9 @@
         "spdx": [
             "MMIXware License"
         ],
-        "custom": [],
+        "custom": [
+            "MMIXware Licence"
+        ],
         "scancodeLicensedb": [
             "mmixware"
         ]

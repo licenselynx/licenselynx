@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Christian Michelsen Research AS Licence",
+            "CMR Licence"
+        ],
         "scancodeLicensedb": [
             "Christian Michelsen Research AS License",
             "CMR License"

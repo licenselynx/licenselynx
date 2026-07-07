@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Intel BSD 2 Clause Licence"
+        ],
         "scancodeLicensedb": [
             "Intel BSD 2 Clause License",
             "LicenseRef-scancode-intel-bsd-2-clause"

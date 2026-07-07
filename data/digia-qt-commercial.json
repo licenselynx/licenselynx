@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Digia Qt Commercial Licence Usage"
+        ],
         "scancodeLicensedb": [
             "Digia Qt Commercial",
             "Digia Qt Commercial License Usage",

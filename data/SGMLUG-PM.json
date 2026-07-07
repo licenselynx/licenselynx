@@ -7,7 +7,9 @@
         "spdx": [
             "SGMLUG Parser Materials License"
         ],
-        "custom": []
+        "custom": [
+            "SGMLUG Parser Materials Licence"
+        ]
     },
     "rejected": [],
     "risky": []

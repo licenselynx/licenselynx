@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "AC3Filter Licence"
+        ],
         "scancodeLicensedb": [
             "AC3Filter License",
             "LicenseRef-scancode-ac3filter"

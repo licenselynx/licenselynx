@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "IBPP Licence"
+        ],
         "scancodeLicensedb": [
             "IBPP License",
             "LicenseRef-scancode-ibpp"

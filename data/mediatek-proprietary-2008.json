@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "MediaTek Proprietary Licence 2008"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-mediatek-proprietary-2008",
             "MediaTek Proprietary License 2008"

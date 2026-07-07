@@ -7,7 +7,10 @@
         "spdx": [
             "Interbase Public License v1.0"
         ],
-        "custom": [],
+        "custom": [
+            "Interbase Public Licence 1.0",
+            "Interbase Public Licence v1.0"
+        ],
         "scancodeLicensedb": [
             "Interbase Public License 1.0",
             "interbase-1.0"

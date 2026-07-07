@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Zhorn Stickies Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-zhorn-stickies",
             "Zhorn Stickies License"

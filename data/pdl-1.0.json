@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Public Documentation Licence Version 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-pdl-1.0",
             "PDL-1.0",

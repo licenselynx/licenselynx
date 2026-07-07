@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Zeebe Community Licence v1.1"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-zeebe-community-1.1",
             "Zeebe Community License v1.1"

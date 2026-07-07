@@ -7,7 +7,9 @@
         "spdx": [
             "BSD-2-Clause Plus Patent License"
         ],
-        "custom": [],
+        "custom": [
+            "BSD-2-Clause Plus Patent Licence"
+        ],
         "scancodeLicensedb": [
             "BSD-2-Clause Plus Patent",
             "bsd-plus-patent"

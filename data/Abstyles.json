@@ -7,7 +7,9 @@
         "spdx": [
             "Abstyles License"
         ],
-        "custom": [],
+        "custom": [
+            "Abstyles Licence"
+        ],
         "scancodeLicensedb": [
             "abstyles"
         ]

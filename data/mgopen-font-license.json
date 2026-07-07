@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "MgOpen Font Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-mgopen-font-license",
             "MgOpen Font License"

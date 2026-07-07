@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "GDCL Licence"
+        ],
         "scancodeLicensedb": [
             "GDCL License",
             "LicenseRef-scancode-gdcl"

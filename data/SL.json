@@ -7,7 +7,9 @@
         "spdx": [
             "SL License"
         ],
-        "custom": [],
+        "custom": [
+            "SL Licence"
+        ],
         "scancodeLicensedb": [
             "sl"
         ]

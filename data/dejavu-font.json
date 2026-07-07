@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "DejaVu Font Licence"
+        ],
         "scancodeLicensedb": [
             "DejaVu Font License",
             "LicenseRef-scancode-dejavu-font"

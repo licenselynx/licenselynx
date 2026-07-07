@@ -7,7 +7,9 @@
         "spdx": [
             "ulem License"
         ],
-        "custom": [],
+        "custom": [
+            "ulem Licence"
+        ],
         "scancodeLicensedb": [
             "ulem"
         ]

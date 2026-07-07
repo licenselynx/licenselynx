@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "AOP Public Domain Licence"
+        ],
         "scancodeLicensedb": [
             "AOP Public Domain License",
             "AOP-PD"

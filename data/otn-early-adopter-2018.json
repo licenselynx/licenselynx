@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "OTN Early Adopter Development Licence 2018"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-otn-early-adopter-2018",
             "OTN Early Adopter 2018",

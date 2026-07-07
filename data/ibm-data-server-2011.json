@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "IBM Data Server Licence 2011"
+        ],
         "scancodeLicensedb": [
             "IBM Data Server License 2011",
             "LicenseRef-scancode-ibm-data-server-2011"

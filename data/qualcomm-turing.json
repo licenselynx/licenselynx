@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Qualcomm Turing Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-qualcomm-turing",
             "Qualcomm Turing License"

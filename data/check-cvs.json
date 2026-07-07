@@ -7,7 +7,9 @@
         "spdx": [
             "check-cvs License"
         ],
-        "custom": [],
+        "custom": [
+            "check-cvs Licence"
+        ],
         "scancodeLicensedb": [
             "check-cvs"
         ]

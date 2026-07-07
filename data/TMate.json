@@ -7,7 +7,9 @@
         "spdx": [
             "TMate Open Source License"
         ],
-        "custom": [],
+        "custom": [
+            "TMate Open Source Licence"
+        ],
         "scancodeLicensedb": [
             "tmate"
         ]

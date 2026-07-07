@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "ASN.1 Object Dumping Code Licence"
+        ],
         "scancodeLicensedb": [
             "ASN.1 Object Dumping Code License",
             "LicenseRef-scancode-asn1"

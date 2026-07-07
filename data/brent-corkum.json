@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Brent Corkum Licence"
+        ],
         "scancodeLicensedb": [
             "Brent Corkum License",
             "LicenseRef-scancode-brent-corkum"

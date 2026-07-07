@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Stanford PVRG Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-stanford-pvrg",
             "Stanford PVRG License"

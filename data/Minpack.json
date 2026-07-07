@@ -7,7 +7,9 @@
         "spdx": [
             "Minpack License"
         ],
-        "custom": [],
+        "custom": [
+            "Minpack Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-minpack",
             "minpack",

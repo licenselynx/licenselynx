@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "CMU Nara Nagoya Licence"
+        ],
         "scancodeLicensedb": [
             "CMU Nara Nagoya License",
             "LicenseRef-scancode-cmu-nara-nagoya"

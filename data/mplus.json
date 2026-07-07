@@ -7,7 +7,10 @@
         "spdx": [
             "mplus Font License"
         ],
-        "custom": [],
+        "custom": [
+            "M+ Fonts licence",
+            "mplus Font Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-m-plus",
             "M+ Fonts license",

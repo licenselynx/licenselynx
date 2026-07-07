@@ -7,7 +7,9 @@
         "spdx": [
             "Unicode License v3"
         ],
-        "custom": [],
+        "custom": [
+            "Unicode Licence v3"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-unicode-v3",
             "unicode-v3"

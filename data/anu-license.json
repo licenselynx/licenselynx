@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "ANU Licence",
+            "Australian National University Licence"
+        ],
         "scancodeLicensedb": [
             "ANU License",
             "Australian National University License",

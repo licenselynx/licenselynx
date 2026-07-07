@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "RSA Demo Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-rsa-demo",
             "RSA Demo License"

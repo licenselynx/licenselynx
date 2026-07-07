@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "NVIDIA Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-nvidia",
             "NVIDIA License"

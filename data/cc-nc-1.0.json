@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Creative Commons NonCommercial Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "CC-NC-1.0",
             "Creative Commons NonCommercial License 1.0",

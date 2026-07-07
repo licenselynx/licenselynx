@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Adobe Color Profile Licence agreement"
+        ],
         "scancodeLicensedb": [
             "Adobe Color Profile License agreement",
             "LicenseRef-scancode-adobe-color-profile-license"

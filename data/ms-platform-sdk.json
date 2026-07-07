@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft Platform SDK Licence",
+            "MS Platform SDK Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-platform-sdk",
             "Microsoft Platform SDK License",

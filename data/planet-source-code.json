@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Planet Source Code Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-planet-source-code",
             "Planet Source Code License"

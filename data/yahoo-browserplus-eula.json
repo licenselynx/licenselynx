@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Yahoo BrowserPlus End User Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-yahoo-browserplus-eula",
             "Yahoo BrowserPlus End User License",

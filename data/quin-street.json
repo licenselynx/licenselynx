@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "QuinStreet Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-quin-street",
             "QuinStreet License"

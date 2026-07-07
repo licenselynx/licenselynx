@@ -7,7 +7,9 @@
         "spdx": [
             "SNIA Public License 1.1"
         ],
-        "custom": [],
+        "custom": [
+            "SNIA Public Licence 1.1"
+        ],
         "scancodeLicensedb": [
             "snia"
         ]

@@ -7,7 +7,10 @@
         "spdx": [
             "Open Software License 1.0"
         ],
-        "custom": [],
+        "custom": [
+            "Open Software Licence 1.0",
+            "Open Software Licence, Version 1.0"
+        ],
         "osi": [
             "Open Software License, Version 1.0"
         ],

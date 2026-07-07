@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "DataMekanix Licence"
+        ],
         "scancodeLicensedb": [
             "DataMekanix License",
             "LicenseRef-scancode-datamekanix-license"

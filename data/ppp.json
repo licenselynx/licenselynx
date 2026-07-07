@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "ppp Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ppp",
             "ppp License"

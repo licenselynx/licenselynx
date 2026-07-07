@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "ActiveState Community Licence"
+        ],
         "scancodeLicensedb": [
             "ActiveState Community License",
             "LicenseRef-scancode-activestate-community"

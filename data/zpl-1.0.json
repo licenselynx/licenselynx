@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Zope Public Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-zpl-1.0",
             "Zope Public License 1.0",

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "SKIP Licence 2014"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-skip-2014",
             "SKIP License 2014"

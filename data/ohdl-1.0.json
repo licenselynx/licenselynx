@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Open Hardware Description Licence Version 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ohdl-1.0",
             "OHDL-1.0",

@@ -7,7 +7,10 @@
         "spdx": [
             "Clips License"
         ],
-        "custom": [],
+        "custom": [
+            "Clips Licence",
+            "CLIPS Licence 2017"
+        ],
         "scancodeLicensedb": [
             "CLIPS License 2017",
             "clips-2017",

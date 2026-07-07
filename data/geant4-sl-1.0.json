@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Geant4 Software Licence v1.0"
+        ],
         "scancodeLicensedb": [
             "Geant4 Software License v1.0",
             "LicenseRef-scancode-geant4-sl-1.0"

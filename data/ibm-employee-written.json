@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "IBM Employee-Written Software Licence",
+            "IBM Licence Agreement for IBM Employee-Written Software"
+        ],
         "scancodeLicensedb": [
             "IBM Employee-Written Software License",
             "IBM License Agreement for IBM Employee-Written Software",

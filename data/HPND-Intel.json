@@ -7,7 +7,9 @@
         "spdx": [
             "Historical Permission Notice and Disclaimer - Intel variant"
         ],
-        "custom": [],
+        "custom": [
+            "Intel Open Source Licence 1993"
+        ],
         "scancodeLicensedb": [
             "Intel Open Source License 1993",
             "Intel OSL 1993",

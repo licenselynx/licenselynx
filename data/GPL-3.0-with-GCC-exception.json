@@ -7,7 +7,9 @@
         "spdx": [
             "GNU General Public License v3.0 w/GCC Runtime Library exception"
         ],
-        "custom": [],
+        "custom": [
+            "GNU General Public Licence v3.0 w/GCC Runtime Library exception"
+        ],
         "scancodeLicensedb": [
             "GPL 3.0 with GCC runtime library exception",
             "gpl-3.0-gcc"

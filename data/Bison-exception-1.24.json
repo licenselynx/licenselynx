@@ -11,8 +11,8 @@
     },
     "rejected": [
         "Bison exception to GPL 2.0 or later",
-        "LicenseRef-scancode-bison-exception-2.0",
-        "bison-exception-2.0"
+        "bison-exception-2.0",
+        "LicenseRef-scancode-bison-exception-2.0"
     ],
     "risky": [],
     "isMajorVersionOnly": true

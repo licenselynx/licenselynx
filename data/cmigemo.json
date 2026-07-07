@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "C/Migemo Licence"
+        ],
         "scancodeLicensedb": [
             "C/Migemo License",
             "LicenseRef-scancode-cmigemo"

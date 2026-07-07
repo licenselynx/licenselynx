@@ -9,7 +9,9 @@
             "LicenseRef-scancode-os4d-1.1-apache-2.0",
             "OS4D-1.1-Apache-2.0"
         ],
-        "custom": []
+        "custom": [
+            "Bitcaster Source Licence, Version 1.1, Apache 2.0 Future Licence"
+        ]
     },
     "rejected": [],
     "risky": []

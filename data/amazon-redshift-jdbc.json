@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Amazon Redshift JDBC Driver Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "Amazon Redshift JDBC Driver License Agreement",
             "LicenseRef-scancode-amazon-redshift-jdbc"

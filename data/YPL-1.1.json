@@ -7,7 +7,9 @@
         "spdx": [
             "Yahoo! Public License v1.1"
         ],
-        "custom": [],
+        "custom": [
+            "Yahoo! Public Licence v1.1"
+        ],
         "scancodeLicensedb": [
             "YPL 1.1",
             "ypl-1.1"

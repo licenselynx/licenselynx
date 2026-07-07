@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Brankas Open Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "Brankas Open License 1.0",
             "LicenseRef-scancode-brankas-open-license-1.0"

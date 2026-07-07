@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Google Patent Licence for WebRTC"
+        ],
         "scancodeLicensedb": [
             "Google Patent License for WebRTC",
             "LicenseRef-scancode-google-patent-license-webrtc"

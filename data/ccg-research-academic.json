@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "CogComp Research and Academic Use Licence",
+            "Cognitive Computation Group Research Licence"
+        ],
         "scancodeLicensedb": [
             "CogComp Research and Academic Use License",
             "Cognitive Computation Group Research License",

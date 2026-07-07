@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Hippocratic Licence 2.0",
+            "Hippocratic Licence v2.0"
+        ],
         "scancodeLicensedb": [
             "Hippocratic License 2.0",
             "Hippocratic License v2.0",

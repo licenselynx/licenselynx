@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft Windows Server 2003 DDK Licence",
+            "MS Windows Server 2003 DDK Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-windows-server-2003-ddk",
             "Microsoft Windows Server 2003 DDK License",

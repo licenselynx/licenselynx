@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Anti-Capitalist Software Licence (v 1.4)"
+        ],
         "scancodeLicensedb": [
             "ACSL v. 1.4",
             "Anti-Capitalist Software License (v 1.4)",

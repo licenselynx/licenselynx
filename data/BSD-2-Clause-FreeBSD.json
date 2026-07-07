@@ -7,7 +7,10 @@
         "spdx": [
             "BSD 2-Clause FreeBSD License"
         ],
-        "custom": [],
+        "custom": [
+            "BSD 2-Clause FreeBSD Licence",
+            "BSD-2-Clause-FreeBSD Licence"
+        ],
         "scancodeLicensedb": [
             "BSD-2-Clause-FreeBSD",
             "BSD-2-Clause-FreeBSD License"

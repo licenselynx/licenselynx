@@ -7,7 +7,9 @@
         "spdx": [
             "Utah Raster Toolkit Run Length Encoded License"
         ],
-        "custom": [],
+        "custom": [
+            "Utah Raster Toolkit Run Length Encoded Licence"
+        ],
         "scancodeLicensedb": [
             "urt-rle"
         ]

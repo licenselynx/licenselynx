@@ -7,7 +7,9 @@
         "spdx": [
             "Adobe Postscript AFM License"
         ],
-        "custom": [],
+        "custom": [
+            "Adobe Postscript AFM Licence"
+        ],
         "scancodeLicensedb": [
             "apafml"
         ]

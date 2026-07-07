@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Gatling-Highcharts Licence"
+        ],
         "scancodeLicensedb": [
             "Gatling-Highcharts License",
             "LicenseRef-scancode-gatling-highcharts"

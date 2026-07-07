@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Semgrep Registry Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-semgrep-registry",
             "Semgrep Registry License"

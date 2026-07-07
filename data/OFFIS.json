@@ -7,7 +7,9 @@
         "spdx": [
             "OFFIS License"
         ],
-        "custom": [],
+        "custom": [
+            "OFFIS Licence"
+        ],
         "scancodeLicensedb": [
             "offis"
         ]

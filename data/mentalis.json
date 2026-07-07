@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Mentalis Licence",
+            "Mentalis Source Code Licence"
+        ],
         "scancodeLicensedb": [
             "Mentalis License",
             "Mentalis Source Code License"

@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Alasir License",
+            "The Alasir License"
+        ],
         "scancodeLicensedb": [
             "Alasir Licence",
             "LicenseRef-scancode-alasir",

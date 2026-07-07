@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Xilinx Licence 2016"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-xilinx-2016",
             "Xilinx License 2016"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "IBM AS-IS Licence"
+        ],
         "scancodeLicensedb": [
             "IBM AS-IS License",
             "LicenseRef-scancode-ibm-as-is"

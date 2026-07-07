@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "BitTorrent Open Source Licence 1.2"
+        ],
         "scancodeLicensedb": [
             "BitTorrent 1.2",
             "BitTorrent Open Source License 1.2",

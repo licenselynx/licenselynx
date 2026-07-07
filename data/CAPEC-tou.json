@@ -7,7 +7,9 @@
         "spdx": [
             "Common Attack    Pattern Enumeration and Classification License"
         ],
-        "custom": []
+        "custom": [
+            "Common Attack    Pattern Enumeration and Classification Licence"
+        ]
     },
     "rejected": [],
     "risky": []

@@ -7,7 +7,15 @@
         "spdx": [
             "Nokia Open Source License"
         ],
-        "custom": [],
+        "custom": [
+            "Licence :: Nokia Open Source Licence",
+            "Licence :: OSI Approved :: Nokia Open Source Licence",
+            "Nokia Open Source Licence",
+            "Nokia Open Source Licence 1.0a",
+            "Nokia Open Source Licence, Version 1.0a",
+            "NOKOS Licence 1.0a",
+            "OSI Approved :: Nokia Open Source Licence"
+        ],
         "osi": [
             "Nokia Open Source License, Version 1.0a"
         ],

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Hacktivismo Enhanced-Source Software Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "Hacktivismo Enhanced-Source Software License Agreement",
             "HESSLA",

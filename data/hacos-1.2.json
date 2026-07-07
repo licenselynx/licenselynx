@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Health Administration Corporation Open Source Licence 1.2"
+        ],
         "scancodeLicensedb": [
             "HACOS 1.2",
             "Health Administration Corporation Open Source License 1.2",

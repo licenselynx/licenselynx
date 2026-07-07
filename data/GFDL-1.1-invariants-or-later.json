@@ -7,7 +7,9 @@
         "spdx": [
             "GNU Free Documentation License v1.1 or later - invariants"
         ],
-        "custom": [],
+        "custom": [
+            "GNU Free Documentation Licence v1.1 or later - invariants"
+        ],
         "scancodeLicensedb": [
             "GFDL-1.1-invariants-or-later",
             "gfdl-1.1-invariants-or-later"

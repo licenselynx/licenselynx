@@ -7,7 +7,14 @@
         "spdx": [
             "Motosoto License"
         ],
-        "custom": [],
+        "custom": [
+            "Licence :: Motosoto Licence",
+            "Licence :: OSI Approved :: Motosoto Licence",
+            "Motosoto Licence",
+            "Motosoto Open Source Licence v0.9.1",
+            "Motosoto Open Source Licence, Version 0.9.1",
+            "OSI Approved :: Motosoto Licence"
+        ],
         "osi": [
             "Motosoto Open Source License, Version 0.9.1"
         ],

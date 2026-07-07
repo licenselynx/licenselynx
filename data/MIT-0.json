@@ -8,7 +8,17 @@
             "MIT No Attribution"
         ],
         "custom": [
-            "MIT no attribution"
+            "Licence :: MIT No Attribution Licence",
+            "Licence :: MIT No Attribution Licence (MIT-0)",
+            "Licence :: MIT-0",
+            "Licence :: OSI Approved :: MIT No Attribution Licence",
+            "Licence :: OSI Approved :: MIT No Attribution Licence (MIT-0)",
+            "Licence :: OSI Approved :: MIT-0",
+            "MIT no attribution",
+            "MIT No Attribution Licence",
+            "MIT No Attribution Licence (MIT-0)",
+            "OSI Approved :: MIT No Attribution Licence",
+            "OSI Approved :: MIT No Attribution Licence (MIT-0)"
         ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ekioh",

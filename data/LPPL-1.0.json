@@ -7,7 +7,9 @@
         "spdx": [
             "LaTeX Project Public License v1.0"
         ],
-        "custom": [],
+        "custom": [
+            "LaTeX Project Public Licence v1.0"
+        ],
         "scancodeLicensedb": [
             "LPPL 1.0",
             "lppl-1.0"

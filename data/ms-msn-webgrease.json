@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft MSN WebGrease Licence",
+            "MS MSN WebGrease Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-msn-webgrease",
             "Microsoft MSN WebGrease License",

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "T-Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-t-license-1.0",
             "T-License 1.0"

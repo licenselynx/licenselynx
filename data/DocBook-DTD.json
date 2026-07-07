@@ -7,7 +7,9 @@
         "spdx": [
             "DocBook DTD License"
         ],
-        "custom": [],
+        "custom": [
+            "DocBook DTD Licence"
+        ],
         "scancodeLicensedb": [
             "docbook-dtd"
         ]

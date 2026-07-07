@@ -7,7 +7,9 @@
         "spdx": [
             "Adobe Display PostScript License"
         ],
-        "custom": [],
+        "custom": [
+            "Adobe Display PostScript Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-x11-adobe",
             "x11-adobe",

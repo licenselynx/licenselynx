@@ -7,7 +7,10 @@
         "spdx": [
             "United    Kingdom Open Parliament Licence v3.0"
         ],
-        "custom": [],
+        "custom": [
+            "United    Kingdom Open Parliament License v3.0",
+            "United Kingdom Open Parliament License v3.0"
+        ],
         "scancodeLicensedb": [
             "opl-uk-3.0",
             "United Kingdom Open Parliament Licence v3.0"

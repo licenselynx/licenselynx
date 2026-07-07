@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "CeCILL Free Software Licence Agreement v1.0 English"
+        ],
         "scancodeLicensedb": [
             "CeCILL 1.0 English",
             "CeCILL Free Software License Agreement v1.0 English",

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Array Input Method Public Licence"
+        ],
         "scancodeLicensedb": [
             "Array Input Method Public License",
             "LicenseRef-scancode-array-input-method-pl"

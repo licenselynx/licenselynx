@@ -7,7 +7,10 @@
         "spdx": [
             "FSF Unlimited License (with License Retention)"
         ],
-        "custom": [],
+        "custom": [
+            "Free Software Foundation - Unlimited Licence",
+            "FSF Unlimited Licence (with Licence Retention)"
+        ],
         "scancodeLicensedb": [
             "Free Software Foundation - Unlimited License",
             "FSF-Unlimited",

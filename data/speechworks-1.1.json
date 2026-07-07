@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "SpeechWorks Public Licence 1.1",
+            "SpeechWorks Public Licence v1.1"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-speechworks-1.1",
             "SpeechWorks Public License 1.1",

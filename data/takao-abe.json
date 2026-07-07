@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Takao Abe Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-takao-abe",
             "Takao Abe License"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Enhanced MIT Licence"
+        ],
         "scancodeLicensedb": [
             "Enhanced MIT License",
             "LicenseRef-scancode-emit"

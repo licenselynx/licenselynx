@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Alexisisaac Freeware Licence"
+        ],
         "scancodeLicensedb": [
             "Alexisisaac Freeware License",
             "LicenseRef-scancode-alexisisaac-freeware"

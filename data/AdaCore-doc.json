@@ -7,7 +7,9 @@
         "spdx": [
             "AdaCore Doc License"
         ],
-        "custom": [],
+        "custom": [
+            "AdaCore Doc Licence"
+        ],
         "scancodeLicensedb": [
             "adacore-doc"
         ]

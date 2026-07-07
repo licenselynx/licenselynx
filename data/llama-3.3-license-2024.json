@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Llama 3.3 Community Licence Agreement 2024"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-llama-3.3-license-2024",
             "Llama 3.3 Community License Agreement 2024"

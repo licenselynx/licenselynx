@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "SNMP4J-SMI Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-snmp4j-smi",
             "SNMP4J-SMI License"

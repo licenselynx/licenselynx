@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Bruno Podetti Licence"
+        ],
         "scancodeLicensedb": [
             "Bruno Podetti License",
             "LicenseRef-scancode-bruno-podetti"

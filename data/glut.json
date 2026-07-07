@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "GLUT Licence",
+            "OpenGL Utility Toolkit (GLUT) Licence"
+        ],
         "scancodeLicensedb": [
             "GLUT License",
             "LicenseRef-scancode-glut",

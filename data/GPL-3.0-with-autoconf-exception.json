@@ -7,7 +7,9 @@
         "spdx": [
             "GNU General Public License v3.0 w/Autoconf exception"
         ],
-        "custom": [],
+        "custom": [
+            "GNU General Public Licence v3.0 w/Autoconf exception"
+        ],
         "scancodeLicensedb": [
             "GPL 3.0 with Autoconf exception",
             "gpl-3.0-autoconf"

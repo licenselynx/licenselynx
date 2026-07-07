@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Waterfall Feed Parser Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-waterfall-feed-parser",
             "Waterfall Feed Parser License"

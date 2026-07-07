@@ -7,7 +7,15 @@
         "spdx": [
             "Sun Public License v1.0"
         ],
-        "custom": [],
+        "custom": [
+            "Licence :: OSI Approved :: Sun Public Licence",
+            "Licence :: Sun Public Licence",
+            "OSI Approved :: Sun Public Licence",
+            "Sun Public Licence",
+            "Sun Public Licence 1.0",
+            "Sun Public Licence v1.0",
+            "Sun Public Licence, Version 1.0"
+        ],
         "osi": [
             "Sun Public License, Version 1.0"
         ],

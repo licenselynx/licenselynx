@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "BERI Hardware-Software Licence v1.0"
+        ],
         "scancodeLicensedb": [
             "BERI Hardware-Software License v1.0",
             "LicenseRef-scancode-beri-hw-sw-1.0"

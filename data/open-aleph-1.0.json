@@ -8,7 +8,9 @@
             "LicenseRef-scancode-open-aleph-1.0",
             "Open Aleph License 1.0"
         ],
-        "custom": []
+        "custom": [
+            "Open Aleph Licence 1.0"
+        ]
     },
     "rejected": [],
     "risky": [],

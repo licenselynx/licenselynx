@@ -7,7 +7,9 @@
         "spdx": [
             "Ferguson Twofish License"
         ],
-        "custom": [],
+        "custom": [
+            "Ferguson Twofish Licence"
+        ],
         "scancodeLicensedb": [
             "ferguson-twofish"
         ]

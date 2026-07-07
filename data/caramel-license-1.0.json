@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Caramel Licence 1.0",
+            "Caramel Software Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "Caramel License 1.0",
             "Caramel Software License 1.0",

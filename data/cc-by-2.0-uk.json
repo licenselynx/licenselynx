@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Creative Commons Attribution Licence 2.0 UK"
+        ],
         "scancodeLicensedb": [
             "CC-BY-2.0-UK",
             "Creative Commons Attribution License 2.0 UK",

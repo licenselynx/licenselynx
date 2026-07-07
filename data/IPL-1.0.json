@@ -7,7 +7,14 @@
         "spdx": [
             "IBM Public License v1.0"
         ],
-        "custom": [],
+        "custom": [
+            "IBM Public Licence",
+            "IBM Public Licence v1.0",
+            "IBM Public Licence, Version 1.0",
+            "Licence :: IBM Public Licence",
+            "Licence :: OSI Approved :: IBM Public Licence",
+            "OSI Approved :: IBM Public Licence"
+        ],
         "osi": [
             "IBM Public License, Version 1.0"
         ],

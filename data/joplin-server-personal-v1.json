@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Joplin Server Personal Use Licence v1"
+        ],
         "scancodeLicensedb": [
             "Joplin Server Personal Use License v1",
             "LicenseRef-scancode-joplin-server-personal-v1"

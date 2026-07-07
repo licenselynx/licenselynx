@@ -7,7 +7,9 @@
         "spdx": [
             "App::s2p License"
         ],
-        "custom": [],
+        "custom": [
+            "App::s2p Licence"
+        ],
         "scancodeLicensedb": [
             "app-s2p"
         ]

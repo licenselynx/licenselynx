@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Oasis WS Security Specification Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-oasis-ws-security-spec",
             "Oasis WS Security Specification License"

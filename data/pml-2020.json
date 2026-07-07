@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Amazon Program Materials Licence Agreement 2020"
+        ],
         "scancodeLicensedb": [
             "Amazon PML 2020",
             "Amazon Program Materials License Agreement 2020",

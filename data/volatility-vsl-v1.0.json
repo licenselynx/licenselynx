@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Volatility Software Licence Version 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-volatility-vsl-v1.0",
             "Volatility Software License Version 1.0"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Xiph Opus Patent Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-xiph-patent",
             "Xiph Opus Patent License"

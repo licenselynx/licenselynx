@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Esri Developer Kit Licence"
+        ],
         "scancodeLicensedb": [
             "Esri Developer Kit License",
             "LicenseRef-scancode-esri-devkit"

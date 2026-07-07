@@ -7,7 +7,9 @@
         "spdx": [
             "Imlib2 License"
         ],
-        "custom": [],
+        "custom": [
+            "Imlib2 Licence"
+        ],
         "scancodeLicensedb": [
             "imlib2"
         ]

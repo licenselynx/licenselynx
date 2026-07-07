@@ -7,7 +7,10 @@
         "spdx": [
             "Academic Free License v1.2"
         ],
-        "custom": [],
+        "custom": [
+            "Academic Free Licence 1.2",
+            "Academic Free Licence v1.2"
+        ],
         "scancodeLicensedb": [
             "Academic Free License 1.2",
             "AFL 1.2",

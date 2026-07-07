@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "BPEL4WS Specification licence"
+        ],
         "scancodeLicensedb": [
             "BPEL4WS Specification license",
             "LicenseRef-scancode-bpel4ws-spec"

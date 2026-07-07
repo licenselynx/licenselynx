@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "mod_dav Licence 1.0",
+            "mod_dav Licence Agreement v1"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-mod-dav-1.0",
             "mod_dav License 1.0",

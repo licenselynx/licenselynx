@@ -7,7 +7,9 @@
         "spdx": [
             "Xdebug License v 1.03"
         ],
-        "custom": [],
+        "custom": [
+            "Xdebug Licence v 1.03"
+        ],
         "scancodeLicensedb": [
             "xdebug-1.03"
         ]

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Eclipse Foundation Technology Compatibility Kit Licence - v1.1"
+        ],
         "scancodeLicensedb": [
             "Eclipse Foundation Technology Compatibility Kit License - v1.1",
             "Eclipse TCK v1.1",

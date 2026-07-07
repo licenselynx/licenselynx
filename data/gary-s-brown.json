@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Gary S. Brown Licence"
+        ],
         "scancodeLicensedb": [
             "Gary S. Brown License",
             "LicenseRef-scancode-gary-s-brown"

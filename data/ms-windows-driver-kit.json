@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft Windows Driver Kit Licence",
+            "MS Windows Driver Kit Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-windows-driver-kit",
             "Microsoft Windows Driver Kit License",

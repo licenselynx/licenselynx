@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Paint.NET Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-paint-net",
             "Paint.NET License"

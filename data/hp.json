@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "HP Non-Commercial Licence"
+        ],
         "scancodeLicensedb": [
             "HP Non-Commercial License",
             "LicenseRef-scancode-hp"

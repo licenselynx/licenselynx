@@ -7,7 +7,9 @@
         "spdx": [
             "Kazlib License"
         ],
-        "custom": [],
+        "custom": [
+            "Kazlib Licence"
+        ],
         "scancodeLicensedb": [
             "Kazlib",
             "kazlib"

@@ -7,7 +7,9 @@
         "spdx": [
             "Adobe Utopia Font License"
         ],
-        "custom": [],
+        "custom": [
+            "Adobe Utopia Font Licence"
+        ],
         "scancodeLicensedb": [
             "adobe-utopia"
         ]

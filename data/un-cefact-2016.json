@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "UN-CEFACT Licence 2016"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-un-cefact-2016",
             "UN-CEFACT License 2016"

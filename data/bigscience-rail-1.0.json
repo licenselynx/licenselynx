@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "BigScience RAIL Licence v1.0"
+        ],
         "scancodeLicensedb": [
             "BigScience RAIL License v1.0",
             "LicenseRef-scancode-bigscience-rail-1.0"

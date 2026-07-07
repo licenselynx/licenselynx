@@ -7,7 +7,10 @@
         "spdx": [
             "Python License 2.0.1"
         ],
-        "custom": [],
+        "custom": [
+            "Python Licence 2.0.1",
+            "Python Software Foundation Licence v2.0.1"
+        ],
         "scancodeLicensedb": [
             "Python Software Foundation License v2.0.1",
             "python-2.0.1"

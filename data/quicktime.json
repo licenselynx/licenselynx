@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Apple Quicktime Licence"
+        ],
         "scancodeLicensedb": [
             "Apple Quicktime License",
             "LicenseRef-scancode-quicktime"

@@ -7,7 +7,10 @@
         "spdx": [
             "Condor Public License v1.1"
         ],
-        "custom": [],
+        "custom": [
+            "Condor Public Licence 1.1",
+            "Condor Public Licence v1.1"
+        ],
         "scancodeLicensedb": [
             "Condor Public License 1.1",
             "condor-1.1"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Aladdin Free Public Licence v9"
+        ],
         "scancodeLicensedb": [
             "Aladdin FPL v9",
             "Aladdin Free Public License v9",

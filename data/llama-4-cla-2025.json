@@ -8,7 +8,9 @@
             "LicenseRef-scancode-llama-4-cla-2025",
             "Llama 4 Community License Agreement 2025"
         ],
-        "custom": []
+        "custom": [
+            "Llama 4 Community Licence Agreement 2025"
+        ]
     },
     "rejected": [],
     "risky": []

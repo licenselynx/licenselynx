@@ -7,7 +7,9 @@
         "spdx": [
             "Gnome GCR Documentation License"
         ],
-        "custom": [],
+        "custom": [
+            "Gnome GCR Documentation Licence"
+        ],
         "scancodeLicensedb": [
             "gcr-docs"
         ]

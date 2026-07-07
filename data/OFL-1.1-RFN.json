@@ -7,7 +7,9 @@
         "spdx": [
             "SIL Open Font License 1.1 with Reserved Font Name"
         ],
-        "custom": [],
+        "custom": [
+            "SIL Open Font Licence 1.1 with Reserved Font Name"
+        ],
         "scancodeLicensedb": [
             "OFL 1.1 Reserved Font Name",
             "ofl-1.1-rfn"

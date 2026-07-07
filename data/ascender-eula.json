@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Ascender Corporation End User Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "Ascender Corporation End User License Agreement",
             "Ascender EULA",

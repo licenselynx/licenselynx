@@ -7,7 +7,9 @@
         "spdx": [
             "Bahyph License"
         ],
-        "custom": [],
+        "custom": [
+            "Bahyph Licence"
+        ],
         "scancodeLicensedb": [
             "bahyph"
         ]

@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Slint Commercial Licence 2.0",
+            "Slint Software Licence Agreement Version 2.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-slint-commercial-2.0",
             "Slint Commercial License 2.0",

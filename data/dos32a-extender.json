@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "DOS32 Advanced DOS Extender Software Licence",
+            "DOS32A Extender Licence"
+        ],
         "scancodeLicensedb": [
             "DOS32 Advanced DOS Extender Software License",
             "DOS32A Extender License",

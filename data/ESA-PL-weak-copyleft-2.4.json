@@ -5,9 +5,11 @@
     },
     "aliases": {
         "spdx": [
-            "European Space Agency Public License \u2013 v2.4 \u2013 Weak Copyleft (Type 2)"
+            "European Space Agency Public License – v2.4 – Weak Copyleft (Type 2)"
         ],
-        "custom": []
+        "custom": [
+            "European Space Agency Public Licence – v2.4 – Weak Copyleft (Type 2)"
+        ]
     },
     "rejected": [],
     "risky": [],

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Intel Royalty Free Licence"
+        ],
         "scancodeLicensedb": [
             "Intel Royalty Free License",
             "LicenseRef-scancode-intel-royalty-free"

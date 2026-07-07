@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Sun source code Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-sun-source",
             "Sun source code License"

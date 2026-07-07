@@ -7,7 +7,9 @@
         "spdx": [
             "fwlw License"
         ],
-        "custom": [],
+        "custom": [
+            "fwlw Licence"
+        ],
         "scancodeLicensedb": [
             "fwlw"
         ]

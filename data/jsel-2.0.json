@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "JAHIA Sustainable Enterprise Licence (JSEL) 2.0"
+        ],
         "scancodeLicensedb": [
             "JAHIA Sustainable Enterprise License (JSEL) 2.0",
             "JSEL 2.0",

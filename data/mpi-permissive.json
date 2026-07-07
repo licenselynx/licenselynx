@@ -7,7 +7,9 @@
         "spdx": [
             "mpi Permissive License"
         ],
-        "custom": [],
+        "custom": [
+            "mpi Permissive Licence"
+        ],
         "scancodeLicensedb": [
             "mpi-permissive"
         ]

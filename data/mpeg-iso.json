@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "MPEG-2 NBC MPEG-4 Audio ISO Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-mpeg-iso",
             "MPEG-2 NBC MPEG-4 Audio ISO",

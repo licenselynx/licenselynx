@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "TXL 10.5 Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-txl-10.5",
             "TXL 10.5 License"

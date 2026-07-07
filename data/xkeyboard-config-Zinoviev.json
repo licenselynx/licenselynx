@@ -7,7 +7,9 @@
         "spdx": [
             "xkeyboard-config Zinoviev License"
         ],
-        "custom": [],
+        "custom": [
+            "xkeyboard-config Zinoviev Licence"
+        ],
         "scancodeLicensedb": [
             "xkeyboard-config-zinoviev"
         ]

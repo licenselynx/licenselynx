@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "DB Inner Source Licence 1.0",
+            "Deutsche Bahn Inner Source Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "DB Inner Source License 1.0",
             "Deutsche Bahn Inner Source License 1.0",

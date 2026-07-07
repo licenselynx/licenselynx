@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Open Innovation Licence version 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-opnl-1.0",
             "Open Innovation License version 1.0",

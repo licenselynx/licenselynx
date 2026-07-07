@@ -7,7 +7,9 @@
         "spdx": [
             "MIT-STK License"
         ],
-        "custom": []
+        "custom": [
+            "MIT-STK Licence"
+        ]
     },
     "rejected": [],
     "risky": []

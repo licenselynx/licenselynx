@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "MediaInfo(Lib) Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-mediainfo-lib",
             "MediaInfo(Lib) License"

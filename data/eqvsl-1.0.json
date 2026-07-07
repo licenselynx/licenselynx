@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Eclipse Foundation Quality Verification Suite Licence - V 1.0"
+        ],
         "scancodeLicensedb": [
             "Eclipse Foundation Quality Verification Suite License - V 1.0",
             "Eclipse QVSL 1.0",

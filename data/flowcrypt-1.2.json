@@ -8,7 +8,9 @@
             "FlowCrypt License 1.2",
             "LicenseRef-scancode-flowcrypt-1.2"
         ],
-        "custom": []
+        "custom": [
+            "FlowCrypt Licence 1.2"
+        ]
     },
     "rejected": [],
     "risky": [],

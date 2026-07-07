@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "ISO Recorder Licence"
+        ],
         "scancodeLicensedb": [
             "ISO Recorder License",
             "LicenseRef-scancode-iso-recorder"

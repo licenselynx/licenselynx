@@ -9,7 +9,9 @@
             "ADI BSD License 2011",
             "LicenseRef-scancode-adi-bsd-2011"
         ],
-        "custom": []
+        "custom": [
+            "ADI BSD Licence 2011"
+        ]
     },
     "rejected": [],
     "risky": []

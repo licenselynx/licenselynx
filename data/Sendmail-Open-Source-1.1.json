@@ -7,7 +7,9 @@
         "spdx": [
             "Sendmail Open Source License v1.1"
         ],
-        "custom": [],
+        "custom": [
+            "Sendmail Open Source Licence v1.1"
+        ],
         "scancodeLicensedb": [
             "sendmail-open-source-1.1"
         ]

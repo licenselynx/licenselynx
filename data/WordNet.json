@@ -7,7 +7,10 @@
         "spdx": [
             "WordNet License"
         ],
-        "custom": [],
+        "custom": [
+            "WordNet Licence",
+            "Wordnet Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-wordnet",
             "Wordnet License"

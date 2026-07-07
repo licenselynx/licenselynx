@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Intel Sample Source Code Licence Agreement 2015"
+        ],
         "scancodeLicensedb": [
             "Intel Sample Source Code 2015",
             "Intel Sample Source Code License Agreement 2015",

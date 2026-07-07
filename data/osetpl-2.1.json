@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "OSET Public Licence v2.1"
+        ],
         "scancodeLicensedb": [
             "OSET 2.1",
             "OSET Public License v2.1"

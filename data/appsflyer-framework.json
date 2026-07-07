@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "AppsFlyer Framework Licence"
+        ],
         "scancodeLicensedb": [
             "AppsFlyer Framework License",
             "LicenseRef-scancode-appsflyer-framework"

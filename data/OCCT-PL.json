@@ -7,7 +7,9 @@
         "spdx": [
             "Open CASCADE Technology Public License"
         ],
-        "custom": [],
+        "custom": [
+            "Open CASCADE Technology Public Licence"
+        ],
         "scancodeLicensedb": [
             "OCCT-PL",
             "occt-pl"

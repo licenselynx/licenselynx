@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft Research Shared Source Licence",
+            "MS Research Shared Source Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-research-shared-source",
             "Microsoft Research Shared Source License",

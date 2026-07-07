@@ -19,9 +19,20 @@
             "CDDL, v1.0",
             "CDDL-1.0 License",
             "cddl1.0",
+            "Common Development and Distribution Licence 1.0",
+            "Common Development and Distribution Licence 1.0 (CDDL-1.0)",
+            "Common Development and Distribution Licence, Version 1.0",
             "Common Development and Distribution License v1.0",
             "Common Development and Distribution License Version 1.0",
-            "Common Development License 1.0"
+            "Common Development License 1.0",
+            "Licence :: CDDL-1.0",
+            "Licence :: Common Development and Distribution Licence 1.0",
+            "Licence :: Common Development and Distribution Licence 1.0 (CDDL-1.0)",
+            "Licence :: OSI Approved :: CDDL-1.0",
+            "Licence :: OSI Approved :: Common Development and Distribution Licence 1.0",
+            "Licence :: OSI Approved :: Common Development and Distribution Licence 1.0 (CDDL-1.0)",
+            "OSI Approved :: Common Development and Distribution Licence 1.0",
+            "OSI Approved :: Common Development and Distribution Licence 1.0 (CDDL-1.0)"
         ],
         "osi": [
             "Common Development and Distribution License, Version 1.0"

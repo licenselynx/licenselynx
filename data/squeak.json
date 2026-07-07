@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Apple Squeak Licence"
+        ],
         "scancodeLicensedb": [
             "Apple Squeak License",
             "LicenseRef-scancode-squeak"

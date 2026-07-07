@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "SBIA Software licence - Downloading Agreement"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-sbia-b",
             "SBIA Part B",

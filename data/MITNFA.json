@@ -7,7 +7,11 @@
         "spdx": [
             "MIT +no-false-attribs license"
         ],
-        "custom": [],
+        "custom": [
+            "MIT +no-false-attribs licence",
+            "MIT no false attribution Licence",
+            "MIT with no false attribution Licence"
+        ],
         "scancodeLicensedb": [
             "MIT no false attribution License",
             "MIT with no false attribution License",

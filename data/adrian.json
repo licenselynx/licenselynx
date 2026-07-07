@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Andre Adrian DFS licence"
+        ],
         "scancodeLicensedb": [
             "Andre Adrian DFS license",
             "LicenseRef-scancode-adrian"

@@ -4,7 +4,9 @@
         "src": "spdx"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "SMAIL General Public Licence"
+        ],
         "spdx": [
             "SMAIL General Public License"
         ],

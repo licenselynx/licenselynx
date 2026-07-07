@@ -7,7 +7,9 @@
         "spdx": [
             "BSD 4.3 RENO License"
         ],
-        "custom": []
+        "custom": [
+            "BSD 4.3 RENO Licence"
+        ]
     },
     "rejected": [],
     "risky": [

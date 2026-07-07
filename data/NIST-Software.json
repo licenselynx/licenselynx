@@ -7,7 +7,9 @@
         "spdx": [
             "NIST Software License"
         ],
-        "custom": [],
+        "custom": [
+            "NIST Software Licence"
+        ],
         "scancodeLicensedb": [
             "nist-software"
         ]

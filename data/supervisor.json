@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Supervisor Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-supervisor",
             "Supervisor License"

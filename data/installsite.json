@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "InstallSite Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "InstallSite License Agreement",
             "LicenseRef-scancode-installsite"

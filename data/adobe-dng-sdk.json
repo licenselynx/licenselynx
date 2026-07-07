@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Adobe DNG SDK Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "Adobe DNG SDK License Agreement",
             "LicenseRef-scancode-adobe-dng-sdk"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Riverbank SIP Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-riverbank-sip",
             "Riverbank SIP License"

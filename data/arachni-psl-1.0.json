@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Arachni Public Source Licence v1.0"
+        ],
         "scancodeLicensedb": [
             "Arachni PSL v1.0",
             "Arachni Public Source License v1.0",

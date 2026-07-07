@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "OWF Contributor Licence Agreement 1.0 - Copyright"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-owf-cla-1.0-copyright",
             "OWF CLA 1.0 - Copyright",

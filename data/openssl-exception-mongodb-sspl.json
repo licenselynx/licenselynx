@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "OpenSSL exception to the Server Side Public Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-openssl-exception-mongodb-sspl",
             "OpenSSL exception to SSPL",

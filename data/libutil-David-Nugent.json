@@ -7,7 +7,9 @@
         "spdx": [
             "libutil David Nugent License"
         ],
-        "custom": [],
+        "custom": [
+            "libutil David Nugent Licence"
+        ],
         "scancodeLicensedb": [
             "libutil-david-nugent"
         ]

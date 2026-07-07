@@ -7,7 +7,9 @@
         "spdx": [
             "Cryptographic Autonomy License 1.0"
         ],
-        "custom": [],
+        "custom": [
+            "Cryptographic Autonomy Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "CAL-1.0",
             "cal-1.0"

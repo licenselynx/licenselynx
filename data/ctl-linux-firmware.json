@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Creative Technology Linux Firmware Licence"
+        ],
         "scancodeLicensedb": [
             "Creative Technology Linux Firmware License",
             "LicenseRef-scancode-ctl-linux-firmware"

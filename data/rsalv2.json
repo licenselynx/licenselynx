@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Redis Source Available Licence 2.0 (RSALv2) Agreement"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-rsalv2",
             "Redis Source Available License 2.0 (RSALv2) Agreement",

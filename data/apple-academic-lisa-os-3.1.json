@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Apple Academic Licence Agreement Lisa OS v3.1"
+        ],
         "scancodeLicensedb": [
             "Apple Academic License Agreement Lisa OS v3.1",
             "Apple Academic Lisa OS v3.1",

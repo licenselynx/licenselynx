@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "JA-SiG Licence"
+        ],
         "scancodeLicensedb": [
             "JA-SiG License",
             "LicenseRef-scancode-ja-sig"

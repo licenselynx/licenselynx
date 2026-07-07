@@ -7,7 +7,9 @@
         "spdx": [
             "Arphic Public License"
         ],
-        "custom": [],
+        "custom": [
+            "Arphic Public Licence"
+        ],
         "scancodeLicensedb": [
             "arphic-public",
             "LicenseRef-scancode-arphic-public"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Qt Licence Agreement v4.4.1"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-qt-commercial-agreement-4.4.1",
             "Qt License Agreement v4.4.1"

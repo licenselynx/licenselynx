@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Jeulurida Public Licence 1.1"
+        ],
         "scancodeLicensedb": [
             "Jeulurida Public License 1.1",
             "LicenseRef-scancode-jelurida-public-1.1"

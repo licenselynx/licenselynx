@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Permissive Binary Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-pbl-1.0",
             "PBL-1.0",

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "FreeBSD unmodified first lines Licence"
+        ],
         "scancodeLicensedb": [
             "FreeBSD unmodified first lines License",
             "LicenseRef-scancode-freebsd-first"

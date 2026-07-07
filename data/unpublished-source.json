@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Unpublished Source Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-unpublished-source",
             "Unpublished Source License"

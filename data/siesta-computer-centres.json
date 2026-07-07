@@ -8,7 +8,9 @@
             "LicenseRef-scancode-siesta-computer-centres",
             "Siesta Licence for Computer Centres"
         ],
-        "custom": []
+        "custom": [
+            "Siesta License for Computer Centres"
+        ]
     },
     "rejected": [],
     "risky": []

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Apple MFi Licence"
+        ],
         "scancodeLicensedb": [
             "Apple MFi License",
             "LicenseRef-scancode-apple-mfi-license"

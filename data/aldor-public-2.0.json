@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Aldor Public Licence 2.0"
+        ],
         "scancodeLicensedb": [
             "Aldor Public License 2.0",
             "LicenseRef-scancode-aldor-public-2.0"

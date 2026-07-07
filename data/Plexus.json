@@ -7,7 +7,10 @@
         "spdx": [
             "Plexus Classworlds License"
         ],
-        "custom": [],
+        "custom": [
+            "Dom4j Licence",
+            "Plexus Classworlds Licence"
+        ],
         "scancodeLicensedb": [
             "dom4j",
             "Dom4j License"

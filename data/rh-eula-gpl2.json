@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Red Hat GPLv2-Based End User Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-rh-eula-gpl2",
             "Red Hat GPLv2-Based End User License Agreement",

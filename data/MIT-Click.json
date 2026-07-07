@@ -7,7 +7,11 @@
         "spdx": [
             "MIT Click License"
         ],
-        "custom": [],
+        "custom": [
+            "Click Licence",
+            "click-licence",
+            "MIT Click Licence"
+        ],
         "scancodeLicensedb": [
             "Click License",
             "click-license",

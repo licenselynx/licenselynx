@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Redis Source Available Licence 1.0",
+            "Redis Source Available Licence Agreement 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-redis-source-available-1.0",
             "Redis Source Available License 1.0",

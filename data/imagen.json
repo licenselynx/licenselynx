@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "IMAGEN Licence"
+        ],
         "scancodeLicensedb": [
             "IMAGEN License",
             "LicenseRef-scancode-imagen"

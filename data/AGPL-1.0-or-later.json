@@ -7,7 +7,10 @@
         "spdx": [
             "Affero General Public License v1.0 or later"
         ],
-        "custom": [],
+        "custom": [
+            "Affero General Public Licence 1.0 or later",
+            "Affero General Public Licence v1.0 or later"
+        ],
         "scancodeLicensedb": [
             "Affero General Public License 1.0 or later",
             "AGPL 1.0 or later",

@@ -8,7 +8,9 @@
             "CockroachDB Software License 2024-10-01",
             "LicenseRef-scancode-cockroachdb-2024-10-01"
         ],
-        "custom": []
+        "custom": [
+            "CockroachDB Software Licence 2024-10-01"
+        ]
     },
     "rejected": [],
     "risky": []

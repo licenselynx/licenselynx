@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "DMTF Licence 2017"
+        ],
         "scancodeLicensedb": [
             "DMTF License 2017",
             "LicenseRef-scancode-dmtf-2017"

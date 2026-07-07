@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Code Project Open Licence (CPOL) 1.0"
+        ],
         "scancodeLicensedb": [
             "Code Project Open License (CPOL) 1.0",
             "CPOL 1.0",

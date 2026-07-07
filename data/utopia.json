@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Licence to TeX Users Group for the Utopia Typeface",
+            "Utopia Typeface Licence"
+        ],
         "scancodeLicensedb": [
             "License to TeX Users Group for the Utopia Typeface",
             "LicenseRef-scancode-utopia",

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "com.oreilly.servlet Licence"
+        ],
         "scancodeLicensedb": [
             "com.oreilly.servlet License",
             "LicenseRef-scancode-com-oreilly-servlet"

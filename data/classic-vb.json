@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Classic VB Licence"
+        ],
         "scancodeLicensedb": [
             "Classic VB License",
             "LicenseRef-scancode-classic-vb"

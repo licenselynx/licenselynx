@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Android SDK Licence 2021",
+            "Android Software Development Kit Licence Agreement 2021"
+        ],
         "scancodeLicensedb": [
             "Android SDK License 2021",
             "Android Software Development Kit License Agreement 2021",

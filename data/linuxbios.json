@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "LinuxBIOS Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-linuxbios",
             "LinuxBIOS License"

@@ -7,7 +7,9 @@
         "spdx": [
             "MIT License Modern Variant"
         ],
-        "custom": [],
+        "custom": [
+            "MIT Licence Modern Variant"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-mit-modern",
             "MIT Modern Variant",

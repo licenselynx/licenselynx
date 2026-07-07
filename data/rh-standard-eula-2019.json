@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Red Hat Standard End User Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-rh-standard-eula-2019",
             "Red Hat Standard End User License Agreement",

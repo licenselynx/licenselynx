@@ -7,7 +7,11 @@
         "spdx": [
             "Sybase Open Watcom Public License 1.0"
         ],
-        "custom": [],
+        "custom": [
+            "Sybase Open Watcom Public Licence 1.0",
+            "Sybase Open Watcom Public Licence v1.0",
+            "The Sybase Open Source License"
+        ],
         "osi": [
             "The Sybase Open Source Licence"
         ],

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Dropbear Licence"
+        ],
         "scancodeLicensedb": [
             "Dropbear License",
             "LicenseRef-scancode-dropbear"

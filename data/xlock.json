@@ -7,7 +7,10 @@
         "spdx": [
             "xlock License"
         ],
-        "custom": [],
+        "custom": [
+            "PBM Library Licence",
+            "xlock Licence"
+        ],
         "scancodeLicensedb": [
             "libpbm",
             "LicenseRef-scancode-libpbm",

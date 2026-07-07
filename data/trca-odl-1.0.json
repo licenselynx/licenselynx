@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Toronto Region Conservation Authority Open Data License 1.0",
+            "TRCA Open Data License 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-trca-odl-1.0",
             "Toronto Region Conservation Authority Open Data Licence 1.0",

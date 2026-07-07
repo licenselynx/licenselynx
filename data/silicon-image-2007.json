@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Silicon Image Proprietary Licence 2007"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-silicon-image-2007",
             "Silicon Image Proprietary License 2007"

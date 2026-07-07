@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Hewlett Packard JRE Licence",
+            "HP JRE Licence"
+        ],
         "scancodeLicensedb": [
             "Hewlett Packard JRE License",
             "HP JRE License",

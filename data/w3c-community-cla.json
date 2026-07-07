@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "W3C Community Contributor Licence Agreement (CLA)"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-w3c-community-cla",
             "W3C Community CLA",

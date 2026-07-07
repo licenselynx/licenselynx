@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "JDOM Licence"
+        ],
         "scancodeLicensedb": [
             "JDOM License",
             "LicenseRef-scancode-jdom"

@@ -7,7 +7,10 @@
         "spdx": [
             "LaTeX Project Public License v1.3c"
         ],
-        "custom": [],
+        "custom": [
+            "LaTeX Project Public Licence v1.3c",
+            "LaTeX Project Public Licence, Version 1.3c"
+        ],
         "osi": [
             "LaTeX Project Public License, Version 1.3c"
         ],

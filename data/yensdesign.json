@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Yensdesign Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-yensdesign",
             "Yensdesign License"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "alterMIME Licence"
+        ],
         "scancodeLicensedb": [
             "alterMIME License",
             "LicenseRef-scancode-altermime"

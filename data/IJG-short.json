@@ -7,7 +7,9 @@
         "spdx": [
             "Independent JPEG Group License - short"
         ],
-        "custom": [],
+        "custom": [
+            "Independent JPEG Group Licence - short"
+        ],
         "scancodeLicensedb": [
             "ijg-short"
         ]

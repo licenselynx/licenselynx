@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Tigra Calendar 3.2 Licence",
+            "Tigra Calendar v3.2 Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-tigra-calendar-3.2",
             "Tigra Calendar 3.2 License",

@@ -7,7 +7,9 @@
         "spdx": [
             "FSF All Permissive License"
         ],
-        "custom": [],
+        "custom": [
+            "FSF All Permissive Licence"
+        ],
         "scancodeLicensedb": [
             "fsf-ap"
         ]

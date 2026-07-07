@@ -7,7 +7,9 @@
         "spdx": [
             "Etalab Open License 2.0"
         ],
-        "custom": [],
+        "custom": [
+            "Etalab Open Licence 2.0"
+        ],
         "scancodeLicensedb": [
             "etalab-2.0",
             "LicenseRef-scancode-etalab-2.0",

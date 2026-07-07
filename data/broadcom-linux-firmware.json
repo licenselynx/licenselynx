@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Broadcom Linux Firmware Licence"
+        ],
         "scancodeLicensedb": [
             "Broadcom Linux Firmware License",
             "LicenseRef-scancode-broadcom-linux-firmware"

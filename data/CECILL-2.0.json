@@ -7,7 +7,9 @@
         "spdx": [
             "CeCILL Free Software License Agreement v2.0"
         ],
-        "custom": [],
+        "custom": [
+            "CeCILL Free Software Licence Agreement v2.0"
+        ],
         "scancodeLicensedb": [
             "CeCILL 2.0",
             "cecill-2.0"

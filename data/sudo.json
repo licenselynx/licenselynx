@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Sudo Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-sudo",
             "Sudo License"

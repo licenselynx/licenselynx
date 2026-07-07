@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "ExamDiff Licence"
+        ],
         "scancodeLicensedb": [
             "ExamDiff License",
             "LicenseRef-scancode-examdiff"

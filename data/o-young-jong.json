@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "O Young Jong Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-o-young-jong",
             "O Young Jong License"

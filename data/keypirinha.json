@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Keypirinha Licence"
+        ],
         "scancodeLicensedb": [
             "Keypirinha License",
             "LicenseRef-scancode-keypirinha"

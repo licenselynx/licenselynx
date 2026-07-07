@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Sglib Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-sglib",
             "Sglib License"

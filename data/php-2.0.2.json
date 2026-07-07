@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "PHP Licence 2.0.2"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-php-2.0.2",
             "PHP License 2.0.2"

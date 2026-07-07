@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Python CWI Licence",
+            "Python CWI Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-python-cwi",
             "Python CWI License",

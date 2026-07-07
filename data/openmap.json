@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "OpenMap Software Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-openmap",
             "OpenMap Software License Agreement"

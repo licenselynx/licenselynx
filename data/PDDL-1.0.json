@@ -7,7 +7,10 @@
         "spdx": [
             "Open Data Commons Public Domain Dedication & License 1.0"
         ],
-        "custom": [],
+        "custom": [
+            "Open Data Commons Public Domain Dedication & Licence 1.0",
+            "Public Domain Dedication & License (PDDL)"
+        ],
         "scancodeLicensedb": [
             "PDDL 1.0",
             "pddl-1.0",

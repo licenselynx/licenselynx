@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Hugo Licence"
+        ],
         "scancodeLicensedb": [
             "Hugo License",
             "LicenseRef-scancode-hugo"

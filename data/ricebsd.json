@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Rice BSD Software Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ricebsd",
             "Rice BSD Software License",

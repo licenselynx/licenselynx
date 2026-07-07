@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "RSA-MD4 Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-rsa-md4",
             "RSA Data Security MD4",

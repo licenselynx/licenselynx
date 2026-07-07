@@ -7,7 +7,10 @@
         "spdx": [
             "Open Government Licence - Canada"
         ],
-        "custom": [],
+        "custom": [
+            "Open Government License - Canada",
+            "Open Government License Canada 2.0"
+        ],
         "scancodeLicensedb": [
             "can-ogl-2.0-en",
             "OGL Canada 2.0",

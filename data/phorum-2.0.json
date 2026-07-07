@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Phorum Licence 2.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-phorum-2.0",
             "Phorum License 2.0"

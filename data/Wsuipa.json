@@ -7,7 +7,9 @@
         "spdx": [
             "Wsuipa License"
         ],
-        "custom": [],
+        "custom": [
+            "Wsuipa Licence"
+        ],
         "scancodeLicensedb": [
             "wsuipa"
         ]

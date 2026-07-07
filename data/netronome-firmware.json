@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Netronome Firmware Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-netronome-firmware",
             "Netronome Firmware License"

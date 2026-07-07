@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "StateWizard Licence",
+            "StateWizard Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-statewizard",
             "StateWizard License",

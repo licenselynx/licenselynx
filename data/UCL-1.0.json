@@ -7,7 +7,9 @@
         "spdx": [
             "Upstream Compatibility License v1.0"
         ],
-        "custom": [],
+        "custom": [
+            "Upstream Compatibility Licence v1.0"
+        ],
         "scancodeLicensedb": [
             "UCL-1.0",
             "ucl-1.0"

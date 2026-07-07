@@ -7,7 +7,9 @@
         "spdx": [
             "BSD 3-Clause No Nuclear License"
         ],
-        "custom": [],
+        "custom": [
+            "BSD 3-Clause No Nuclear Licence"
+        ],
         "scancodeLicensedb": [
             "Sun BSD-Style with Nuclear Restrictions",
             "sun-bsd-no-nuclear"

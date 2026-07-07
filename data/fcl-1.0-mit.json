@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Fair Core Licence, Version 1.0, MIT Future Licence"
+        ],
         "scancodeLicensedb": [
             "Fair Core License, Version 1.0, MIT Future License",
             "FCL-1.0-MIT",

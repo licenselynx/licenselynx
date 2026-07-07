@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "WinZip Self-Extractor Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-winzip-self-extractor",
             "WinZip Self-Extractor License"

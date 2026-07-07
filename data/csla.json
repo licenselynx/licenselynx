@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "CSLA .NET Licence",
+            "CSLA Licence"
+        ],
         "scancodeLicensedb": [
             "CSLA .NET License",
             "CSLA License",

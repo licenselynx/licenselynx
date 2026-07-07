@@ -7,7 +7,9 @@
         "spdx": [
             "man2html License"
         ],
-        "custom": []
+        "custom": [
+            "man2html Licence"
+        ]
     },
     "rejected": [],
     "risky": []

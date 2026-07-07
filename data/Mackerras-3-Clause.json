@@ -7,7 +7,10 @@
         "spdx": [
             "Mackerras 3-Clause License"
         ],
-        "custom": [],
+        "custom": [
+            "Mackerras 3-Clause Licence",
+            "Paul Mackerras New Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-paul-mackerras-new",
             "Paul Mackerras New License",

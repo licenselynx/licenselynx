@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Pipedream Source Available Licence 1.0",
+            "Pipedream Source Available Licence Version 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-pipedream-sal-1.0",
             "Pipedream Source Available License 1.0",

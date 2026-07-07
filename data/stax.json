@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Stax Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-stax",
             "Stax License"

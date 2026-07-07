@@ -7,7 +7,19 @@
         "spdx": [
             "Mulan Permissive Software License, Version 2"
         ],
-        "custom": [],
+        "custom": [
+            "Licence :: Mulan Permissive Software Licence v2",
+            "Licence :: Mulan Permissive Software Licence v2 (MulanPSL-2.0)",
+            "Licence :: MulanPSL-2.0",
+            "Licence :: OSI Approved :: Mulan Permissive Software Licence v2",
+            "Licence :: OSI Approved :: Mulan Permissive Software Licence v2 (MulanPSL-2.0)",
+            "Licence :: OSI Approved :: MulanPSL-2.0",
+            "Mulan Permissive Software Licence v2",
+            "Mulan Permissive Software Licence v2 (MulanPSL-2.0)",
+            "Mulan Permissive Software Licence, Version 2",
+            "OSI Approved :: Mulan Permissive Software Licence v2",
+            "OSI Approved :: Mulan Permissive Software Licence v2 (MulanPSL-2.0)"
+        ],
         "scancodeLicensedb": [
             "Mulan PSL v2",
             "mulanpsl-2.0"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "libgeoTiff Licence"
+        ],
         "scancodeLicensedb": [
             "libgeoTiff License",
             "LicenseRef-scancode-libgeotiff"

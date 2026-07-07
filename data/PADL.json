@@ -7,7 +7,9 @@
         "spdx": [
             "PADL License"
         ],
-        "custom": [],
+        "custom": [
+            "PADL Licence"
+        ],
         "scancodeLicensedb": [
             "padl"
         ]

@@ -7,7 +7,9 @@
         "spdx": [
             "Community Data License Agreement Permissive 1.0"
         ],
-        "custom": [],
+        "custom": [
+            "Community Data Licence Agreement Permissive 1.0"
+        ],
         "scancodeLicensedb": [
             "CDLA Permissive 1.0",
             "cdla-permissive-1.0"

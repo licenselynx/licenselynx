@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Theodore Ts'o licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-tso-license",
             "Theodore Ts'o license"

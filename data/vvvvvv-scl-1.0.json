@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "VVVVVV Source Code Licence v1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-vvvvvv-scl-1.0",
             "VVVVVV Source Code License v1.0"

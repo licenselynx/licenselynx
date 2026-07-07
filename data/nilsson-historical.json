@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Nilsson Historical Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-nilsson-historical",
             "Nilsson Historical License"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Douglas Young Licence"
+        ],
         "scancodeLicensedb": [
             "Douglas Young License",
             "LicenseRef-scancode-douglas-young"

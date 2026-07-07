@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "EmbedThis Evaluation Licence"
+        ],
         "scancodeLicensedb": [
             "EmbedThis Evaluation License",
             "LicenseRef-scancode-embedthis-evaluation"

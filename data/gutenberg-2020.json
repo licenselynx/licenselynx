@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Gutenberg Licence 2020",
+            "Project Gutenberg Licence 2020"
+        ],
         "scancodeLicensedb": [
             "Gutenberg License 2020",
             "LicenseRef-scancode-gutenberg-2020",

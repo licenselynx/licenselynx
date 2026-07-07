@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Netron Project Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-netron",
             "Netron Project License"

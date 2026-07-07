@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "TOPPERS Licence",
+            "TOPPERS Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-toppers-license",
             "TOPPERS License",

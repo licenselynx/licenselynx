@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Software Heritage Contributor Licence Agreement 1.1"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-sh-cla-1.1",
             "Software Heritage CLA 1.1",

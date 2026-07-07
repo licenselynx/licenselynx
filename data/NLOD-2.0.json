@@ -7,7 +7,9 @@
         "spdx": [
             "Norwegian Licence for Open Government Data (NLOD) 2.0"
         ],
-        "custom": [],
+        "custom": [
+            "Norwegian License for Open Government Data (NLOD) 2.0"
+        ],
         "scancodeLicensedb": [
             "NLOD-2.0",
             "nlod-2.0"

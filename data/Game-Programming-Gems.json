@@ -7,7 +7,10 @@
         "spdx": [
             "Game Programming Gems License"
         ],
-        "custom": [],
+        "custom": [
+            "Dante Treglia Licence",
+            "Game Programming Gems Licence"
+        ],
         "scancodeLicensedb": [
             "Dante Treglia License",
             "dante-treglia",

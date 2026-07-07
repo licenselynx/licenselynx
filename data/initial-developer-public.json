@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Initial Developer Public Licence"
+        ],
         "scancodeLicensedb": [
             "Initial Developer Public License",
             "LicenseRef-scancode-initial-developer-public"

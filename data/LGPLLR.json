@@ -7,7 +7,9 @@
         "spdx": [
             "Lesser General Public License For Linguistic Resources"
         ],
-        "custom": [],
+        "custom": [
+            "Lesser General Public Licence For Linguistic Resources"
+        ],
         "scancodeLicensedb": [
             "LGPLLR",
             "lgpllr"

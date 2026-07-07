@@ -7,7 +7,9 @@
         "spdx": [
             "European Space Agency Public License (ESA-PL) - V2.4 - Strong Copyleft (Type 1)"
         ],
-        "custom": []
+        "custom": [
+            "European Space Agency Public Licence (ESA-PL) - V2.4 - Strong Copyleft (Type 1)"
+        ]
     },
     "rejected": [],
     "risky": [],

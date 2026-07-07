@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Delorie Historical Licence"
+        ],
         "scancodeLicensedb": [
             "Delorie Historical License",
             "LicenseRef-scancode-delorie-historical"

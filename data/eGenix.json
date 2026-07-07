@@ -7,7 +7,10 @@
         "spdx": [
             "eGenix.com Public License 1.1.0"
         ],
-        "custom": [],
+        "custom": [
+            "eGenix Public Licence 1.1.0",
+            "eGenix.com Public Licence 1.1.0"
+        ],
         "scancodeLicensedb": [
             "eGenix Public License 1.1.0",
             "egenix-1.1.0"

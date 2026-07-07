@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "NCSA HTTPd Licence 1995"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ncsa-httpd-1995",
             "NCSA HTTPd License 1995"

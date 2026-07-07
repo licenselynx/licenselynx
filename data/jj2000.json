@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "JJ2000 Licence"
+        ],
         "scancodeLicensedb": [
             "JJ2000 License",
             "LicenseRef-scancode-jj2000"

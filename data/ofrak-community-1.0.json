@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "OFRAK Community Licence Agreement 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ofrak-community-1.0",
             "OFRAK Community License Agreement 1.0"

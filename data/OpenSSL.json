@@ -8,7 +8,9 @@
             "OpenSSL License"
         ],
         "custom": [
-            "openssl"
+            "openssl",
+            "OpenSSL Licence",
+            "OpenSSL/SSLeay Licence"
         ],
         "scancodeLicensedb": [
             "openssl-ssleay",

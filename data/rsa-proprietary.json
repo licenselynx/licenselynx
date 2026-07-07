@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "RSA Proprietary Shrinkwrap Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-rsa-proprietary",
             "RSA Proprietary",

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "IBM glextrusion Licence"
+        ],
         "scancodeLicensedb": [
             "IBM glextrusion License",
             "LicenseRef-scancode-ibm-glextrusion"

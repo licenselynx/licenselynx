@@ -7,7 +7,10 @@
         "spdx": [
             "Functional Source License, Version 1.1, ALv2 Future License"
         ],
-        "custom": [],
+        "custom": [
+            "Functional Source Licence, Version 1.1, ALv2 Future Licence",
+            "Functional Source Licence, Version 1.1, Apache 2.0 Future Licence"
+        ],
         "scancodeLicensedb": [
             "FSL-1.1-Apache-2.0",
             "fsl-1.1-apache-2.0",

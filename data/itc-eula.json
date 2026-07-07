@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "ITC End User Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "ITC End User License Agreement",
             "ITC EULA",

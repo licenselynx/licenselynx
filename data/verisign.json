@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "VeriSign Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-verisign",
             "VeriSign License"

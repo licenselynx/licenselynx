@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "OCamlPro Non-Commercial Purpose Licence v1"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ocamlpro-nc-v1",
             "OCamlPro Non-Commercial Purpose License v1"

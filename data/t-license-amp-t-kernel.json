@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "T-Licence for AMP T-Kernel"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-t-license-amp-t-kernel",
             "T-License for AMP T-Kernel"

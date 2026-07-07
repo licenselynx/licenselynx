@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Infineon Free Software Licence"
+        ],
         "scancodeLicensedb": [
             "Infineon Free Software License",
             "LicenseRef-scancode-infineon-free"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Red Hat Attribution Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-red-hat-attribution",
             "Red Hat Attribution License"

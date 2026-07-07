@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "ePaperPress Licence"
+        ],
         "scancodeLicensedb": [
             "ePaperPress License",
             "LicenseRef-scancode-epaperpress"

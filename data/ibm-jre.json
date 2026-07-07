@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "IBM Java Runtime Environment Licence",
+            "IBM JRE Licence"
+        ],
         "scancodeLicensedb": [
             "IBM Java Runtime Environment License",
             "IBM JRE License",

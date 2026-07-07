@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Carnegie Mellon Simple Licence",
+            "CMU Simple Licence"
+        ],
         "scancodeLicensedb": [
             "Carnegie Mellon Simple License",
             "CMU Simple License",

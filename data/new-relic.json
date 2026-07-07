@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "New Relic Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-new-relic",
             "New Relic License"

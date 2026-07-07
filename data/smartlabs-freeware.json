@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "SmartLabs Freeware Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-smartlabs-freeware",
             "SmartLabs Freeware License"

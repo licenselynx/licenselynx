@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "MPEG-7 Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-mpeg-7",
             "MPEG-7 License"

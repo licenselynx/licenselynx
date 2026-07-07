@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Bitwarden Licence Agreement v1"
+        ],
         "scancodeLicensedb": [
             "Bitwarden License Agreement v1",
             "LicenseRef-scancode-bitwarden-1.0"

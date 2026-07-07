@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "BSD Acknowledgment (Carrot2) Licence"
+        ],
         "scancodeLicensedb": [
             "BSD Acknowledgment (Carrot2) License",
             "LicenseRef-scancode-bsd-ack-carrot2"

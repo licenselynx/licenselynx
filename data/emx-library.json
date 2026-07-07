@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "EMX Library Licence"
+        ],
         "scancodeLicensedb": [
             "EMX Library License",
             "LicenseRef-scancode-emx-library"

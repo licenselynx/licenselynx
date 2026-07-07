@@ -7,7 +7,14 @@
         "spdx": [
             "University of Illinois/NCSA Open Source License"
         ],
-        "custom": [],
+        "custom": [
+            "Licence :: OSI Approved :: University of Illinois/NCSA Open Source Licence",
+            "Licence :: University of Illinois/NCSA Open Source Licence",
+            "NCSA Open Source Licence",
+            "OSI Approved :: University of Illinois/NCSA Open Source Licence",
+            "The University of Illinois/NCSA Open Source Licence",
+            "University of Illinois/NCSA Open Source Licence"
+        ],
         "osi": [
             "The University of Illinois/NCSA Open Source License"
         ],

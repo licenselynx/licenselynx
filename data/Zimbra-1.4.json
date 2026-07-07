@@ -7,7 +7,9 @@
         "spdx": [
             "Zimbra Public License v1.4"
         ],
-        "custom": [],
+        "custom": [
+            "Zimbra Public Licence v1.4"
+        ],
         "scancodeLicensedb": [
             "Zimbra PL 1.4",
             "zimbra-1.4"

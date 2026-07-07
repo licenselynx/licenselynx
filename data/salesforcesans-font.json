@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "SalesforceSans Font Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-salesforcesans-font",
             "SalesforceSans Font License"

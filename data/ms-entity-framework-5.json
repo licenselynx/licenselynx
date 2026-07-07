@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "MS Entity Framework 5 Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-entity-framework-5",
             "MS Entity Framework 5 License"

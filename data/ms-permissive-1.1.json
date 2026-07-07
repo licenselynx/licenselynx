@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft Permissive Licence (MS-PL) v1.1"
+        ],
         "scancodeLicensedb": [
             "Microsoft Permissive License (MS-PL) v1.1",
             "MS-PL 1.1"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Brian Clapper Licence"
+        ],
         "scancodeLicensedb": [
             "Brian Clapper License",
             "LicenseRef-scancode-brian-clapper"

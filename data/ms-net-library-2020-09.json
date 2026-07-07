@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft .NET Library Licence 2020-09",
+            "MS .NET Library Licence 2020-09"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-net-library-2020-09",
             "Microsoft .NET Library License 2020-09",

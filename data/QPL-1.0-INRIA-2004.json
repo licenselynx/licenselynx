@@ -7,7 +7,9 @@
         "spdx": [
             "Q Public License 1.0 - INRIA 2004 variant"
         ],
-        "custom": [],
+        "custom": [
+            "Q Public Licence 1.0 - INRIA 2004 variant"
+        ],
         "scancodeLicensedb": [
             "qpl-1.0-inria-2004"
         ]

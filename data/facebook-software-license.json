@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Facebook Software Licence"
+        ],
         "scancodeLicensedb": [
             "Facebook Software License",
             "LicenseRef-scancode-facebook-software-license"

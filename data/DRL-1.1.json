@@ -7,7 +7,10 @@
         "spdx": [
             "Detection Rule License 1.1"
         ],
-        "custom": [],
+        "custom": [
+            "Detection Rule Licence (DRL) 1.1",
+            "Detection Rule Licence 1.1"
+        ],
         "scancodeLicensedb": [
             "Detection Rule License (DRL) 1.1",
             "DRL-1.1",

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "OKL licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-okl",
             "OKL license"

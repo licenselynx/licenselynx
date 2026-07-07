@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Intel Microcode Licence"
+        ],
         "scancodeLicensedb": [
             "Intel Microcode License",
             "LicenseRef-scancode-intel-microcode"

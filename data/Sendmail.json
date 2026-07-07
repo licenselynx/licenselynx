@@ -7,7 +7,9 @@
         "spdx": [
             "Sendmail License"
         ],
-        "custom": [],
+        "custom": [
+            "Sendmail Licence"
+        ],
         "scancodeLicensedb": [
             "sendmail"
         ]

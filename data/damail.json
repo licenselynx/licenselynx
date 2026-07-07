@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Don't Ask Me About It Licence"
+        ],
         "scancodeLicensedb": [
             "DAMAIL",
             "Don't Ask Me About It License",

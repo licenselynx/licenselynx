@@ -7,7 +7,10 @@
         "spdx": [
             "Apple Public Source License 2.0"
         ],
-        "custom": [],
+        "custom": [
+            "Apple Public Source Licence 2.0",
+            "Apple Public Source Licence, Version 2.0"
+        ],
         "osi": [
             "Apple Public Source License, Version 2.0"
         ],

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "NXLOG Public Licence v1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-nxlog-public-license-1.0",
             "NXLOG Public License v1.0"

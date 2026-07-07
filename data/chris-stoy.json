@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Chris Stoy Attribution Licence"
+        ],
         "scancodeLicensedb": [
             "Chris Stoy Attribution License",
             "LicenseRef-scancode-chris-stoy"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "MicroType Express (MTX) Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-mtx-licensing-statement",
             "MicroType Express (MTX) License"

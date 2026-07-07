@@ -7,7 +7,10 @@
         "spdx": [
             "Systemics W3Works BSD variant license"
         ],
-        "custom": [],
+        "custom": [
+            "Systemics W3Works BSD variant licence",
+            "Systemics W3Works Licence"
+        ],
         "scancodeLicensedb": [
             "bsd-systemics-w3works",
             "Systemics W3Works License"

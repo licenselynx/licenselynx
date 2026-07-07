@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Red Hat Apache-Based End User Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-rh-eula-apache2",
             "Red Hat Apache-Based End User License Agreement",

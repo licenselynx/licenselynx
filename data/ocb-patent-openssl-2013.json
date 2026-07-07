@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "OCB Patent Licence for OpenSSL 2013",
+            "Patent Licence for OpenSSL of OCB 2013"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ocb-patent-openssl-2013",
             "OCB Patent License for OpenSSL 2013",

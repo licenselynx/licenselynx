@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Original SSLeay Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ssleay",
             "Original SSLeay License"

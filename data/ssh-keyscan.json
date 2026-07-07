@@ -7,7 +7,9 @@
         "spdx": [
             "ssh-keyscan License"
         ],
-        "custom": [],
+        "custom": [
+            "ssh-keyscan Licence"
+        ],
         "scancodeLicensedb": [
             "ssh-keyscan"
         ]

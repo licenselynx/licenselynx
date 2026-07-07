@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "STLport Licence 2000"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-stlport-2000",
             "STLport License 2000"

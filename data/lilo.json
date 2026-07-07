@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "LILO Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-lilo",
             "LILO License"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "XFree86 Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-xfree86-1.0",
             "XFree86 License 1.0"

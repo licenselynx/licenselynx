@@ -7,7 +7,10 @@
         "spdx": [
             "Python License 2.0"
         ],
-        "custom": [],
+        "custom": [
+            "Python Licence 2.0",
+            "Python Licence, Version 2.0"
+        ],
         "osi": [
             "Python License, Version 2.0"
         ]

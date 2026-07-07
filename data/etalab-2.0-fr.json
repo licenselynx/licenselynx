@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Etalab Open Licence 2.0 French"
+        ],
         "scancodeLicensedb": [
             "Etalab Open License 2.0 French"
         ]

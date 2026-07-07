@@ -8,7 +8,9 @@
             "BigScience Open RAIL-M2 License",
             "LicenseRef-scancode-bigscience-open-rail-m2"
         ],
-        "custom": []
+        "custom": [
+            "BigScience Open RAIL-M2 Licence"
+        ]
     },
     "rejected": [],
     "risky": []

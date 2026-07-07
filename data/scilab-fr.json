@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "License SCILAB"
+        ],
         "scancodeLicensedb": [
             "Licence SCILAB",
             "LicenseRef-scancode-scilab-fr",
