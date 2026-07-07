@@ -9,6 +9,8 @@
             "GPL-2.0+"
         ],
         "custom": [
+            "GPL-2+",
+            "GPL2+",
             "\"GPL-2.0-or-later\""
         ],
         "scancodeLicensedb": [

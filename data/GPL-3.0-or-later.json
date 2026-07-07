@@ -9,6 +9,7 @@
             "GPL-3.0+"
         ],
         "custom": [
+            "GPL-3+",
             "\"GPL-3.0-or-later\"",
             "\"GPLv3+\""
         ],
