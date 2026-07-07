@@ -8,11 +8,14 @@
             "GNU General Public License v1.0 only",
             "GPL-1.0"
         ],
-        "custom": []
+        "custom": [
+            "GPL1"
+        ]
     },
     "rejected": [
         "GNU General Public License (GPL)",
-        "GPL"
+        "GPL",
+        "LicenseRef-GPL"
     ],
     "risky": [
         "GNU General Public License 1.0",
