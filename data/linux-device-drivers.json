@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Linux Device Drivers Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-linux-device-drivers",
             "Linux Device Drivers",

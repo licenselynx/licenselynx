@@ -7,7 +7,9 @@
         "spdx": [
             "Zope Public License 1.1"
         ],
-        "custom": [],
+        "custom": [
+            "Zope Public Licence 1.1"
+        ],
         "scancodeLicensedb": [
             "ZPL 1.1",
             "zpl-1.1"

@@ -7,7 +7,10 @@
         "spdx": [
             "Hewlett-Packard 1986 License"
         ],
-        "custom": [],
+        "custom": [
+            "Hewlett-Packard 1986 Licence",
+            "HP 1986 Licence"
+        ],
         "scancodeLicensedb": [
             "HP 1986 License",
             "hp-1986"

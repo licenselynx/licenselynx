@@ -7,7 +7,9 @@
         "spdx": [
             "David M. Gay dtoa License"
         ],
-        "custom": [],
+        "custom": [
+            "David M. Gay dtoa Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-x11-lucent",
             "x11-lucent",

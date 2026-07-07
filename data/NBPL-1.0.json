@@ -7,7 +7,10 @@
         "spdx": [
             "Net Boolean Public License v1"
         ],
-        "custom": [],
+        "custom": [
+            "Net Boolean Public Licence 1.0",
+            "Net Boolean Public Licence v1"
+        ],
         "scancodeLicensedb": [
             "NBPL-1.0",
             "nbpl-1.0",

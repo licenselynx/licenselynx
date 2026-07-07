@@ -7,7 +7,9 @@
         "spdx": [
             "OGC Software License, Version 1.0"
         ],
-        "custom": [],
+        "custom": [
+            "OGC Software Licence, Version 1.0"
+        ],
         "scancodeLicensedb": [
             "OGC 1.0",
             "ogc-1.0"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "WS-Addressing Specification Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ws-addressing-spec",
             "WS-Addressing Specification License"

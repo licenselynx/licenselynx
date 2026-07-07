@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "ParaView Licence 1.2"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-paraview-1.2",
             "ParaView License 1.2"

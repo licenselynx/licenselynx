@@ -7,7 +7,10 @@
         "spdx": [
             "Nara Institute of Science and Technology License (2003)"
         ],
-        "custom": [],
+        "custom": [
+            "Nara Institute Licence 2003",
+            "Nara Institute of Science and Technology Licence (2003)"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-naist-2003",
             "naist-2003",

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "The Happy Bunny Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-happy-bunny",
             "The Happy Bunny License"

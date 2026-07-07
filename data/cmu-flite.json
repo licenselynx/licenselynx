@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Carnegie Mellon University Flite Licence",
+            "CMU Flite Licence"
+        ],
         "scancodeLicensedb": [
             "Carnegie Mellon University Flite License",
             "CMU Flite License",

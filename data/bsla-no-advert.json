@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Berkeley Software Licence Agreement with no advertizing"
+        ],
         "scancodeLicensedb": [
             "Berkeley Software License Agreement with no advertizing",
             "BSLA no advertizing",

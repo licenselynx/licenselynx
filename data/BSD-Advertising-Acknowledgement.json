@@ -7,7 +7,9 @@
         "spdx": [
             "BSD Advertising Acknowledgement License"
         ],
-        "custom": [],
+        "custom": [
+            "BSD Advertising Acknowledgement Licence"
+        ],
         "scancodeLicensedb": [
             "bsd-advertising-acknowledgement"
         ]

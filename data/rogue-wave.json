@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Rogue Wave Software Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-rogue-wave",
             "Rogue Wave Software License"

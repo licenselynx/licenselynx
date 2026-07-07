@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "David H. Bailey Limited BSD Licence 2015",
+            "DHB Limited BSD Licence 2015"
+        ],
         "scancodeLicensedb": [
             "David H. Bailey Limited BSD License 2015",
             "DHB Limited BSD License 2015",

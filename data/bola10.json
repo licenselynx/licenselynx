@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "BOLA - Buena Onda Licence Agreement (v1.0)"
+        ],
         "scancodeLicensedb": [
             "BOLA - Buena Onda License Agreement (v1.0)",
             "LicenseRef-scancode-bola10"

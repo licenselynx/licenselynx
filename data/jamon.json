@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "JAMon Licence"
+        ],
         "scancodeLicensedb": [
             "JAMon License",
             "LicenseRef-scancode-jamon"

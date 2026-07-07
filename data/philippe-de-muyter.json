@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Philippe De Muyter Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-philippe-de-muyter",
             "Philippe De Muyter License"

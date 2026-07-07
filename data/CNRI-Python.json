@@ -7,7 +7,22 @@
         "spdx": [
             "CNRI Python License"
         ],
-        "custom": [],
+        "custom": [
+            "CNRI Open Source Licence Agreement for Python 1.6",
+            "CNRI portion of the multi-part Python Licence",
+            "CNRI Python Licence",
+            "Licence :: CNRI Python Licence",
+            "Licence :: OSI Approved :: CNRI Python Licence",
+            "Licence :: OSI Approved :: Python Licence",
+            "Licence :: OSI Approved :: Python Licence (CNRI Python Licence)",
+            "Licence :: Python Licence",
+            "Licence :: Python Licence (CNRI Python Licence)",
+            "OSI Approved :: CNRI Python Licence",
+            "OSI Approved :: Python Licence",
+            "OSI Approved :: Python Licence (CNRI Python Licence)",
+            "Python Licence",
+            "Python Licence (CNRI Python Licence)"
+        ],
         "osi": [
             "CNRI portion of the multi-part Python License"
         ],

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Lil Licence v1"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-lil-1",
             "Lil License v1"

@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft Contribution Licence Agreement (CLA)",
+            "MS Contribution Licence Agreement (CLA)"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-cla",
             "Microsoft Contribution License Agreement (CLA)",

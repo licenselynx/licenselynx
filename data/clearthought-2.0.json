@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Clearthought Software Licence v2.0"
+        ],
         "scancodeLicensedb": [
             "Clearthought Software License v2.0",
             "LicenseRef-scancode-clearthought-2.0"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "ODB Non-Commercial Use and Evaluation Licence (NCUEL)"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-odb-ncuel",
             "ODB NCUEL",

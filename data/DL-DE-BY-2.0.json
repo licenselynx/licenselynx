@@ -5,10 +5,13 @@
     },
     "aliases": {
         "spdx": [
-            "Data licence Germany \u00e2\u20ac\u201c attribution \u00e2\u20ac\u201c version 2.0",
-            "Data licence Germany \u2013 attribution \u2013 version 2.0"
+            "Data licence Germany â€“ attribution â€“ version 2.0",
+            "Data licence Germany – attribution – version 2.0"
         ],
-        "custom": [],
+        "custom": [
+            "Data license Germany â€“ attribution â€“ version 2.0",
+            "Data license Germany – attribution – version 2.0"
+        ],
         "scancodeLicensedb": [
             "Datenlizenz Deutschland - Namensnennung - Version 2.0 - Deutsch"
         ]

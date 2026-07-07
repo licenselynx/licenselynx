@@ -7,7 +7,10 @@
         "spdx": [
             "Hippocratic License 2.1"
         ],
-        "custom": [],
+        "custom": [
+            "Hippocratic Licence 2.1",
+            "Hippocratic Licence v2.1"
+        ],
         "scancodeLicensedb": [
             "Hippocratic License v2.1",
             "hippocratic-2.1"

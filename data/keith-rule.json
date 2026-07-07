@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Keith Rule Licence"
+        ],
         "scancodeLicensedb": [
             "Keith Rule License",
             "LicenseRef-scancode-keith-rule"

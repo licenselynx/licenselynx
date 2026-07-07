@@ -7,7 +7,9 @@
         "spdx": [
             "LZMA SDK License (versions 9.11 to 9.20)"
         ],
-        "custom": [],
+        "custom": [
+            "LZMA SDK Licence (versions 9.11 to 9.20)"
+        ],
         "scancodeLicensedb": [
             "lzma-sdk-9.11-to-9.20"
         ]

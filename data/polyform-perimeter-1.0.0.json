@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "PolyForm Perimeter Licence 1.0.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-polyform-perimeter-1.0.0",
             "PolyForm Perimeter License 1.0.0"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "GUST Font Licence 2006-09-30"
+        ],
         "scancodeLicensedb": [
             "GUST Font License 2006-09-30",
             "LicenseRef-scancode-gust-font-2006-09-30"

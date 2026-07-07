@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Visual Numerics Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-visual-numerics",
             "Visual Numerics License"

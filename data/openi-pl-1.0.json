@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "OpenI Public Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-openi-pl-1.0",
             "OpenI Public License 1.0"

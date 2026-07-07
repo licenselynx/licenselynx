@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "TreeView Distributor Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-treeview-distributor",
             "TreeView Distributor License"

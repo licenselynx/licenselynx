@@ -7,7 +7,9 @@
         "spdx": [
             "SGI OpenGL License"
         ],
-        "custom": [],
+        "custom": [
+            "SGI OpenGL Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-x11-opengl",
             "x11-opengl",

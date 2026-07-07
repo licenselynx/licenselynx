@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Flora Licence v1.1"
+        ],
         "scancodeLicensedb": [
             "Flora License v1.1",
             "LicenseRef-scancode-flora-1.1"

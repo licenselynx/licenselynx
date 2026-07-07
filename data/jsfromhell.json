@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "JSFromHell Licence"
+        ],
         "scancodeLicensedb": [
             "JSFromHell License",
             "LicenseRef-scancode-jsfromhell"

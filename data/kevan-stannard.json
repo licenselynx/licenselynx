@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Kevan Stannard Free Software Licence",
+            "Kevan Stannard Licence"
+        ],
         "scancodeLicensedb": [
             "Kevan Stannard Free Software License",
             "Kevan Stannard License",

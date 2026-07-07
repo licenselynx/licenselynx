@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Qualcomm ISO/IEC MPEG-B DASH Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-qualcomm-iso",
             "Qualcomm ISO/IEC MPEG-B DASH License"

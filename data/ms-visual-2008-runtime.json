@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft Visual C++ 2008 Runtime Libraries Licence",
+            "MS Visual C++ 2008 Runtime Libraries Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-visual-2008-runtime",
             "Microsoft Visual C++ 2008 Runtime Libraries License",

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Carnegie Mellon Template Licence"
+        ],
         "scancodeLicensedb": [
             "Carnegie Mellon Template License"
         ]

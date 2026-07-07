@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Minecraft Mod Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-minecraft-mod",
             "Minecraft Mod License"

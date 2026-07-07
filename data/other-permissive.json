@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Other Permissive Licences"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-Fedora-UltraPermissive",
             "LicenseRef-scancode-other-permissive",

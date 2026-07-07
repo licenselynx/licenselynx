@@ -8,7 +8,9 @@
             "LicenseRef-scancode-xmos-public-1",
             "XMOS Public Licence v1"
         ],
-        "custom": []
+        "custom": [
+            "XMOS Public License v1"
+        ]
     },
     "rejected": [],
     "risky": []

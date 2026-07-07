@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "STMicro Liberty Licence v2"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-st-mcd-2.0",
             "STMicro Liberty License v2"

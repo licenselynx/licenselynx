@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Colt Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "Colt License Agreement",
             "LicenseRef-scancode-colt"

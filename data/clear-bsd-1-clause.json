@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Clear BSD 1-Clause Licence"
+        ],
         "scancodeLicensedb": [
             "Clear BSD 1-Clause License",
             "LicenseRef-scancode-clear-bsd-1-clause"

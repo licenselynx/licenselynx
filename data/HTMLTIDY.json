@@ -7,7 +7,10 @@
         "spdx": [
             "HTML Tidy License"
         ],
-        "custom": [],
+        "custom": [
+            "HTML Tidy Licence",
+            "Tidy Licence"
+        ],
         "scancodeLicensedb": [
             "tidy",
             "Tidy License"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Ago Private Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "Ago Private License 1.0",
             "LicenseRef-scancode-ago-private-1.0"

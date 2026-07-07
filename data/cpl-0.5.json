@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Common Public Licence 0.5"
+        ],
         "scancodeLicensedb": [
             "Common Public License 0.5",
             "CPL 0.5",

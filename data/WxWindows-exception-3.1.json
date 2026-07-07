@@ -7,7 +7,9 @@
         "spdx": [
             "WxWindows Library Exception 3.1"
         ],
-        "custom": [],
+        "custom": [
+            "WxWindows Library Exception to GNU Licences"
+        ],
         "scancodeLicensedb": [
             "WxWindows Library Exception to GNU Licenses",
             "wxwindows-exception-3.1"

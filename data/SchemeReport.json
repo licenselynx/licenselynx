@@ -7,7 +7,9 @@
         "spdx": [
             "Scheme Language Report License"
         ],
-        "custom": [],
+        "custom": [
+            "Scheme Language Report Licence"
+        ],
         "scancodeLicensedb": [
             "schemereport"
         ]

@@ -7,7 +7,9 @@
         "spdx": [
             "libtiff License"
         ],
-        "custom": [],
+        "custom": [
+            "libtiff Licence"
+        ],
         "scancodeLicensedb": [
             "X11-Style (Tiff)",
             "x11-tiff"

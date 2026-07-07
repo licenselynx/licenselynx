@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Brad Martinez VB-32 Licence"
+        ],
         "scancodeLicensedb": [
             "Brad Martinez VB-32 License",
             "LicenseRef-scancode-brad-martinez-vb-32"

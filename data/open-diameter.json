@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Open Diameter Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-open-diameter",
             "Open Diameter License"

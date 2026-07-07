@@ -7,7 +7,10 @@
         "spdx": [
             "FreeBSD Documentation License"
         ],
-        "custom": [],
+        "custom": [
+            "FreeBSD Doc Licence",
+            "FreeBSD Documentation Licence"
+        ],
         "scancodeLicensedb": [
             "FreeBSD Doc License",
             "freebsd-doc",

@@ -7,7 +7,9 @@
         "spdx": [
             "CERN Open Hardware Licence Version 2 - Weakly Reciprocal"
         ],
-        "custom": [],
+        "custom": [
+            "CERN Open Hardware License Version 2 - Weakly Reciprocal"
+        ],
         "scancodeLicensedb": [
             "CERN-OHL-W-2.0",
             "cern-ohl-w-2.0"

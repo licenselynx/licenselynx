@@ -9,7 +9,9 @@
             "Sun Java Advanced Imaging Distribution License v1.1.X",
             "Sun JDL-JAI 1.1.X"
         ],
-        "custom": []
+        "custom": [
+            "Sun Java Advanced Imaging Distribution Licence v1.1.X"
+        ]
     },
     "rejected": [],
     "risky": [],

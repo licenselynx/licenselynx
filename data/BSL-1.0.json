@@ -13,6 +13,8 @@
             "Boost License 1.0",
             "Boost License v1.0",
             "Boost License Version 1.0",
+            "Boost Software Licence 1.0",
+            "Boost Software Licence 1.0 (BSL-1.0)",
             "Boost Software License",
             "Boost Software License v1.0",
             "Boost Software License, Version 1.0",
@@ -22,7 +24,15 @@
             "bsl",
             "BSL 1.0",
             "BSL-1.0",
-            "bsl1.0"
+            "bsl1.0",
+            "Licence :: Boost Software Licence 1.0",
+            "Licence :: Boost Software Licence 1.0 (BSL-1.0)",
+            "Licence :: BSL-1.0",
+            "Licence :: OSI Approved :: Boost Software Licence 1.0",
+            "Licence :: OSI Approved :: Boost Software Licence 1.0 (BSL-1.0)",
+            "Licence :: OSI Approved :: BSL-1.0",
+            "OSI Approved :: Boost Software Licence 1.0",
+            "OSI Approved :: Boost Software Licence 1.0 (BSL-1.0)"
         ],
         "osi": [
             "Boost Software License 1.0 (BSL-1.0)"

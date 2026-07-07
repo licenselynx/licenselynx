@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Wink Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-wink",
             "Wink License"

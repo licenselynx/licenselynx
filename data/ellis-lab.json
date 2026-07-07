@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "EllisLab Licence"
+        ],
         "scancodeLicensedb": [
             "EllisLab License",
             "LicenseRef-scancode-ellis-lab"

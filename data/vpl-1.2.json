@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Vtiger Public Licence 1.2"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-vpl-1.2",
             "VPL 1.2",

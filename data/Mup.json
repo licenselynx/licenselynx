@@ -7,7 +7,9 @@
         "spdx": [
             "Mup License"
         ],
-        "custom": [],
+        "custom": [
+            "Mup Licence"
+        ],
         "scancodeLicensedb": [
             "mup"
         ]

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "W3C Document Licence (2002-12-31)"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-w3c-docs-20021231",
             "W3C Document License (2002-12-31)",

@@ -7,7 +7,11 @@
         "spdx": [
             "Educational Community License v1.0"
         ],
-        "custom": [],
+        "custom": [
+            "Educational Community Licence 1.0",
+            "Educational Community Licence v1.0",
+            "Educational Community Licence, Version 1.0"
+        ],
         "osi": [
             "Educational Community License, Version 1.0"
         ],

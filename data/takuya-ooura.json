@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Takuya OOURA Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-takuya-ooura",
             "Takuya OOURA License"

@@ -7,7 +7,9 @@
         "spdx": [
             "Zeeff License"
         ],
-        "custom": [],
+        "custom": [
+            "Zeeff Licence"
+        ],
         "scancodeLicensedb": [
             "zeeff"
         ]

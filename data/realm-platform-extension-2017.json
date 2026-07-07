@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Realm Platform Extensions Licence 2017"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-realm-platform-extension-2017",
             "Realm Platform Extensions License 2017"

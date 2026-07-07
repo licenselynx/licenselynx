@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "AMSFonts licence"
+        ],
         "scancodeLicensedb": [
             "AMSFonts license",
             "LicenseRef-scancode-ams-fonts"

@@ -7,7 +7,17 @@
         "spdx": [
             "Mozilla Public License 1.0"
         ],
-        "custom": [],
+        "custom": [
+            "Licence :: Mozilla Public Licence 1.0",
+            "Licence :: Mozilla Public Licence 1.0 (MPL)",
+            "Licence :: OSI Approved :: Mozilla Public Licence 1.0",
+            "Licence :: OSI Approved :: Mozilla Public Licence 1.0 (MPL)",
+            "Mozilla Public Licence 1.0",
+            "Mozilla Public Licence 1.0 (MPL)",
+            "Mozilla Public Licence, Version 1.0",
+            "OSI Approved :: Mozilla Public Licence 1.0",
+            "OSI Approved :: Mozilla Public Licence 1.0 (MPL)"
+        ],
         "osi": [
             "Mozilla Public License, Version 1.0"
         ],
@@ -26,10 +36,10 @@
         ]
     },
     "rejected": [
-        "License :: OSI Approved :: MPL",
         "License :: MPL",
-        "OSI Approved :: MPL",
-        "MPL"
+        "License :: OSI Approved :: MPL",
+        "MPL",
+        "OSI Approved :: MPL"
     ],
     "risky": [],
     "isMajorVersionOnly": false

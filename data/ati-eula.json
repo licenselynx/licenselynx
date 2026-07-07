@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "ATI Software End User Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "ATI Software End User License Agreement",
             "ATI Software EULA",

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Things I Made (TIM) Public Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-things-i-made-public-license",
             "Things I Made (TIM) Public License"

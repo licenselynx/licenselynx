@@ -7,7 +7,19 @@
         "spdx": [
             "Blue Oak Model License 1.0.0"
         ],
-        "custom": [],
+        "custom": [
+            "Blue Oak Model Licence",
+            "Blue Oak Model Licence (BlueOak-1.0.0)",
+            "Blue Oak Model Licence 1.0.0",
+            "Licence :: Blue Oak Model Licence",
+            "Licence :: Blue Oak Model Licence (BlueOak-1.0.0)",
+            "Licence :: BlueOak-1.0.0",
+            "Licence :: OSI Approved :: Blue Oak Model Licence",
+            "Licence :: OSI Approved :: Blue Oak Model Licence (BlueOak-1.0.0)",
+            "Licence :: OSI Approved :: BlueOak-1.0.0",
+            "OSI Approved :: Blue Oak Model Licence",
+            "OSI Approved :: Blue Oak Model Licence (BlueOak-1.0.0)"
+        ],
         "scancodeLicensedb": [
             "blueoak-1.0.0"
         ],

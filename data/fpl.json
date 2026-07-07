@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Freeware Public Licence (FPL)"
+        ],
         "scancodeLicensedb": [
             "Freeware Public License (FPL)",
             "LicenseRef-scancode-fpl"

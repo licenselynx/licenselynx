@@ -7,7 +7,9 @@
         "spdx": [
             "CERN Open Hardware Licence v1.2"
         ],
-        "custom": [],
+        "custom": [
+            "CERN Open Hardware License v1.2"
+        ],
         "scancodeLicensedb": [
             "cern-ohl-1.2"
         ]

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "GNU emacs General Public Licence 1988"
+        ],
         "scancodeLicensedb": [
             "GNU emacs General Public License 1988",
             "LicenseRef-scancode-gnu-emacs-gpl-1988"

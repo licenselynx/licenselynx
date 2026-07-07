@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft Pre-Release Software Licence Terms 2023"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-pre-release-sla-2023",
             "Microsoft Pre-Release Software License Terms 2023",

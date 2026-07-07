@@ -7,7 +7,9 @@
         "spdx": [
             "pnmstitch License"
         ],
-        "custom": [],
+        "custom": [
+            "pnmstitch Licence"
+        ],
         "scancodeLicensedb": [
             "pnmstitch"
         ]

@@ -7,7 +7,9 @@
         "spdx": [
             "Ruby License"
         ],
-        "custom": [],
+        "custom": [
+            "Ruby Licence"
+        ],
         "scancodeLicensedb": [
             "ruby"
         ]

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Xceed Community Licence 2021"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-xceed-community-2021",
             "Xceed Community License 2021"

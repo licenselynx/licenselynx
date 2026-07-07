@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Adobe InDesign SDK Licence",
+            "Adobe SDK Licence for INDESIGN, INDESIGN SERVER and INCOPY Software"
+        ],
         "scancodeLicensedb": [
             "Adobe InDesign SDK License",
             "Adobe SDK License for INDESIGN, INDESIGN SERVER and INCOPY Software",

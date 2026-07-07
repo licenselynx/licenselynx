@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Vicomsoft Software Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-vicomsoft-software",
             "Vicomsoft Software License"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Linux Documentation Project General Public Licence v1a, November 1998"
+        ],
         "scancodeLicensedb": [
             "LDPGPL-1a",
             "LicenseRef-scancode-ldpgpl-1a",

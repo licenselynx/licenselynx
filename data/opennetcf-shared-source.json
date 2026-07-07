@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "OpenNETCF Shared Source Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-opennetcf-shared-source",
             "OpenNETCF Shared Source License"

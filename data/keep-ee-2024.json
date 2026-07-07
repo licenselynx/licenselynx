@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "The Keep Enterprise Edition (EE) licence (the Enterprise License)",
+            "The Keep Enterprise Edition (EE) license (the Enterprise Licence)"
+        ],
         "scancodeLicensedb": [
             "Keep Enterprise Edition (EE)",
             "LicenseRef-scancode-keep-ee-2024",

@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "CommonJ Timer and Work Manager Licence",
+            "CommonJ Timer Licence"
+        ],
         "scancodeLicensedb": [
             "CommonJ Timer and Work Manager License",
             "CommonJ Timer License",

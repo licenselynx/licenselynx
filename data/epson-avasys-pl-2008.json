@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Epson AVASYS Public Licence 2008"
+        ],
         "scancodeLicensedb": [
             "Epson AVASYS Public License 2008",
             "LicenseRef-scancode-epson-avasys-pl-2008"

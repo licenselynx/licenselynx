@@ -7,7 +7,9 @@
         "spdx": [
             "BSD Protection License"
         ],
-        "custom": [],
+        "custom": [
+            "BSD Protection Licence"
+        ],
         "scancodeLicensedb": [
             "bsd-protection"
         ]

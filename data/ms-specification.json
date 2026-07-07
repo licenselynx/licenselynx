@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft Specification Licence",
+            "MS Specification Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-specification",
             "Microsoft Specification License",

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "OTN Developer Licence for JAVA EE SDK"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-oracle-java-ee-sdk-2010",
             "OTN Developer License for JAVA EE SDK"

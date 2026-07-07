@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Psytec Free Software Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-psytec-freesoft",
             "Psytec Free Software License"

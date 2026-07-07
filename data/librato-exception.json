@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Librato Open Licence 1.0",
+            "Librato Open Licence Version 1.0"
+        ],
         "scancodeLicensedb": [
             "Librato Open License 1.0",
             "Librato Open License Version 1.0",

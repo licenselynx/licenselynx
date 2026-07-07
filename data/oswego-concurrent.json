@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Oswego Concurrent Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-oswego-concurrent",
             "Oswego Concurrent License"

@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "JRunner Licence",
+            "JRunner Software Licence"
+        ],
         "scancodeLicensedb": [
             "JRunner License",
             "JRunner Software License",

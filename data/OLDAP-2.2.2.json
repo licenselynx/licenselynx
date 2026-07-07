@@ -7,7 +7,10 @@
         "spdx": [
             "Open LDAP Public License 2.2.2"
         ],
-        "custom": [],
+        "custom": [
+            "Open LDAP Public Licence 2.2.2",
+            "OpenLDAP Public Licence 2.2.2"
+        ],
         "scancodeLicensedb": [
             "OpenLDAP Public License 2.2.2",
             "openldap-2.2.2"

@@ -7,7 +7,10 @@
         "spdx": [
             "SCEA Shared Source License"
         ],
-        "custom": [],
+        "custom": [
+            "SCEA Shared Source Licence",
+            "SCEA Shared Source Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "SCEA Shared Source License 1.0",
             "scea-1.0"

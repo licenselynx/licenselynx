@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "JGraph General Licence"
+        ],
         "scancodeLicensedb": [
             "JGraph General License",
             "LicenseRef-scancode-jgraph-general"

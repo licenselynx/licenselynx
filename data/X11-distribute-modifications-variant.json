@@ -7,7 +7,9 @@
         "spdx": [
             "X11 License Distribution Modification Variant"
         ],
-        "custom": [],
+        "custom": [
+            "X11 Licence Distribution Modification Variant"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-x11-fsf",
             "x11-fsf",

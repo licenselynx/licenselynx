@@ -7,7 +7,10 @@
         "spdx": [
             "Zend License v2.0"
         ],
-        "custom": [],
+        "custom": [
+            "Zend Engine Licence 2.0",
+            "Zend Licence v2.0"
+        ],
         "scancodeLicensedb": [
             "Zend Engine License 2.0",
             "zend-2.0"

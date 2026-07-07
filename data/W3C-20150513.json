@@ -7,7 +7,9 @@
         "spdx": [
             "W3C Software Notice and Document License (2015-05-13)"
         ],
-        "custom": [],
+        "custom": [
+            "W3C Software Notice and Document Licence (2015-05-13)"
+        ],
         "scancodeLicensedb": [
             "W3C Software and Document (2015-05-13)",
             "W3C-SOFTWARE-DOC-20150513",

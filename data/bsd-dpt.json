@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "BSD Distributed Processing Technology Licence"
+        ],
         "scancodeLicensedb": [
             "BSD Distributed Processing Technology License",
             "BSD DPT",

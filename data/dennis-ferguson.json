@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Dennis Ferguson Licence"
+        ],
         "scancodeLicensedb": [
             "Dennis Ferguson License",
             "LicenseRef-scancode-dennis-ferguson"

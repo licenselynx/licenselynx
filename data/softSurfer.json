@@ -7,7 +7,9 @@
         "spdx": [
             "softSurfer License"
         ],
-        "custom": [],
+        "custom": [
+            "softSurfer Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-softsurfer",
             "softsurfer"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Intel Simplified Software Licence (Version April 2018)"
+        ],
         "scancodeLicensedb": [
             "Intel Simplified Software License (Version April 2018)",
             "ISSL 2018",

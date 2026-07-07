@@ -7,7 +7,9 @@
         "spdx": [
             "Apple Public Source License 1.2"
         ],
-        "custom": [],
+        "custom": [
+            "Apple Public Source Licence 1.2"
+        ],
         "scancodeLicensedb": [
             "APSL 1.2",
             "apsl-1.2"

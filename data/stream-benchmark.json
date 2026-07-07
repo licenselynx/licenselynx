@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "STREAM Benchmark Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-stream-benchmark",
             "STREAM Benchmark License"

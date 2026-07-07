@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "MAX & Mojo Community Licence 20240828"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-max-mojo-community-20240828",
             "MAX & Mojo Community License 20240828"

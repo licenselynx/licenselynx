@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Activepieces Enterprise Licence 2023"
+        ],
         "scancodeLicensedb": [
             "Activepieces Enterprise License 2023",
             "LicenseRef-scancode-activepieces-enterprise-2023"

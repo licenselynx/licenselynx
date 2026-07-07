@@ -7,7 +7,9 @@
         "spdx": [
             "Matrix Template Library License"
         ],
-        "custom": [],
+        "custom": [
+            "Matrix Template Library Licence"
+        ],
         "scancodeLicensedb": [
             "mtll"
         ]

@@ -8,7 +8,9 @@
             "LicenseRef-scancode-menuet64-2024",
             "Menuet64 License 2024"
         ],
-        "custom": []
+        "custom": [
+            "Menuet64 Licence 2024"
+        ]
     },
     "rejected": [],
     "risky": []

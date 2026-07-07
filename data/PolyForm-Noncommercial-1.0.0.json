@@ -7,7 +7,10 @@
         "spdx": [
             "PolyForm Noncommercial License 1.0.0"
         ],
-        "custom": [],
+        "custom": [
+            "PolyForm Noncommercial Licence 1.0.0",
+            "Polyform Noncommercial Licence 1.0.0"
+        ],
         "scancodeLicensedb": [
             "Polyform Noncommercial License 1.0.0",
             "polyform-noncommercial-1.0.0"

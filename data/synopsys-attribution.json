@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Synopsys Attribution Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-synopsys-attribution",
             "Synopsys Attribution License"

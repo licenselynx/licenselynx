@@ -7,7 +7,9 @@
         "spdx": [
             "Caldera License"
         ],
-        "custom": [],
+        "custom": [
+            "Caldera Licence"
+        ],
         "scancodeLicensedb": [
             "caldera"
         ]

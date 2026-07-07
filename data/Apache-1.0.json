@@ -7,7 +7,9 @@
         "spdx": [
             "Apache License 1.0"
         ],
-        "custom": [],
+        "custom": [
+            "Apache Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "Apache 1.0",
             "apache-1.0"

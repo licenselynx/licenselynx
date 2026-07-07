@@ -7,7 +7,9 @@
         "spdx": [
             "UCAR License"
         ],
-        "custom": [],
+        "custom": [
+            "UCAR Licence"
+        ],
         "scancodeLicensedb": [
             "ucar"
         ]

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Moxa Linux Firmware Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-moxa-linux-firmware",
             "Moxa Linux Firmware License"

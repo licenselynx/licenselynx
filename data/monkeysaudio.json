@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Monkeys Audio Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-monkeysaudio",
             "Monkeys Audio License Agreement"

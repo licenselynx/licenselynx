@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Anti 996 Licence 1.0",
+            "Anti 996 Licence Version 1.0 (Draft)"
+        ],
         "scancodeLicensedb": [
             "Anti 996 License 1.0",
             "Anti 996 License Version 1.0 (Draft)",

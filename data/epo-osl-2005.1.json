@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "EPO Open Source License No. 2005/1"
+        ],
         "scancodeLicensedb": [
             "EPO Open Source Licence No. 2005/1",
             "EPO-OSL",

@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft Windows Server 2003 SP1 Platform SDK Licence",
+            "MS Windows Server 2003 SP1 Platform SDK Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-windows-server-2003-sdk",
             "Microsoft Windows Server 2003 SP1 Platform SDK License",

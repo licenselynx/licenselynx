@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "IBM DHCP Licence"
+        ],
         "scancodeLicensedb": [
             "IBM DHCP License",
             "LicenseRef-scancode-ibm-dhcp"

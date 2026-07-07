@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Artop Software Licence for Preparatory Development"
+        ],
         "scancodeLicensedb": [
             "Artop ASLP",
             "Artop Software License for Preparatory Development",

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Duplicate Network Time Protocol Licence"
+        ],
         "scancodeLicensedb": [
             "Duplicate Network Time Protocol License"
         ]

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Pixabay Content Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-pixabay-content",
             "Pixabay Content License"

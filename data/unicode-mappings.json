@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Unicode Mappings Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-unicode-mappings",
             "Unicode Mappings License"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "ADI BSD Licence"
+        ],
         "scancodeLicensedb": [
             "ADI BSD",
             "ADI BSD License",

@@ -7,7 +7,9 @@
         "spdx": [
             "Mozilla Public License 2.0 (no copyleft exception)"
         ],
-        "custom": [],
+        "custom": [
+            "Mozilla Public Licence 2.0 (no copyleft exception)"
+        ],
         "scancodeLicensedb": [
             "MPL 2.0 with no copyleft exception",
             "mpl-2.0-no-copyleft-exception"

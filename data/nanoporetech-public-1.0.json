@@ -9,7 +9,10 @@
             "Nanoporetech Public License 1.0",
             "Oxford Nanopore Technologies PLC. Public License Version 1.0"
         ],
-        "custom": []
+        "custom": [
+            "Nanoporetech Public Licence 1.0",
+            "Oxford Nanopore Technologies PLC. Public Licence Version 1.0"
+        ]
     },
     "rejected": [],
     "risky": [],

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "TwistedSNMP Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-twisted-snmp",
             "TwistedSNMP License"

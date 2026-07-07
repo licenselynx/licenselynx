@@ -7,7 +7,9 @@
         "spdx": [
             "ngrep License"
         ],
-        "custom": []
+        "custom": [
+            "ngrep Licence"
+        ]
     },
     "rejected": [],
     "risky": []

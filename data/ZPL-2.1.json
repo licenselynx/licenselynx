@@ -9,6 +9,7 @@
         ],
         "custom": [
             "Zope License 2.1",
+            "Zope Public Licence 2.1",
             "Zope Public License 2.1 (ZPL)",
             "Zope Public License v2.1",
             "Zope Public License v2.1 (ZPL)",
@@ -28,8 +29,8 @@
         ]
     },
     "rejected": [
-        "ZPL (Public License)",
-        "zope"
+        "zope",
+        "ZPL (Public License)"
     ],
     "risky": [],
     "isMajorVersionOnly": false

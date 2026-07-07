@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Socketxx Licence 2003"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-socketxx-2003",
             "Socketxx License 2003"

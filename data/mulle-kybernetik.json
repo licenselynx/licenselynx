@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Mulle Kybernetik Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-mulle-kybernetik",
             "Mulle Kybernetik License"

@@ -7,7 +7,10 @@
         "spdx": [
             "Zope Public License 2.0"
         ],
-        "custom": [],
+        "custom": [
+            "The Zope Public Licence, Version 2.0",
+            "Zope Public Licence 2.0"
+        ],
         "osi": [
             "The Zope Public License, Version 2.0"
         ],

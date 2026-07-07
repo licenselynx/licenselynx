@@ -7,7 +7,10 @@
         "spdx": [
             "Adobe Systems Incorporated Source Code License Agreement"
         ],
-        "custom": [],
+        "custom": [
+            "Adobe Source Code Licence 2006",
+            "Adobe Systems Incorporated Source Code Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "Adobe Source Code License 2006",
             "adobe-scl"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "UnRar Licence v3"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-unrar-v3",
             "UnRar License v3"

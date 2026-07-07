@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "LCS-Telegraphics Licence"
+        ],
         "scancodeLicensedb": [
             "LCS-Telegraphics License",
             "LicenseRef-scancode-lcs-telegraphics"

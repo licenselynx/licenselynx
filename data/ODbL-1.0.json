@@ -8,7 +8,9 @@
             "Open Data Commons Open Database License v1.0"
         ],
         "custom": [
-            "ODBL"
+            "ODBL",
+            "ODC Open Database Licence v1.0",
+            "Open Data Commons Open Database Licence v1.0"
         ],
         "scancodeLicensedb": [
             "ODbL 1.0",

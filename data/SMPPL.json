@@ -7,7 +7,9 @@
         "spdx": [
             "Secure Messaging Protocol Public License"
         ],
-        "custom": [],
+        "custom": [
+            "Secure Messaging Protocol Public Licence"
+        ],
         "scancodeLicensedb": [
             "SMPPL",
             "smppl"

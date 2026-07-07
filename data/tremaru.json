@@ -8,7 +8,9 @@
             "LicenseRef-scancode-tremaru",
             "Trema.ru License"
         ],
-        "custom": []
+        "custom": [
+            "Trema.ru Licence"
+        ]
     },
     "rejected": [],
     "risky": []

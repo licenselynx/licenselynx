@@ -9,7 +9,20 @@
         ],
         "custom": [
             "\"EUPL-1.2\"",
-            "eupl1.2"
+            "eupl1.2",
+            "European Union Public License 1.2 (EUPL 1.2)",
+            "Licence :: EUPL 1.2",
+            "Licence :: European Union Public Licence 1.2",
+            "Licence :: European Union Public Licence 1.2 (EUPL 1.2)",
+            "Licence :: OSI Approved :: EUPL 1.2",
+            "Licence :: OSI Approved :: European Union Public Licence 1.2",
+            "Licence :: OSI Approved :: European Union Public Licence 1.2 (EUPL 1.2)",
+            "License :: European Union Public License 1.2",
+            "License :: European Union Public License 1.2 (EUPL 1.2)",
+            "License :: OSI Approved :: European Union Public License 1.2",
+            "License :: OSI Approved :: European Union Public License 1.2 (EUPL 1.2)",
+            "OSI Approved :: European Union Public License 1.2",
+            "OSI Approved :: European Union Public License 1.2 (EUPL 1.2)"
         ],
         "scancodeLicensedb": [
             "EUPL 1.2",

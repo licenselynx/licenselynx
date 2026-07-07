@@ -7,7 +7,9 @@
         "spdx": [
             "OSSP License"
         ],
-        "custom": []
+        "custom": [
+            "OSSP Licence"
+        ]
     },
     "rejected": [],
     "risky": []

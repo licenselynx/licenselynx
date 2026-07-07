@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Aptana Public Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "Aptana 1.0",
             "Aptana Public License 1.0",

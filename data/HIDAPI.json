@@ -7,7 +7,9 @@
         "spdx": [
             "HIDAPI License"
         ],
-        "custom": [],
+        "custom": [
+            "HIDAPI Licence"
+        ],
         "scancodeLicensedb": [
             "hidapi"
         ]

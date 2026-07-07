@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Montreal Data Licence (MDL) 2021"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-mdl-2021",
             "MDL 2021",

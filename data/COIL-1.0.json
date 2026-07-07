@@ -7,7 +7,10 @@
         "spdx": [
             "Copyfree Open Innovation License"
         ],
-        "custom": [],
+        "custom": [
+            "Copyfree Open Innovation Licence",
+            "Copyfree Open Innovation Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "COIL-1.0",
             "coil-1.0",

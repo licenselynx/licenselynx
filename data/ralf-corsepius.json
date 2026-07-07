@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Ralf Corsepius Licence"
+        ],
         "scancodeLicensedb": [
             "Ralf Corsepius License"
         ]

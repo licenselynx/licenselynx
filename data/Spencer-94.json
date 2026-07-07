@@ -7,7 +7,10 @@
         "spdx": [
             "Spencer License 94"
         ],
-        "custom": [],
+        "custom": [
+            "Henry Spencer Regexp Licence",
+            "Spencer Licence 94"
+        ],
         "scancodeLicensedb": [
             "Henry Spencer Regexp License",
             "hs-regexp"

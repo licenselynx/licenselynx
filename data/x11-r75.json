@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "X.Org Preferred Licence"
+        ],
         "scancodeLicensedb": [
             "X.Org Preferred License",
             "X11-R7.5"

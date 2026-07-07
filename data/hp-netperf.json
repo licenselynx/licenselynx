@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "HP Netperf Licence"
+        ],
         "scancodeLicensedb": [
             "HP Netperf License",
             "LicenseRef-scancode-hp-netperf"

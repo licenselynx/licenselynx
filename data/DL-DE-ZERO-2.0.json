@@ -5,11 +5,14 @@
     },
     "aliases": {
         "spdx": [
-            "Data licence Germany \u00e2\u20ac\u201c zero \u00e2\u20ac\u201c version 2.0"
+            "Data licence Germany â€“ zero â€“ version 2.0"
         ],
-        "custom": [],
+        "custom": [
+            "Data license Germany â€“ zero â€“ version 2.0",
+            "Data license Germany – zero – version 2.0"
+        ],
         "scancodeLicensedb": [
-            "Data licence Germany \u2013 zero \u2013 version 2.0",
+            "Data licence Germany – zero – version 2.0",
             "dl-de-zero-2.0"
         ]
     },

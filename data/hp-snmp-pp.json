@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "SNMP++ Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-hp-snmp-pp",
             "SNMP++ License"

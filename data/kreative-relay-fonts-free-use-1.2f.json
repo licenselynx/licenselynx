@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Kreative Software Relay Fonts Free Use Licence 1.2f"
+        ],
         "scancodeLicensedb": [
             "Kreative Software Relay Fonts Free Use 1.2f",
             "Kreative Software Relay Fonts Free Use License 1.2f",

@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Homebrewed Licence",
+            "Homebrewed or Craft Beer Licence"
+        ],
         "scancodeLicensedb": [
             "Homebrewed License",
             "Homebrewed or Craft Beer License",

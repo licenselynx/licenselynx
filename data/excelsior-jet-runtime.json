@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Excelsior JET Runtime Licence"
+        ],
         "scancodeLicensedb": [
             "Excelsior JET Runtime License",
             "LicenseRef-scancode-excelsior-jet-runtime"

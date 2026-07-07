@@ -7,7 +7,9 @@
         "spdx": [
             "Lawrence Berkeley National Labs BSD variant license"
         ],
-        "custom": [],
+        "custom": [
+            "Lawrence Berkeley National Labs BSD variant licence"
+        ],
         "scancodeLicensedb": [
             "LBNL BSD Variant",
             "lbnl-bsd"

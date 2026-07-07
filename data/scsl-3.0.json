@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Sun Community Source Licence 3.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-scsl-3.0",
             "Sun Community Source License 3.0"

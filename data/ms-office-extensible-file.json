@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft Office Extensible File Licence",
+            "MS Office Extensible File Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-office-extensible-file",
             "Microsoft Office Extensible File License",

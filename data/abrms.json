@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Anyone But Richard Stallman Licence"
+        ],
         "scancodeLicensedb": [
             "ABRMS",
             "Anyone But Richard Stallman License",

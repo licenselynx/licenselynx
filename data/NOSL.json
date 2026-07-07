@@ -7,7 +7,10 @@
         "spdx": [
             "Netizen Open Source License"
         ],
-        "custom": [],
+        "custom": [
+            "Netizen Open Source Licence",
+            "Netizen Open Source Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "Netizen Open Source License 1.0",
             "NOSL 1.0",

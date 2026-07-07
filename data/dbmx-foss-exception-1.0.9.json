@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Kyoto Products FOSS Licence Exception v1.0.9"
+        ],
         "scancodeLicensedb": [
             "Kyoto Products FOSS License Exception v1.0.9",
             "LicenseRef-scancode-dbmx-foss-exception-1.0.9"

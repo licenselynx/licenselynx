@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Open Group Public Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-opengroup-pl",
             "Open Group Public License"

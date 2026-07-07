@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft SQL Server Data Tools Licence",
+            "MS SQL Server Data Tools Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-sql-server-data-tools",
             "Microsoft SQL Server Data Tools License",

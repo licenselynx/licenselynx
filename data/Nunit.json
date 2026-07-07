@@ -7,7 +7,9 @@
         "spdx": [
             "Nunit License"
         ],
-        "custom": []
+        "custom": [
+            "Nunit Licence"
+        ]
     },
     "rejected": [],
     "risky": []

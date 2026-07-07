@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Oracle SQL Developer Licence Terms"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-oracle-sql-developer",
             "Oracle SQL Developer License Terms"

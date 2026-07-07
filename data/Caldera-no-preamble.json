@@ -7,7 +7,9 @@
         "spdx": [
             "Caldera License (without preamble)"
         ],
-        "custom": [],
+        "custom": [
+            "Caldera Licence (without preamble)"
+        ],
         "scancodeLicensedb": [
             "caldera-no-preamble"
         ]

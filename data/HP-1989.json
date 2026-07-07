@@ -7,7 +7,10 @@
         "spdx": [
             "Hewlett-Packard 1989 License"
         ],
-        "custom": [],
+        "custom": [
+            "Hewlett-Packard 1989 Licence",
+            "OSF 1990 Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-osf-1990",
             "OSF 1990 License",

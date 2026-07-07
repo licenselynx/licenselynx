@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft patterns & practices Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-msppl",
             "Microsoft patterns & practices License",

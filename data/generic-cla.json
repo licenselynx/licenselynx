@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Prior Generic Contributor Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "Generic CLA",
             "LicenseRef-scancode-generic-cla",

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "PCRE Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-pcre",
             "PCRE License"

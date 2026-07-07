@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "MakeHuman Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-make-human-exception",
             "MakeHuman License"

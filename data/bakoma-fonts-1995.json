@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "BaKoMa Fonts License 1995"
+        ],
         "scancodeLicensedb": [
             "BaKoMa Fonts Licence 1995",
             "LicenseRef-scancode-bakoma-fonts-1995"

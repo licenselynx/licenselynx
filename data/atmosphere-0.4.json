@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Atmosphere Software Licence Version 0.4"
+        ],
         "scancodeLicensedb": [
             "atmosphere",
             "Atmosphere Software License Version 0.4",

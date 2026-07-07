@@ -9,13 +9,16 @@
             "Affero General Public License v1.0 only",
             "AGPL-1.0"
         ],
-        "custom": []
+        "custom": [
+            "Affero General Public Licence v1.0",
+            "Affero General Public Licence v1.0 only"
+        ]
     },
     "rejected": [],
     "risky": [
         "Affero General Public License 1.0",
-        "agpl-1.0",
-        "AGPL 1.0"
+        "AGPL 1.0",
+        "agpl-1.0"
     ],
     "isMajorVersionOnly": true
 }

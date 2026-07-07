@@ -7,7 +7,9 @@
         "spdx": [
             "Buddy License"
         ],
-        "custom": []
+        "custom": [
+            "Buddy Licence"
+        ]
     },
     "rejected": [],
     "risky": []

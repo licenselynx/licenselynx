@@ -9,7 +9,10 @@
             "OpenMDW License Agreement, version 1.0",
             "openmdw-1.0"
         ],
-        "custom": [],
+        "custom": [
+            "OpenMDW Licence Agreement v1.0",
+            "OpenMDW Licence Agreement, version 1.0"
+        ],
         "spdx": [
             "OpenMDW License Agreement v1.0"
         ]

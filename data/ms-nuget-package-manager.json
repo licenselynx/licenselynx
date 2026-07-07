@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft NuGet-Based Package Manager Licence",
+            "MS NuGet-Based Package Manager Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-nuget-package-manager",
             "Microsoft NuGet-Based Package Manager License",

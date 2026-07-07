@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Sencha Software Licence Agreement v3.17"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-sencha-commercial-3.17",
             "Sencha Software License Agreement v3.17"

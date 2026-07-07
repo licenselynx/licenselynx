@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Sonar Source-Available Licence v1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-sonar-sal-1.0",
             "Sonar Source-Available License v1.0"

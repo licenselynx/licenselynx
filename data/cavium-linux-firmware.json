@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Cavium Linux Firmware Licence"
+        ],
         "scancodeLicensedb": [
             "Cavium Linux Firmware License",
             "LicenseRef-scancode-cavium-linux-firmware"

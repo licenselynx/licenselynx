@@ -7,7 +7,9 @@
         "spdx": [
             "BSD 3-Clause Flex variant"
         ],
-        "custom": [],
+        "custom": [
+            "Flex Licence v2.5"
+        ],
         "scancodeLicensedb": [
             "Flex 2.5",
             "Flex License v2.5",

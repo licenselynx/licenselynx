@@ -7,7 +7,10 @@
         "spdx": [
             "Freetype Project License"
         ],
-        "custom": [],
+        "custom": [
+            "FreeType Project Licence",
+            "Freetype Project Licence"
+        ],
         "scancodeLicensedb": [
             "freetype",
             "FreeType Project License"

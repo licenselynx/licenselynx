@@ -7,7 +7,9 @@
         "spdx": [
             "NIST Public Domain Notice with license fallback"
         ],
-        "custom": [],
+        "custom": [
+            "NIST Public Domain Notice with licence fallback"
+        ],
         "scancodeLicensedb": [
             "NIST Public Domain Notice with fallback",
             "nist-pd-fallback"

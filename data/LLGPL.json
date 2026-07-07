@@ -7,7 +7,9 @@
         "spdx": [
             "LLGPL Preamble"
         ],
-        "custom": [],
+        "custom": [
+            "Lisp Lesser General Public Licence (LLPGL)"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-llgpl",
             "Lisp Lesser General Public License (LLPGL)",

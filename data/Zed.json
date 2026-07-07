@@ -7,7 +7,9 @@
         "spdx": [
             "Zed License"
         ],
-        "custom": [],
+        "custom": [
+            "Zed Licence"
+        ],
         "scancodeLicensedb": [
             "zed"
         ]

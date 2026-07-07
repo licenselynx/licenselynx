@@ -7,7 +7,9 @@
         "spdx": [
             "Taiwan Open Government Data License, version 1.0"
         ],
-        "custom": [],
+        "custom": [
+            "Taiwan Open Government Data Licence, version 1.0"
+        ],
         "scancodeLicensedb": [
             "ogdl-taiwan-1.0"
         ]

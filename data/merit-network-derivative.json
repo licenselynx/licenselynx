@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Merit Network Derivative Works Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-merit-network-derivative",
             "Merit Network Derivative Works License"

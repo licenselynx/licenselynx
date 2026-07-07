@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "PfTijah Public Licence 1.1",
+            "PfTijah Public Licence v1.1"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-pftijah-1.1",
             "PfTijah Public License 1.1",

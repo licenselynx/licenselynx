@@ -7,7 +7,9 @@
         "spdx": [
             "Artistic License 1.0 w/clause 8"
         ],
-        "custom": [],
+        "custom": [
+            "Artistic Licence 1.0 w/clause 8"
+        ],
         "scancodeLicensedb": [
             "Artistic 1.0 w/clause 8",
             "artistic-1.0-cl8"

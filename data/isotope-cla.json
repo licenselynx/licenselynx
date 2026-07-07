@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Isotope Commercial Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "Isotope Commercial License Agreement",
             "LicenseRef-scancode-isotope-cla"

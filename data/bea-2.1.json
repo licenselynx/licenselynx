@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "BEA Public Licence 2.1"
+        ],
         "scancodeLicensedb": [
             "BEA 2.1",
             "BEA Public License 2.1",

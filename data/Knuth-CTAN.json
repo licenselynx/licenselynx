@@ -7,7 +7,9 @@
         "spdx": [
             "Knuth CTAN License"
         ],
-        "custom": [],
+        "custom": [
+            "Knuth CTAN Licence"
+        ],
         "scancodeLicensedb": [
             "knuth-ctan"
         ]

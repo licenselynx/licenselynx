@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "ITU-T General Public Licence",
+            "ITU-T Software Tools General Public Licence"
+        ],
         "scancodeLicensedb": [
             "ITU-T General Public License",
             "ITU-T Software Tools General Public License",

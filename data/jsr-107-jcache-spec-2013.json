@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "JSR-107 JCache Specification 2013 Licence"
+        ],
         "scancodeLicensedb": [
             "JSR-107 JCache Specification 2013 License",
             "LicenseRef-scancode-jsr-107-jcache-spec-2013"

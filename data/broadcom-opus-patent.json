@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Broadcom Opus Patent Licence"
+        ],
         "scancodeLicensedb": [
             "Broadcom Opus Patent License",
             "LicenseRef-scancode-broadcom-opus-patent"

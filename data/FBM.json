@@ -7,7 +7,9 @@
         "spdx": [
             "Fuzzy Bitmap License"
         ],
-        "custom": [],
+        "custom": [
+            "Fuzzy Bitmap Licence"
+        ],
         "scancodeLicensedb": [
             "fbm"
         ]

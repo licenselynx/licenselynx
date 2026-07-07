@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Marvell Firmware Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-marvell-firmware",
             "Marvell Firmware License"

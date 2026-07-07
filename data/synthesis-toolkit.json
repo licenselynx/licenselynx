@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Synthesis Toolkit Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-synthesis-toolkit",
             "Synthesis Toolkit License"

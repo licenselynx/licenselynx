@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Sandeep Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-sandeep",
             "Sandeep License"

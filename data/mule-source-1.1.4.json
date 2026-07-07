@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Mule Source Public Licence 1.1.4"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-mule-source-1.1.4",
             "Mule Source PL 1.1.4",

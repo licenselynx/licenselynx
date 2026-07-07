@@ -7,7 +7,20 @@
         "spdx": [
             "The MirOS Licence"
         ],
-        "custom": [],
+        "custom": [
+            "Licence :: MirOS",
+            "Licence :: MirOS Licence",
+            "Licence :: MirOS Licence (MirOS)",
+            "Licence :: OSI Approved :: MirOS",
+            "Licence :: OSI Approved :: MirOS Licence",
+            "Licence :: OSI Approved :: MirOS Licence (MirOS)",
+            "MirOS Licence",
+            "MirOS Licence (MirOS)",
+            "OSI Approved :: MirOS Licence",
+            "OSI Approved :: MirOS Licence (MirOS)",
+            "The MirOS License",
+            "The MirOS License (MirOS)"
+        ],
         "osi": [
             "The MirOS Licence (MirOS)"
         ],

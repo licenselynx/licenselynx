@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Tumbolia Public Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-tumbolia",
             "Tumbolia Public License"

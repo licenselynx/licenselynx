@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "NVIDIA Licence with Government Qualifications"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-nvidia-gov",
             "NVIDIA License with Government Qualifications"

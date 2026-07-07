@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Open Game Licence v1.0a"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ogl-1.0a",
             "OGL 1.0a",

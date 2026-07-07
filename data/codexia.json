@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Codexia Licence"
+        ],
         "scancodeLicensedb": [
             "Codexia License",
             "LicenseRef-scancode-codexia"

@@ -8,7 +8,20 @@
             "European Union Public License 1.0"
         ],
         "custom": [
-            "eupl1.0"
+            "eupl1.0",
+            "European Union Public License 1.0 (EUPL 1.0)",
+            "Licence :: EUPL 1.0",
+            "Licence :: European Union Public Licence 1.0",
+            "Licence :: European Union Public Licence 1.0 (EUPL 1.0)",
+            "Licence :: OSI Approved :: EUPL 1.0",
+            "Licence :: OSI Approved :: European Union Public Licence 1.0",
+            "Licence :: OSI Approved :: European Union Public Licence 1.0 (EUPL 1.0)",
+            "License :: European Union Public License 1.0",
+            "License :: European Union Public License 1.0 (EUPL 1.0)",
+            "License :: OSI Approved :: European Union Public License 1.0",
+            "License :: OSI Approved :: European Union Public License 1.0 (EUPL 1.0)",
+            "OSI Approved :: European Union Public License 1.0",
+            "OSI Approved :: European Union Public License 1.0 (EUPL 1.0)"
         ],
         "scancodeLicensedb": [
             "EUPL 1.0",

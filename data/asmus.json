@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "ASMUS Licence"
+        ],
         "scancodeLicensedb": [
             "ASMUS License",
             "LicenseRef-scancode-asmus"

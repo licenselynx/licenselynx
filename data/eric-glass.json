@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Eric Glass Licence"
+        ],
         "scancodeLicensedb": [
             "Eric Glass License",
             "LicenseRef-scancode-eric-glass"

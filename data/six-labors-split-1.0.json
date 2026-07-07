@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Six Labors Split Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-six-labors-split-1.0",
             "Six Labors Split License 1.0"

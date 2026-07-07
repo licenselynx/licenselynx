@@ -7,7 +7,10 @@
         "spdx": [
             "TermReadKey License"
         ],
-        "custom": [],
+        "custom": [
+            "Term Readkey Licence",
+            "TermReadKey Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-term-readkey",
             "Term Readkey License",

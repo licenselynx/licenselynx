@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Kumar Robotics Licence"
+        ],
         "scancodeLicensedb": [
             "Kumar Robotics License",
             "LicenseRef-scancode-kumar-robotics"

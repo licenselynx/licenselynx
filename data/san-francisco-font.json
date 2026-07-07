@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Apple San Francisco Font Licence",
+            "San Francisco Font Licence"
+        ],
         "scancodeLicensedb": [
             "Apple San Francisco Font License",
             "LicenseRef-scancode-san-francisco-font",

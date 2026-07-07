@@ -7,7 +7,10 @@
         "spdx": [
             "Info-ZIP License"
         ],
-        "custom": [],
+        "custom": [
+            "Info-ZIP Licence",
+            "Info-Zip Licence"
+        ],
         "scancodeLicensedb": [
             "info-zip",
             "Info-Zip License"

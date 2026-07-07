@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Dgraph Community Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "Dgraph Community License Agreement",
             "LicenseRef-scancode-dgraph-cla"

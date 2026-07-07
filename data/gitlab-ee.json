@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "GitLab Enterprise Edition (EE) licence"
+        ],
         "scancodeLicensedb": [
             "GitLab EE",
             "GitLab Enterprise Edition (EE) license",

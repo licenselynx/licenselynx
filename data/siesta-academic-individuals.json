@@ -8,7 +8,9 @@
             "LicenseRef-scancode-siesta-academic-individuals",
             "Siesta Academic Licence for Individuals"
         ],
-        "custom": []
+        "custom": [
+            "Siesta Academic License for Individuals"
+        ]
     },
     "rejected": [],
     "risky": []

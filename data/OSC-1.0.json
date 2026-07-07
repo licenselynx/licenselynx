@@ -7,7 +7,9 @@
         "spdx": [
             "OSC License 1.0"
         ],
-        "custom": []
+        "custom": [
+            "OSC Licence 1.0"
+        ]
     },
     "rejected": [],
     "risky": [],

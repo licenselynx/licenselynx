@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Cadence Linux Firmware Licence"
+        ],
         "scancodeLicensedb": [
             "Cadence Linux Firmware License",
             "LicenseRef-scancode-cadence-linux-firmware"

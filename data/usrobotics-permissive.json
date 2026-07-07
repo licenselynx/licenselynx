@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "USRobotics Permissive Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-usrobotics-permissive",
             "USRobotics Permissive License"

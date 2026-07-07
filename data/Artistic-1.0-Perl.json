@@ -7,7 +7,10 @@
         "spdx": [
             "Artistic License 1.0 (Perl)"
         ],
-        "custom": [],
+        "custom": [
+            "Artistic Licence (Perl) 1.0",
+            "Artistic Licence 1.0 (Perl)"
+        ],
         "scancodeLicensedb": [
             "Artistic License (Perl) 1.0",
             "Artistic-Perl-1.0",

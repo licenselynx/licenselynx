@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Sun GlassFish Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-sun-glassfish",
             "Sun GlassFish License"

@@ -7,7 +7,10 @@
         "spdx": [
             "Code Project Open License 1.02"
         ],
-        "custom": [],
+        "custom": [
+            "Code Project Open Licence (CPOL) 1.02",
+            "Code Project Open Licence 1.02"
+        ],
         "scancodeLicensedb": [
             "Code Project Open License (CPOL) 1.02",
             "CPOL 1.02",

@@ -7,7 +7,9 @@
         "spdx": [
             "Solderpad Hardware License v2.1"
         ],
-        "custom": [],
+        "custom": [
+            "Solderpad Hardware Licence v2.1"
+        ],
         "scancodeLicensedb": [
             "shl-2.1"
         ]

@@ -7,7 +7,12 @@
         "spdx": [
             "Attribution Assurance License"
         ],
-        "custom": [],
+        "custom": [
+            "Attribution Assurance Licence",
+            "Licence :: Attribution Assurance Licence",
+            "Licence :: OSI Approved :: Attribution Assurance Licence",
+            "OSI Approved :: Attribution Assurance Licence"
+        ],
         "scancodeLicensedb": [
             "AAL",
             "attribution"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Hauppauge Firmware OEM Licence"
+        ],
         "scancodeLicensedb": [
             "Hauppauge Firmware OEM License",
             "LicenseRef-scancode-hauppauge-firmware-oem"

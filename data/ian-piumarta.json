@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Ian Piumarta Licence"
+        ],
         "scancodeLicensedb": [
             "Ian Piumarta License",
             "LicenseRef-scancode-ian-piumarta"

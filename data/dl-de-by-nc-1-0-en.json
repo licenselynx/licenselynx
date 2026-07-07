@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Data license Germany - attribution - non-commercial - Version 1.0 - English"
+        ],
         "scancodeLicensedb": [
             "Data licence Germany - attribution - non-commercial - Version 1.0 - English",
             "dl-de/by-nc-1-0-en",

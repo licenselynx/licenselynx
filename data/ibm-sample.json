@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "IBM Sample Licence",
+            "IBM Sample Program Licence"
+        ],
         "scancodeLicensedb": [
             "IBM Sample License",
             "IBM Sample Program License",

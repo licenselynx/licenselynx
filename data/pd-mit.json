@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Modified MIT Licence for Public Domain software"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-pd-mit",
             "Modified MIT License for Public Domain software"

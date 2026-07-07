@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Fair Core Licence, Version 1.0, Apache 2.0 Future Licence"
+        ],
         "scancodeLicensedb": [
             "Fair Core License, Version 1.0, Apache 2.0 Future License",
             "FCL-1.0-Apache-2.0",

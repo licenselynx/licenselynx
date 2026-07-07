@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft Windows Operating System Licence 2019"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-windows-os-2018",
             "Microsoft Windows Operating System License 2019",

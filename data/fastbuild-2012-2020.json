@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "FASTBuild Licence 2012-2020"
+        ],
         "scancodeLicensedb": [
             "FASTBuild License 2012-2020",
             "LicenseRef-scancode-fastbuild-2012-2020"

@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Oracle Commercial Database Licence 11g Release 2 (11.2)",
+            "Oracle Commercial Database Licence 11g2"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-oracle-commercial-database-11g2",
             "LicenseRef-scancode-oracle-commercial-db-11g2",

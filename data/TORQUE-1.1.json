@@ -7,7 +7,9 @@
         "spdx": [
             "TORQUE v2.5+ Software License v1.1"
         ],
-        "custom": [],
+        "custom": [
+            "TORQUE v2.5+ Software Licence v1.1"
+        ],
         "scancodeLicensedb": [
             "TORQUE 1.1",
             "torque-1.1"

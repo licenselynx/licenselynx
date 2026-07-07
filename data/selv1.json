@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Stalwart Enterprise Licence 1.0 (SELv1) Agreement"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-selv1",
             "SELv1",

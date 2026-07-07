@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "SATA Licence",
+            "Star And Thank Author Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-sata",
             "SATA License",

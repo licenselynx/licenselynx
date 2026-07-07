@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft CAPICOM Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-capicom",
             "Microsoft CAPICOM License"

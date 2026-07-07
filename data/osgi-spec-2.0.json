@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "OSGi Specification Licence 2.0",
+            "OSGi Specification Licence Version 2.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-osgi-spec-2.0",
             "OSGi Specification License 2.0",

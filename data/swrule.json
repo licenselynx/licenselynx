@@ -7,7 +7,9 @@
         "spdx": [
             "swrule License"
         ],
-        "custom": [],
+        "custom": [
+            "swrule Licence"
+        ],
         "scancodeLicensedb": [
             "swrule"
         ]

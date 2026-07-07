@@ -7,7 +7,10 @@
         "spdx": [
             "lsof License"
         ],
-        "custom": [],
+        "custom": [
+            "lsof Licence",
+            "Purdue BSD-Style Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-purdue-bsd",
             "Purdue BSD-Style License",

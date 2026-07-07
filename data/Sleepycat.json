@@ -7,7 +7,14 @@
         "spdx": [
             "Sleepycat License"
         ],
-        "custom": [],
+        "custom": [
+            "Licence :: OSI Approved :: Sleepycat Licence",
+            "Licence :: Sleepycat Licence",
+            "OSI Approved :: Sleepycat Licence",
+            "Sleepycat Licence",
+            "Sleepycat Licence (Berkeley Database Licence)",
+            "The Sleepycat Licence"
+        ],
         "osi": [
             "The Sleepycat License"
         ],

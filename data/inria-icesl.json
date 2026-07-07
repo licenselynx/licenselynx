@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "INRIA End User Licence Agreement for IceSL Software"
+        ],
         "scancodeLicensedb": [
             "INRIA End User License Agreement for IceSL Software",
             "INRIA IceSL EULA",

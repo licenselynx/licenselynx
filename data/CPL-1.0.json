@@ -8,7 +8,13 @@
             "Common Public License 1.0"
         ],
         "custom": [
-            "CPL"
+            "Common Public Licence",
+            "Common Public Licence 1.0",
+            "Common Public Licence, Version 1.0",
+            "CPL",
+            "Licence :: Common Public Licence",
+            "Licence :: OSI Approved :: Common Public Licence",
+            "OSI Approved :: Common Public Licence"
         ],
         "osi": [
             "Common Public License, Version 1.0"

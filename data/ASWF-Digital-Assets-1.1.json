@@ -7,7 +7,10 @@
         "spdx": [
             "ASWF Digital Assets License 1.1"
         ],
-        "custom": [],
+        "custom": [
+            "ASWF Digital Assets Licence 1.1",
+            "ASWF Digital Assets Licence v1.1"
+        ],
         "scancodeLicensedb": [
             "ASWF Digital Assets License v1.1",
             "aswf-digital-assets-1.1",

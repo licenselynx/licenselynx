@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Ghostscript General Public Licence 1988"
+        ],
         "scancodeLicensedb": [
             "Ghostscript General Public License 1988",
             "LicenseRef-scancode-ghostscript-1988"

@@ -7,7 +7,10 @@
         "spdx": [
             "FSF Unlimited License (With License Retention and Warranty Disclaimer)"
         ],
-        "custom": [],
+        "custom": [
+            "FSF Unlimited Licence (With Licence Retention and Warranty Disclaimer)",
+            "FSF Unlimited Licence No Warranty"
+        ],
         "scancodeLicensedb": [
             "FSF Unlimited License No Warranty",
             "fsf-unlimited-no-warranty",

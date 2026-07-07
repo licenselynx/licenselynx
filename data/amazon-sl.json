@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Amazon Software Licence"
+        ],
         "scancodeLicensedb": [
             "Amazon Software License",
             "LicenseRef-.amazon.com.-AmznSL-1.0",

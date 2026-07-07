@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "H2 Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "H2 1.0",
             "H2 License 1.0",

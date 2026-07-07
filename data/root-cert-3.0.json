@@ -8,7 +8,9 @@
             "LicenseRef-scancode-root-cert-3.0",
             "Root Certificate License Agreement v3.0"
         ],
-        "custom": []
+        "custom": [
+            "Root Certificate Licence Agreement v3.0"
+        ]
     },
     "rejected": [],
     "risky": [],

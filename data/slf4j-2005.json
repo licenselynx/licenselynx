@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "SLF4J Licence 2005"
+        ],
         "scancodeLicensedb": [
             "SLF4J License 2005"
         ]

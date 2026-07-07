@@ -7,7 +7,13 @@
         "spdx": [
             "PostgreSQL License"
         ],
-        "custom": [],
+        "custom": [
+            "Licence :: OSI Approved :: PostgreSQL Licence",
+            "Licence :: PostgreSQL Licence",
+            "OSI Approved :: PostgreSQL Licence",
+            "PostgreSQL Licence",
+            "The PostgreSQL License"
+        ],
         "osi": [
             "The PostgreSQL Licence"
         ],

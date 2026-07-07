@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "OCLC Research Public Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-oclc-1.0",
             "OCLC Research Public License 1.0"

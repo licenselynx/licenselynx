@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "n8n Enterprise Licence 2022"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-n8n-ee-2022",
             "n8n Enterprise License 2022"

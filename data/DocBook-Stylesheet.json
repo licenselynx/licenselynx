@@ -7,7 +7,9 @@
         "spdx": [
             "DocBook Stylesheet License"
         ],
-        "custom": [],
+        "custom": [
+            "DocBook Stylesheet Licence"
+        ],
         "scancodeLicensedb": [
             "docbook-stylesheet"
         ]

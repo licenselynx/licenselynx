@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "DSTC Public Licence (DPL) v1.1"
+        ],
         "scancodeLicensedb": [
             "DPL-1.1",
             "DSTC Public License (DPL) v1.1",

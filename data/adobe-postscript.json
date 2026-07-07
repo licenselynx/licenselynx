@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Adobe PostScript Licence"
+        ],
         "scancodeLicensedb": [
             "Adobe PostScript License",
             "LicenseRef-scancode-adobe-postscript"

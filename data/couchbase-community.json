@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Couchbase Community Edition Licence"
+        ],
         "scancodeLicensedb": [
             "Couchbase Community Edition License",
             "LicenseRef-scancode-couchbase-community"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Booz Allen Public Licence v1.0"
+        ],
         "scancodeLicensedb": [
             "Booz Allen Public License v1.0",
             "LicenseRef-scancode-bapl-1.0"

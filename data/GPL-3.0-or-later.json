@@ -9,9 +9,21 @@
             "GPL-3.0+"
         ],
         "custom": [
-            "GPL-3+",
             "\"GPL-3.0-or-later\"",
-            "\"GPLv3+\""
+            "\"GPLv3+\"",
+            "GNU General Public Licence 3.0 or later",
+            "GNU General Public Licence v3 or later",
+            "GNU General Public Licence v3 or later (GPLv3+)",
+            "GNU General Public Licence v3.0 or later",
+            "GPL-3+",
+            "Licence :: GNU General Public Licence v3 or later",
+            "Licence :: GNU General Public Licence v3 or later (GPLv3+)",
+            "Licence :: GPLv3+",
+            "Licence :: OSI Approved :: GNU General Public Licence v3 or later",
+            "Licence :: OSI Approved :: GNU General Public Licence v3 or later (GPLv3+)",
+            "Licence :: OSI Approved :: GPLv3+",
+            "OSI Approved :: GNU General Public Licence v3 or later",
+            "OSI Approved :: GNU General Public Licence v3 or later (GPLv3+)"
         ],
         "scancodeLicensedb": [
             "GNU General Public License 3.0 or later",

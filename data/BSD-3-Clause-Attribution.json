@@ -7,7 +7,9 @@
         "spdx": [
             "BSD with attribution"
         ],
-        "custom": [],
+        "custom": [
+            "BSD Acknowledgment Licence"
+        ],
         "scancodeLicensedb": [
             "BSD Acknowledgment License",
             "bsd-ack"

@@ -7,7 +7,10 @@
         "spdx": [
             "Haskell Language Report License"
         ],
-        "custom": [],
+        "custom": [
+            "Haskell Language Report Licence",
+            "Haskell Report Licence"
+        ],
         "scancodeLicensedb": [
             "Haskell Report License",
             "haskell-report"

@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Madwifi Licence",
+            "Madwifi Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-bsd-no-mod",
             "Madwifi License",

@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Open Compensation Token Licence v0.21",
+            "Open Compensation Token Licence Version 0.21"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-octl-0.21",
             "Open Compensation Token License v0.21",

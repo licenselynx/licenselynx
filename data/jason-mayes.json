@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Jason Mayes Licence"
+        ],
         "scancodeLicensedb": [
             "Jason Mayes License",
             "LicenseRef-scancode-jason-mayes"

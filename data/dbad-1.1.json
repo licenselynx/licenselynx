@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "DBAD Licence 1.1",
+            "Don't Be a Dick Public Licence 1.1"
+        ],
         "scancodeLicensedb": [
             "DBAD License 1.1",
             "Don't Be a Dick Public License 1.1",

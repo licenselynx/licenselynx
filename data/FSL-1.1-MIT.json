@@ -4,7 +4,9 @@
         "src": "spdx"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Functional Source Licence, Version 1.1, MIT Future Licence"
+        ],
         "spdx": [
             "Functional Source License, Version 1.1, MIT Future License"
         ],

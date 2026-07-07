@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Jabber Open Source Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "Jabber 1.0",
             "Jabber Open Source License 1.0",

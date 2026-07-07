@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Amlogic Linux Firmware Licence"
+        ],
         "scancodeLicensedb": [
             "Amlogic Linux Firmware License",
             "LicenseRef-scancode-amlogic-linux-firmware"

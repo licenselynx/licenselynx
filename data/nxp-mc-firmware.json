@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "NXP MC Firmware Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-nxp-mc-firmware",
             "NXP MC Firmware License"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Oracle Code Samples BSD-Style Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-oracle-code-samples-bsd",
             "Oracle Code Samples BSD-Style License"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "DeepSeek Licence Agreement v1.0"
+        ],
         "scancodeLicensedb": [
             "DeepSeek License Agreement v1.0",
             "LicenseRef-scancode-deepseek-la-1.0"

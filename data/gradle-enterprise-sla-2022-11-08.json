@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Gradle Enterprise Software Licence Agreement 2022-11-08"
+        ],
         "scancodeLicensedb": [
             "Gradle Enterprise SLA 2022-",
             "Gradle Enterprise Software License Agreement 2022-11-08",

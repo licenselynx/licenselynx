@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Robert Hubley Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-robert-hubley",
             "Robert Hubley License"

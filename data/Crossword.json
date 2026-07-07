@@ -7,7 +7,9 @@
         "spdx": [
             "Crossword License"
         ],
-        "custom": [],
+        "custom": [
+            "Crossword Licence"
+        ],
         "scancodeLicensedb": [
             "crossword"
         ]

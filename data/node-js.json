@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Node Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-node-js",
             "Node License"

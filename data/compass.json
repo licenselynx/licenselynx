@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Compass Licence"
+        ],
         "scancodeLicensedb": [
             "Compass License",
             "LicenseRef-scancode-compass"

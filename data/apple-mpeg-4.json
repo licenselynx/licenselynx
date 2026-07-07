@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Apple MPEG-4 Licence"
+        ],
         "scancodeLicensedb": [
             "Apple MPEG-4 License",
             "LicenseRef-scancode-apple-mpeg-4"

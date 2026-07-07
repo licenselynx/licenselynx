@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Chris Maunder Licence"
+        ],
         "scancodeLicensedb": [
             "Chris Maunder License",
             "LicenseRef-scancode-chris-maunder"

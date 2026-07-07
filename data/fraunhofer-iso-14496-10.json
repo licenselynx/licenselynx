@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Fraunhofer ISO 14496-10 Licence"
+        ],
         "scancodeLicensedb": [
             "Fraunhofer ISO 14496-10 License",
             "LicenseRef-scancode-fraunhofer-iso-14496-10"

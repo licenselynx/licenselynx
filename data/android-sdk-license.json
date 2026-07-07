@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Android SDK Licence 2015",
+            "Android Software Development Kit Licence Agreement 2015"
+        ],
         "scancodeLicensedb": [
             "Android SDK License 2015",
             "Android Software Development Kit License Agreement 2015",

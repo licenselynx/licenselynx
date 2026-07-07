@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "GNU General Public Licence 2.0 with DjVu Patent Grant"
+        ],
         "scancodeLicensedb": [
             "GNU General Public License 2.0 with DjVu Patent Grant",
             "GPL 2.0 with DjVu Patent Grant",

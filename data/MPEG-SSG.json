@@ -7,7 +7,9 @@
         "spdx": [
             "MPEG Software Simulation"
         ],
-        "custom": [],
+        "custom": [
+            "MPEG SSG Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-mpeg-ssg",
             "MPEG SSG License",

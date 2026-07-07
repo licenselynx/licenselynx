@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Matthew Kwan Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-matthew-kwan",
             "Matthew Kwan License"

@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "TCG Spec Licence v1",
+            "Trusted Computing Group Spec Licence v1"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-tcg-spec-license-v1",
             "TCG Spec License v1",

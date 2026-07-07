@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "wxWindows Restricted License 3.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-wxwindows-r-3.0",
             "wxWindows Restricted Licence 3.0"

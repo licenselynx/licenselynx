@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Karl Peterson Licence"
+        ],
         "scancodeLicensedb": [
             "Karl Peterson License",
             "LicenseRef-scancode-karl-peterson"

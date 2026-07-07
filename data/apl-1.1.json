@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Academic Public Licence version 1.1"
+        ],
         "scancodeLicensedb": [
             "Academic Public License version 1.1",
             "APL-1.1",

@@ -4,10 +4,12 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "INRIA Non-Commercial Licence Agreement for the Zélus compiler"
+        ],
         "scancodeLicensedb": [
             "INRIA NCLA Zelus",
-            "INRIA Non-Commercial License Agreement for the Z\u00e9lus compiler",
+            "INRIA Non-Commercial License Agreement for the Zélus compiler",
             "LicenseRef-scancode-inria-zelus"
         ]
     },

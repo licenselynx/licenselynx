@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "RubyEncoder Loader License"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-rubyencoder-loader",
             "RubyEncoder Loader Licence"

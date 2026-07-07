@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "AG Grid Enterprise Licence"
+        ],
         "scancodeLicensedb": [
             "AG Grid Enterprise License",
             "LicenseRef-scancode-ag-grid-enterprise"

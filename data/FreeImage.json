@@ -7,7 +7,11 @@
         "spdx": [
             "FreeImage Public License v1.0"
         ],
-        "custom": [],
+        "custom": [
+            "FreeImage Public Licence 1.0",
+            "FreeImage Public Licence v1.0",
+            "FreeImage Public Licence Version 1.0"
+        ],
         "scancodeLicensedb": [
             "FreeImage Public License 1.0",
             "FreeImage Public License Version 1.0",

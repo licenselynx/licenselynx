@@ -7,7 +7,10 @@
         "spdx": [
             "SSH OpenSSH license"
         ],
-        "custom": [],
+        "custom": [
+            "OpenSSH Licence",
+            "SSH OpenSSH licence"
+        ],
         "scancodeLicensedb": [
             "openssh",
             "OpenSSH License"

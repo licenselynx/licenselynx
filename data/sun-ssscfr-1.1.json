@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Sun Solaris Source Code (Foundation Release) Licence 1.1",
+            "Sun Solaris Source Code Licence 1.1"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-sun-ssscfr-1.1",
             "Sun Solaris Source Code (Foundation Release) License 1.1",

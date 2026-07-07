@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Intel MCU path licence 2018"
+        ],
         "scancodeLicensedb": [
             "Intel MCU path license 2018",
             "LicenseRef-scancode-intel-mcu-2018"

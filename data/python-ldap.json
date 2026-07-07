@@ -7,7 +7,9 @@
         "spdx": [
             "Python ldap License"
         ],
-        "custom": [],
+        "custom": [
+            "Python ldap Licence"
+        ],
         "scancodeLicensedb": [
             "python-ldap"
         ]

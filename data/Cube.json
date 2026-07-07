@@ -7,7 +7,9 @@
         "spdx": [
             "Cube License"
         ],
-        "custom": [],
+        "custom": [
+            "Cube Licence"
+        ],
         "scancodeLicensedb": [
             "cube"
         ]

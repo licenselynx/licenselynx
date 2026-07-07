@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Sun Industry Standards Source Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-sun-sissl-1.0",
             "Sun Industry Standards Source License 1.0"

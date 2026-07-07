@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "libzip Licence",
+            "NiH libzip Licence"
+        ],
         "scancodeLicensedb": [
             "libzip License",
             "NiH libzip License"

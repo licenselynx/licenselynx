@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "University of Michigan Open Source Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-michigan-disclaimer",
             "University of Michigan Open Source License",

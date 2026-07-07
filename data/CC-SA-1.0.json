@@ -4,7 +4,9 @@
         "src": "spdx"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Creative Commons ShareAlike Licence 1.0"
+        ],
         "spdx": [
             "Creative Commons Share Alike 1.0 Generic"
         ],

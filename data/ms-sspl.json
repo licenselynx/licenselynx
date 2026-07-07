@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft Shared Source Permissive Licence (SS-PL)"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-sspl",
             "Microsoft Shared Source Permissive License (SS-PL)",

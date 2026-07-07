@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Polyform Shield Licence 1.0.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-polyform-defensive-1.0.0",
             "LicenseRef-scancode-polyform-shield-1.0.0",

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Sun Proprietary Non-Commercial Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-sun-prop-non-commercial",
             "Sun Proprietary Non-Commercial License"

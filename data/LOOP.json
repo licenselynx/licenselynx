@@ -7,7 +7,9 @@
         "spdx": [
             "Common Lisp LOOP License"
         ],
-        "custom": [],
+        "custom": [
+            "Common Lisp LOOP Licence"
+        ],
         "scancodeLicensedb": [
             "loop"
         ]

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Debian reportbug Licence"
+        ],
         "scancodeLicensedb": [
             "Debian reportbug License",
             "LicenseRef-scancode-reportbug"

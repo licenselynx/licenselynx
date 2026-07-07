@@ -7,7 +7,9 @@
         "spdx": [
             "Historical Permission Notice and Disclaimer - Kevlin Henney variant"
         ],
-        "custom": [],
+        "custom": [
+            "Kevlin Henney Licence"
+        ],
         "scancodeLicensedb": [
             "Kevlin Henney License",
             "kevlin-henney",

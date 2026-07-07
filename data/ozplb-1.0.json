@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Australian Public License B Version 1.0"
+        ],
         "scancodeLicensedb": [
             "Australian Public Licence B Version 1.0",
             "LicenseRef-scancode-ozplb-1.0",

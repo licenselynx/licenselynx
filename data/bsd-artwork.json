@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "BSD Artwork Licence"
+        ],
         "scancodeLicensedb": [
             "BSD Artwork",
             "BSD Artwork License",

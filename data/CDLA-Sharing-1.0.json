@@ -7,7 +7,9 @@
         "spdx": [
             "Community Data License Agreement Sharing 1.0"
         ],
-        "custom": [],
+        "custom": [
+            "Community Data Licence Agreement Sharing 1.0"
+        ],
         "scancodeLicensedb": [
             "CDLA Sharing 1.0",
             "cdla-sharing-1.0"

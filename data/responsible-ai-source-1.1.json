@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Reponsible AI Source Code Licence v1.1"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-responsible-ai-source-1.1",
             "Reponsible AI Source Code License v1.1"

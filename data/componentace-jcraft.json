@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "ComponentAce JCraft Licence"
+        ],
         "scancodeLicensedb": [
             "ComponentAce JCraft License",
             "LicenseRef-scancode-componentace-jcraft"

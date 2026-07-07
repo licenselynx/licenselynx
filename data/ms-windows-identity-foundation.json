@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft Windows Identity Foundation Licence",
+            "MS Windows Identity Foundation Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-windows-identity-foundation",
             "Microsoft Windows Identity Foundation License",

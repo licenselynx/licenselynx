@@ -7,7 +7,10 @@
         "spdx": [
             "Beerware License"
         ],
-        "custom": [],
+        "custom": [
+            "Beer-Ware Licence",
+            "Beerware Licence"
+        ],
         "scancodeLicensedb": [
             "Beer-Ware License",
             "beerware"

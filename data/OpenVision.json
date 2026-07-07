@@ -7,7 +7,9 @@
         "spdx": [
             "OpenVision License"
         ],
-        "custom": [],
+        "custom": [
+            "OpenVision Licence"
+        ],
         "scancodeLicensedb": [
             "openvision"
         ]

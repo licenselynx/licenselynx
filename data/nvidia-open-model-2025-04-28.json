@@ -8,7 +8,9 @@
             "LicenseRef-scancode-nvidia-open-model-2025-04-28",
             "NVIDIA Open Model License Agreement 2025-04-28"
         ],
-        "custom": []
+        "custom": [
+            "NVIDIA Open Model Licence Agreement 2025-04-28"
+        ]
     },
     "rejected": [],
     "risky": []

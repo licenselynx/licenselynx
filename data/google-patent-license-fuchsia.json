@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Google Patent Licence for Fuchsia"
+        ],
         "scancodeLicensedb": [
             "Google Patent License for Fuchsia",
             "LicenseRef-scancode-google-patent-license-fuchsia"

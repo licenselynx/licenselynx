@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "BigScience Open RAIL-M Licence"
+        ],
         "scancodeLicensedb": [
             "BigScience Open RAIL-M License",
             "LicenseRef-scancode-bigscience-open-rail-m"

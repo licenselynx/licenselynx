@@ -7,7 +7,10 @@
         "spdx": [
             "Inner Net License v2.0"
         ],
-        "custom": [],
+        "custom": [
+            "Inner Net Licence 2.0",
+            "Inner Net Licence v2.0"
+        ],
         "scancodeLicensedb": [
             "Inner Net 2.0",
             "Inner Net License 2.0",

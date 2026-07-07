@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microchip Linux Firmware Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-microchip-linux-firmware",
             "Microchip Linux Firmware License"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Metro Link Public Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-metrolink-1.0",
             "Metro Link Public License 1.0",

@@ -7,7 +7,11 @@
         "spdx": [
             "Computer Associates Trusted Open Source License 1.1"
         ],
-        "custom": [],
+        "custom": [
+            "CA Trusted Open Source Licence 1.1",
+            "Computer Associates Trusted Open Source Licence 1.1",
+            "Computer Associates Trusted Open Source Licence, Version 1.1"
+        ],
         "osi": [
             "Computer Associates Trusted Open Source License, Version 1.1"
         ],

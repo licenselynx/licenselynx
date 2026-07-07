@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "CognitiveWeb Open Source Licence 1.1"
+        ],
         "scancodeLicensedb": [
             "CognitiveWeb Open Source License 1.1",
             "LicenseRef-scancode-cognitive-web-osl-1.1"

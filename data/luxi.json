@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Bigelow & Holmes Luxi fonts licence"
+        ],
         "scancodeLicensedb": [
             "Bigelow & Holmes Luxi fonts license",
             "LicenseRef-scancode-luxi"

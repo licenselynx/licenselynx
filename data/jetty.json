@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Jetty Licence"
+        ],
         "scancodeLicensedb": [
             "Jetty License",
             "LicenseRef-scancode-jetty"

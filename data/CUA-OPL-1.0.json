@@ -7,7 +7,11 @@
         "spdx": [
             "CUA Office Public License v1.0"
         ],
-        "custom": [],
+        "custom": [
+            "CUA Office Public Licence",
+            "CUA Office Public Licence 1.0",
+            "CUA Office Public Licence v1.0"
+        ],
         "osi": [
             "CUA Office Public License"
         ],

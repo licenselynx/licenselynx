@@ -7,7 +7,11 @@
         "spdx": [
             "Enlightenment License (e16)"
         ],
-        "custom": [],
+        "custom": [
+            "EFL MIT-Style Licence",
+            "Enlightenment (EFL) MIT-Style Licence",
+            "Enlightenment Licence (e16)"
+        ],
         "scancodeLicensedb": [
             "EFL MIT-Style License",
             "enlightenment",

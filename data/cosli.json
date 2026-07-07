@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Civilian Open Source Licence"
+        ],
         "scancodeLicensedb": [
             "Civilian Open Source License",
             "COSLi",

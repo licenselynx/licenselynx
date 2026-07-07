@@ -7,7 +7,10 @@
         "spdx": [
             "Scheme Widget Library (SWL) Software License Agreement"
         ],
-        "custom": [],
+        "custom": [
+            "Scheme Widget Library (SWL) Software Licence",
+            "Scheme Widget Library (SWL) Software Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "Scheme Widget Library (SWL) Software License",
             "swl"

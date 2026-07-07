@@ -9,9 +9,21 @@
             "GPL-2.0+"
         ],
         "custom": [
+            "\"GPL-2.0-or-later\"",
+            "GNU General Public Licence 2.0 or later",
+            "GNU General Public Licence v2 or later",
+            "GNU General Public Licence v2 or later (GPLv2+)",
+            "GNU General Public Licence v2.0 or later",
             "GPL-2+",
             "GPL2+",
-            "\"GPL-2.0-or-later\""
+            "Licence :: GNU General Public Licence v2 or later",
+            "Licence :: GNU General Public Licence v2 or later (GPLv2+)",
+            "Licence :: GPLv2+",
+            "Licence :: OSI Approved :: GNU General Public Licence v2 or later",
+            "Licence :: OSI Approved :: GNU General Public Licence v2 or later (GPLv2+)",
+            "Licence :: OSI Approved :: GPLv2+",
+            "OSI Approved :: GNU General Public Licence v2 or later",
+            "OSI Approved :: GNU General Public Licence v2 or later (GPLv2+)"
         ],
         "scancodeLicensedb": [
             "GNU General Public License 2.0 or later",

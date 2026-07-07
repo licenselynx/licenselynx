@@ -7,7 +7,11 @@
         "spdx": [
             "Frameworx Open License 1.0"
         ],
-        "custom": [],
+        "custom": [
+            "Frameworx Licence, Version 1.0",
+            "Frameworx Open Licence 1.0",
+            "Frameworx Open Licence v1.0"
+        ],
         "osi": [
             "Frameworx License, Version 1.0"
         ],

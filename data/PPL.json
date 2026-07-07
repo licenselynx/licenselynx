@@ -7,7 +7,9 @@
         "spdx": [
             "Peer Production License"
         ],
-        "custom": [],
+        "custom": [
+            "Peer Production Licence"
+        ],
         "scancodeLicensedb": [
             "ppl"
         ]

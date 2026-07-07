@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Hugging Face Optimized Inference Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "HFOILv1.0",
             "Hugging Face Optimized Inference License 1.0",

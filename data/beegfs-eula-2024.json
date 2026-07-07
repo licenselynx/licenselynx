@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "BeeGFS End User Licence Agreement 2024"
+        ],
         "scancodeLicensedb": [
             "BeeGFS End User License Agreement 2024",
             "BeeGFS EULA 2024",

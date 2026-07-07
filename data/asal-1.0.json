@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Any Source Available Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "Any Source Available License 1.0",
             "ASAL 1.0",

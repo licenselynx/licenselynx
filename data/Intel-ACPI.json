@@ -7,7 +7,9 @@
         "spdx": [
             "Intel ACPI Software License Agreement"
         ],
-        "custom": [],
+        "custom": [
+            "Intel ACPI Software Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "Intel ACPI SLA",
             "intel-acpi"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Binary-Only Linux Firmware Licence"
+        ],
         "scancodeLicensedb": [
             "Binary-Only Linux Firmware License",
             "LicenseRef-scancode-binary-linux-firmware"

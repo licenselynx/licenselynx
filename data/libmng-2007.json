@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "libmng Licence 2007"
+        ],
         "scancodeLicensedb": [
             "libmng License 2007",
             "LicenseRef-scancode-libmng-2007"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Epson End User Software Licence Agreement 2023"
+        ],
         "scancodeLicensedb": [
             "Epson End User Software License Agreement 2023",
             "Epson EULA 2023",

@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Actuate Corporation BIRT iHub F-Type Software Licence Agreement",
+            "BIRT iHub F-Type Software Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "Actuate Corporation BIRT iHub F-Type Software License Agreement",
             "BIRT iHub F-Type Software License Agreement",

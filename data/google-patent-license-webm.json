@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Google Patent Licence for WebM"
+        ],
         "scancodeLicensedb": [
             "Google Patent License for WebM",
             "LicenseRef-scancode-google-patent-license-webm"

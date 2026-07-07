@@ -7,7 +7,9 @@
         "spdx": [
             "Ubuntu Font Licence v1.0"
         ],
-        "custom": [],
+        "custom": [
+            "Ubuntu Font License v1.0"
+        ],
         "scancodeLicensedb": [
             "ubuntu-font-1.0"
         ]

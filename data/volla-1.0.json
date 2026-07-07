@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Volla License 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-volla-1.0",
             "Volla Licence 1.0"

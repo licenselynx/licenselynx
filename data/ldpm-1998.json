@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Linux Documentation Project Manifesto Template Licence 1998-09-21"
+        ],
         "scancodeLicensedb": [
             "LDPM-1998",
             "LicenseRef-scancode-ldpm-1998",

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "EnergyPlus BSD-Style Licence"
+        ],
         "scancodeLicensedb": [
             "EnergyPlus BSD-Style License",
             "LicenseRef-scancode-energyplus-bsd"

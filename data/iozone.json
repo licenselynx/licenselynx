@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "IOzone Licence"
+        ],
         "scancodeLicensedb": [
             "IOzone License",
             "LicenseRef-scancode-iozone"

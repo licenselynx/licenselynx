@@ -7,7 +7,9 @@
         "spdx": [
             "Checkmk License"
         ],
-        "custom": [],
+        "custom": [
+            "Checkmk Licence"
+        ],
         "scancodeLicensedb": [
             "checkmk"
         ]

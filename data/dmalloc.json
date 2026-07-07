@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "dmalloc Licence"
+        ],
         "scancodeLicensedb": [
             "dmalloc License",
             "LicenseRef-scancode-dmalloc"

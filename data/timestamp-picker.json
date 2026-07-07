@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Timestamp Picker Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-timestamp-picker",
             "Timestamp Picker License"

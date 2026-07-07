@@ -7,7 +7,10 @@
         "spdx": [
             "SGI Free Software License B v1.0"
         ],
-        "custom": [],
+        "custom": [
+            "SGI Free Software Licence B 1.0",
+            "SGI Free Software Licence B v1.0"
+        ],
         "scancodeLicensedb": [
             "SGI Free Software License B 1.0",
             "sgi-fslb-1.0"

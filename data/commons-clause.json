@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Commons Clause Licence Condition v1.0"
+        ],
         "scancodeLicensedb": [
             "Commons Clause",
             "Commons Clause License Condition v1.0",

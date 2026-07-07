@@ -7,7 +7,19 @@
         "spdx": [
             "Open Software License 3.0"
         ],
-        "custom": [],
+        "custom": [
+            "Licence :: Open Software Licence 3.0",
+            "Licence :: Open Software Licence 3.0 (OSL-3.0)",
+            "Licence :: OSI Approved :: Open Software Licence 3.0",
+            "Licence :: OSI Approved :: Open Software Licence 3.0 (OSL-3.0)",
+            "Licence :: OSI Approved :: OSL-3.0",
+            "Licence :: OSL-3.0",
+            "Open Software Licence 3.0",
+            "Open Software Licence 3.0 (OSL-3.0)",
+            "Open Software Licence, Version 3.0",
+            "OSI Approved :: Open Software Licence 3.0",
+            "OSI Approved :: Open Software Licence 3.0 (OSL-3.0)"
+        ],
         "osi": [
             "Open Software License, Version 3.0"
         ],

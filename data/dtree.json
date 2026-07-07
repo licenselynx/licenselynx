@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Dtree Licence"
+        ],
         "scancodeLicensedb": [
             "Dtree License",
             "LicenseRef-scancode-dtree"

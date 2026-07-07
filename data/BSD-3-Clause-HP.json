@@ -7,7 +7,9 @@
         "spdx": [
             "Hewlett-Packard BSD variant license"
         ],
-        "custom": [],
+        "custom": [
+            "Hewlett-Packard BSD variant licence"
+        ],
         "scancodeLicensedb": [
             "bsd-3-clause-hp"
         ]

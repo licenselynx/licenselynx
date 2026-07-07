@@ -7,7 +7,9 @@
         "spdx": [
             "Eurosym License"
         ],
-        "custom": [],
+        "custom": [
+            "Eurosym Licence"
+        ],
         "scancodeLicensedb": [
             "eurosym"
         ]

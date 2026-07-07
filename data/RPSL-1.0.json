@@ -7,7 +7,11 @@
         "spdx": [
             "RealNetworks Public Source License v1.0"
         ],
-        "custom": [],
+        "custom": [
+            "RealNetworks Public Source Licence 1.0",
+            "RealNetworks Public Source Licence v1.0",
+            "RealNetworks Public Source Licence, Version 1.0"
+        ],
         "osi": [
             "RealNetworks Public Source License, Version 1.0"
         ],

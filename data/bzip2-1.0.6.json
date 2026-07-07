@@ -7,7 +7,9 @@
         "spdx": [
             "bzip2 and libbzip2 License v1.0.6"
         ],
-        "custom": []
+        "custom": [
+            "bzip2 and libbzip2 Licence v1.0.6"
+        ]
     },
     "rejected": [
         "bzip2-1.0.5"

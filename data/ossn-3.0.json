@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Open Source Social Network Licence v3.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ossn-3.0",
             "Open Source Social Network License v3.0",

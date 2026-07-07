@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Paul Hsieh Exposition Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-paul-hsieh-exposition",
             "Paul Hsieh Exposition License"

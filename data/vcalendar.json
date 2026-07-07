@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "VCalendar Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-vcalendar",
             "VCalendar License"

@@ -4,7 +4,9 @@
         "src": "spdx"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "TekHVC Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-tekhvc",
             "tekhvc"

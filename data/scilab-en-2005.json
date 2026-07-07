@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "SCILAB Licence 2005"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-scilab-en",
             "LicenseRef-scancode-scilba-en",

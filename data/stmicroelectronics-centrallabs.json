@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "STMicroelectronics CentralLabs Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-stmicroelectronics-centrallabs",
             "STMicroelectronics CentralLabs License"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "TTF2PT1 Project Licence"
+        ],
         "scancodeLicensedb": [
             "TTF2PT1 Project License"
         ]

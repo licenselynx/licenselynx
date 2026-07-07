@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Broadcom WICED Development Kit Licence Agreement",
+            "Broadcom WICED SDK Licence"
+        ],
         "scancodeLicensedb": [
             "Broadcom WICED Development Kit License Agreement",
             "Broadcom WICED SDK License",

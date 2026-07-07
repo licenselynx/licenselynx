@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Westhawk Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-westhawk",
             "Westhawk License"

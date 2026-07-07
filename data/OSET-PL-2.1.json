@@ -7,7 +7,9 @@
         "spdx": [
             "OSET Public License version 2.1"
         ],
-        "custom": [],
+        "custom": [
+            "OSET Public Licence version 2.1"
+        ],
         "scancodeLicensedb": [
             "OSET-PL-2.1",
             "oset-pl-2.1"

@@ -7,7 +7,9 @@
         "spdx": [
             "Creative Commons Attribution Share Alike 3.0 Austria"
         ],
-        "custom": [],
+        "custom": [
+            "Creative Commons Attribution Share Alike Licence 3.0 Austria"
+        ],
         "scancodeLicensedb": [
             "CC-BY-SA-3.0-AT",
             "cc-by-sa-3.0-at",

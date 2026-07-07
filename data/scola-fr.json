@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Entente de license ouverte de Statistique Canada",
+            "Statistics Canada Open License"
+        ],
         "scancodeLicensedb": [
             "Entente de licence ouverte de Statistique Canada",
             "LicenseRef-scancode-scola-fr",

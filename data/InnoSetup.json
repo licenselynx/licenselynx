@@ -4,7 +4,9 @@
         "src": "spdx"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Inno Setup Licence"
+        ],
         "spdx": [
             "Inno Setup License"
         ],

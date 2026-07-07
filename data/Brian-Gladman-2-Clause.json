@@ -7,7 +7,10 @@
         "spdx": [
             "Brian Gladman 2-Clause License"
         ],
-        "custom": [],
+        "custom": [
+            "Brian Gladman 2-Clause Licence",
+            "Brian Gladman Licence"
+        ],
         "scancodeLicensedb": [
             "Brian Gladman License",
             "brian-gladman",

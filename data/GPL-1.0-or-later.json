@@ -9,6 +9,8 @@
             "GPL-1.0+"
         ],
         "custom": [
+            "GNU General Public Licence 1.0 or later",
+            "GNU General Public Licence v1.0 or later",
             "GPL-1+"
         ],
         "scancodeLicensedb": [

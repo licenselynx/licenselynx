@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Jetty Project Corporate Contributor Licence Agreement V1.1"
+        ],
         "scancodeLicensedb": [
             "Jetty CCLA 1.1",
             "Jetty Project Corporate Contributor License Agreement V1.1",

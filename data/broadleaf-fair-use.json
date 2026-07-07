@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Broadleaf Fair Use Licence Agreement v1.0"
+        ],
         "scancodeLicensedb": [
             "Broadleaf Fair Use License Agreement v1.0",
             "LicenseRef-scancode-broadleaf-fair-use"

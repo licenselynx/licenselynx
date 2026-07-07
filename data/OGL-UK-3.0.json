@@ -7,7 +7,10 @@
         "spdx": [
             "Open Government Licence v3.0"
         ],
-        "custom": [],
+        "custom": [
+            "Open Government License v3.0",
+            "U.K. Open Government Licence for Public Sector Information v3.0"
+        ],
         "scancodeLicensedb": [
             "OGL-UK-3.0",
             "ogl-uk-3.0",

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Other Copyleft Licences"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-other-copyleft",
             "Other Copyleft Licenses"

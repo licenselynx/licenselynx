@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "PowerVR Tools Software End User Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-powervr-tools-software-eula",
             "PowerVR Tools Software End User License Agreement",

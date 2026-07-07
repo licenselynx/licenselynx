@@ -7,7 +7,9 @@
         "spdx": [
             "Mulan Permissive Software License, Version 1"
         ],
-        "custom": [],
+        "custom": [
+            "Mulan Permissive Software Licence, Version 1"
+        ],
         "scancodeLicensedb": [
             "mulanpsl-1.0"
         ]

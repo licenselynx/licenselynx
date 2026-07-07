@@ -7,7 +7,10 @@
         "spdx": [
             "Sustainable Use License v1.0"
         ],
-        "custom": [],
+        "custom": [
+            "Sustainable Use Licence 1.0",
+            "Sustainable Use Licence v1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-sustainable-use-1.0",
             "Sustainable Use 1.0",

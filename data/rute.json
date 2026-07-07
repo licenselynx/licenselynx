@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Rute Users Tutorial and Exposition Licence 0.8.0",
+            "Rute Users Tutorial and Exposition Licence v0.8.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-rute",
             "Rute Users Tutorial and Exposition License 0.8.0",

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Zuora Software Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-zuora-software",
             "Zuora Software License"

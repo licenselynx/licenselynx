@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "ScyllaDB Software Licence Agreement 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-scylladb-sla-1.0",
             "ScyllaDB SLA 1.0",

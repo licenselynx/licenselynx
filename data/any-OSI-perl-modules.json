@@ -7,7 +7,9 @@
         "spdx": [
             "Any OSI License - Perl Modules"
         ],
-        "custom": [],
+        "custom": [
+            "Any OSI Licence - Perl Modules"
+        ],
         "scancodeLicensedb": [
             "Any OSI Perl Modules",
             "any-osi-perl-modules"

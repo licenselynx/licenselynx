@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Artop Software Licence Based on AUTOSAR Released Material"
+        ],
         "scancodeLicensedb": [
             "Artop ASLR",
             "Artop Software License Based on AUTOSAR Released Material",

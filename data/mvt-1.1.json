@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "MVT Licence 1.1"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-mvt-1.1",
             "MVT License 1.1"

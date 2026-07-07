@@ -8,7 +8,9 @@
             "LA_OPT_NXP_Software_License v51 November 2023",
             "LicenseRef-scancode-la-opt-nxp-v51-2023"
         ],
-        "custom": []
+        "custom": [
+            "LA_OPT_NXP_Software_Licence v51 November 2023"
+        ]
     },
     "rejected": [],
     "risky": []

@@ -9,6 +9,9 @@
         ],
         "custom": [
             "Eclipse License 1.0",
+            "Eclipse Public Licence 1.0",
+            "Eclipse Public Licence 1.0 (EPL-1.0)",
+            "Eclipse Public Licence, Version 1.0",
             "Eclipse Public License (1.0)",
             "Eclipse Public License - v 1.0",
             "Eclipse Public License - Version 1.0",
@@ -24,6 +27,14 @@
             "EPL Version 1.0",
             "EPL-1.0 License",
             "epl1.0",
+            "Licence :: Eclipse Public Licence 1.0",
+            "Licence :: Eclipse Public Licence 1.0 (EPL-1.0)",
+            "Licence :: EPL-1.0",
+            "Licence :: OSI Approved :: Eclipse Public Licence 1.0",
+            "Licence :: OSI Approved :: Eclipse Public Licence 1.0 (EPL-1.0)",
+            "Licence :: OSI Approved :: EPL-1.0",
+            "OSI Approved :: Eclipse Public Licence 1.0",
+            "OSI Approved :: Eclipse Public Licence 1.0 (EPL-1.0)",
             "The Eclipse Public License Version 1.0"
         ],
         "osi": [
@@ -47,8 +58,8 @@
         ]
     },
     "rejected": [
-        "EPL License",
-        "Eclipse Public License"
+        "Eclipse Public License",
+        "EPL License"
     ],
     "risky": [],
     "isMajorVersionOnly": true

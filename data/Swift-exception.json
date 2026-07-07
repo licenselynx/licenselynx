@@ -7,7 +7,9 @@
         "spdx": [
             "Swift Exception"
         ],
-        "custom": [],
+        "custom": [
+            "Runtime Library Exception to the Apache 2.0 Licence"
+        ],
         "scancodeLicensedb": [
             "apple-runtime-library-exception",
             "Runtime Library Exception to Apache 2.0",

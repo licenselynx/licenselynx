@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Hazelcast Community Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "Hazelcast Community License 1.0",
             "LicenseRef-scancode-hazelcast-community-1.0"

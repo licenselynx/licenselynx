@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "MSNTP Licence",
+            "MSNTP software licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-msntp",
             "MSNTP License",

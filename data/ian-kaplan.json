@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Ian Kaplan Licence"
+        ],
         "scancodeLicensedb": [
             "Ian Kaplan License",
             "LicenseRef-scancode-ian-kaplan"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "T-Engine Public Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-t-engine-public",
             "T-Engine Public License"

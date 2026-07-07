@@ -7,7 +7,9 @@
         "spdx": [
             "Community Specification License 1.0"
         ],
-        "custom": [],
+        "custom": [
+            "Community Specification Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "CSL-1.0",
             "csl-1.0",

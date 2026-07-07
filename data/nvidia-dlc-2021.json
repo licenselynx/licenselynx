@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "NVIDIA Deep Learning Container Licence 2021"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-nvidia-dlc-2021",
             "NVIDIA Deep Learning Container License 2021"

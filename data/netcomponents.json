@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "NetComponents Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-netcomponents",
             "NetComponents License"

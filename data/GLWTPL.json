@@ -7,7 +7,9 @@
         "spdx": [
             "Good Luck With That Public License"
         ],
-        "custom": [],
+        "custom": [
+            "Good Luck With That Public Licence"
+        ],
         "scancodeLicensedb": [
             "GLWTPL",
             "glwtpl"

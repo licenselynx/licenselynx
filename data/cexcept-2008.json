@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "cexcept Licence 2008"
+        ],
         "scancodeLicensedb": [
             "cexcept License 2008",
             "LicenseRef-scancode-cexcept-2008"

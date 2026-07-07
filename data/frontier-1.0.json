@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Frontier Artistic Licence"
+        ],
         "scancodeLicensedb": [
             "Frontier Artistic License",
             "LicenseRef-scancode-frontier-1.0"

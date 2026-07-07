@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft Nuget Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-nuget",
             "Microsoft Nuget License",

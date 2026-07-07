@@ -7,7 +7,9 @@
         "spdx": [
             "BSD 3-Clause Modification"
         ],
-        "custom": [],
+        "custom": [
+            "Repoze Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-repoze",
             "repoze",

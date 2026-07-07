@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Intel Firmware Licence"
+        ],
         "scancodeLicensedb": [
             "Intel Firmware License",
             "LicenseRef-scancode-intel-firmware"

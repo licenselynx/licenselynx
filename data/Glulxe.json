@@ -7,7 +7,9 @@
         "spdx": [
             "Glulxe License"
         ],
-        "custom": [],
+        "custom": [
+            "Glulxe Licence"
+        ],
         "scancodeLicensedb": [
             "glulxe"
         ]

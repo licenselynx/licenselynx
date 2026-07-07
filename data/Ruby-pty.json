@@ -7,7 +7,9 @@
         "spdx": [
             "Ruby pty extension license"
         ],
-        "custom": [],
+        "custom": [
+            "Ruby pty extension licence"
+        ],
         "scancodeLicensedb": [
             "ruby-pty"
         ]

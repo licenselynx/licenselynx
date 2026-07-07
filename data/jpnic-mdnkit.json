@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "JPNIC mdnkit Licence"
+        ],
         "scancodeLicensedb": [
             "JPNIC mdnkit License",
             "LicenseRef-scancode-jpnic-mdnkit"

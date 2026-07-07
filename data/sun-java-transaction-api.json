@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Sun Java Transaction API Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-sun-java-transaction-api",
             "Sun Java Transaction API License"

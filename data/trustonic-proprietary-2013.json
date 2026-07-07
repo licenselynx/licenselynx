@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Trustonic Proprietary Licence 2013"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-trustonic-proprietary-2013",
             "Trustonic Proprietary License 2013"

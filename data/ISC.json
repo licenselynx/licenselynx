@@ -12,13 +12,24 @@
             "'ISC'",
             "Internet Systems Consortium License",
             "Internet Systems Consortium Open Source License",
+            "ISC Licence",
+            "ISC Licence (ISC)",
+            "ISC Licence (ISCL)",
             "ISC license",
             "ISC License (Internet Systems Consortium)",
             "ISC License (Open Source)",
             "ISC Open License",
             "ISC Open Source License",
             "isc-license",
-            "ISCL"
+            "ISCL",
+            "Licence :: ISC Licence",
+            "Licence :: ISC Licence (ISCL)",
+            "Licence :: ISCL",
+            "Licence :: OSI Approved :: ISC Licence",
+            "Licence :: OSI Approved :: ISC Licence (ISCL)",
+            "Licence :: OSI Approved :: ISCL",
+            "OSI Approved :: ISC Licence",
+            "OSI Approved :: ISC Licence (ISCL)"
         ],
         "osi": [
             "ISC License (ISC)"

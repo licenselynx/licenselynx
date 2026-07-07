@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "TrueCrypt Licence 3.1"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-truecrypt-3.1",
             "TrueCrypt License 3.1"

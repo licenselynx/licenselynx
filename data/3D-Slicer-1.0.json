@@ -7,7 +7,11 @@
         "spdx": [
             "3D Slicer License v1.0"
         ],
-        "custom": [],
+        "custom": [
+            "3D Slicer Contribution and Software Licence Agreement v1.0",
+            "3D Slicer Licence 1.0",
+            "3D Slicer Licence v1.0"
+        ],
         "scancodeLicensedb": [
             "3D Slicer Contribution and Software License Agreement v1.0",
             "3D Slicer License 1.0",

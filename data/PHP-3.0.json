@@ -7,7 +7,11 @@
         "spdx": [
             "PHP License v3.0"
         ],
-        "custom": [],
+        "custom": [
+            "PHP Licence 3.0",
+            "PHP Licence v3.0",
+            "The PHP Licence, Version 3.0"
+        ],
         "osi": [
             "The PHP License, Version 3.0"
         ],

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Open Government License Alberta 2.1"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-can-ogl-alberta-2.1",
             "OGL Alberta 2.1",

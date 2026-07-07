@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "AVSystem 5-Clause Licence"
+        ],
         "scancodeLicensedb": [
             "AVSystem 5-Clause License",
             "LicenseRef-scancode-avsystem-5-clause"

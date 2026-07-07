@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "OneZoom Non-Profit Source Available License v1"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-onezoom-np-sal-v1",
             "OneZoom Non-Profit Source Available Licence v1"

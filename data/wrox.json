@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Wrox Press Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-wrox",
             "Wrox Press License"

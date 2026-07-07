@@ -7,7 +7,11 @@
         "spdx": [
             "Lucent Public License v1.02"
         ],
-        "custom": [],
+        "custom": [
+            "Lucent Public Licence 1.02",
+            "Lucent Public Licence v1.02",
+            "Lucent Public Licence, Version 1.02"
+        ],
         "osi": [
             "Lucent Public License, Version 1.02"
         ],

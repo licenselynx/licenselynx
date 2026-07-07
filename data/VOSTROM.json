@@ -7,7 +7,10 @@
         "spdx": [
             "VOSTROM Public License for Open Source"
         ],
-        "custom": [],
+        "custom": [
+            "VOSTROM Public Licence",
+            "VOSTROM Public Licence for Open Source"
+        ],
         "scancodeLicensedb": [
             "vostrom",
             "VOSTROM Public License"

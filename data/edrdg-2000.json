@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "EDRDG General Dictionary Licence 2000"
+        ],
         "scancodeLicensedb": [
             "EDRDG General Dictionary License 2000",
             "LicenseRef-scancode-edrdg-2000"

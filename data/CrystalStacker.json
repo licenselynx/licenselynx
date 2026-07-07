@@ -7,7 +7,10 @@
         "spdx": [
             "CrystalStacker License"
         ],
-        "custom": [],
+        "custom": [
+            "Crystal Stacker Licence",
+            "CrystalStacker Licence"
+        ],
         "scancodeLicensedb": [
             "Crystal Stacker License",
             "crystal-stacker"

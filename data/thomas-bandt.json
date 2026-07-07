@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Thomas Bandt Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-thomas-bandt",
             "Thomas Bandt License"

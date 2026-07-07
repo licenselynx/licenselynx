@@ -7,7 +7,18 @@
         "spdx": [
             "CMU License"
         ],
-        "custom": [],
+        "custom": [
+            "CMU Licence",
+            "CMU Licence (MIT-CMU)",
+            "Licence :: CMU Licence",
+            "Licence :: CMU Licence (MIT-CMU)",
+            "Licence :: MIT-CMU",
+            "Licence :: OSI Approved :: CMU Licence",
+            "Licence :: OSI Approved :: CMU Licence (MIT-CMU)",
+            "Licence :: OSI Approved :: MIT-CMU",
+            "OSI Approved :: CMU Licence",
+            "OSI Approved :: CMU Licence (MIT-CMU)"
+        ],
         "scancodeLicensedb": [
             "CMU Style",
             "cmu-uc"

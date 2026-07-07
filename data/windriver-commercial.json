@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Wind River Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-windriver-commercial",
             "Wind River License"

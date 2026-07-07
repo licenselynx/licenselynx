@@ -7,7 +7,11 @@
         "spdx": [
             "IPA Font License"
         ],
-        "custom": [],
+        "custom": [
+            "IPA Font Licence",
+            "IPA Font Licence 1.0",
+            "IPA Font Licence Agreement v1.0"
+        ],
         "scancodeLicensedb": [
             "IPA Font License 1.0",
             "IPA Font License Agreement v1.0",

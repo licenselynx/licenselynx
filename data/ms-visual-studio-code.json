@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft Visual Studio Code Licence",
+            "MS Visual Studio Code Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-visual-studio-code",
             "Microsoft Visual Studio Code License",

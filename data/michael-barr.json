@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Michael Barr Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-michael-barr",
             "Michael Barr License"

@@ -7,7 +7,9 @@
         "spdx": [
             "metamail License"
         ],
-        "custom": [],
+        "custom": [
+            "metamail Licence"
+        ],
         "scancodeLicensedb": [
             "metamail"
         ]

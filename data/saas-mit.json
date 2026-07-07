@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "SaaS MIT Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-saas-mit",
             "SaaS MIT License"

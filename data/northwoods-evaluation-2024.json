@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Northwoods Software Evaluation Licence 2024"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-northwoods-evaluation-2024",
             "Northwoods Software Evaluation License 2024"

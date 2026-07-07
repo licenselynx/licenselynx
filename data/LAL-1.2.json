@@ -7,7 +7,9 @@
         "spdx": [
             "Licence Art Libre 1.2"
         ],
-        "custom": [],
+        "custom": [
+            "License Art Libre 1.2"
+        ],
         "scancodeLicensedb": [
             "lal-1.2"
         ]

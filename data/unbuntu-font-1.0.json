@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Obsolete Font Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "Obsolete Font License 1.0"
         ]

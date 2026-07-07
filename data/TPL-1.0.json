@@ -7,7 +7,9 @@
         "spdx": [
             "THOR Public License 1.0"
         ],
-        "custom": []
+        "custom": [
+            "THOR Public Licence 1.0"
+        ]
     },
     "rejected": [],
     "risky": [

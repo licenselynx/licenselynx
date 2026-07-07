@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft Windows Rally Development Kit Licence",
+            "MS Windows Rally Development Kit Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-microsoft-windows-rally-devkit",
             "Microsoft Windows Rally Development Kit License",

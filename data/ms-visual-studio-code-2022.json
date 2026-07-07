@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft Visual Studio Code Licence 2022",
+            "MS Visual Studio Code Licence 2022"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-visual-studio-code-2022",
             "Microsoft Visual Studio Code License 2022",

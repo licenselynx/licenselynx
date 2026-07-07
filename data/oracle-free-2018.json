@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Oracle Free Licence 2018"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-oracle-free-2018",
             "Oracle Free License 2018"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Cavium malloc Licence"
+        ],
         "scancodeLicensedb": [
             "Cavium malloc License",
             "LicenseRef-scancode-cavium-malloc"

@@ -7,7 +7,9 @@
         "spdx": [
             "Latex2e License"
         ],
-        "custom": [],
+        "custom": [
+            "Latex2e Licence"
+        ],
         "scancodeLicensedb": [
             "latex2e"
         ]

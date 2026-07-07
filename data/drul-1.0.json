@@ -9,7 +9,9 @@
             "DRUL 1.0",
             "LicenseRef-scancode-drul-1.0"
         ],
-        "custom": []
+        "custom": [
+            "Detection Rule Usage Licence (DRUL) 1.0"
+        ]
     },
     "rejected": [],
     "risky": [],

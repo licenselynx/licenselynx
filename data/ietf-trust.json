@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "IETF Trust Licence"
+        ],
         "scancodeLicensedb": [
             "IETF Trust License",
             "LicenseRef-scancode-ietf-trust"

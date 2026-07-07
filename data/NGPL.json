@@ -7,7 +7,13 @@
         "spdx": [
             "Nethack General Public License"
         ],
-        "custom": [],
+        "custom": [
+            "Licence :: Nethack General Public Licence",
+            "Licence :: OSI Approved :: Nethack General Public Licence",
+            "Nethack General Public Licence",
+            "OSI Approved :: Nethack General Public Licence",
+            "The Nethack General Public Licence"
+        ],
         "osi": [
             "The Nethack General Public License"
         ],

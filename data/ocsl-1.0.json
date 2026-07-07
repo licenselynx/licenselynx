@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Oracle Community Source Licence v1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ocsl-1.0",
             "OCSL 1.0",

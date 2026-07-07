@@ -7,7 +7,9 @@
         "spdx": [
             "Time::ParseDate License"
         ],
-        "custom": [],
+        "custom": [
+            "Time::ParseDate Licence"
+        ],
         "scancodeLicensedb": [
             "tpdl"
         ]

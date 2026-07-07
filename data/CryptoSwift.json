@@ -4,7 +4,9 @@
         "src": "spdx"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "CryptoSwift Licence"
+        ],
         "spdx": [
             "CryptoSwift License"
         ],

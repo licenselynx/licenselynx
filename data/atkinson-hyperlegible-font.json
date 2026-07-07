@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Atkinson Hyperlegible Font Licence"
+        ],
         "scancodeLicensedb": [
             "Atkinson Hyperlegible Font License",
             "LicenseRef-scancode-atkinson-hyperlegible-font"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Access Grid Toolkit Public Licence (AGTPL)"
+        ],
         "scancodeLicensedb": [
             "Access Grid Toolkit Public License (AGTPL)",
             "AGTPL",

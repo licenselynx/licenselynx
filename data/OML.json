@@ -7,7 +7,9 @@
         "spdx": [
             "Open Market License"
         ],
-        "custom": [],
+        "custom": [
+            "Open Market Licence"
+        ],
         "scancodeLicensedb": [
             "FastCGI DevKit",
             "fastcgi-devkit"

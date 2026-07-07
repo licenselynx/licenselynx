@@ -8,7 +8,9 @@
             "LicenseRef-scancode-qwen-2024",
             "Qwen License Agreement 2024"
         ],
-        "custom": []
+        "custom": [
+            "Qwen Licence Agreement 2024"
+        ]
     },
     "rejected": [],
     "risky": []

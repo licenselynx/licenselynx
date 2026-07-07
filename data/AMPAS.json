@@ -7,7 +7,9 @@
         "spdx": [
             "Academy of Motion Picture Arts and Sciences BSD"
         ],
-        "custom": [],
+        "custom": [
+            "AMPAS BSD-Style Licence"
+        ],
         "scancodeLicensedb": [
             "Academy of Motion Picture Arts and Sciences BSD-Style",
             "ampas",

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Wide Open Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-wol",
             "Wide Open License"

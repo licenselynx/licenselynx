@@ -7,7 +7,9 @@
         "spdx": [
             "SSH short notice"
         ],
-        "custom": [],
+        "custom": [
+            "Tatu Ylonen Licence"
+        ],
         "scancodeLicensedb": [
             "Tatu Ylonen License",
             "tatu-ylonen"

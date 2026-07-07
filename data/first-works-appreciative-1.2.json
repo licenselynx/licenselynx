@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "First Works Appreciative Licence 1.2"
+        ],
         "scancodeLicensedb": [
             "First Works Appreciative License 1.2",
             "LicenseRef-scancode-first-works-appreciative-1.2"

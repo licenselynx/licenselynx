@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "nexB Software Subscription Licence Agreement 1.1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-nexb-ssla-1.1.0",
             "nexB Software Subscription License Agreement 1.1.0",

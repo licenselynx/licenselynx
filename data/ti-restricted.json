@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Texas Instruments Restricted Use Licence",
+            "TI Restricted Use Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ti-restricted",
             "Texas Instruments Restricted Use License",

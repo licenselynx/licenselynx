@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "MediaTek Firmware Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-mediatek-firmware",
             "MediaTek Firmware License"

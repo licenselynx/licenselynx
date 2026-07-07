@@ -7,7 +7,9 @@
         "spdx": [
             "Michigan/Merit Networks License"
         ],
-        "custom": [],
+        "custom": [
+            "Michigan/Merit Networks Licence"
+        ],
         "scancodeLicensedb": [
             "umich-merit"
         ]

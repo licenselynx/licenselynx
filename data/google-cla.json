@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Google Individual Contributor Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "Google CLA",
             "Google Individual Contributor License Agreement",

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Chicken Dance Licence v0.2"
+        ],
         "scancodeLicensedb": [
             "Chicken Dance License v0.2",
             "Chicken Dance v0.2",

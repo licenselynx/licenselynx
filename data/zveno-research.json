@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Zveno Research Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-zveno-research",
             "Zveno Research License"

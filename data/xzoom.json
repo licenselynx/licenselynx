@@ -7,7 +7,9 @@
         "spdx": [
             "xzoom License"
         ],
-        "custom": [],
+        "custom": [
+            "xzoom Licence"
+        ],
         "scancodeLicensedb": [
             "xzoom"
         ]

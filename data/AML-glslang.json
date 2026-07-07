@@ -7,7 +7,10 @@
         "spdx": [
             "AML glslang variant License"
         ],
-        "custom": [],
+        "custom": [
+            "AML glslang variant Licence",
+            "NVIDIA 2002 Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-nvidia-2002",
             "NVIDIA 2002 License",

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "SCRUB Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-scrub",
             "SCRUB License"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Hot Potato Licence"
+        ],
         "scancodeLicensedb": [
             "Hot Potato",
             "Hot Potato License",

@@ -7,7 +7,10 @@
         "spdx": [
             "diffmark license"
         ],
-        "custom": [],
+        "custom": [
+            "diffmark Licence",
+            "diffmark licence"
+        ],
         "scancodeLicensedb": [
             "diffmark",
             "diffmark License"

@@ -16,17 +16,25 @@
             "'GNU (GPLv3)",
             "'Gnu GPL3 (Gnu Public License)",
             "GENERAL PUBLIC LICENSE, version 3 (GPL-3.0)",
+            "GNU General Public Licence v3.0 only",
             "GNU General Public License 3.0",
             "GNU General Public License v3",
             "GNU General Public License v3 (GPLv3)",
             "GNU General Public License, Version 3.0",
-            "gpl-3.0",
             "GPL 3.0",
             "GPL v3",
-            "gpl3",
+            "gpl-3.0",
             "GPL3",
+            "gpl3",
             "GPLv3",
-            "LicenseRef-gpl-3.0"
+            "Licence :: GNU General Public Licence v3",
+            "Licence :: GNU General Public Licence v3 (GPLv3)",
+            "Licence :: GPLv3",
+            "Licence :: OSI Approved :: GNU General Public Licence v3",
+            "Licence :: OSI Approved :: GNU General Public Licence v3 (GPLv3)",
+            "Licence :: OSI Approved :: GPLv3",
+            "OSI Approved :: GNU General Public Licence v3",
+            "OSI Approved :: GNU General Public Licence v3 (GPLv3)"
         ],
         "pypi": [
             "License :: GNU General Public License v3",
@@ -41,9 +49,6 @@
         ]
     },
     "rejected": [],
-    "risky": [
-
-
-    ],
+    "risky": [],
     "isMajorVersionOnly": true
 }

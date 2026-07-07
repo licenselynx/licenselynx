@@ -7,7 +7,15 @@
         "spdx": [
             "Ricoh Source Code Public License"
         ],
-        "custom": [],
+        "custom": [
+            "Licence :: OSI Approved :: Ricoh Source Code Public Licence",
+            "Licence :: Ricoh Source Code Public Licence",
+            "OSI Approved :: Ricoh Source Code Public Licence",
+            "Ricoh Source Code Public Licence",
+            "Ricoh Source Code Public Licence 1.0",
+            "Ricoh Source Code Public Licence v1.0",
+            "The Ricoh Source Code Public Licence"
+        ],
         "osi": [
             "The Ricoh Source Code Public License"
         ],

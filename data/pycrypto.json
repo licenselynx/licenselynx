@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "PyCrypto Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-pycrypto",
             "PyCrypto License"

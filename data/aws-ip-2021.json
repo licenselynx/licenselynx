@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "AWS Intellectual Property Licence 2021",
+            "AWS IP Licence 2021"
+        ],
         "scancodeLicensedb": [
             "AWS Intellectual Property License 2021",
             "AWS IP License 2021",

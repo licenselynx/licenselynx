@@ -9,7 +9,9 @@
             "DOSA-1.0",
             "LicenseRef-scancode-dosa-1.0"
         ],
-        "custom": []
+        "custom": [
+            "Delayed Open Source Attribution Licence 1.0 (DOSA-1.0)"
+        ]
     },
     "rejected": [],
     "risky": [],

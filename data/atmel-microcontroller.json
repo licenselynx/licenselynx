@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Atmel Microcontroller Licence"
+        ],
         "scancodeLicensedb": [
             "Atmel Microcontroller License",
             "LicenseRef-scancode-atmel-microcontroller"

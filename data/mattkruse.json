@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Matt Kruse Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-mattkruse",
             "Matt Kruse License"

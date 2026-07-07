@@ -7,7 +7,9 @@
         "spdx": [
             "NRL License"
         ],
-        "custom": [],
+        "custom": [
+            "NRL Licence"
+        ],
         "scancodeLicensedb": [
             "nrl"
         ]

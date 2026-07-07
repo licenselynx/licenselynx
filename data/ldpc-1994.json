@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Linux Documentation Project Copying Licence 1994-03-30"
+        ],
         "scancodeLicensedb": [
             "LDPC-1994",
             "LicenseRef-scancode-ldpc-1994",

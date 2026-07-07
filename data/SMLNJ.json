@@ -7,7 +7,9 @@
         "spdx": [
             "Standard ML of New Jersey License"
         ],
-        "custom": [],
+        "custom": [
+            "Standard ML of New Jersey Licence"
+        ],
         "scancodeLicensedb": [
             "Standard ML of New Jersey",
             "standard-ml-nj",

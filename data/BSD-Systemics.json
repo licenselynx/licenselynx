@@ -7,7 +7,9 @@
         "spdx": [
             "Systemics BSD variant license"
         ],
-        "custom": [],
+        "custom": [
+            "Systemics BSD variant licence"
+        ],
         "scancodeLicensedb": [
             "bsd-systemics"
         ]

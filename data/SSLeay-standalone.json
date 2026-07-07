@@ -7,7 +7,10 @@
         "spdx": [
             "SSLeay License - standalone"
         ],
-        "custom": [],
+        "custom": [
+            "Original SSLeay Licence with Windows Clause",
+            "SSLeay Licence - standalone"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ssleay-windows",
             "Original SSLeay License with Windows Clause",

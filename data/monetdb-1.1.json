@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "MonetDB Public Licence Version 1.1"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-monetdb-1.1",
             "MonetDB 1.1",

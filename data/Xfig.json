@@ -7,7 +7,9 @@
         "spdx": [
             "Xfig License"
         ],
-        "custom": [],
+        "custom": [
+            "Xfig Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-mit-xfig",
             "MIT Xfig Variant",

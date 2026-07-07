@@ -7,7 +7,10 @@
         "spdx": [
             "Afmparse License"
         ],
-        "custom": [],
+        "custom": [
+            "Afmparse Licence",
+            "afmparse Licence"
+        ],
         "scancodeLicensedb": [
             "afmparse",
             "afmparse License"

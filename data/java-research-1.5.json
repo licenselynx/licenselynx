@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Java Research Licence 1.5",
+            "Java Research Licence Version 1.5"
+        ],
         "scancodeLicensedb": [
             "Java Research License 1.5",
             "Java Research License Version 1.5",

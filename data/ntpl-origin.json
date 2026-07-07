@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "NTP Origin Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ntpl-origin",
             "NTP Origin License"

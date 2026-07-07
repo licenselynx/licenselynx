@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "libselinux Licence"
+        ],
         "scancodeLicensedb": [
             "libselinux License",
             "LicenseRef-scancode-libselinux-pd"

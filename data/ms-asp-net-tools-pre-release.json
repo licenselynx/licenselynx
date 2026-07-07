@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft ASP.NET Tools Pre-Release Licence",
+            "MS ASP.NET Tools Pre-Release Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-asp-net-tools-pre-release",
             "Microsoft ASP.NET Tools Pre-Release License",

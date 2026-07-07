@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "vhf Public Licence V 1.1"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-vhfpl-1.1",
             "vhf Public License V 1.1",

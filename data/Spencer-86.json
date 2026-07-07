@@ -7,7 +7,10 @@
         "spdx": [
             "Spencer License 86"
         ],
-        "custom": [],
+        "custom": [
+            "Regexp Licence",
+            "Spencer Licence 86"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-regexp",
             "regexp",

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Adobe Flex 4 SDK Software Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "Adobe Flex 4 SDK SLA",
             "Adobe Flex 4 SDK Software License Agreement",

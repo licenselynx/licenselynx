@@ -7,7 +7,10 @@
         "spdx": [
             "Common Public Attribution License 1.0"
         ],
-        "custom": [],
+        "custom": [
+            "Common Public Attribution Licence 1.0",
+            "Common Public Attribution Licence Version 1.0 (CPAL-1.0)"
+        ],
         "osi": [
             "Common Public Attribution License Version 1.0 (CPAL-1.0)"
         ],

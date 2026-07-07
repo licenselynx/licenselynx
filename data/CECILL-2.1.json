@@ -7,7 +7,18 @@
         "spdx": [
             "CeCILL Free Software License Agreement v2.1"
         ],
-        "custom": [],
+        "custom": [
+            "CEA CNRS Inria Logiciel Libre Licence, version 2.1",
+            "Cea Cnrs Inria Logiciel Libre Licence, Version 2.1",
+            "CEA CNRS Inria Logiciel Libre Licence, version 2.1 (CeCILL-2.1)",
+            "CeCILL Free Software Licence Agreement v2.1",
+            "Licence :: CEA CNRS Inria Logiciel Libre Licence, version 2.1",
+            "Licence :: CEA CNRS Inria Logiciel Libre Licence, version 2.1 (CeCILL-2.1)",
+            "Licence :: OSI Approved :: CEA CNRS Inria Logiciel Libre Licence, version 2.1",
+            "Licence :: OSI Approved :: CEA CNRS Inria Logiciel Libre Licence, version 2.1 (CeCILL-2.1)",
+            "OSI Approved :: CEA CNRS Inria Logiciel Libre Licence, version 2.1",
+            "OSI Approved :: CEA CNRS Inria Logiciel Libre Licence, version 2.1 (CeCILL-2.1)"
+        ],
         "osi": [
             "Cea Cnrs Inria Logiciel Libre License, Version 2.1"
         ],

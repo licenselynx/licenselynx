@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "JPRS Open Source Code Licence v1.1"
+        ],
         "scancodeLicensedb": [
             "JPRS Open Source Code License v1.1",
             "JPRS OSCL 1.1",

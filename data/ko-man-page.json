@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Korean Manpage Project Licence"
+        ],
         "scancodeLicensedb": [
             "Korean Manpage Project License",
             "LicenseRef-scancode-ko-man-page"

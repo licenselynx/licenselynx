@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Whitecat Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-whitecat",
             "Whitecat License"

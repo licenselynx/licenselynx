@@ -7,7 +7,9 @@
         "spdx": [
             "Graphics Gems License"
         ],
-        "custom": [],
+        "custom": [
+            "Graphics Gems Licence"
+        ],
         "scancodeLicensedb": [
             "graphics-gems",
             "LicenseRef-scancode-graphics-gems"

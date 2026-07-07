@@ -7,7 +7,10 @@
         "spdx": [
             "DigiRule FOSS License Exception"
         ],
-        "custom": [],
+        "custom": [
+            "DigiRule FOSS Licence Exception",
+            "DigiRule FOSS Licence Exception to GPL 2.0"
+        ],
         "scancodeLicensedb": [
             "DigiRule FOSS Exception to GPL 2.0",
             "DigiRule FOSS License Exception to GPL 2.0",

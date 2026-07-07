@@ -7,7 +7,9 @@
         "spdx": [
             "Widget Workshop License"
         ],
-        "custom": [],
+        "custom": [
+            "Widget Workshop Licence"
+        ],
         "scancodeLicensedb": [
             "widget-workshop"
         ]

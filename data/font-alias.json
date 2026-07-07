@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "font-alias Licence"
+        ],
         "scancodeLicensedb": [
             "font-alias License",
             "LicenseRef-scancode-font-alias"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Allen Institute Software Licence 2018"
+        ],
         "scancodeLicensedb": [
             "Allen Institute Software License 2018",
             "LicenseRef-scancode-allen-institute-software-2018"

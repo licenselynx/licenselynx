@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Elastic Licence 2018",
+            "Elastic Licence Agreement 2018"
+        ],
         "scancodeLicensedb": [
             "Elastic License 2018",
             "Elastic License Agreement 2018",

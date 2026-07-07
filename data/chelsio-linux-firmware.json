@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Chelsio Linux Firmware Licence"
+        ],
         "scancodeLicensedb": [
             "Chelsio Linux Firmware License",
             "LicenseRef-scancode-chelsio-linux-firmware"

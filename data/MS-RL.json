@@ -7,7 +7,10 @@
         "spdx": [
             "Microsoft Reciprocal License"
         ],
-        "custom": [],
+        "custom": [
+            "Microsoft Reciprocal Licence",
+            "Microsoft Reciprocal Licence (MS-RL)"
+        ],
         "osi": [
             "Microsoft Reciprocal License (MS-RL)"
         ],

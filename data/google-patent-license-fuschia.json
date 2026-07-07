@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Google Patent Licence for Fuschia"
+        ],
         "scancodeLicensedb": [
             "Google Patent License for Fuschia"
         ]

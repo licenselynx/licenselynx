@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "RealNetworks Community Source Licence v2.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-rcsl-2.0",
             "RCSL R&D 2.0",

@@ -7,7 +7,10 @@
         "spdx": [
             "3dfx Glide License"
         ],
-        "custom": [],
+        "custom": [
+            "3dfx Glide Licence",
+            "3DFX GLIDE Source Code General Public Licence"
+        ],
         "scancodeLicensedb": [
             "3DFX GLIDE",
             "3DFX GLIDE Source Code General Public License",

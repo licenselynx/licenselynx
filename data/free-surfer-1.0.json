@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "FreeSurfer Software Licence Agreement 1.0"
+        ],
         "scancodeLicensedb": [
             "FreeSurfer Software License Agreement 1.0",
             "LicenseRef-scancode-free-surfer-1.0"

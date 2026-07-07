@@ -7,7 +7,10 @@
         "spdx": [
             "NCL Source Code License"
         ],
-        "custom": [],
+        "custom": [
+            "FFTPACK Licence 2004",
+            "NCL Source Code Licence"
+        ],
         "scancodeLicensedb": [
             "FFTPACK License 2004",
             "fftpack-2004",

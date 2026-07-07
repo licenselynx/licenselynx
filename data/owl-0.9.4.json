@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Open Works Licence v0.9.4"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-owl-0.9.4",
             "Open Works License v0.9.4",

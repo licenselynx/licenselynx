@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Unknown Licence file reference",
+            "Unknown Licence reference"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-unknown-license-reference",
             "Unknown License file reference",

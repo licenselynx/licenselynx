@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Unicode Licence Agreement - Data Files and Software"
+        ],
         "scancodeLicensedb": [
             "Unicode - Data Files and Software",
             "Unicode License Agreement - Data Files and Software"

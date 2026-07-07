@@ -7,7 +7,9 @@
         "spdx": [
             "MIT Tom Wu Variant"
         ],
-        "custom": [],
+        "custom": [
+            "MIT Addition Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-mit-addition",
             "MIT Addition License",

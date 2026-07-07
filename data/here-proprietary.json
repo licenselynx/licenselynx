@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "HERE Proprietary Licence"
+        ],
         "scancodeLicensedb": [
             "HERE Proprietary",
             "HERE Proprietary License",

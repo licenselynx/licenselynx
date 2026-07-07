@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Linux Documentation Project Licence (LDPL) v2.0"
+        ],
         "scancodeLicensedb": [
             "LDPL-2.0",
             "LicenseRef-scancode-ldpl-2.0",

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "NTLM Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ntlm",
             "NTLM License"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "ZIPList5 Geocode Duplication Licence Addendum"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ziplist5-geocode-dup-addendum",
             "LicenseRef-scancode-ziplist5-geocode-duplication-addendum",

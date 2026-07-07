@@ -7,7 +7,9 @@
         "spdx": [
             "Multics License"
         ],
-        "custom": [],
+        "custom": [
+            "Multics Licence"
+        ],
         "scancodeLicensedb": [
             "multics"
         ]

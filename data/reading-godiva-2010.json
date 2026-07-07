@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Reading Godiva Licence 2010"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-reading-godiva-2010",
             "Reading Godiva License 2010"

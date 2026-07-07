@@ -8,7 +8,13 @@
             "Historical Permission Notice and Disclaimer"
         ],
         "custom": [
-            "Historical Permission"
+            "Historical Permission",
+            "Licence :: Historical Permission Notice and Disclaimer",
+            "Licence :: Historical Permission Notice and Disclaimer (HPND)",
+            "Licence :: HPND",
+            "Licence :: OSI Approved :: Historical Permission Notice and Disclaimer",
+            "Licence :: OSI Approved :: Historical Permission Notice and Disclaimer (HPND)",
+            "Licence :: OSI Approved :: HPND"
         ],
         "scancodeLicensedb": [
             "historical"

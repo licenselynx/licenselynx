@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "UNIX Network Programming Book Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-unpbook",
             "UNIX Network Programming Book License"

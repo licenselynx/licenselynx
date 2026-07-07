@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Ecma Documentation Licence"
+        ],
         "scancodeLicensedb": [
             "Ecma Documentation License",
             "LicenseRef-scancode-ecma-documentation"

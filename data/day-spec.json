@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Day Specification Licence"
+        ],
         "scancodeLicensedb": [
             "Day Specification License",
             "LicenseRef-scancode-day-spec"

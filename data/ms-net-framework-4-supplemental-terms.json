@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Microsoft Software Supplemental Licence - .NET Framework 4",
+            "MS Supplemental Licence - .NET Framework 4"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-ms-net-framework-4-supp-terms",
             "LicenseRef-scancode-ms-net-framework-4-supplemental-terms",

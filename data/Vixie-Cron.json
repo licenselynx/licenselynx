@@ -4,7 +4,9 @@
         "src": "spdx"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Vixie Cron Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-vixie-cron",
             "vixie-cron"

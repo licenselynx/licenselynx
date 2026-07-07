@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "muT-Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-mut-license",
             "muT-License"

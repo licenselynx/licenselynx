@@ -7,7 +7,9 @@
         "spdx": [
             "Open Software License 2.0"
         ],
-        "custom": [],
+        "custom": [
+            "Open Software Licence 2.0"
+        ],
         "scancodeLicensedb": [
             "OSL 2.0",
             "osl-2.0"

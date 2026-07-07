@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Politepix Public Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-politepix-pl-1.0",
             "Politepix Public License 1.0"

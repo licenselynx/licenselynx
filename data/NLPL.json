@@ -7,7 +7,9 @@
         "spdx": [
             "No Limit Public License"
         ],
-        "custom": [],
+        "custom": [
+            "No Limit Public Licence"
+        ],
         "scancodeLicensedb": [
             "NLPL",
             "nlpl"

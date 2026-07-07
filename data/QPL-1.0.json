@@ -7,7 +7,21 @@
         "spdx": [
             "Q Public License 1.0"
         ],
-        "custom": [],
+        "custom": [
+            "Licence :: OSI Approved :: QPL",
+            "Licence :: OSI Approved :: Qt Public Licence",
+            "Licence :: OSI Approved :: Qt Public Licence (QPL)",
+            "Licence :: QPL",
+            "Licence :: Qt Public Licence",
+            "Licence :: Qt Public Licence (QPL)",
+            "OSI Approved :: Qt Public Licence",
+            "OSI Approved :: Qt Public Licence (QPL)",
+            "Q Public Licence 1.0",
+            "Q Public Licence Version 1.0",
+            "Qt Public Licence",
+            "Qt Public Licence (QPL)",
+            "The Q Public Licence Version (QPL-1.0)"
+        ],
         "osi": [
             "The Q Public License Version (QPL-1.0)"
         ],

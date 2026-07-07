@@ -7,7 +7,9 @@
         "spdx": [
             "ANTLR Software Rights Notice with license fallback"
         ],
-        "custom": [],
+        "custom": [
+            "ANTLR Software Rights Notice with licence fallback"
+        ],
         "scancodeLicensedb": [
             "ANTLR-PD with fallback",
             "antlr-pd-fallback"

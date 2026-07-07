@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "CCLRC Licence"
+        ],
         "scancodeLicensedb": [
             "CCLRC License",
             "LicenseRef-scancode-cclrc"

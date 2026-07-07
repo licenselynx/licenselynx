@@ -7,7 +7,10 @@
         "spdx": [
             "Erlang Public License v1.1"
         ],
-        "custom": [],
+        "custom": [
+            "Erlang Public Licence 1.1",
+            "Erlang Public Licence v1.1"
+        ],
         "scancodeLicensedb": [
             "Erlang Public License 1.1",
             "erlangpl-1.1"

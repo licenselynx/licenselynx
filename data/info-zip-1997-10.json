@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Info-Zip Licence 1997-10"
+        ],
         "scancodeLicensedb": [
             "Info-Zip License 1997-10",
             "LicenseRef-scancode-info-zip-1997-10"

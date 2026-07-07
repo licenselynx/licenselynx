@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "TeamDev Services Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-teamdev-services",
             "TeamDev Services License"

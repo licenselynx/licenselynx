@@ -8,7 +8,9 @@
             "GNU emacs General Public License 1985",
             "LicenseRef-scancode-gnu-emacs-gpl-1985"
         ],
-        "custom": []
+        "custom": [
+            "GNU emacs General Public Licence 1985"
+        ]
     },
     "rejected": [],
     "risky": []

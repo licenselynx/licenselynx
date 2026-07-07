@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Gareth McCaughan Licence"
+        ],
         "scancodeLicensedb": [
             "Gareth McCaughan License",
             "LicenseRef-scancode-gareth-mccaughan"

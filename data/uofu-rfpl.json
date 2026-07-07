@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "University of Utah Research Foundation Public Licence",
+            "UURF Public Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-uofu-rfpl",
             "University of Utah Research Foundation Public License",

@@ -7,7 +7,9 @@
         "spdx": [
             "Non-Commercial Government Licence"
         ],
-        "custom": [],
+        "custom": [
+            "Non-Commercial Government License"
+        ],
         "scancodeLicensedb": [
             "ncgl-uk-2.0"
         ]

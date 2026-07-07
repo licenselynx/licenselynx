@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Adaptec Downloadable Software Licence"
+        ],
         "scancodeLicensedb": [
             "Adaptec Downloadable Software License",
             "LicenseRef-scancode-adaptec-downloadable"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Paul Mackerras Simplified Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-paul-mackerras-simplified",
             "Paul Mackerras Simplified License"

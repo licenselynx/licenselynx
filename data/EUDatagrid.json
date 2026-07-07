@@ -7,7 +7,9 @@
         "spdx": [
             "EU DataGrid Software License"
         ],
-        "custom": [],
+        "custom": [
+            "EU DataGrid Software Licence"
+        ],
         "scancodeLicensedb": [
             "eu-datagrid"
         ]

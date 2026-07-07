@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Free unknown licence detected but not recognized"
+        ],
         "scancodeLicensedb": [
             "Free unknown",
             "Free unknown license detected but not recognized",

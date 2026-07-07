@@ -7,7 +7,9 @@
         "spdx": [
             "Transitive Grace Period Public Licence 1.0"
         ],
-        "custom": [],
+        "custom": [
+            "Transitive Grace Period Public License 1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-tgppl-1.0",
             "TGGPL 1.0",

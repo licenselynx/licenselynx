@@ -7,7 +7,9 @@
         "spdx": [
             "W3C Software Notice and License (1998-07-20)"
         ],
-        "custom": [],
+        "custom": [
+            "W3C Software Notice and Licence (1998-07-20)"
+        ],
         "scancodeLicensedb": [
             "W3C-SOFTWARE-19980720",
             "w3c-software-19980720"

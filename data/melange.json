@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Melange Chat Server/Client Public Licence",
+            "Melange Public Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-melange",
             "Melange Chat Server/Client Public License",

@@ -7,7 +7,9 @@
         "spdx": [
             "BSD 3-Clause acpica variant"
         ],
-        "custom": [],
+        "custom": [
+            "Intel BSD Licence"
+        ],
         "scancodeLicensedb": [
             "Intel BSD License",
             "intel-bsd",

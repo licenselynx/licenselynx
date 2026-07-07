@@ -8,7 +8,9 @@
             "LicenseRef-scancode-microchip-enc28j60-2009",
             "Microchip ENC28J60 License 2009"
         ],
-        "custom": []
+        "custom": [
+            "Microchip ENC28J60 Licence 2009"
+        ]
     },
     "rejected": [],
     "risky": []

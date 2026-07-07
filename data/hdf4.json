@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "HDF4 Licence"
+        ],
         "scancodeLicensedb": [
             "HDF4 License",
             "LicenseRef-scancode-hdf4"

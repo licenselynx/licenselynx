@@ -7,7 +7,9 @@
         "spdx": [
             "radvd License"
         ],
-        "custom": [],
+        "custom": [
+            "radvd Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-radvd",
             "radvd"

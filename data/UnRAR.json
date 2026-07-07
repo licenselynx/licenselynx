@@ -7,7 +7,9 @@
         "spdx": [
             "UnRAR License"
         ],
-        "custom": []
+        "custom": [
+            "UnRAR Licence"
+        ]
     },
     "rejected": [],
     "risky": []

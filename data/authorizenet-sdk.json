@@ -4,7 +4,10 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "AuthorizeNet SDK Licence",
+            "AuthorizeNet Software Development Kit (SDK) Licence Agreement"
+        ],
         "scancodeLicensedb": [
             "AuthorizeNet SDK License",
             "AuthorizeNet Software Development Kit (SDK) License Agreement",

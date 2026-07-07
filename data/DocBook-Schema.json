@@ -7,7 +7,9 @@
         "spdx": [
             "DocBook Schema License"
         ],
-        "custom": [],
+        "custom": [
+            "DocBook Schema Licence"
+        ],
         "scancodeLicensedb": [
             "docbook-schema"
         ]

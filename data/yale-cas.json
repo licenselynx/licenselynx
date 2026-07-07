@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Yale CAS Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-yale-cas",
             "Yale CAS License"

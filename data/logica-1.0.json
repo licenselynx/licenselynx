@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Logica Open Source Licence v1.0"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-logica-1.0",
             "Logica Open Source License v1.0",

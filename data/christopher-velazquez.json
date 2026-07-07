@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Christopher Velazquez Licence"
+        ],
         "scancodeLicensedb": [
             "Christopher Velazquez License",
             "LicenseRef-scancode-christopher-velazquez"

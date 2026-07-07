@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Scintilla Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-scintilla",
             "Scintilla License"

@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Internet Computer Community Source Licence 1.0"
+        ],
         "scancodeLicensedb": [
             "IC 1.0",
             "Internet Computer Community Source License 1.0",

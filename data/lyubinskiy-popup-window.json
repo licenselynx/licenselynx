@@ -4,7 +4,9 @@
         "src": "scancode-licensedb"
     },
     "aliases": {
-        "custom": [],
+        "custom": [
+            "Lyubinskiy popup-window Licence"
+        ],
         "scancodeLicensedb": [
             "LicenseRef-scancode-lyubinskiy-popup-window",
             "Lyubinskiy popup-window License"
