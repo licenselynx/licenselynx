@@ -37,11 +37,11 @@ func TestSmokeStableMap(t *testing.T) {
 func TestSmokeRiskyMap(t *testing.T) {
 	t.Parallel()
 
-	if _, ok := Map("License :: LGPLv3"); ok {
+	if _, ok := Map("AGPL 1.0"); ok {
 		t.Fatal("expected risky-only entry to miss without risky option")
 	}
 
-	got, ok := Map("License :: LGPLv3", WithRisky())
+	got, ok := Map("AGPL 1.0", WithRisky())
 	if !ok {
 		t.Fatal("expected risky-only entry to resolve with risky option")
 	}
