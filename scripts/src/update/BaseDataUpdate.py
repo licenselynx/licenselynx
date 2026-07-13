@@ -13,6 +13,14 @@ import requests
 from src.logger import setup_logger
 
 
+LICENSE_SPELLING_PAIRS = (
+    ("license", "licence"),
+    ("License", "Licence"),
+    ("LICENSE", "LICENCE"),
+)
+LICENSE_REF_PATTERN = re.compile(r"licen[cs]eref", re.IGNORECASE)
+
+
 class BaseDataUpdate:
     def __init__(self, src: str, log_level=10):
         self._LOGGER = setup_logger(__name__, log_level=log_level)
@@ -98,10 +106,14 @@ class BaseDataUpdate:
                                                 rejected_aliases, risky_aliases)
 
         custom_aliases = self._create_custom_list_for_quotes(normalized_aliases)
+        custom_aliases.extend(self._create_custom_list_for_license_spellings(normalized_aliases))
+        all_aliases = set(itertools.chain.from_iterable(existing_aliases.values()))
+        all_aliases.add(data["canonical"]["id"])
 
         for alias in custom_aliases:
-            if alias not in aliases_list:
+            if alias not in all_aliases:
                 existing_aliases["custom"].append(alias)
+                all_aliases.add(alias)
 
         existing_aliases["custom"].sort(key=lambda y: y.lower())
         if alias_key in data["aliases"]:
@@ -143,6 +155,8 @@ class BaseDataUpdate:
         normalized_aliases = self._normalize_alias_list(aliases)
         normalized_aliases.sort(key=lambda y: y.lower())
         custom_list = self._create_custom_list_for_quotes(normalized_aliases)
+        custom_list.extend(self._create_custom_list_for_license_spellings(normalized_aliases))
+        custom_list.sort(key=lambda y: y.lower())
 
         output_data = {
             "canonical": {
@@ -280,6 +294,20 @@ class BaseDataUpdate:
             new_alias = pattern.sub(self._swap_quotes, alias)
             if new_alias not in aliases:
                 aliases.append(new_alias)
+
+    @staticmethod
+    def _create_custom_list_for_license_spellings(aliases: list[str]) -> list[str]:
+        """Create License/Licence spelling variants for source aliases."""
+        custom_aliases = []
+        for alias in aliases:
+            if LICENSE_REF_PATTERN.search(alias):
+                continue
+            for american, british in LICENSE_SPELLING_PAIRS:
+                if american in alias:
+                    custom_aliases.append(alias.replace(american, british))
+                if british in alias:
+                    custom_aliases.append(alias.replace(british, american))
+        return list(dict.fromkeys(custom_aliases))
 
     @staticmethod
     def _swap_quotes(match):

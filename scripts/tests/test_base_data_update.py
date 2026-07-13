@@ -123,6 +123,48 @@ def test_create_license_file(mock_json_dump, mock_open, mock_join, base_data_upd
     mock_json_dump.assert_called_once_with(expected_data, mock_open(), indent=4)
 
 
+@patch("os.path.join", return_value="/path/to/data/license.json")
+@patch("builtins.open", new_callable=mock_open)
+@patch("json.dump")
+def test_create_license_file_adds_british_license_spelling_to_custom(mock_json_dump, mock_open,
+                                                                     mock_join, base_data_update):
+    base_data_update.create_license_file("test_license", ["Test License"])
+
+    expected_data = {
+        "canonical": {"id": "test_license", "src": "test_source"},
+        "aliases": {"test_source": ["Test License"], "custom": ["Test Licence"]},
+        "rejected": [],
+        "risky": []
+    }
+    mock_json_dump.assert_called_once_with(expected_data, mock_open(), indent=4)
+
+
+@patch("os.path.join", return_value="/path/to/license.json")
+@patch("builtins.open", new_callable=mock_open,
+       read_data='{"canonical": {"id": "test"}, "aliases": {"test_source": [], "custom": []}, '
+                 '"rejected": [], "risky": []}')
+@patch("json.dump")
+def test_update_license_file_adds_american_license_spelling_to_custom(mock_json_dump, mock_open,
+                                                                      mock_join, base_data_update):
+    base_data_update.update_license_file("test", ["Test Licence"])
+
+    expected_data = {
+        "canonical": {"id": "test"},
+        "aliases": {"test_source": ["Test Licence"], "custom": ["Test License"]},
+        "rejected": [],
+        "risky": []
+    }
+    mock_json_dump.assert_called_once_with(expected_data, mock_open(), indent=4)
+
+
+def test_create_custom_list_for_license_spellings_excludes_license_references(base_data_update):
+    aliases = ["LicenseRef-example", "LicenceRef-example", "Example License"]
+
+    result = base_data_update._create_custom_list_for_license_spellings(aliases)
+
+    assert result == ["Example Licence"]
+
+
 def test_normalize_quotes(base_data_update):
     sample_alias = "“test” ‘test’ \"test\""
     result = base_data_update._normalize_quotes(sample_alias)
