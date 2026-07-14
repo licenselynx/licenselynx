@@ -34,51 +34,49 @@ interface LicenseRepository {
  * Maps the given license name to its corresponding data.
  *
  * @param licenseName the name of the license to map
- * @param risky enable risky mappings
+ * @param risky enable risky mappings (default: `false`)
  * @param org optional organization to search in
- * @returns LicenseObject as promise or error if not found
+ * @returns LicenseObject as readonly object or error if not found
  */
-export const map = function (licenseName: string, risky: boolean = false, org?: Organization) {
-    return new Promise<LicenseObject>((resolve, reject) => {
-        const licenses = mergedData as LicenseRepository;
+export const map = function (licenseName: string, risky: boolean = false, org?: Organization): Readonly<LicenseObject> {
+    const licenses = mergedData as LicenseRepository;
 
-        const normalizedLicenseName = normalizeQuotes(licenseName);
+    const normalizedLicenseName = normalizeQuotes(licenseName);
 
-        let licenseData = licenses.stableMap[normalizedLicenseName];
+    let licenseData = licenses.stableMap[normalizedLicenseName];
 
-        if (!licenseData && risky) {
-            licenseData = licenses.riskyMap[normalizedLicenseName];
+    if (!licenseData && risky) {
+        licenseData = licenses.riskyMap[normalizedLicenseName];
+    }
+
+    if (!licenseData && org) {
+        const orgMap = licenses[org as string];
+        if (orgMap) {
+            licenseData = orgMap[normalizedLicenseName];
         }
+    }
 
-        if (!licenseData && org) {
-            const orgMap = licenses[org as string];
-            if (orgMap) {
-                licenseData = orgMap[normalizedLicenseName];
-            }
+    if (licenseData) {
+        const canonical = licenseData.id;
+        const src = licenseData.src;
+
+        if (canonical && src) {
+            return Object.freeze({ id: canonical, src });
         }
+    }
 
-        if (licenseData) {
-            const canonical = licenseData.id;
-            const src = licenseData.src;
-
-            if (canonical && src) {
-                resolve(Object.freeze({id: canonical, src}));
-            }
-        }
-
-        reject(new Error('License ' + licenseName + ' not found.'));
-    })
+    throw new Error('License ' + licenseName + ' not found.');
 }
 
-export const isSpdxIdentifier= function (licenseObject: LicenseObject): boolean {
+export const isSpdxIdentifier = function (licenseObject: LicenseObject): boolean {
     return licenseObject.src === LicenseSource.Spdx;
 }
 
-export const isScancodeLicensedbIdentifier= function (licenseObject: LicenseObject): boolean {
+export const isScancodeLicensedbIdentifier = function (licenseObject: LicenseObject): boolean {
     return licenseObject.src === LicenseSource.ScancodeLicensedb;
 }
 
-export const isCustomIdentifier= function (licenseObject: LicenseObject): boolean {
+export const isCustomIdentifier = function (licenseObject: LicenseObject): boolean {
     return licenseObject.src === LicenseSource.Custom;
 }
 
