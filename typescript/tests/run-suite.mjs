@@ -30,15 +30,13 @@ const run = (command, args) => {
 try {
     if (mode === 'unit') {
         await fs.writeFile(resourcesPath, await fs.readFile(unitFixturePath, 'utf8'));
-        run('npx', ['esbuild', 'index.ts', '--bundle', '--platform=node', '--target=node10', '--outdir=dist']);
-        run('npx', ['tsc', '--emitDeclarationOnly', '--outDir', 'dist']);
+        run('npm', ['run', 'build']);
         await fs.rm(path.join(root, 'coverage'), { recursive: true, force: true });
-        run('npx', ['c8', '--reporter=text', '--reporter=lcov', '--report-dir', 'coverage', 'node', '--test', 'tests/unit.test.mjs']);
+        run('npx', ['c8', '--reporter=text', '--reporter=lcov', '--report-dir', 'coverage', 'tsx', '--test', 'tests/unit.test.mjs']);
     } else {
         run('python3', ['../scripts/src/load/merge_data.py', '-o', './resources/merged_data.json']);
-        run('npx', ['esbuild', 'index.ts', '--bundle', '--platform=node', '--target=node10', '--outdir=dist']);
-        run('npx', ['tsc', '--emitDeclarationOnly', '--outDir', 'dist']);
-        run('node', ['--test', `tests/${mode}.test.mjs`]);
+        run('npm', ['run', 'build']);
+        run('npx', ['tsx', '--test', `tests/${mode}.test.mjs`]);
     }
 } finally {
     await fs.writeFile(resourcesPath, originalResources);

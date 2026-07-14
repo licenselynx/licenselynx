@@ -83,6 +83,7 @@ _support/
 !typescript/resources/*
 !typescript/tests/resources/*
 !typescript/package-lock.json
+!typescript/.oxlintrc.json
 !data/*
 
 !go/testdata/*
