@@ -25,11 +25,16 @@ test('packed package installs and exposes the library', async () => {
 
         assert.ok(await fs.stat(path.join(root, 'dist', 'index.js')));
         assert.ok(await fs.stat(path.join(root, 'dist', 'index.d.ts')));
+        assert.ok(await fs.stat(path.join(root, 'dist', 'resources', 'merged_data.json')));
         await fs.writeFile(packageJson, JSON.stringify({ private: true }));
         execFileSync('npm', ['install', '--ignore-scripts', '--no-package-lock', tarball], {
             cwd: directory,
             stdio: 'inherit',
         });
+
+        // Check if the license data is available
+        const licenses = await import(pathToFileURL(path.join(root, 'dist', 'resources', 'merged_data.json')).href);
+        assert.ok(licenses.stableMap);
 
         const modulePath = path.join(directory, 'node_modules', '@licenselynx', 'licenselynx', 'dist', 'index.js');
         const { map } = await import(pathToFileURL(modulePath).href);

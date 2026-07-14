@@ -12,17 +12,16 @@
         "test": "tests"
     },
     "files": [
-        "dist/index.js",
-        "dist/index.d.ts",
+        "dist",
         "README.md"
     ],
     "scripts": {
         "clean": "rm -rf dist coverage",
-        "build": "esbuild index.ts --bundle --platform=node --target=node10 --outdir=dist && tsc --emitDeclarationOnly --outDir dist",
+        "build": "tsc",
         "test": "node tests/run-suite.mjs unit",
         "test:smoke": "node tests/run-suite.mjs smoke",
         "test:package": "node tests/run-suite.mjs package",
-        "lint": "eslint *.ts "
+        "lint": "oxlint"
     },
     "repository": {
         "type": "git",
@@ -30,21 +29,15 @@
         "directory": "typescript"
     },
     "devDependencies": {
-        "@babel/preset-typescript": "7.28.5",
-        "c8": "11.0.0",
-        "@eslint/eslintrc": "3.3.3",
-        "@eslint/js": "9.39.1",
-        "@types/node": "24.10.1",
-        "@typescript-eslint/eslint-plugin": "8.47.0",
-        "@typescript-eslint/parser": "8.47.0",
-        "esbuild": "0.28.1",
-        "eslint": "9.39.1",
-        "globals": "16.5.0",
-        "typescript": "5.9.3"
+        "@types/node": "^24.10.1",
+        "c8": "^11.0.0",
+        "oxlint": "^1.74.0",
+        "oxlint-tsgolint": "^0.24.0",
+        "tsx": "^4.23.1",
+        "typescript": "^7.0.2"
     },
     "allowScripts": {
         "esbuild": true,
-        "fsevents": true,
-        "unrs-resolver": true
+        "fsevents": true
     }
 }
