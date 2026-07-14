@@ -7,7 +7,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 
 const mode = process.argv[2];
-if (mode !== 'unit' && mode !== 'smoke') {
+if (mode !== 'unit' && mode !== 'smoke' && mode !== 'package') {
     throw new Error(`Unsupported test mode: ${mode}`);
 }
 
@@ -38,7 +38,7 @@ try {
         run('python3', ['../scripts/src/load/merge_data.py', '-o', './resources/merged_data.json']);
         run('npx', ['esbuild', 'index.ts', '--bundle', '--platform=node', '--target=node10', '--outdir=dist']);
         run('npx', ['tsc', '--emitDeclarationOnly', '--outDir', 'dist']);
-        run('node', ['--test', 'tests/smoke.test.mjs']);
+        run('node', ['--test', `tests/${mode}.test.mjs`]);
     }
 } finally {
     await fs.writeFile(resourcesPath, originalResources);

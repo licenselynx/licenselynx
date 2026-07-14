@@ -70,6 +70,9 @@ jobs:
       - name: Run smoke tests against linked package
         working-directory: typescript
         run: npm run test:smoke
+      - name: Test packed package
+        working-directory: typescript
+        run: npm run test:package
 
   lint:
     runs-on: ubuntu-latest

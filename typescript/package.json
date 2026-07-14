@@ -21,6 +21,7 @@
         "build": "esbuild index.ts --bundle --platform=node --target=node10 --outdir=dist && tsc --emitDeclarationOnly --outDir dist",
         "test": "node tests/run-suite.mjs unit",
         "test:smoke": "node tests/run-suite.mjs smoke",
+        "test:package": "node tests/run-suite.mjs package",
         "lint": "eslint *.ts "
     },
     "repository": {

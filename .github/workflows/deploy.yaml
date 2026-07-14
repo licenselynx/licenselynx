@@ -182,6 +182,10 @@ jobs:
           python3 scripts/src/load/merge_data.py -o ./typescript/resources/merged_data.json
           cd typescript
           npm ci
+          npm run build
+      - name: Test packed package
+        working-directory: typescript
+        run: npm run test:package
       - run: |
           cd typescript
           npm publish --provenance --access public
