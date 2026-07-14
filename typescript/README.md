@@ -1,3 +1,12 @@
+> [!WARNING]
+> Versions `0.9.13` through `2.3.1` of `@licenselynx/licenselynx` were published without the compiled runtime files and are unusable. Upgrade to `2.3.2` or later:
+>
+> ```sh
+> npm install @licenselynx/licenselynx@latest
+> ```
+>
+> The issue is tracked in [#104](https://github.com/licenselynx/licenselynx/issues/104).
+
 # LicenseLynx for TypeScript
 
 In TypeScript, you need to import the ``map`` function from the ``LicenseLynx`` module and use it to map a license name.
