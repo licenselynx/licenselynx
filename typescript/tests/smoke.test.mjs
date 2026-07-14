@@ -4,36 +4,31 @@
  */
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import path from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { map, Organization } from '../dist/index.js';
 
-const distRoot = path.resolve(process.cwd(), 'dist');
-const moduleUrl = pathToFileURL(path.join(distRoot, 'index.js')).href;
-const { map, Organization } = await import(moduleUrl);
-
-test('stable map lookup for 0BSD', async () => {
-    const result = await map('0BSD');
+test('stable map lookup for 0BSD', () => {
+    const result = map('0BSD');
     assert.ok(result);
     assert.equal(result.id, '0BSD');
 });
 
-test('risky map lookup with flag enabled for libpng-2.0', async () => {
-    const result = await map('LIbpng License v2', true);
+test('risky map lookup with flag enabled for libpng-2.0', () => {
+    const result = map('LIbpng License v2', true);
     assert.ok(result);
     assert.equal(result.id, 'libpng-2.0');
 });
 
-test('risky entry must not resolve without the flag', async () => {
-    await assert.rejects(map('LIbpng License v2'));
+test('risky entry must not resolve without the flag', () => {
+    assert.throws(() => map('LIbpng License v2'));
 });
 
-test('organization-scoped lookup for SISL-1.5', async () => {
-    const result = await map('Siemens Inner Source License v1.5', false, Organization.Siemens);
+test('organization-scoped lookup for SISL-1.5', () => {
+    const result = map('Siemens Inner Source License v1.5', false, Organization.Siemens);
     assert.ok(result);
     assert.equal(result.id, 'SISL-1.5');
     assert.equal(result.src, 'siemens');
 });
 
-test('organization entry must not resolve without the org parameter', async () => {
-    await assert.rejects(map('Siemens Inner Source License v1.5'));
+test('organization entry must not resolve without the org parameter', () => {
+    assert.throws(() => map('Siemens Inner Source License v1.5'));
 });
