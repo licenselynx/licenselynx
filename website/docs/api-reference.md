@@ -140,19 +140,19 @@ Maps a license name string to its canonical `LicenseObject`.
     import {map, Organization} from "@licenselynx/licenselynx";
 
     // Basic lookup
-    const result = await map('Apache-2.0');
+    const result = map('Apache-2.0');
     console.log(result.id);   // "Apache-2.0"
     console.log(result.src);  // "spdx"
 
     // With risky mappings
-    const risky = await map('gpl3', true);
+    const risky = map('gpl3', true);
 
     // With organization
-    const orgResult = await map('SISL-1.4', false, Organization.Siemens);
+    const orgResult = map('SISL-1.4', false, Organization.Siemens);
 
     // Error handling
     try {
-        await map('nonexistent');
+        map('nonexistent');
     } catch (e) {
         console.error(e.message);  // "License nonexistent not found."
     }
@@ -270,7 +270,7 @@ Methods to classify a `LicenseObject` by its source. All return `boolean`.
       Organization,
     } from "@licenselynx/licenselynx";
 
-    const result = await map('MIT');
+    const result = map('MIT');
 
     isSpdxIdentifier(result);
     isScancodeLicensedbIdentifier(result);

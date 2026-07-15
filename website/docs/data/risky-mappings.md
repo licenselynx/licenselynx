@@ -58,10 +58,10 @@ For family-specific conventions (for example the GNU `-only` risky default), see
     import {map} from "@licenselynx/licenselynx";
 
     // Stable only (default)
-    await map('gpl3');                // rejects
+    map('gpl3');                // throws an error
 
     // With risky mappings
-    await map('gpl3', true);          // resolves to GPL-3.0-only
+    map('gpl3', true);          // returns GPL-3.0-only
     ```
 
 ## Relationship to Rejected Mappings

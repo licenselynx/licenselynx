@@ -38,7 +38,7 @@ test('packed package installs and exposes the library', async () => {
 
         const modulePath = path.join(directory, 'node_modules', '@licenselynx', 'licenselynx', 'dist', 'index.js');
         const { map } = await import(pathToFileURL(modulePath).href);
-        const result = await map('0BSD');
+        const result = map('0BSD');
 
         assert.equal(result.id, '0BSD');
     } finally {

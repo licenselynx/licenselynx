@@ -30,14 +30,14 @@ System.out.println(result.getSrc());  // "spdx"
 
 ## TypeScript
 
-`map` returns a `Promise`.
+`map` returns a `LicenseObject`.
 
 ```typescript
-import {map} from "@licenselynx/licenselynx";
+import { map } from "@licenselynx/licenselynx";
 
-const result = await map('MIT');
-console.log(result.id);   // "MIT"
-console.log(result.src);  // "spdx"
+const result = map("MIT");
+console.log(result.id); // "MIT"
+console.log(result.src); // "spdx"
 ```
 
 ## Risky Mappings
@@ -59,7 +59,7 @@ All languages support an optional `risky` parameter. When enabled, the lookup fa
 === "TypeScript"
 
     ```typescript
-    const result = await map('gpl3', true);
+    const result = map('gpl3', true);
     ```
 
 ## Organization Mappings
@@ -87,7 +87,7 @@ All languages support an optional `org` parameter for looking up organization-sp
     ```typescript
     import {map, Organization} from "@licenselynx/licenselynx";
 
-    const result = await map('SISL-1.4', false, Organization.Siemens);
+    const result = map('SISL-1.4', false, Organization.Siemens);
     ```
 
 ## Data Mapping
