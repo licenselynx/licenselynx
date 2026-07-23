@@ -17,9 +17,15 @@
 
 # LicenseLynx 
 
-## Overview
+<div align="center"><img src="website/docs/assets/licenselynx-simple-explanation-dark.png#only-dark" alt="LicenseLynx Workflow Explanation"></div>
 
-LicenseLynx is a project focused on deterministically map unknown or ambiguous license names and their canonical license names.
+How can we map a license string found in the wild automatically and deterministically?
+**LicenseLynx** is the answer to that!
+
+We collect and match license strings found from SPDX, ScanCode LicenseDB, and OSI License List to its canonical identifier.
+But this is just the starting point.
+The most valuable data comes from the community with custom aliases for license identifiers which are not present in the license databases or license lists.
+
 Additionally, we offer libraries for Python, Java, Go, and TypeScript to streamline the process of mapping licenses to their canonical names,
 typically represented by SPDX IDs.
 
