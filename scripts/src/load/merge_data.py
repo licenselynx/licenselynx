@@ -80,7 +80,7 @@ def read_org_data(data_dir: str) -> dict:
 
 def write_data(alias_mapping: dict, output_path: str):
     with open(output_path, 'w') as outfile:
-        json.dump(alias_mapping, outfile, indent=4)
+        json.dump(alias_mapping, outfile, separators=(',', ':'))
 
 
 def merge_data_to_paths(data_dir: str, output_path: str):
