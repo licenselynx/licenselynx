@@ -26,9 +26,7 @@
             "The Unlicence",
             "The Unlicence (Unlicence)",
             "Unlicence",
-            "unlicence",
-            "UNLICENSED",
-            "unlicensed"
+            "unlicence"
         ],
         "scancodeLicensedb": [
             "Unlicense",
@@ -47,6 +45,9 @@
             "The Unlicense (Unlicense)"
         ]
     },
-    "rejected": [],
+    "rejected": [
+        "UNLICENSED",
+        "unlicensed"
+    ],
     "risky": []
 }
