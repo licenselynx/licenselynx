@@ -1,8 +1,12 @@
 {
     "name": "@licenselynx/licenselynx",
-    "version": "2.3.2",
+    "version": "2.3.3",
     "author": "Leo Reinmann",
-    "keywords": ["deterministic", "license-mapping", "license-compliance"],
+    "keywords": [
+        "deterministic",
+        "license-mapping",
+        "license-compliance"
+    ],
     "license": "BSD-3-Clause",
     "description": "Deterministically map license strings to its canonical identifier",
     "homepage": "https://github.com/licenselynx/licenselynx/tree/main/typescript",
