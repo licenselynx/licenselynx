@@ -22,14 +22,14 @@ jobs:
       contents: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           token: ${{ secrets.PUSH_TOKEN || github.token }}
       - name: Install Poetry
         run: |
           pipx install poetry
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: '3.11'
           cache: poetry
@@ -58,7 +58,7 @@ jobs:
           anybadge --label "total mappings" --value "${TOTAL_MAPPINGS}" --file website/badges/total-mappings.svg --overwrite
       - name: Upload statistics file
         if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@4a55954c782fc1ea30b9056cd3e7a2b40ca8887d # v7.2.0
         with:
           commit_message: "chore: update total mappings badge"
           commit_user_name: "CI/CD Push Token"
