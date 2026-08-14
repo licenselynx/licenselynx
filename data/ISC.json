@@ -10,6 +10,7 @@
         "custom": [
             "\"ISC\"",
             "'ISC'",
+            "(ISC)",
             "Internet Systems Consortium License",
             "Internet Systems Consortium Open Source License",
             "ISC Licence",

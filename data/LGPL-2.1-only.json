@@ -9,6 +9,7 @@
             "LGPL-2.1"
         ],
         "custom": [
+            "(LGPL-2.1)",
             "GNU Lesser General Public Licence v2.1 only",
             "GNU LGPL 2.1 (only)",
             "GNU LGPL v2.1 only",

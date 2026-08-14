@@ -9,6 +9,7 @@
             "GPL-2.0"
         ],
         "custom": [
+            "(GPL-2.0)",
             "GNU General Public Licence v2.0 only",
             "GNU General Public License 2.0",
             "GNU General Public License v2",

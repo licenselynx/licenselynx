@@ -8,6 +8,7 @@
             "Mozilla Public License 2.0"
         ],
         "custom": [
+            "'mpl-2.0'",
             "Licence :: Mozilla Public Licence 2.0",
             "Licence :: Mozilla Public Licence 2.0 (MPL 2.0)",
             "Licence :: MPL 2.0",
