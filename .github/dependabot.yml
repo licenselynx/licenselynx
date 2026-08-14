@@ -1,0 +1,61 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    groups:
+      github-actions:
+        patterns:
+          - '*'
+
+  - package-ecosystem: gomod
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    groups:
+      go:
+        patterns:
+          - '*'
+
+  - package-ecosystem: pip
+    directory: /python
+    schedule:
+      interval: weekly
+      day: monday
+    groups:
+      python:
+        patterns:
+          - '*'
+
+  - package-ecosystem: pip
+    directory: /scripts
+    schedule:
+      interval: weekly
+      day: monday
+    groups:
+      scripts:
+        patterns:
+          - '*'
+
+  - package-ecosystem: npm
+    directory: /typescript
+    schedule:
+      interval: weekly
+      day: monday
+    groups:
+      typescript:
+        patterns:
+          - '*'
+
+  - package-ecosystem: gradle
+    directory: /java
+    schedule:
+      interval: weekly
+      day: monday
+    groups:
+      java:
+        patterns:
+          - '*'
