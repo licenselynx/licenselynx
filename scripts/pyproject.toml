@@ -11,14 +11,14 @@ packages = [{include = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-requests = "^2.33.0"
+requests = "^2.34.2"
 python-dotenv = "^1.2.2"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^9.0.3"
+pytest = "^9.1.1"
 flake8 = "^7.0.0"
-coverage = "^7.4.4"
-mypy = "^1.9.0"
+coverage = "^7.15.4"
+mypy = "^2.3.0"
 
 [tool.poetry.scripts]
 data_validation = "src.validate.data_validation:main"
