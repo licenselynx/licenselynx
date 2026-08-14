@@ -55,6 +55,14 @@ updates:
     schedule:
       interval: weekly
       day: monday
+    # Gradle 9 requires JVM 17, and JUnit 6 requires Java 17.
+    ignore:
+      - dependency-name: 'gradle-wrapper'
+        update-types:
+          - version-update:semver-major
+      - dependency-name: 'org.junit.jupiter:*'
+        update-types:
+          - version-update:semver-major
     groups:
       java:
         patterns:
