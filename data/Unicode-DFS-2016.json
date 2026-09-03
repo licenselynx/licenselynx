@@ -13,6 +13,9 @@
         "scancodeLicensedb": [
             "Unicode DFS 2016",
             "unicode-dfs-2016"
+        ],
+        "osi": [
+            "Unicode, Inc. License Agreement - Data Files and Software"
         ]
     },
     "rejected": [],

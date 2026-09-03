@@ -165,6 +165,18 @@ def test_create_custom_list_for_license_spellings_excludes_license_references(ba
     assert result == ["Example Licence"]
 
 
+@patch("os.listdir", return_value=["orgs", "license.json"])
+@patch("os.path.isdir", side_effect=lambda path: path.endswith("orgs"))
+@patch("builtins.open", new_callable=mock_open,
+       read_data='{"aliases": {"source": ["matching alias"]}}')
+def test_get_file_for_unrecognized_id_skips_directories(mock_open, mock_isdir, mock_listdir,
+                                                        base_data_update):
+    result = base_data_update.get_file_for_unrecognized_id(["matching alias"])
+
+    assert result == "license.json"
+    mock_open.assert_called_once()
+
+
 def test_normalize_quotes(base_data_update):
     sample_alias = "“test” ‘test’ \"test\""
     result = base_data_update._normalize_quotes(sample_alias)

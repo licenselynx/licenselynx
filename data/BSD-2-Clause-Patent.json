@@ -13,6 +13,9 @@
         "scancodeLicensedb": [
             "BSD-2-Clause Plus Patent",
             "bsd-plus-patent"
+        ],
+        "osi": [
+            "BSD+Patent"
         ]
     },
     "rejected": [],

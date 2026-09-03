@@ -1,135 +1,119 @@
 #
 # Copyright (c) Siemens AG 2025 ALL RIGHTS RESERVED
 #
-import pytest
-from unittest.mock import MagicMock, patch, mock_open
 import json
 from unittest import mock
+from unittest.mock import MagicMock, mock_open, patch
+
+import pytest
+
 from src.update.OsiDataUpdate import OsiDataUpdate
 
 
-def test_get_aliases(capsys):
-    entry = {
-        "id": "MIT",
-        "name": "MIT License",
-        "other_names": [{"name": "MIT"}]
-    }
-
-    alias = OsiDataUpdate.get_aliases(entry)
-    assert set(alias) == {"MIT", "MIT License"}
-
-
-def test_extract_url_id(capsys):
-    entry = {
-        "links": [
-            {
-                "note": "Wikipedia page",
-                "url": "https://en.wikipedia.org/wiki/MIT_License"
-            },
-            {
-                "note": "OSI Page",
-                "url": "https://opensource.org/licenses/mit"
-            }]
-    }
-
-    url_id = OsiDataUpdate.extract_url_id(entry)
-    assert "mit" == url_id
-
-
-def test_process_unrecognized_license_id_recognized(capsys):
+def test_process_unrecognized_license_id_recognized():
     aliases = ["The MIT License", "MIT License"]
-    canonical_id = "mit"
     data = {
-        "canonical": {
-            "id": canonical_id
-        },
+        "canonical": {"id": "mit"},
+        "aliases": {"custom": [], "osi": [], "spdx": ["MIT License"]},
+        "rejected": [],
+        "risky": [],
+    }
+    with mock.patch("builtins.open", mock.mock_open(read_data=json.dumps(data))), mock.patch("json.dump"):
+        updater = OsiDataUpdate()
+        updater.update_license_file = MagicMock()
+        result = updater.process_unrecognized_license_id(aliases, "mit", "")
+
+    assert result is None
+
+
+def test_process_unrecognized_license_id_still_unrecognized():
+    updater = OsiDataUpdate()
+    updater.get_file_for_unrecognized_id = MagicMock(return_value=None)
+
+    result = updater.process_unrecognized_license_id(["The MIT License"], "mit", "")
+
+    assert result == "mit"
+
+
+def test_process_unrecognized_license_id_resolves_gpl_to_only():
+    updater = OsiDataUpdate()
+    updater.get_file_for_unrecognized_id = MagicMock(return_value="GPL-3.0-only.json")
+    updater.update_license_file = MagicMock()
+
+    result = updater.process_unrecognized_license_id(
+        ["GNU General Public License version 3"], "GPL-3.0", "gpl-3-0"
+    )
+
+    assert result is None
+    updater.update_license_file.assert_called_once()
+    assert updater.update_license_file.call_args.args[0] == "GPL-3.0-only"
+
+
+def test_update_license_file_skips_equivalent_scancode_alias(tmp_path):
+    updater = OsiDataUpdate()
+    updater._DATA_DIR = str(tmp_path)
+    filepath = tmp_path / "Apache-2.0.json"
+    filepath.write_text(json.dumps({
+        "canonical": {"id": "Apache-2.0", "src": "spdx"},
         "aliases": {
+            "spdx": ["Apache License 2.0"],
             "custom": [],
-            "osi": [],
-            "spdx": ["MIT License"]
-        }
-    }
-    with mock.patch("builtins.open", mock.mock_open(read_data=json.dumps(data))), mock.patch("json.dump"):
-        osi_data_update = OsiDataUpdate()
-        result = osi_data_update.process_unrecognized_license_id(aliases, canonical_id, "")
-
-        assert result is None
-
-
-def test_process_unrecognized_license_id_recognized_still_unrecognized(capsys):
-    aliases = ["The MIT License", "MIT License"]
-    canonical_id = "mit"
-    data = {
-        "canonical": {
-            "id": "MIT"
+            "scancodeLicensedb": ["Apache 2.0"],
         },
-        "aliases": {
-            "osi": [],
-            "spdx": []
-        }
-    }
-    with mock.patch("builtins.open", mock.mock_open(read_data=json.dumps(data))), mock.patch("json.dump"):
-        osi_data_update = OsiDataUpdate()
-        result = osi_data_update.process_unrecognized_license_id(aliases, canonical_id, "")
+        "rejected": [],
+        "risky": [],
+    }))
 
-        assert result == "mit"
+    updater.update_license_file("Apache-2.0", ["Apache Software License 2.0", "apache-2-0"])
+
+    data = json.loads(filepath.read_text())
+    assert data["aliases"]["osi"] == ["Apache Software License 2.0"]
 
 
 @pytest.fixture
 def osi_data_update():
-    """Fixture to initialize the OsiDataUpdate instance."""
     updater = OsiDataUpdate()
-    updater._LOGGER = MagicMock()  # Mock the logger
-    updater._DATA_DIR = "mock_data_dir"  # Mock data directory
+    updater._LOGGER = MagicMock()
+    updater._DATA_DIR = "mock_data_dir"
     return updater
 
 
 def test_process_licenses(osi_data_update):
-    # Mock data
-    mock_license_list = [
-        {
-            "id": "license-1",
-            "links": [{"note": "OSI Page", "url": "https://opensource.org/licenses/license-1"}],
-            "name": "Test License 1",
-            "other_names": [{"name": "License One"}]
-        },
-        {
-            "id": "license-2",
-            "links": [{"note": "OSI Page", "url": "https://opensource.org/licenses/license-2"}],
-            "name": "Test License 2",
-            "other_names": []
-        },
+    license_list = [
+        {"id": "osi-license-1", "spdx_id": "license-1", "name": "Test License 1"},
+        {"id": "license-2", "spdx_id": "", "name": "Test License 2"},
     ]
-    mock_files_list = ["license-1.json"]  # Existing file in the directory
-
-    # Mock the dependencies
     osi_data_update.download_json_file = MagicMock()
-    osi_data_update.load_json_file = MagicMock(return_value=mock_license_list)
+    osi_data_update.load_json_file = MagicMock(return_value=license_list)
+    osi_data_update.update_license_file = MagicMock()
+    osi_data_update.process_unrecognized_license_id = MagicMock(return_value="license-2")
+    osi_data_update.delete_file = MagicMock()
+
+    with patch("os.listdir", return_value=["license-1.json"]), patch("builtins.open", mock_open()):
+        osi_data_update.process_licenses()
+
+    osi_data_update.download_json_file.assert_called_once_with(
+        "https://opensource.org/api/license", "osi_license_list.json"
+    )
+    osi_data_update.update_license_file.assert_called_once_with(
+        "license-1", ["Test License 1", "osi-license-1"]
+    )
+    osi_data_update._LOGGER.info.assert_called_once_with("Unprocessed licenses: 1\n['license-2']")
+
+
+def test_process_licenses_matches_spdx_id_case_insensitively(osi_data_update):
+    osi_data_update.download_json_file = MagicMock()
+    osi_data_update.load_json_file = MagicMock(return_value=[{
+        "id": "nokia",
+        "spdx_id": "NOKIA",
+        "name": "Nokia Open Source License Version 1.0a",
+    }])
     osi_data_update.update_license_file = MagicMock()
     osi_data_update.delete_file = MagicMock()
 
-    # Mock os.listdir to return mock files
-    with patch("os.listdir", return_value=mock_files_list):
-        # Mock open for reading JSON files
-        mock_file_data = json.dumps({"aliases": {"osi": ["Test License 1", "License One"]}})
-        with patch("builtins.open", mock_open(read_data=mock_file_data)):
-            # Call the method under test
-            osi_data_update.process_licenses()
+    with patch("os.listdir", return_value=["Nokia.json"]):
+        osi_data_update.process_licenses()
 
-            # Assertions
-            osi_data_update.download_json_file.assert_called_once_with(
-                "https://api.opensource.org/licenses/", "osi_license_list.json"
-            )
-            osi_data_update.load_json_file.assert_called_once_with("osi_license_list.json")
-
-            # Check if update_license_file was called for license-1
-            osi_data_update.update_license_file.assert_any_call(
-                "license-1",
-                ["Test License 1", "License One", "license-1"],
-            )
-
-            # Check if update_license_file was not called for license-2
-            osi_data_update.update_license_file.assert_called_once()
-
-            osi_data_update.delete_file.assert_called_once_with("osi_license_list.json")
-            osi_data_update._LOGGER.info.assert_any_call("Unprocessed licenses: 1\n['license-2']")
+    osi_data_update.update_license_file.assert_called_once_with(
+        "Nokia", ["Nokia Open Source License Version 1.0a", "nokia"]
+    )

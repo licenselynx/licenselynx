@@ -2,7 +2,9 @@
 # Copyright (c) Siemens AG 2025 ALL RIGHTS RESERVED
 #
 import logging
+import json
 import os
+import re
 from src.update.BaseDataUpdate import BaseDataUpdate
 from src.update.canonical_source import CanonicalSource
 
@@ -14,45 +16,41 @@ class OsiDataUpdate(BaseDataUpdate):
         else:
             super().__init__(src=src, log_level=logging.INFO)
 
+    def update_license_file(self, canonical_id: str, aliases: list[str], alias_key: str | None = None) -> None:
+        filepath = os.path.join(self._DATA_DIR, f"{canonical_id}.json")
+        data = self.load_json_file(filepath)
+        aliases_by_source = data.get("aliases", {})
+        existing_aliases = [data["canonical"]["id"]]
+        for source_aliases in aliases_by_source.values():
+            existing_aliases.extend(source_aliases)
+
+        existing_keys = {self._alias_key(alias) for alias in existing_aliases}
+        risky_keys = {self._alias_key(alias) for alias in data.get("risky", [])}
+        rejected_keys = {self._alias_key(alias) for alias in data.get("rejected", [])}
+        new_aliases = [
+            alias for alias in self._normalize_alias_list(aliases)
+            if self._alias_key(alias) not in existing_keys | risky_keys | rejected_keys
+        ]
+        if not new_aliases:
+            return
+
+        source = alias_key or self._src
+        aliases_by_source.setdefault(source, []).extend(new_aliases)
+        aliases_by_source[source].sort(key=str.lower)
+
+        with open(filepath, 'rb') as infile:
+            infile.seek(-1, os.SEEK_END)
+            had_trailing_newline = infile.read(1) == b'\n'
+        with open(filepath, 'w') as outfile:
+            json.dump(data, outfile, indent=4)
+            if had_trailing_newline:
+                outfile.write('\n')
+
     @staticmethod
-    def get_aliases(entry: dict) -> list[str]:
-        """
-        Get aliases for a license entry
-        Args:
-            entry: The license entry from the license list
+    def _alias_key(alias: str) -> str:
+        return re.sub(r"[^\w]", "", alias.casefold())
 
-        Returns:
-            aliases (list): list of aliases for the license
-        """
-        aliases = []
-
-        if entry["name"]:
-            aliases.append(entry["name"])
-        if entry["other_names"]:
-            for other_name in entry["other_names"]:
-                aliases.append(other_name["name"])
-
-        return aliases
-
-    @staticmethod
-    def extract_url_id(entry: dict) -> str | None:
-        """
-        Extract the url id from OSI Page link of a license entry
-        Args:
-            entry: The license entry from the license list
-
-        Returns:
-            url_id (string): the url id of the license entry
-
-        """
-        url_id = None
-        links = entry["links"]
-        for link in links:
-            if link["note"] == "OSI Page":
-                url_id = link["url"].rsplit('/', 1)[1]
-        return url_id
-
-    def process_unrecognized_license_id(self, aliases: list[str], license_id: str, url_id: str) -> str | None:
+    def process_unrecognized_license_id(self, aliases: list[str], license_id: str, osi_id: str) -> str | None:
         """
         Process unrecognized license to either find the license file with all the  license name variations or return the
         unprocessed license if no match is found
@@ -60,7 +58,7 @@ class OsiDataUpdate(BaseDataUpdate):
         Args:
             aliases: A list of aliases associated with this license
             license_id: id of the license
-            url_id: id of the url page of the license
+            osi_id: OSI identifier of the license
 
         Returns:
             unprocessed_license_id (string): id of the still unrecognized license or None if the license was found
@@ -69,7 +67,7 @@ class OsiDataUpdate(BaseDataUpdate):
         # Get all variations of license and merge them into a list
         license_name_variations = []
         license_name_variations.extend(aliases)
-        license_name_variations.extend({url_id, license_id})
+        license_name_variations.extend({osi_id, license_id})
 
         filename = self.get_file_for_unrecognized_id(license_name_variations)
 
@@ -92,32 +90,35 @@ class OsiDataUpdate(BaseDataUpdate):
         """
         filepath = "osi_license_list.json"
 
-        # Download and load index.json of OSI license list
-        self.download_json_file("https://api.opensource.org/licenses/", filepath)
+        # Download and load the OSI license list
+        self.download_json_file("https://opensource.org/api/license", filepath)
         license_list = self.load_json_file(filepath)
 
-        files_list = os.listdir(self._DATA_DIR)
+        files_by_id = {
+            filename[:-5].casefold(): filename[:-5]
+            for filename in os.listdir(self._DATA_DIR)
+            if filename.endswith(".json")
+        }
         unprocessed_licenses = []
         for entry in license_list:
-            # Get license id and extract from the url of the OSI Page
-            license_id = entry["id"]
-
-            url_id = self.extract_url_id(entry)
-
-            aliases = self.get_aliases(entry)
+            osi_id = entry["id"]
+            license_id = entry["spdx_id"] or osi_id
+            aliases = [entry["name"]]
+            license_file_id = files_by_id.get(license_id.casefold())
+            osi_file_id = files_by_id.get(osi_id.casefold())
 
             # Process licenses where both ids are unrecognized in an extra step
-            if not (f"{license_id}.json" in files_list or f"{url_id}.json" in files_list):
-                unprocessed_license = self.process_unrecognized_license_id(aliases, license_id, url_id)
+            if not (license_file_id or osi_file_id):
+                unprocessed_license = self.process_unrecognized_license_id(aliases, license_id, osi_id)
                 if unprocessed_license:
                     unprocessed_licenses.append(unprocessed_license)
             else:
-                if f"{license_id}.json" in files_list:
-                    aliases.append(url_id)
-                    self.update_license_file(license_id, aliases)
+                if license_file_id:
+                    aliases.append(osi_id)
+                    self.update_license_file(license_file_id, aliases)
                 else:
                     aliases.append(license_id)
-                    self.update_license_file(url_id, aliases)
+                    self.update_license_file(osi_file_id, aliases)
         if unprocessed_licenses:
             self._LOGGER.info(f"Unprocessed licenses: {len(unprocessed_licenses)}\n"
                               f"{unprocessed_licenses}")

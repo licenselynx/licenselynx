@@ -13,6 +13,9 @@
         "scancodeLicensedb": [
             "BSD-1-Clause",
             "bsd-1-clause"
+        ],
+        "osi": [
+            "1-clause BSD License"
         ]
     },
     "rejected": [],

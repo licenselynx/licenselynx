@@ -11,6 +11,9 @@
         "custom": [
             "GNU General Public Licence v1.0 only",
             "GPL1"
+        ],
+        "osi": [
+            "GNU General Public License, version 1"
         ]
     },
     "rejected": [
