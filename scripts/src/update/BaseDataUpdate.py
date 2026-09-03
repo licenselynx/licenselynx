@@ -192,6 +192,8 @@ class BaseDataUpdate:
         for license_variation in license_name_variations:
             for filename in os.listdir(self._DATA_DIR):
                 filepath = os.path.join(self._DATA_DIR, filename)
+                if not filename.endswith(".json") or os.path.isdir(filepath):
+                    continue
                 with open(filepath, 'r') as f:
                     data = json.load(f)
                     aliases = data.get("aliases", {})
