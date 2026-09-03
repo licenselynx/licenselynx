@@ -13,6 +13,9 @@
             "\"AGPL-3.0-only\"",
             "GNU Affero General Public Licence v3.0",
             "GNU Affero General Public Licence v3.0 only"
+        ],
+        "osi": [
+            "GNU Affero General Public License version 3"
         ]
     },
     "rejected": [],

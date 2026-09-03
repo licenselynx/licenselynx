@@ -26,6 +26,9 @@
         "scancodeLicensedb": [
             "CDDL 1.1",
             "cddl-1.1"
+        ],
+        "osi": [
+            "COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL)"
         ]
     },
     "rejected": [],

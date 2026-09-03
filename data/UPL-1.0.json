@@ -40,6 +40,9 @@
             "Universal Permissive License",
             "Universal Permissive License (UPL)",
             "UPL"
+        ],
+        "osi": [
+            "The Universal Permissive License Version 1.0"
         ]
     },
     "rejected": [],

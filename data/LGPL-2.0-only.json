@@ -20,6 +20,9 @@
             "LGPL-2.0",
             "LGPL-2.0 (only)",
             "LGPL-2.0-only License"
+        ],
+        "osi": [
+            "GNU Library General Public License version 2"
         ]
     },
     "rejected": [

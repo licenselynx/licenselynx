@@ -49,6 +49,9 @@
             "OSI Approved :: GNU General Public License v3",
             "OSI Approved :: GNU General Public License v3 (GPLv3)",
             "OSI Approved :: GPLv3"
+        ],
+        "osi": [
+            "GNU General Public License version 3"
         ]
     },
     "rejected": [],

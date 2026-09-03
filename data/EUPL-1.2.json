@@ -40,6 +40,9 @@
             "OSI Approved :: EUPL 1.2",
             "OSI Approved :: European Union Public Licence 1.2",
             "OSI Approved :: European Union Public Licence 1.2 (EUPL 1.2)"
+        ],
+        "osi": [
+            "European Union Public Licence, version 1.2"
         ]
     },
     "rejected": [],

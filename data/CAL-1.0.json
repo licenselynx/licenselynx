@@ -13,6 +13,9 @@
         "scancodeLicensedb": [
             "CAL-1.0",
             "cal-1.0"
+        ],
+        "osi": [
+            "Cryptographic Autonomy License"
         ]
     },
     "rejected": [],
