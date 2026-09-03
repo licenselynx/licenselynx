@@ -49,6 +49,12 @@ def test_process_unrecognized_license_id_resolves_gpl_to_only():
     assert updater.update_license_file.call_args.args[0] == "GPL-3.0-only"
 
 
+def test_debug_initialization():
+    updater = OsiDataUpdate(debug=True)
+
+    assert updater._LOGGER.level == 10
+
+
 def test_update_license_file_skips_equivalent_scancode_alias(tmp_path):
     updater = OsiDataUpdate()
     updater._DATA_DIR = str(tmp_path)
@@ -68,6 +74,39 @@ def test_update_license_file_skips_equivalent_scancode_alias(tmp_path):
 
     data = json.loads(filepath.read_text())
     assert data["aliases"]["osi"] == ["Apache Software License 2.0"]
+
+
+def test_update_license_file_returns_when_all_aliases_exist(tmp_path):
+    updater = OsiDataUpdate()
+    updater._DATA_DIR = str(tmp_path)
+    filepath = tmp_path / "AAL.json"
+    original = json.dumps({
+        "canonical": {"id": "AAL", "src": "spdx"},
+        "aliases": {"spdx": ["Attribution Assurance License"], "custom": []},
+        "rejected": [],
+        "risky": [],
+    })
+    filepath.write_text(original)
+
+    updater.update_license_file("AAL", ["Attribution Assurance License"])
+
+    assert filepath.read_text() == original
+
+
+def test_update_license_file_preserves_trailing_newline(tmp_path):
+    updater = OsiDataUpdate()
+    updater._DATA_DIR = str(tmp_path)
+    filepath = tmp_path / "AAL.json"
+    filepath.write_text(json.dumps({
+        "canonical": {"id": "AAL", "src": "spdx"},
+        "aliases": {"spdx": ["Attribution Assurance License"], "custom": []},
+        "rejected": [],
+        "risky": [],
+    }) + "\n")
+
+    updater.update_license_file("AAL", ["AAL current"])
+
+    assert filepath.read_bytes().endswith(b"\n")
 
 
 @pytest.fixture
@@ -117,3 +156,37 @@ def test_process_licenses_matches_spdx_id_case_insensitively(osi_data_update):
     osi_data_update.update_license_file.assert_called_once_with(
         "Nokia", ["Nokia Open Source License Version 1.0a", "nokia"]
     )
+
+
+def test_process_licenses_uses_osi_id_file(osi_data_update):
+    osi_data_update.download_json_file = MagicMock()
+    osi_data_update.load_json_file = MagicMock(return_value=[{
+        "id": "osi-id",
+        "spdx_id": "missing-spdx-id",
+        "name": "Test License",
+    }])
+    osi_data_update.update_license_file = MagicMock()
+    osi_data_update.delete_file = MagicMock()
+
+    with patch("os.listdir", return_value=["osi-id.json"]):
+        osi_data_update.process_licenses()
+
+    osi_data_update.update_license_file.assert_called_once_with(
+        "osi-id", ["Test License", "missing-spdx-id"]
+    )
+
+
+def test_process_licenses_continues_after_resolved_unrecognized_entry(osi_data_update):
+    osi_data_update.download_json_file = MagicMock()
+    osi_data_update.load_json_file = MagicMock(return_value=[
+        {"id": "license-1", "spdx_id": "", "name": "Test License 1"},
+        {"id": "license-2", "spdx_id": "", "name": "Test License 2"},
+    ])
+    osi_data_update.process_unrecognized_license_id = MagicMock(side_effect=[None, "license-2"])
+    osi_data_update.delete_file = MagicMock()
+
+    with patch("os.listdir", return_value=[]):
+        osi_data_update.process_licenses()
+
+    assert osi_data_update.process_unrecognized_license_id.call_count == 2
+    osi_data_update._LOGGER.info.assert_called_once_with("Unprocessed licenses: 1\n['license-2']")
