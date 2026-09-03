@@ -10,6 +10,10 @@
         "scancodeLicensedb": [
             "Collaborative Virtual Workspace License",
             "LicenseRef-scancode-cvwl"
+        ],
+        "osi": [
+            "cvw",
+            "MITRE Collaborative Virtual Workspace License"
         ]
     },
     "rejected": [],

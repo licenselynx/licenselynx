@@ -33,6 +33,7 @@
             "zlib/libpng v1.0"
         ],
         "osi": [
+            "The zlib/libpng License",
             "The zlib/libpng License (Zlib)"
         ],
         "scancodeLicensedb": [
