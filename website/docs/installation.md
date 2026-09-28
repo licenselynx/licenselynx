@@ -2,7 +2,7 @@
 
 ## Python
 
-Requires Python **3.11** or higher.
+Requires Python **3.9** or higher.
 
 ```shell
 pip install licenselynx

@@ -3,10 +3,10 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 import json
-from enum import StrEnum
 from unittest.mock import mock_open, patch, MagicMock
 
 import pytest
+from licenselynx._compat import StrEnum
 import licenselynx.license_map_singleton as license_map_singleton_module
 import licenselynx.license_object as license_object_module
 from licenselynx.licenselynx import LicenseLynx

@@ -11,7 +11,7 @@ authors = [
 ]
 readme = "README.md"
 license = "BSD-3-Clause"
-requires-python = ">=3.11"
+requires-python = ">=3.9"
 
 
 
@@ -31,7 +31,11 @@ include = [
 [tool.poetry.group.dev.dependencies]
 mypy = ">=1.8,<3.0"
 flake8 = "^7.0.0"
-pytest = "^9.0.2"
+# Python 3.9 compatibility only; see README for the legacy pytest advisory.
+pytest = [
+    { version = "==8.4.2", python = ">=3.9,<3.10" },
+    { version = "==9.1.1", python = ">=3.10" },
+]
 coverage = "^7.5.1"
 
 

@@ -1,4 +1,4 @@
-from enum import StrEnum
+from licenselynx._compat import StrEnum
 
 
 class LicenseSource(StrEnum):
