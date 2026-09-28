@@ -40,6 +40,28 @@ console.log(result.id); // "MIT"
 console.log(result.src); // "spdx"
 ```
 
+## Go
+
+```go
+package main
+
+import (
+	"fmt"
+
+	"github.com/licenselynx/licenselynx/v2/go"
+)
+
+func main() {
+	licenseObject, ok := licenselynx.Map("MIT")
+	if !ok {
+		panic("license not found")
+	}
+
+	fmt.Println(licenseObject.ID) // "MIT"
+	fmt.Println(licenseObject.Src) // "spdx"
+}
+```
+
 ## Risky Mappings
 
 All languages support an optional `risky` parameter. When enabled, the lookup falls back to lower-confidence mappings if no match is found in the stable map. See [Risky Mappings](data/risky-mappings.md) for details.
@@ -60,6 +82,15 @@ All languages support an optional `risky` parameter. When enabled, the lookup fa
 
     ```typescript
     const result = map('gpl3', true);
+    ```
+
+=== "Go"
+
+    ```go
+    riskyLicenseObject, ok := licenselynx.Map("License :: LGPLv3", licenselynx.WithRisky())
+	if ok {
+		fmt.Println(riskyLicenseObject.ID)
+	}
     ```
 
 ## Organization Mappings
@@ -88,6 +119,11 @@ All languages support an optional `org` parameter for looking up organization-sp
     import {map, Organization} from "@licenselynx/licenselynx";
 
     const result = map('SISL-1.4', false, Organization.Siemens);
+    ```
+=== "Go"
+
+    ```go
+    licenseObject, ok := licenselynx.Map("SISL 1.5", licenselynx.WithOrganization(licenselynx.OrgSiemens))
     ```
 
 ## Data Mapping

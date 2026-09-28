@@ -35,3 +35,11 @@ Compatible with Node.js **10** and above. No runtime dependencies.
 ```shell
 npm install @licenselynx/licenselynx
 ```
+
+## Go
+
+Requires `go 1.25` or higher.
+
+```shell
+go get github.com/licenselynx/licenselynx/v2
+```
