@@ -69,9 +69,9 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.14.4'
 
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-    testRuntimeOnly 'org.slf4j:slf4j-simple:2.0.19'
+    testRuntimeOnly 'org.slf4j:slf4j-simple:2.0.20'
 
-    implementation 'org.slf4j:slf4j-api:2.0.19'
+    implementation 'org.slf4j:slf4j-api:2.0.20'
 
     compileOnly group: 'net.jcip', name: 'jcip-annotations', version: '1.0'
     compileOnly group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2'
