@@ -21,29 +21,37 @@ concurrency:
 jobs:
   tests:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.9', '3.10', '3.11', '3.12', '3.13', '3.14']
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Install Poetry
         run: |
-          pipx install poetry
+          pipx install poetry==2.4.3
       - name: Set up Python
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
-          python-version: '3.11'
+          python-version: ${{ matrix.python-version }}
           cache: poetry
           cache-dependency-path: python/poetry.lock
       - name: Set Poetry environment
         run: |
           cd python
-          poetry env use 3.11
+          poetry env use ${{ matrix.python-version }}
       - name: Install dependencies
         run: |
           cd python
+          poetry check --lock
           poetry install --no-root
       - name: Run the automated tests
         run: |
           cd python
+          # Private root mitigates CVE-2025-71176 in the Python 3.9 pytest pin.
+          TMPDIR=$(mktemp -d)
+          export TMPDIR
           poetry run coverage run --branch -m pytest -vv -m "not smoke"
           poetry run coverage report --omit="tests/*"
           poetry run coverage xml --omit="tests/*"
@@ -55,6 +63,7 @@ jobs:
           poetry build
           python3 check_files.py
       - name: Upload coverage to Codecov
+        if: matrix.python-version == '3.11'
         uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7.1.1
         with:
           files: python/coverage.xml
@@ -66,32 +75,42 @@ jobs:
 
   integration-test:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.9', '3.10', '3.11', '3.12', '3.13', '3.14']
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Install Poetry
         run: |
-          pipx install poetry
+          pipx install poetry==2.4.3
       - name: Set up Python
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
-          python-version: '3.11'
+          python-version: ${{ matrix.python-version }}
           cache: poetry
           cache-dependency-path: python/poetry.lock
       - name: Set Poetry environment
         run: |
           cd python
-          poetry env use 3.11
+          poetry env use ${{ matrix.python-version }}
       - name: Build package with real data
         run: |
           mkdir -p python/licenselynx/resources
           python3 scripts/src/load/merge_data.py -o ./python/licenselynx/resources/merged_data.json
           cd python
-          poetry install
+          poetry check --lock
+          poetry install --no-root
+          poetry build
+          poetry run python -m pip install --no-deps dist/*.whl
       - name: Run smoke tests against installed package
         run: |
           cd python
-          poetry run python -m pytest tests/test_smoke_installed.py -v
+          TMPDIR=$(mktemp -d)
+          export TMPDIR
+          # Isolated mode and importlib prevent the checkout shadowing the wheel.
+          poetry run python -I -m pytest --import-mode=importlib tests/test_smoke_installed.py -v
 
   lint:
     runs-on: ubuntu-latest
@@ -100,7 +119,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Install Poetry
         run: |
-          pipx install poetry
+          pipx install poetry==2.4.3
       - name: Set up Python
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:

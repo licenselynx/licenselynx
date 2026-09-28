@@ -27,7 +27,7 @@ class _LicenseMapSingleton(metaclass=_Singleton):
     def __init__(self):
         self._stable_map_str = "stableMap"
         self._risky_map_str = "riskyMap"
-        self._file_path = resources.files("licenselynx.resources").joinpath("merged_data.json")
+        self._file_path = resources.files("licenselynx").joinpath("resources/merged_data.json")
         try:
             with self._file_path.open() as file:
                 data = json.load(file)
