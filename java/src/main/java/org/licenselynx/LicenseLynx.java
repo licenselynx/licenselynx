@@ -89,7 +89,7 @@ public final class LicenseLynx
     static LicenseObject map(@Nonnull final String pLicenseName, final boolean pRisky,
         @CheckForNull final Organization pOrganization, @Nonnull final LicenseMap pLicenseMap)
     {
-        String licenseNameNormalized = QuotesHandler.normalizeQuotes(pLicenseName);
+        String licenseNameNormalized = normalizeLicenseName(pLicenseName);
         LicenseObject licenseObject = pLicenseMap.getCanonicalLicenseMap().get(licenseNameNormalized);
 
         if (licenseObject == null && pRisky) {
@@ -101,6 +101,15 @@ public final class LicenseLynx
         }
 
         return licenseObject;
+    }
+
+
+
+    @CheckForNull
+    static String normalizeLicenseName(@CheckForNull final String pLicenseName)
+    {
+        final String quotesNormalized = QuotesHandler.normalizeQuotes(pLicenseName);
+        return quotesNormalized == null ? null : quotesNormalized.trim();
     }
 
 
