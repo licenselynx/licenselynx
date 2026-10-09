@@ -3,6 +3,8 @@
 
 package licenselynx
 
+import "strings"
+
 //go:generate go run ./internal/codegen -input ../_support/merged_data.build.json -output .
 
 type options struct {
@@ -48,7 +50,7 @@ func mapWithLicenseMaps(licenseName string, maps licenseMaps, opts ...Option) (L
 		}
 	}
 
-	normalizedLicenseName := normalizeQuotes(licenseName)
+	normalizedLicenseName := normalizeLicenseName(licenseName)
 
 	if licenseObject, ok := maps.stable[normalizedLicenseName]; ok {
 		return licenseObject, true
@@ -67,4 +69,8 @@ func mapWithLicenseMaps(licenseName string, maps licenseMaps, opts ...Option) (L
 	}
 
 	return LicenseObject{}, false
+}
+
+func normalizeLicenseName(licenseName string) string {
+	return strings.TrimSpace(normalizeQuotes(licenseName))
 }

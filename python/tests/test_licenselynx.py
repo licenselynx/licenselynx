@@ -98,6 +98,13 @@ def test_map_with_quotes_license(mock_data):
     assert result.src == LicenseSource.SPDX
 
 
+def test_map_with_surrounding_whitespace(mock_data):
+    result = LicenseLynx.map("  \t" + LICENSE_STRING_STABLE + " \r\n")
+
+    assert isinstance(result, LicenseObject)
+    assert result.id == CANONICAL_ID_STABLE
+
+
 def test_map_with_non_existing_license(mock_data):
     result = LicenseLynx.map(LICENSE_STRING_RISKY)
     result2 = LicenseLynx.map(CANONICAL_ID_RISKY, risky=True)
