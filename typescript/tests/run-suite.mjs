@@ -32,7 +32,7 @@ try {
         await fs.writeFile(resourcesPath, await fs.readFile(unitFixturePath, 'utf8'));
         run('npm', ['run', 'build']);
         await fs.rm(path.join(root, 'coverage'), { recursive: true, force: true });
-        run('npx', ['c8', '--reporter=text', '--reporter=lcov', '--report-dir', 'coverage', 'tsx', '--test', 'tests/unit.test.mjs']);
+        run('npx', ['c8', '--reporter=text', '--reporter=lcov', '--report-dir', 'coverage', 'tsx', '--test', 'tests/unit.test.mjs', 'tests/normalization.test.mjs']);
     } else {
         run('python3', ['../scripts/src/load/merge_data.py', '-o', './resources/merged_data.json']);
         run('npm', ['run', 'build']);

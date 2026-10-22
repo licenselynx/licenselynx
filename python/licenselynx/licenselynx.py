@@ -10,6 +10,10 @@ from licenselynx.organization import Organization
 from licenselynx.quotes_handler import _QuotesHandler
 
 
+def _normalize_license_name(license_name: str) -> str:
+    return _QuotesHandler().normalize_quotes(license_name).strip()
+
+
 class LicenseLynx:
 
     @staticmethod
@@ -23,7 +27,7 @@ class LicenseLynx:
         or throws an exception if a runtime error occurs
         """
         try:
-            license_name = _QuotesHandler().normalize_quotes(license_name)
+            license_name = _normalize_license_name(license_name)
             instance = _LicenseMapSingleton()
 
             license_object: Optional[LicenseObject] = instance.merged_data.stable_map.get(license_name)

@@ -41,7 +41,7 @@ interface LicenseRepository {
 export const map = function (licenseName: string, risky: boolean = false, org?: Organization): Readonly<LicenseObject> {
     const licenses = mergedData as LicenseRepository;
 
-    const normalizedLicenseName = normalizeQuotes(licenseName);
+    const normalizedLicenseName = normalizeLicenseName(licenseName);
 
     let licenseData = licenses.stableMap[normalizedLicenseName];
 
@@ -135,3 +135,5 @@ const normalizeQuotes = (input: string, replacement: string = "'"): string => {
         .map(char => isQuoteCharacter(char) ? replacement : char)
         .join("");
 };
+
+const normalizeLicenseName = (input: string): string => input ? normalizeQuotes(input).trim() : input;
