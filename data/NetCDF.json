@@ -17,7 +17,8 @@
             "NetCDF Open License",
             "NetCDF Open Source License",
             "NetCDF Public License",
-            "NetCDF Software License"
+            "NetCDF Software License",
+            "(MIT-style) netCDF C library license"
         ],
         "scancodeLicensedb": [
             "netcdf",

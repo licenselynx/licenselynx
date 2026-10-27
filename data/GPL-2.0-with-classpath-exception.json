@@ -15,7 +15,12 @@
             "GNU General Public License, Version 2 with the Classpath Exception",
             "GNU General Public License, version 2 with the GNU Classpath Exception",
             "GPLv2+CE",
-            "The GNU General Public License (GPL), Version 2, With Classpath Exception"
+            "The GNU General Public License (GPL), Version 2, With Classpath Exception",
+            "GPL2 w/ CPE",
+            "GPLv2 with classpath exception",
+            "GPLv2 license, includes the CLASSPATH exception",
+            "GNU General Public License, version 2, with the Classpath Exception",
+            "GPL v2 with the Classpath exception"
         ],
         "scancodeLicensedb": [
             "GPL 2.0 with classpath exception",

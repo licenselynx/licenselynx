@@ -8,7 +8,8 @@
             "BSD 3-Clause No Nuclear License"
         ],
         "custom": [
-            "BSD 3-Clause No Nuclear Licence"
+            "BSD 3-Clause No Nuclear Licence",
+            "BSD 3-clause License w/nuclear disclaimer"
         ],
         "scancodeLicensedb": [
             "Sun BSD-Style with Nuclear Restrictions",

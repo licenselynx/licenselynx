@@ -24,7 +24,9 @@
             "Licence :: OSI Approved :: GNU General Public Licence v2 or later (GPLv2+)",
             "Licence :: OSI Approved :: GPLv2+",
             "OSI Approved :: GNU General Public Licence v2 or later",
-            "OSI Approved :: GNU General Public Licence v2 or later (GPLv2+)"
+            "OSI Approved :: GNU General Public Licence v2 or later (GPLv2+)",
+            "GNU General Public License (GPL) version 2, or any later version",
+            "GNU General Public License (GPL) version 2.0, or any later version"
         ],
         "scancodeLicensedb": [
             "GNU General Public License 2.0 or later",

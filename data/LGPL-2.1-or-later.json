@@ -12,7 +12,9 @@
             "GNU Lesser General Public Licence 2.1 or later",
             "GNU Lesser General Public Licence v2.1 or later",
             "LGPL 2.1+",
-            "LGPL-2.1+"
+            "LGPL-2.1+",
+            "GNU Lesser General Public License (LGPL), version 2.1 or later",
+            "LGPL, v2.1 or later"
         ],
         "scancodeLicensedb": [
             "GNU Lesser General Public License 2.1 or later",

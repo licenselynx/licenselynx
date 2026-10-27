@@ -48,7 +48,11 @@
             "Licence :: OSI Approved :: GNU Lesser General Public Licence v3 (LGPLv3)",
             "Licence :: OSI Approved :: LGPLv3",
             "OSI Approved :: GNU Lesser General Public Licence v3",
-            "OSI Approved :: GNU Lesser General Public Licence v3 (LGPLv3)"
+            "OSI Approved :: GNU Lesser General Public Licence v3 (LGPLv3)",
+            "LGPL3.0",
+            "GNU Lesser General Public License (LGPL), version 3",
+            "GNU Lesser General Public License (LGPL), version 3.0",
+            "GNU Lesser General Public License version 3.0"
         ],
         "pypi": [
             "LGPLv3 License",

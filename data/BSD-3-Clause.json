@@ -58,8 +58,11 @@
             "The BSD 3-Clause Licence",
             "The BSD 3-Clause License",
             "The BSD 3-Clause License (BSD3)",
-            "The BSD License",
-            "The New BSD License"
+            "The New BSD License",
+            "BSD 3-Clause \"New\" or \"Revised\" License (BSD-3-Clause)",
+            "Eclipse Distribution License (New BSD License)",
+            "Revised BSD",
+            "Eclipse Distribution License v1.0"
         ],
         "osi": [
             "BSD-3",
@@ -70,6 +73,8 @@
             "LicenseRef-scancode-libzip"
         ]
     },
-    "rejected": [],
+    "rejected": [
+        "The BSD License"
+    ],
     "risky": []
 }

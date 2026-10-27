@@ -35,7 +35,10 @@
             "Licence :: OSI Approved :: EPL-1.0",
             "OSI Approved :: Eclipse Public Licence 1.0",
             "OSI Approved :: Eclipse Public Licence 1.0 (EPL-1.0)",
-            "The Eclipse Public License Version 1.0"
+            "The Eclipse Public License Version 1.0",
+            "Eclipse Public License (EPL) 1.0",
+            "Eclipse Public License - v1.0",
+            "Eclipse Public License (EPL), Version 1.0"
         ],
         "osi": [
             "Eclipse Public License, Version 1.0"

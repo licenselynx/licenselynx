@@ -46,7 +46,10 @@
             "Licence :: OSI Approved :: GPLv2",
             "OSI Approved :: GNU General Public Licence v2",
             "OSI Approved :: GNU General Public Licence v2 (GPLv2)",
-            "The GNU General Public License, Version 2"
+            "The GNU General Public License, Version 2",
+            "GNU General Public License (GPL) version 2",
+            "GNU General Public License (GPL) version 2.0",
+            "GNU General Public License v2.0"
         ],
         "pypi": [
             "GPLv2",
