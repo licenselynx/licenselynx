@@ -19,7 +19,9 @@
             "LGPL v2.0 only",
             "LGPL-2.0",
             "LGPL-2.0 (only)",
-            "LGPL-2.0-only License"
+            "LGPL-2.0-only License",
+            "GNU Lesser General Public License (LGPL), version 2.0",
+            "GNU Lesser General Public License v2.0"
         ],
         "osi": [
             "GNU Library General Public License version 2"
@@ -35,6 +37,7 @@
         "Lesser General Public License (LGPL)"
     ],
     "risky": [
+        "GNU Lesser General Public License (LGPL), version 2",
         "GNU Lesser General Public License 2.0",
         "GNU Lesser General Public License v2",
         "GNU Lesser General Public License v2 (LGPLv2)",

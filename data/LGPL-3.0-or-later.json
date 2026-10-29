@@ -22,7 +22,10 @@
             "Licence :: OSI Approved :: GNU Lesser General Public Licence v3 or later (LGPLv3+)",
             "Licence :: OSI Approved :: LGPLv3+",
             "OSI Approved :: GNU Lesser General Public Licence v3 or later",
-            "OSI Approved :: GNU Lesser General Public Licence v3 or later (LGPLv3+)"
+            "OSI Approved :: GNU Lesser General Public Licence v3 or later (LGPLv3+)",
+            "GNU Lesser General Public License (LGPL), version 3 or later",
+            "GNU Lesser General Public License (LGPL), version 3.0 or later",
+            "Lesser General Public License, version 3 or greater"
         ],
         "scancodeLicensedb": [
             "GNU Lesser General Public License 3.0 or later",

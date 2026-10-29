@@ -23,7 +23,14 @@
             "LGPL2.1",
             "LGPLv2.1 (only)",
             "LGPLv2.1 only",
-            "LGPLv2.1-only"
+            "LGPLv2.1-only",
+            "LGPL 2.1",
+            "LGPL v2.1",
+            "LGPL, version 2.1",
+            "GNU Lesser General Public License Version 2.1, February 1999",
+            "GNU Lesser General Public License, Version 2.1",
+            "GNU Library or Lesser General Public License (LGPL) V2.1",
+            "GNU LESSER GENERAL PUBLIC LICENSE 2.1"
         ]
     },
     "rejected": [
