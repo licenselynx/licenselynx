@@ -217,22 +217,32 @@ jobs:
 
   deploy-java:
     name: Publish Java artifact to Maven Central
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: test-and-lint-java
     environment: maven-central
+    concurrency:
+      group: maven-central-${{ github.ref_name }}
+      cancel-in-progress: false
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
           fetch-tags: true
-      - name: Setup Java (runner JDK for Gradle + JReleaser)
+      - name: Setup Java (JDK 8 toolchain + JDK 21 runner)
         uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
         with:
           distribution: 'temurin'
-          java-version: 21
+          # The last JDK is active; JDK 8 compiles the library and buildSrc.
+          java-version: |
+            8.0.504+1
+            21.0.13+9
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@8da46b539cd8fe6ab27ca75128919a18d757604c # v6.4.1
+      - name: Register Java toolchains
+        run: |
+          # User-home properties also apply to the separate buildSrc build.
+          printf '\norg.gradle.java.installations.fromEnv=JAVA_HOME_8_X64,JAVA_HOME_21_X64\n' >> "$GRADLE_USER_HOME/gradle.properties"
       - name: Build merged data
         run: |
           mkdir _support
