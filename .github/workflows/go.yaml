@@ -5,9 +5,11 @@ on:
       - main
     paths:
       - go.mod
+      - go.sum
       - go/**
       - data/**
       - fixtures/**
+      - scripts/src/load/merge_data.py
       - .github/workflows/go.yaml
       - codecov.yml
   pull_request:
@@ -15,9 +17,11 @@ on:
       - main
     paths:
       - go.mod
+      - go.sum
       - go/**
       - data/**
       - fixtures/**
+      - scripts/src/load/merge_data.py
       - .github/workflows/go.yaml
       - codecov.yml
   workflow_dispatch:
