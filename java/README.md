@@ -47,6 +47,12 @@ public class LicenseExample {
 }
 ```
 
+## Matching Behavior
+
+Matching normalizes Unicode quotes, trims surrounding whitespace, and lowercases using `Locale.ROOT`.
+`Expat` and `expat` both return canonical ID `MIT`; canonical values keep their original casing.
+Risky and organization lookups remain opt-in. See [Matching Behavior](https://licenselynx.org/data/matching-behavior/).
+
 ## Organization Licenses
 
 Organizations can register internal/proprietary license identifiers that are kept separate from OSS licenses.

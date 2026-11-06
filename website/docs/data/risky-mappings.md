@@ -2,7 +2,9 @@
 
 ## The Problem
 
-Some license strings are ambiguous. For example, `"gpl3"` clearly points at GPL 3, but does not say whether it means `GPL-3.0-only` or `GPL-3.0-or-later`. Mapping it by default would be a guess, which violates LicenseLynx's [data quality](data-quality.md) principle of deterministic mappings.
+Some license strings omit important version or later-version information. Returning a plausible mapping for
+such a string would be a guess, which violates LicenseLynx's [data quality](data-quality.md) principle of deterministic mappings.
+For a concrete dataset example, `Libpng License v2` is stored only in the risky map.
 
 ## How LicenseLynx Handles This
 
@@ -13,6 +15,8 @@ Instead of discarding ambiguous mappings entirely, LicenseLynx separates them in
 
 This way, the default behavior is always safe, but callers who prefer broader coverage over strict accuracy can opt in.
 For the full lookup order, see [Matching Behavior](matching-behavior.md).
+Both maps use case-insensitive matching. Lowercasing an input does not enable risky mappings, and a stable
+match always takes precedence when both maps contain the same normalized key.
 
 ## When a Mapping Becomes Risky
 
@@ -34,10 +38,10 @@ For family-specific conventions (for example the GNU `-only` risky default), see
     from licenselynx.licenselynx import LicenseLynx
 
     # Stable only (default)
-    result = LicenseLynx.map("gpl3")          # None
+    result = LicenseLynx.map("LIBPNG LICENSE V2")  # None
 
     # With risky mappings
-    result = LicenseLynx.map("gpl3", risky=True)  # LicenseObject(id="GPL-3.0-only", src="spdx")
+    result = LicenseLynx.map("LIBPNG LICENSE V2", risky=True)  # LicenseObject(id="libpng-2.0", src="spdx")
     ```
 
 === "Java"
@@ -46,10 +50,10 @@ For family-specific conventions (for example the GNU `-only` risky default), see
     import org.licenselynx.LicenseLynx;
 
     // Stable only (default)
-    LicenseLynx.map("gpl3");          // null
+    LicenseLynx.map("LIBPNG LICENSE V2");        // null
 
     // With risky mappings
-    LicenseLynx.map("gpl3", true);    // LicenseObject
+    LicenseLynx.map("LIBPNG LICENSE V2", true);  // LicenseObject
     ```
 
 === "TypeScript"
@@ -58,10 +62,10 @@ For family-specific conventions (for example the GNU `-only` risky default), see
     import {map} from "@licenselynx/licenselynx";
 
     // Stable only (default)
-    map('gpl3');                // throws an error
+    map('LIBPNG LICENSE V2');        // throws an error
 
     // With risky mappings
-    map('gpl3', true);          // returns GPL-3.0-only
+    map('LIBPNG LICENSE V2', true);  // returns libpng-2.0
     ```
 
 ## Relationship to Rejected Mappings
