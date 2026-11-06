@@ -7,6 +7,7 @@ from enum import Enum
 import re
 
 import requests
+from src.load.merge_data import normalize_license_name
 from src.logger import setup_logger
 from src.update.canonical_source import CanonicalSource
 
@@ -113,28 +114,41 @@ def check_json_filename(data_dir: str):
             logger.error(f"File '{filename}' is not a JSON file.")
 
 
-def check_unique_aliases(data_dir: str):
+def check_unique_aliases(data_dir: str, include_risky: bool = False):
     all_aliases: dict[str, set[str]] = {}
+    risky_aliases: dict[str, set[str]] = {}
+    risky_scope = all_aliases if include_risky else risky_aliases
     for filename in sorted(os.listdir(data_dir)):
         if filename.endswith(".json"):
             filepath = os.path.join(data_dir, filename)
-            with open(filepath, 'r') as f:
+            with open(filepath, 'r', encoding='utf-8') as f:
                 data = json.load(f)
                 canonical_id = data["canonical"]["id"]
                 add_identifier(canonical_id, all_aliases, filename)
                 aliases = data.get("aliases", [])
                 access_aliases(aliases, all_aliases, filename)
+                for alias in data.get("risky", []):
+                    add_identifier(alias, risky_scope, filename)
 
-    for alias, filenames in all_aliases.items():
+    _check_unique_identifiers(all_aliases, "Alias")
+    _check_unique_identifiers(risky_aliases, "Risky alias")
+
+
+def _check_unique_identifiers(identifiers: dict[str, set[str]], label: str):
+    for alias, filenames in identifiers.items():
         if len(filenames) > 1:
-            logger.error(f"Alias '{alias}' is not unique globally. Affected file: {sorted(filenames)}")
+            logger.error(f"{label} '{alias}' is not unique globally. Affected file: {sorted(filenames)}")
 
 
 def add_identifier(identifier: str, all_aliases: dict, filename: str):
-    if identifier in all_aliases:
-        all_aliases[identifier].add(filename)
+    key = normalize_license_name(identifier)
+    if not key:
+        logger.error(f"Identifier {identifier!r} in {filename!r} is empty after normalization.")
+        return
+    if key in all_aliases:
+        all_aliases[key].add(filename)
     else:
-        all_aliases[identifier] = {filename}
+        all_aliases[key] = {filename}
 
 
 def access_aliases(aliases: dict, all_aliases: dict, filename: str):
@@ -224,12 +238,14 @@ def check_rejected_not_in_valid_fields(data_dir: str):
         if not filename.endswith(JSON_EXTENSION):
             continue
         filepath = os.path.join(data_dir, filename)
-        with open(filepath, 'r') as f:
+        with open(filepath, 'r', encoding='utf-8') as f:
             data = json.load(f)
             aliases = data.get("aliases", [])
             aliases_list = flatten_aliases_dict(aliases)
             rejected = data.get("rejected", [])
-            matched = set(aliases_list) & set(rejected)
+            matched = {normalize_license_name(alias) for alias in aliases_list} & {
+                normalize_license_name(alias) for alias in rejected
+            }
             if matched:
                 logger.error(f"rejected aliases {matched} in '{filename}' is in aliases list")
 
@@ -403,12 +419,12 @@ def check_valid_alias_keys(data_dir: str):
                         logger.error(f"File '{filename}' has invalid alias key '{key}'. Valid keys are {valid_alias_keys}")
 
 
-def validate_license_data(data_dir: str):
+def validate_license_data(data_dir: str, organization: bool = False):
     check_rejected_field_exists(data_dir)
     check_rejected_not_in_valid_fields(data_dir)
 
     check_json_filename(data_dir)
-    check_unique_aliases(data_dir)
+    check_unique_aliases(data_dir, include_risky=organization)
     check_valid_alias_keys(data_dir)
     check_length_and_characters(data_dir)
 
@@ -455,26 +471,27 @@ def validate_oss_licenses(data_dir: str):
 
 def collect_identifiers_from_dir(data_dir: str) -> set[str]:
     """
-    Collects all canonical IDs and aliases from JSON files in the given directory.
-    Returns a set of all identifiers (canonical IDs + flattened aliases).
+    Collects normalized canonical IDs, aliases, and risky entries from JSON files.
+    Returns lookup keys suitable for checking OSS/organization overlap.
     """
     identifiers: set[str] = set()
     for filename in os.listdir(data_dir):
         if not filename.endswith(JSON_EXTENSION):
             continue
         filepath = os.path.join(data_dir, filename)
-        with open(filepath, 'r') as f:
+        with open(filepath, 'r', encoding='utf-8') as f:
             data = json.load(f)
             canonical_id = data["canonical"]["id"]
-            identifiers.add(canonical_id)
+            identifiers.add(normalize_license_name(canonical_id))
             aliases = data.get("aliases", {})
-            identifiers.update(flatten_aliases_dict(aliases))
+            identifiers.update(normalize_license_name(alias) for alias in flatten_aliases_dict(aliases))
+            identifiers.update(normalize_license_name(alias) for alias in data.get("risky", []))
     return identifiers
 
 
 def check_no_overlap_between_oss_and_orgs(oss_dir: str, orgs_dir: str):
     """
-    Validates that no alias or canonical identifier from any organization
+    Validates that no normalized lookup key from any organization
     subfolder is present in the OSS license files, and vice versa.
     Within different orgs, the same aliases and canonical names can occur,
     but not between orgs and OSS license data.
@@ -527,7 +544,7 @@ def validate_orgs_licenses(data_dir: str):
     validate_unique_orgs(data_dir)
     for org_dir in os.listdir(data_dir):
         org_dir_path = os.path.join(data_dir, org_dir)
-        validate_license_data(org_dir_path)
+        validate_license_data(org_dir_path, organization=True)
         validate_equal_source_and_org_names(org_dir, org_dir_path)
         validate_org_names_not_forbidden(org_dir)
 
