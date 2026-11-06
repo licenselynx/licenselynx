@@ -41,6 +41,9 @@ test('packed package installs and exposes the library', async () => {
         const result = map('0BSD');
 
         assert.equal(result.id, '0BSD');
+        assert.deepEqual(map('eXpAt'), { id: 'MIT', src: 'spdx' });
+        assert.throws(() => map('MİT'));
+        assert.deepEqual(map('LICENCE LIBRE DU QUÉBEC – PERMISSIVE VERSION 1.1'), { id: 'LiLiQ-P-1.1', src: 'spdx' });
     } finally {
         await fs.rm(directory, { recursive: true, force: true });
     }

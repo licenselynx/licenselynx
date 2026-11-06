@@ -31,7 +31,8 @@ interface LicenseRepository {
 
 
 /**
- * Maps the given license name to its corresponding data.
+ * Maps the given license name using locale-independent Unicode lowercase.
+ * Canonical identifiers and sources retain their original casing.
  *
  * @param licenseName the name of the license to map
  * @param risky enable risky mappings (default: `false`)
@@ -136,4 +137,4 @@ const normalizeQuotes = (input: string, replacement: string = "'"): string => {
         .join("");
 };
 
-const normalizeLicenseName = (input: string): string => input ? normalizeQuotes(input).trim() : input;
+const normalizeLicenseName = (input: string): string => input ? normalizeQuotes(input).trim().toLowerCase() : input;

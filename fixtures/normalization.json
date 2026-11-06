@@ -1,5 +1,6 @@
 {
   "description": "Spec for license-name normalization",
+  "caseMapping": "locale-independent Unicode full lowercase, not case folding",
   "quoteReplacement": "'",
   "quoteCharacters": [
     "\u2018",
@@ -20,38 +21,69 @@
   "trimCharacters": [" ", "\t", "\n", "\r", "\u000b", "\u000c"],
   "testCases": [
     { "name": "empty string", "input": "", "expected": "" },
-    { "name": "unchanged", "input": "Apache-2.0", "expected": "Apache-2.0" },
-    { "name": "trims spaces", "input": "  MIT  ", "expected": "MIT" },
+    { "name": "already lowercase", "input": "apache-2.0", "expected": "apache-2.0" },
+    { "name": "lowercases mixed case", "input": "Apache-2.0", "expected": "apache-2.0" },
+    { "name": "trims spaces", "input": "  MIT  ", "expected": "mit" },
     {
       "name": "trims tab, CR and LF",
       "input": "\tMIT License\r\n",
-      "expected": "MIT License"
+      "expected": "mit license"
     },
     { "name": "whitespace only", "input": " \t\n ", "expected": "" },
     {
       "name": "keeps internal whitespace",
       "input": "Apache   License\t2.0",
-      "expected": "Apache   License\t2.0"
+      "expected": "apache   license\t2.0"
     },
     {
       "name": "keeps ascii quotes",
       "input": "\"MIT\" 'BSD'",
-      "expected": "\"MIT\" 'BSD'"
+      "expected": "\"mit\" 'bsd'"
     },
     {
       "name": "replaces curly quotes",
       "input": "\u201cMIT\u201d and \u2018BSD\u2019",
-      "expected": "'MIT' and 'BSD'"
+      "expected": "'mit' and 'bsd'"
     },
     {
       "name": "quotes and trim combined",
       "input": "  \u2018MIT\u2019 \n",
-      "expected": "'MIT'"
+      "expected": "'mit'"
     },
     {
       "name": "does not trim inside quotes",
       "input": "\u201c MIT \u201d",
-      "expected": "' MIT '"
-    }
+      "expected": "' mit '"
+    },
+    { "name": "accented letters", "input": "LICENÇA PÚBLICA QUÉBEC ZÉLUS", "expected": "licença pública québec zélus" },
+    { "name": "dotted and dotless I", "input": "Iİıi", "expected": "ii\u0307ıi" },
+    { "name": "Greek final sigma", "input": "ΟΣ", "expected": "ος" },
+    { "name": "Greek non-final sigma", "input": "ΟΣΑ", "expected": "οσα" },
+    { "name": "isolated Greek sigma", "input": "Σ", "expected": "σ" },
+    { "name": "lowercase sigma forms stay distinct", "input": "σ ς", "expected": "σ ς" },
+    { "name": "sharp S is not folded to ss", "input": "STRAẞE Straße SS", "expected": "straße straße ss" },
+    { "name": "combining accents are not composed", "input": "E\u0301", "expected": "e\u0301" },
+    { "name": "fullwidth letters are not converted to ASCII", "input": "ＭＩＴ", "expected": "ｍｉｔ" },
+    { "name": "supplementary letters", "input": "\ud801\udc00", "expected": "\ud801\udc28" }
+  ],
+  "mappingCases": [
+    { "name": "lowercase canonical", "input": "mit", "id": "MIT", "src": "spdx" },
+    { "name": "mixed-case canonical", "input": "mIt", "id": "MIT", "src": "spdx" },
+    { "name": "dotted I is not ASCII I", "input": "MİT", "id": null },
+    { "name": "original Expat alias", "input": "Expat", "id": "MIT", "src": "spdx" },
+    { "name": "lowercase Expat alias", "input": "expat", "id": "MIT", "src": "spdx" },
+    { "name": "mixed-case Expat alias", "input": "eXpAt", "id": "MIT", "src": "spdx" },
+    { "name": "Debian BSD 2 clause", "input": "BSD-2-clause", "id": "BSD-2-Clause", "src": "spdx" },
+    { "name": "Debian BSD 3 clause", "input": "bSd-3-CLAUSE", "id": "BSD-3-Clause", "src": "spdx" },
+    { "name": "Debian BSD 4 clause", "input": "bsd-4-clause", "id": "BSD-4-Clause", "src": "spdx" },
+    { "name": "quotes, trim, and lowercase", "input": " \t“mIt”\r\n", "id": "MIT", "src": "spdx" },
+    { "name": "accented alias", "input": "LICENCE LIBRE DU QUÉBEC – PERMISSIVE VERSION 1.1", "id": "LiLiQ-P-1.1", "src": "spdx" },
+    { "name": "risky remains disabled", "input": "LIBPNG LICENSE V2", "id": null },
+    { "name": "mixed-case risky alias", "input": "LIBPNG LICENSE V2", "risky": true, "id": "libpng-2.0", "src": "spdx" },
+    { "name": "organization remains disabled", "input": "SIEMENS INNER SOURCE LICENSE V1.5", "id": null },
+    { "name": "mixed-case organization alias", "input": "SIEMENS INNER SOURCE LICENSE V1.5", "org": "siemens", "id": "SISL-1.5", "src": "siemens" },
+    { "name": "risky does not enable organization", "input": "SIEMENS INNER SOURCE LICENSE V1.5", "risky": true, "id": null },
+    { "name": "organization does not enable risky", "input": "LIBPNG LICENSE V2", "org": "siemens", "id": null },
+    { "name": "stable wins over risky casing variant", "input": "Nokia Qt LGPL Exception 1.1", "risky": true, "id": "Nokia-Qt-exception-1.1", "src": "spdx" }
   ]
 }

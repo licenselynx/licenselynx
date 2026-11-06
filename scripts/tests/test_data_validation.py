@@ -900,7 +900,8 @@ def test_collect_identifiers_from_dir():
 
     data = {
         "canonical": {"id": "MIT", "src": "spdx"},
-        "aliases": {"spdx": ["MIT License"], "custom": ["mit"]}
+        "aliases": {"spdx": ["MIT License"], "custom": ["mit"]},
+        "risky": ["MIT RISKY"],
     }
 
     with open(os.path.join("test_data", "MIT.json"), 'w') as f:
@@ -908,7 +909,7 @@ def test_collect_identifiers_from_dir():
 
     result = collect_identifiers_from_dir("test_data")
 
-    assert result == {"MIT", "MIT License", "mit"}
+    assert result == {"mit", "mit license", "mit risky"}
 
 
 def test_check_no_overlap_between_oss_and_orgs_success():
@@ -958,7 +959,7 @@ def test_check_no_overlap_between_oss_and_orgs_detects_org_canonical_in_oss():
 
     assert mock_logger.error.call_count == 1
     mock_logger.error.assert_called_with(
-        "Identifier 'SharedId' is present in both OSS and organization license data."
+        "Identifier 'sharedid' is present in both OSS and organization license data."
     )
 
 
@@ -985,7 +986,7 @@ def test_check_no_overlap_between_oss_and_orgs_detects_org_alias_in_oss_and_oss_
 
     assert mock_logger.error.call_count == 2
     mock_logger.error.assert_any_call(
-        "Identifier 'MIT' is present in both OSS and organization license data."
+        "Identifier 'mit' is present in both OSS and organization license data."
     )
     mock_logger.error.assert_any_call(
         "Identifier 'shared-org-alias' is present in both OSS and organization license data."
@@ -1053,11 +1054,140 @@ def test_check_no_overlap_between_oss_and_orgs_multiple_orgs_with_overlap():
 
     assert mock_logger.error.call_count == 2
     mock_logger.error.assert_any_call(
-        "Identifier 'MIT' is present in both OSS and organization license data."
+        "Identifier 'mit' is present in both OSS and organization license data."
     )
     mock_logger.error.assert_any_call(
         "Identifier 'overlap-from-org2' is present in both OSS and organization license data."
     )
+
+
+@pytest.mark.parametrize("first, second", [
+    ("Expat", "expat"), ("LICENÇA", "licença"), ("İ", "i\u0307"), ("ΟΣ", "ος"),
+    ("‘Example’", "'example'"), ("  Example  ", "example"),
+])
+def test_unique_aliases_checks_normalized_keys(tmp_path, first, second):
+    for canonical_id, alias in [("License-A", first), ("License-B", second)]:
+        data = {"canonical": {"id": canonical_id, "src": "spdx"}, "aliases": {"custom": [alias]}}
+        (tmp_path / f"{canonical_id}.json").write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_unique_aliases(str(tmp_path))
+    mock_logger.error.assert_called_once()
+    assert data_validation.normalize_license_name(first) in mock_logger.error.call_args[0][0]
+
+
+def test_unique_aliases_allows_case_variants_of_same_license(tmp_path):
+    data = {"canonical": {"id": "MIT", "src": "spdx"}, "aliases": {"custom": ["mit", "MiT"]}}
+    (tmp_path / "MIT.json").write_text(json.dumps(data), encoding="utf-8")
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_unique_aliases(str(tmp_path))
+    mock_logger.error.assert_not_called()
+
+
+def test_unique_aliases_checks_risky_keys_separately(tmp_path):
+    for canonical_id, alias in [("License-A", "Shared"), ("License-B", "SHARED")]:
+        data = {"canonical": {"id": canonical_id, "src": "spdx"}, "aliases": {}, "risky": [alias]}
+        (tmp_path / f"{canonical_id}.json").write_text(json.dumps(data), encoding="utf-8")
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_unique_aliases(str(tmp_path))
+    mock_logger.error.assert_called_once_with(
+        "Risky alias 'shared' is not unique globally. Affected file: ['License-A.json', 'License-B.json']"
+    )
+
+
+def test_unique_aliases_keeps_oss_scopes_separate_but_checks_combined_org_map(tmp_path):
+    stable = {"canonical": {"id": "Org-A", "src": "acme"}, "aliases": {"custom": ["Shared"]}}
+    risky = {"canonical": {"id": "Org-B", "src": "acme"}, "aliases": {}, "risky": ["SHARED"]}
+    (tmp_path / "Org-A.json").write_text(json.dumps(stable), encoding="utf-8")
+    (tmp_path / "Org-B.json").write_text(json.dumps(risky), encoding="utf-8")
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_unique_aliases(str(tmp_path))
+        mock_logger.error.assert_not_called()
+        check_unique_aliases(str(tmp_path), include_risky=True)
+    mock_logger.error.assert_called_once_with(
+        "Alias 'shared' is not unique globally. Affected file: ['Org-A.json', 'Org-B.json']"
+    )
+
+
+def test_oss_org_overlap_checks_normalized_risky_keys(tmp_path):
+    oss_dir = tmp_path / "oss"
+    orgs_dir = tmp_path / "orgs"
+    org_dir = orgs_dir / "acme"
+    oss_dir.mkdir()
+    org_dir.mkdir(parents=True)
+    oss = {"canonical": {"id": "MIT", "src": "spdx"}, "aliases": {}, "risky": ["LICENÇA"]}
+    org = {"canonical": {"id": "Org-A", "src": "acme"}, "aliases": {"custom": ["licença"]}}
+    (oss_dir / "MIT.json").write_text(json.dumps(oss), encoding="utf-8")
+    (org_dir / "Org-A.json").write_text(json.dumps(org), encoding="utf-8")
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_no_overlap_between_oss_and_orgs(str(oss_dir), str(orgs_dir))
+    mock_logger.error.assert_called_once_with(
+        "Identifier 'licença' is present in both OSS and organization license data."
+    )
+
+
+@pytest.mark.parametrize("alias, rejected", [
+    ("Allowed Name", "allowed name"),
+    ("  Allowed Name  ", "ALLOWED NAME"),
+    ("‘Allowed Name’", "'allowed name'"),
+    ("LICENÇA", "licença"),
+    ("İ", "i\u0307"),
+    ("ΟΣ", "ος"),
+])
+def test_rejected_aliases_are_checked_after_normalization(tmp_path, alias, rejected):
+    data = {
+        "canonical": {"id": "Example-License", "src": "custom"},
+        "aliases": {"custom": [alias]},
+        "rejected": [rejected],
+        "risky": [],
+    }
+    (tmp_path / "Example-License.json").write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        validate_license_data(str(tmp_path))
+    mock_logger.error.assert_called_once()
+    assert data_validation.normalize_license_name(rejected) in mock_logger.error.call_args[0][0]
+
+
+@pytest.mark.parametrize("field", ["canonical", "alias", "risky"])
+@pytest.mark.parametrize("identifier", ["", " \t\n ", "\u00a0"])
+def test_validation_rejects_empty_normalized_lookup_keys(tmp_path, field, identifier):
+    data = {
+        "canonical": {"id": "Example-License", "src": "custom"},
+        "aliases": {"custom": ["Allowed Name"]},
+        "rejected": [],
+        "risky": [],
+    }
+    if field == "canonical":
+        data["canonical"]["id"] = identifier
+    elif field == "alias":
+        data["aliases"]["custom"] = [identifier]
+    else:
+        data["risky"] = [identifier]
+    (tmp_path / "Example-License.json").write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        check_unique_aliases(str(tmp_path))
+    mock_logger.error.assert_called_once_with(
+        f"Identifier {identifier!r} in 'Example-License.json' is empty after normalization."
+    )
+
+
+@pytest.mark.parametrize("field", ["alias", "risky"])
+@pytest.mark.parametrize("organization", [False, True])
+def test_full_validation_rejects_blank_lookup_entries(tmp_path, field, organization):
+    data = {
+        "canonical": {"id": "Example-License", "src": "custom"},
+        "aliases": {"custom": ["Allowed Name"]},
+        "rejected": [],
+        "risky": [],
+    }
+    if field == "alias":
+        data["aliases"]["custom"] = [" \t\n "]
+    else:
+        data["risky"] = [" \t\n "]
+    (tmp_path / "Example-License.json").write_text(json.dumps(data), encoding="utf-8")
+    with mock.patch('src.validate.data_validation.logger', mock_logger):
+        validate_license_data(str(tmp_path), organization=organization)
+    mock_logger.error.assert_called_once()
+    assert "empty after normalization" in mock_logger.error.call_args[0][0]
 
 
 if __name__ == "__main__":

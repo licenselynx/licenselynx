@@ -10,6 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -53,6 +54,33 @@ public class LicenseNameNormalizationTest
 
 
     @TestFactory
+    public List<DynamicTest> mappingCases() throws IOException
+    {
+        List<DynamicTest> tests = new ArrayList<>();
+        for (JsonElement element : loadSpec().getAsJsonArray("mappingCases"))
+        {
+            JsonObject testCase = element.getAsJsonObject();
+            String input = testCase.get("input").getAsString();
+            boolean risky = testCase.has("risky") && testCase.get("risky").getAsBoolean();
+            Organization org = testCase.has("org") ? Organization.fromValue(testCase.get("org").getAsString()) : null;
+            tests.add(DynamicTest.dynamicTest(testCase.get("name").getAsString(), () -> {
+                LicenseObject result = LicenseLynx.map(input, risky, org);
+                if (testCase.get("id").isJsonNull()) {
+                    Assertions.assertNull(result);
+                }
+                else {
+                    Assertions.assertNotNull(result);
+                    Assertions.assertEquals(testCase.get("id").getAsString(), result.getId());
+                    Assertions.assertEquals(testCase.get("src").getAsString(), result.getCanonicalSource().getValue());
+                }
+            }));
+        }
+        return tests;
+    }
+
+
+
+    @TestFactory
     public List<DynamicTest> testEveryQuoteCharacter() throws IOException
     {
         JsonObject spec = loadSpec();
@@ -82,6 +110,22 @@ public class LicenseNameNormalizationTest
                 () -> Assertions.assertEquals("a", LicenseLynx.normalizeLicenseName(trim + "a" + trim))));
         }
         return tests;
+    }
+
+
+
+    @Test
+    public void testLowercaseIsIndependentOfDefaultLocale()
+    {
+        Locale previous = Locale.getDefault();
+        try {
+            Locale.setDefault(new Locale("tr", "TR"));
+            Assertions.assertEquals("mit", LicenseLynx.normalizeLicenseName("MIT"));
+            Assertions.assertEquals("i̇", LicenseLynx.normalizeLicenseName("İ")); // i + combining dot
+        }
+        finally {
+            Locale.setDefault(previous);
+        }
     }
 
 
