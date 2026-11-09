@@ -107,7 +107,7 @@ jobs:
           poetry check --lock
           poetry install --no-root
           poetry build
-          poetry run python -m pip install --no-deps dist/*.whl
+          poetry run python -m pip install --force-reinstall --no-deps dist/*.whl
       - name: Run smoke tests against installed package
         run: |
           cd python
