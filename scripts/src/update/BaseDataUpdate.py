@@ -10,6 +10,7 @@ from typing import Optional
 
 import requests
 
+from src.load.merge_data import normalize_license_name
 from src.logger import setup_logger
 
 
@@ -105,13 +106,16 @@ class BaseDataUpdate:
         self.add_alias_list_to_existing_mapping(aliases_list, alias_key, canonical_id, data, existing_aliases, normalized_aliases,
                                                 rejected_aliases, risky_aliases)
 
-        custom_aliases = self._create_custom_list_for_quotes(normalized_aliases)
-        custom_aliases.extend(self._create_custom_list_for_license_spellings(normalized_aliases))
+        excluded_keys = {normalize_license_name(alias) for alias in risky_aliases + rejected_aliases}
+        # Do not derive stable aliases from risky or rejected source names.
+        custom_alias_sources = [alias for alias in normalized_aliases if normalize_license_name(alias) not in excluded_keys]
+        custom_aliases = self._create_custom_list_for_quotes(custom_alias_sources)
+        custom_aliases.extend(self._create_custom_list_for_license_spellings(custom_alias_sources))
         all_aliases = set(itertools.chain.from_iterable(existing_aliases.values()))
         all_aliases.add(data["canonical"]["id"])
 
         for alias in custom_aliases:
-            if alias not in all_aliases:
+            if normalize_license_name(alias) not in excluded_keys and alias not in all_aliases:
                 existing_aliases["custom"].append(alias)
                 all_aliases.add(alias)
 
@@ -125,11 +129,14 @@ class BaseDataUpdate:
     def add_alias_list_to_existing_mapping(self, aliases_list: list[str], alias_key: str, canonical_id: str, data: dict,
                                            existing_aliases: dict[str, list[str]], normalized_aliases: list[str],
                                            rejected_aliases: list[str], risky_aliases: list[str]) -> None:
+        risky_keys = {normalize_license_name(alias) for alias in risky_aliases}
+        rejected_keys = {normalize_license_name(alias) for alias in rejected_aliases}
         for alias in normalized_aliases:
-            if alias in risky_aliases:
+            lookup_key = normalize_license_name(alias)
+            if lookup_key in risky_keys:
                 self._LOGGER.debug(f"For {canonical_id} the alias '{alias}' is already in risky list")
                 continue
-            if alias in rejected_aliases:
+            if lookup_key in rejected_keys:
                 self._LOGGER.debug(f"For {canonical_id} the alias '{alias}' is already in rejected list")
                 continue
             if alias not in aliases_list:
