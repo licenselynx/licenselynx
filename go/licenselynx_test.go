@@ -11,15 +11,15 @@ func TestMapWithLicenseMaps(t *testing.T) {
 	org := Organization("test-org")
 	testMaps := licenseMaps{
 		stable: map[string]LicenseObject{
-			"MIT":         {ID: "MIT", Src: string(SourceSPDX)},
+			"mit":         {ID: "MIT", Src: string(SourceSPDX)},
 			"'quoted-id'": {ID: "QUOTED", Src: string(SourceCustom)},
 		},
 		risky: map[string]LicenseObject{
-			"LGPLv3": {ID: "LGPL-3.0-only", Src: string(SourceSPDX)},
+			"lgplv3": {ID: "LGPL-3.0-only", Src: string(SourceSPDX)},
 		},
 		organizations: map[Organization]map[string]LicenseObject{
 			org: {
-				"ORG-LIC": {ID: "ORG-LIC", Src: string(org)},
+				"org-lic": {ID: "ORG-LIC", Src: string(org)},
 			},
 		},
 	}
@@ -38,6 +38,12 @@ func TestMapWithLicenseMaps(t *testing.T) {
 			wantOK:      true,
 		},
 		{
+			name:        "mixed-case stable hit",
+			licenseName: "mIt",
+			want:        LicenseObject{ID: "MIT", Src: string(SourceSPDX)},
+			wantOK:      true,
+		},
+		{
 			name:        "stable hit with risky enabled",
 			licenseName: "MIT",
 			opts:        []Option{WithRisky()},
@@ -52,10 +58,22 @@ func TestMapWithLicenseMaps(t *testing.T) {
 			wantOK:      true,
 		},
 		{
+			name:        "mixed-case risky hit",
+			licenseName: "lGpLv3",
+			opts:        []Option{WithRisky()},
+			want:        LicenseObject{ID: "LGPL-3.0-only", Src: string(SourceSPDX)},
+			wantOK:      true,
+		},
+		{
 			name:        "risky miss when disabled",
 			licenseName: "LGPLv3",
 			want:        LicenseObject{},
 			wantOK:      false,
+		},
+		{
+			name:        "organization option does not enable risky",
+			licenseName: "lgplV3",
+			opts:        []Option{WithOrganization(org)},
 		},
 		{
 			name:        "organization hit when enabled",
@@ -65,10 +83,22 @@ func TestMapWithLicenseMaps(t *testing.T) {
 			wantOK:      true,
 		},
 		{
+			name:        "mixed-case organization hit",
+			licenseName: "oRg-LiC",
+			opts:        []Option{WithOrganization(org)},
+			want:        LicenseObject{ID: "ORG-LIC", Src: string(org)},
+			wantOK:      true,
+		},
+		{
 			name:        "organization miss without option",
 			licenseName: "ORG-LIC",
 			want:        LicenseObject{},
 			wantOK:      false,
+		},
+		{
+			name:        "risky option does not enable organization",
+			licenseName: "org-LIC",
+			opts:        []Option{WithRisky()},
 		},
 		{
 			name:        "organization miss with different org",

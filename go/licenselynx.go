@@ -3,7 +3,12 @@
 
 package licenselynx
 
-import "strings"
+import (
+	"strings"
+
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
+)
 
 //go:generate go run ./internal/codegen -input ../_support/merged_data.build.json -output .
 
@@ -30,6 +35,8 @@ func WithOrganization(org Organization) Option {
 }
 
 // Map resolves a license name or identifier to its canonical representation.
+// License names are normalized using quotes, surrounding whitespace trimming,
+// and locale-independent Unicode lowercase. Canonical values retain their casing.
 // The lookup is performed in the following order:
 // 1. Stable mappings (always)
 // 2. Risky mappings (if WithRisky() is provided)
@@ -72,5 +79,5 @@ func mapWithLicenseMaps(licenseName string, maps licenseMaps, opts ...Option) (L
 }
 
 func normalizeLicenseName(licenseName string) string {
-	return strings.TrimSpace(normalizeQuotes(licenseName))
+	return cases.Lower(language.Und).String(strings.TrimSpace(normalizeQuotes(licenseName)))
 }

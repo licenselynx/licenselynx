@@ -9,6 +9,7 @@ on:
       - website/**
       - '!website/badges/**'
       - data/**
+      - scripts/src/load/merge_data.py
 permissions:
   contents: read
   pages: write
