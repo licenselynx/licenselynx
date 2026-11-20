@@ -4,8 +4,11 @@ The `map` method is the core of every LicenseLynx library. It takes a license na
 
 For the full method signatures, parameters, and error handling, see the [API Reference](api-reference.md).
 
+Matching normalizes quotes, trims whitespace, and applies locale-independent Unicode lowercase.
+`Expat`, `expat`, and `eXpAt` all resolve to `MIT`, preserving canonical `id` and `src` casing.
+
 If no match is found, Python returns `None`, Java returns `null`, and TypeScript rejects the `Promise`.
-For quote normalization and lookup order, see [Matching Behavior](data/matching-behavior.md).
+For Unicode details and lookup order, see [Matching Behavior](data/matching-behavior.md).
 
 ## Python
 
@@ -69,25 +72,25 @@ All languages support an optional `risky` parameter. When enabled, the lookup fa
 === "Python"
 
     ```python
-    result = LicenseLynx.map("gpl3", risky=True)
+    result = LicenseLynx.map("LIBPNG LICENSE V2", risky=True)
     ```
 
 === "Java"
 
     ```java
-    LicenseObject result = LicenseLynx.map("gpl3", true);
+    LicenseObject result = LicenseLynx.map("LIBPNG LICENSE V2", true);
     ```
 
 === "TypeScript"
 
     ```typescript
-    const result = map('gpl3', true);
+    const result = map('LIBPNG LICENSE V2', true);
     ```
 
 === "Go"
 
     ```go
-    riskyLicenseObject, ok := licenselynx.Map("License :: LGPLv3", licenselynx.WithRisky())
+    riskyLicenseObject, ok := licenselynx.Map("LIBPNG LICENSE V2", licenselynx.WithRisky())
 	if ok {
 		fmt.Println(riskyLicenseObject.ID)
 	}
@@ -129,4 +132,5 @@ All languages support an optional `org` parameter for looking up organization-sp
 ## Data Mapping
 
 The full license mapping is also available as a JSON file at [`/json/latest/mapping.json`](https://licenselynx.org/json/latest/mapping.json).
+Its lookup keys are normalized lowercase strings; direct JSON consumers must normalize input before indexing a map.
 See the [Data Specification](data/data-specification.md) for the format.

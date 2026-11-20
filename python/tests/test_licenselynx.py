@@ -45,14 +45,23 @@ def mock_organization(monkeypatch):
 @pytest.fixture(autouse=True)
 def mock_data():
     """Mocks the merged_data.json file for testing."""
-    mock_data = {"stableMap": {LICENSE_STRING_STABLE: {"id": CANONICAL_ID_STABLE, "src": LicenseSource.SPDX.value},
-                               LICENSE_STRING_WITH_NORMALIZED_QUOTES: {"id": CANONICAL_ID_STABLE,
-                                                                       "src": LicenseSource.SPDX.value},
-                               LICENSE_STRING_SCANCODE: {"id": CANONICAL_ID_STABLE, "src": LicenseSource.SCANCODE_LICENSEDB.value},
-                               },
-                 "riskyMap": {LICENSE_STRING_RISKY: {"id": CANONICAL_ID_RISKY, "src": LicenseSource.CUSTOM.value}},
-                 TestOrganization.TEST_ORG: {LICENSE_STRING_ORG: {"id": CANONICAL_ID_ORG,
-                                                                  "src": TestOrganization.TEST_ORG.value}}}
+    mock_data = {
+        "stableMap": {
+            LICENSE_STRING_STABLE.lower(): {"id": CANONICAL_ID_STABLE, "src": LicenseSource.SPDX.value},
+            LICENSE_STRING_WITH_NORMALIZED_QUOTES.lower(): {"id": CANONICAL_ID_STABLE, "src": LicenseSource.SPDX.value},
+            LICENSE_STRING_SCANCODE.lower(): {"id": CANONICAL_ID_STABLE, "src": LicenseSource.SCANCODE_LICENSEDB.value},
+            "licença pública": {"id": CANONICAL_ID_STABLE, "src": LicenseSource.SPDX.value},
+            "shared": {"id": CANONICAL_ID_STABLE, "src": LicenseSource.SPDX.value},
+        },
+        "riskyMap": {
+            LICENSE_STRING_RISKY.lower(): {"id": CANONICAL_ID_RISKY, "src": LicenseSource.CUSTOM.value},
+            "shared": {"id": CANONICAL_ID_RISKY, "src": LicenseSource.CUSTOM.value},
+        },
+        TestOrganization.TEST_ORG: {
+            LICENSE_STRING_ORG.lower(): {"id": CANONICAL_ID_ORG, "src": TestOrganization.TEST_ORG.value},
+            "shared": {"id": CANONICAL_ID_ORG, "src": TestOrganization.TEST_ORG.value},
+        },
+    }
     mock_file = MagicMock()
     mock_file.__enter__.return_value = mock_open(read_data=json.dumps(mock_data)).return_value
 
@@ -67,11 +76,11 @@ def test_license_map_singleton(mock_data):
     instance2 = _LicenseMapSingleton()
 
     assert instance == instance2
-    assert instance.merged_data.risky_map.get(LICENSE_STRING_RISKY).id == CANONICAL_ID_RISKY
-    assert instance.merged_data.risky_map.get(LICENSE_STRING_RISKY).src == LicenseSource.CUSTOM
+    assert instance.merged_data.risky_map.get(LICENSE_STRING_RISKY.lower()).id == CANONICAL_ID_RISKY
+    assert instance.merged_data.risky_map.get(LICENSE_STRING_RISKY.lower()).src == LicenseSource.CUSTOM
 
-    assert instance.merged_data.stable_map.get(LICENSE_STRING_STABLE).id == CANONICAL_ID_STABLE
-    assert instance.merged_data.stable_map.get(LICENSE_STRING_STABLE).src == LicenseSource.SPDX
+    assert instance.merged_data.stable_map.get(LICENSE_STRING_STABLE.lower()).id == CANONICAL_ID_STABLE
+    assert instance.merged_data.stable_map.get(LICENSE_STRING_STABLE.lower()).src == LicenseSource.SPDX
 
 
 def test_map_with_existing_license(mock_data):
@@ -103,6 +112,34 @@ def test_map_with_surrounding_whitespace(mock_data):
 
     assert isinstance(result, LicenseObject)
     assert result.id == CANONICAL_ID_STABLE
+
+
+@pytest.mark.parametrize("license_name", ["mit license", "MIT LICENSE", "mIt LiCeNsE", "LICENÇA PÚBLICA"])
+def test_map_is_case_insensitive(license_name):
+    result = LicenseLynx.map(license_name)
+    assert result is not None
+    assert result.id == CANONICAL_ID_STABLE
+    assert result.src == LicenseSource.SPDX
+
+
+def test_case_insensitive_lookup_preserves_scope_boundaries():
+    assert LicenseLynx.map("GPL LICENSE") is None
+    assert LicenseLynx.map("GPL LICENSE", org=TestOrganization.TEST_ORG) is None
+    assert LicenseLynx.map("TESTORG") is None
+    assert LicenseLynx.map("TESTORG", risky=True) is None
+    risky = LicenseLynx.map("GPL LICENSE", risky=True)
+    org = LicenseLynx.map("TESTORG", org=TestOrganization.TEST_ORG)
+    assert risky is not None
+    assert org is not None
+    assert risky.id == CANONICAL_ID_RISKY
+    assert org.id == CANONICAL_ID_ORG
+
+
+def test_stable_mapping_wins_over_risky_and_organization():
+    result = LicenseLynx.map("SHARED", risky=True, org=TestOrganization.TEST_ORG)
+    assert result is not None
+    assert result.id == CANONICAL_ID_STABLE
+    assert result.src == LicenseSource.SPDX
 
 
 def test_map_with_non_existing_license(mock_data):

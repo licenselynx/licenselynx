@@ -78,33 +78,30 @@ The build pipeline merges all individual files into a single `merged_data.json` 
 ```json
 {
     "stableMap": {
-        "MIT": {
-            "id": "MIT",
-            "src": "spdx"
-        },
-        "MIT License": {
-            "id": "MIT",
-            "src": "spdx"
-        },
         "mit": {
             "id": "MIT",
-            "src": "scancode-licensedb"
-        },
-        ...
-    },
-    "riskyMap": {
-        "gpl3": {
-            "id": "GPL-3.0-only",
             "src": "spdx"
         },
-        ...
+        "mit license": {
+            "id": "MIT",
+            "src": "spdx"
+        },
+        "expat": {
+            "id": "MIT",
+            "src": "spdx"
+        }
+    },
+    "riskyMap": {
+        "libpng license v2": {
+            "id": "libpng-2.0",
+            "src": "spdx"
+        }
     },
     "siemens": {
-        "SISL-1.4": {
+        "sisl-1.4": {
             "id": "SISL-1.4",
             "src": "siemens"
-        },
-        ...
+        }
     }
 }
 ```
@@ -113,18 +110,23 @@ The build pipeline merges all individual files into a single `merged_data.json` 
 
 | Key                       | Description                                                              |
 |---------------------------|--------------------------------------------------------------------------|
-| `stableMap`               | All aliases from every license file. This is the default lookup target.  |
+| `stableMap`               | Canonical IDs and aliases from OSS license files. This is the default lookup target. |
 | `riskyMap`                | All `risky` entries from every license file. Only queried when opted in. |
 | `<org>` (e.g., `siemens`) | Organization-specific license mappings.                                  |
 
 ### Entry Format
 
-Each entry in any map is keyed by the alias string and contains:
+Each entry in any map is keyed by a normalized lowercase license name or identifier and contains:
 
 | Field | Type     | Description                                              |
 |-------|----------|----------------------------------------------------------|
 | `id`  | `string` | The canonical license identifier this alias resolves to. |
 | `src` | `string` | The source of the canonical name.                        |
+
+Keys use quote normalization, whitespace trimming, and locale-independent Unicode lowercase; source files,
+canonical values, and top-level map names are unchanged. Identical targets are deduplicated, while conflicting
+keys within a map cause merging to fail. Direct JSON consumers must normalize input before lookup.
+See [Matching Behavior](matching-behavior.md) for the rules and scope precedence.
 
 ## Data Sources
 

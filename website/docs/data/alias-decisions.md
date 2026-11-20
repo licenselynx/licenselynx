@@ -13,9 +13,9 @@ For aliases like `gpl-2.0`, `GPLv2`, `GPL v2`, `GNU General Public License v2`, 
 
 If an automated source maps suffixless aliases to `-or-later`, we keep those aliases out of the `-or-later` files so future auto-updates do not reintroduce them there.
 
-Exceptions kept on the **stable** map as exact matches:
+Exceptions kept on the **stable** map as recognized identifiers:
 
-| Alias (exact) | Resolves to        | Reason                                                  |
+| Alias         | Resolves to        | Reason                                                  |
 |---------------|--------------------|---------------------------------------------------------|
 | `GPL-2.0`     | `GPL-2.0-only`     | Deprecated SPDX ID, explicitly `-only` per SPDX history |
 | `GPL-2.0+`    | `GPL-2.0-or-later` | Deprecated SPDX ID, explicitly `-or-later`              |

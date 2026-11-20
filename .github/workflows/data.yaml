@@ -5,12 +5,16 @@ on:
       - main
     paths:
       - data/**
+      - scripts/src/load/merge_data.py
+      - scripts/src/validate/data_validation.py
       - .github/workflows/data.yaml
   pull_request:
     branches:
       - main
     paths:
       - data/**
+      - scripts/src/load/merge_data.py
+      - scripts/src/validate/data_validation.py
       - .github/workflows/data.yaml
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}

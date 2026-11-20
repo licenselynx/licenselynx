@@ -69,8 +69,8 @@ func TestGeneratorProducesCompilableFiles(t *testing.T) {
 	if err != nil {
 		t.Fatalf("read stable map file: %v", err)
 	}
-	assertContains(t, string(stableMapSource), "\"Apache 2.0\": {ID: \"Apache-2.0\", Src: \"spdx\"},")
-	assertContains(t, string(stableMapSource), "\"MIT\":")
+	assertContains(t, string(stableMapSource), "\"apache 2.0\": {ID: \"Apache-2.0\", Src: \"spdx\"},")
+	assertContains(t, string(stableMapSource), "\"mit\":")
 	assertContains(t, string(stableMapSource), "ID: \"MIT\", Src: \"spdx\"}")
 
 	writeSupportFiles(t, outputDir)
@@ -110,7 +110,7 @@ func TestGenerateWithoutOrganizations(t *testing.T) {
 		outputDir:   outputDir,
 		data: mergedData{
 			"stableMap": {
-				"MIT": {ID: "MIT", Src: "spdx"},
+				"mit": {ID: "MIT", Src: "spdx"},
 			},
 			"riskyMap": {},
 		},

@@ -5,9 +5,11 @@ on:
       - main
     paths:
       - go.mod
+      - go.sum
       - go/**
       - data/**
       - fixtures/**
+      - scripts/src/load/merge_data.py
       - .github/workflows/go.yaml
       - codecov.yml
   pull_request:
@@ -15,9 +17,11 @@ on:
       - main
     paths:
       - go.mod
+      - go.sum
       - go/**
       - data/**
       - fixtures/**
+      - scripts/src/load/merge_data.py
       - .github/workflows/go.yaml
       - codecov.yml
   workflow_dispatch:
@@ -37,7 +41,8 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
         with:
-          go-version: '1.26'
+          # Pin generation because go/format output depends on the Go version.
+          go-version: '1.27.3'
       - name: Generate merged data
         run: |
           mkdir -p _support
@@ -60,6 +65,7 @@ jobs:
         go-version:
           - '1.25'
           - '1.26'
+          - '1.27.3'
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1

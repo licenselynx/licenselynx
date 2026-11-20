@@ -2,8 +2,26 @@
 # SPDX-FileCopyrightText: Copyright 2025 Siemens AG
 # SPDX-License-Identifier: BSD-3-Clause
 #
+import json
+from pathlib import Path
+
 import pytest
 from licenselynx import LicenseLynx, Organization
+
+SPEC = json.loads((Path(__file__).resolve().parents[2] / "fixtures" / "normalization.json").read_text("utf-8"))
+
+
+@pytest.mark.smoke
+@pytest.mark.parametrize("case", SPEC["mappingCases"], ids=lambda case: case["name"])
+def test_shared_case_insensitive_mappings(case):
+    org = Organization(case["org"]) if "org" in case else None
+    result = LicenseLynx.map(case["input"], risky=case.get("risky", False), org=org)
+    if case["id"] is None:
+        assert result is None
+    else:
+        assert result is not None
+        assert result.id == case["id"]
+        assert result.src == case["src"]
 
 
 @pytest.mark.smoke

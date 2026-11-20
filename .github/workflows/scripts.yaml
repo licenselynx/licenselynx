@@ -5,6 +5,7 @@ on:
       - main
     paths:
       - scripts/**
+      - fixtures/**
       - .github/workflows/scripts.yaml
       - codecov.yml
   pull_request:
@@ -12,6 +13,7 @@ on:
       - main
     paths:
       - scripts/**
+      - fixtures/**
       - .github/workflows/scripts.yaml
       - codecov.yml
   workflow_dispatch:

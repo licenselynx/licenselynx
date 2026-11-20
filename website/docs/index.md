@@ -73,6 +73,7 @@ Choose a starting point:
 - **Community-driven approach**: Custom mappings from the community enhance LicenseLynx to map more license aliases to its canonical identifiers
 - **Aggregated data**: Collects license information and aliases from the license list of SPDX, ScanCode LicenseDB, and OSI into a single repository
 - **SPDX Compliance**: Maps licenses to their canonical names using SPDX IDs if possible
+- **Case-insensitive matching**: Unicode-aware lowercase lookup accepts casing variants while preserving canonical identifier casing
 - **Multi-Language Support**: Offers libraries in Python, Java, and TypeScript to use it with your projects
 
 ## Contributing

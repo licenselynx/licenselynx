@@ -21,7 +21,7 @@ A new library should:
 - load the merged mapping data
 - expose a `map()` function or method
 - support stable lookups, risky lookups, and organization-specific lookups
-- apply the same quote normalization as the existing libraries
+- normalize quotes, trim surrounding whitespace, and apply locale-independent Unicode lowercase before lookup
 - return the canonical identifier and source
 - include tests
 

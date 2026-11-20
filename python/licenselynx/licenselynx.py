@@ -11,7 +11,7 @@ from licenselynx.quotes_handler import _QuotesHandler
 
 
 def _normalize_license_name(license_name: str) -> str:
-    return _QuotesHandler().normalize_quotes(license_name).strip()
+    return _QuotesHandler().normalize_quotes(license_name).strip().lower()
 
 
 class LicenseLynx:
@@ -19,7 +19,8 @@ class LicenseLynx:
     @staticmethod
     def map(license_name: str, risky: bool = False, org: Optional[Organization] = None) -> Optional[LicenseObject]:
         """
-        Maps license name to the canonical license identifier
+        Maps a license name case-insensitively using locale-independent Unicode lowercase.
+        Canonical identifiers and sources retain their original casing.
         :param license_name: string of a license name
         :param risky: enable risky mappings
         :param org: organization enum
