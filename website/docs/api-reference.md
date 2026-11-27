@@ -34,12 +34,16 @@ The return type of `map()`. Holds the resolved canonical identifier and its sour
 
 Maps a license name string to its canonical `LicenseObject`.
 
+Matching uses locale-independent Unicode lowercase; `Expat` and `expat` both resolve to `MIT`.
+Canonical casing and the existing risky/organization parameters are unchanged.
+
 **Lookup order:**
 
 1. Normalize Unicode quotes in the input to ASCII `'`
-2. Search the **stable map** (high-confidence mappings)
-3. If not found and `risky` is enabled, search the **risky map**
-4. If not found and `org` is provided, search the organization-specific map
+2. Trim surrounding whitespace and apply locale-independent Unicode lowercase
+3. Search the **stable map** (high-confidence mappings)
+4. If not found and `risky` is enabled, search the **risky map**
+5. If not found and `org` is provided, search the organization-specific map
 
 === "Python"
 
@@ -73,7 +77,7 @@ Maps a license name string to its canonical `LicenseObject`.
     assert result is None
 
     # With risky mappings
-    result = LicenseLynx.map("gpl3", risky=True)
+    result = LicenseLynx.map("LIBPNG LICENSE V2", risky=True)
 
     # With organization
     result = LicenseLynx.map("SISL-1.4", org=Organization.SIEMENS)
@@ -145,7 +149,7 @@ Maps a license name string to its canonical `LicenseObject`.
     console.log(result.src);  // "spdx"
 
     // With risky mappings
-    const risky = map('gpl3', true);
+    const risky = map('LIBPNG LICENSE V2', true);
 
     // With organization
     const orgResult = map('SISL-1.4', false, Organization.Siemens);
@@ -284,4 +288,4 @@ Methods to classify a `LicenseObject` by its source. All return `boolean`.
 All libraries automatically normalize 14 Unicode quotation mark characters to ASCII `'` before lookup. This means license strings copied
 from PDFs, Word documents, or web pages with typographic quotes will still match.
 
-For the full list and examples, see [Matching Behavior](data/matching-behavior.md).
+Inputs are also trimmed and lowercased. For the Unicode rules and examples, see [Matching Behavior](data/matching-behavior.md).

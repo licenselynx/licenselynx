@@ -20,6 +20,14 @@ type normalizationSpec struct {
 		Input    string `json:"input"`
 		Expected string `json:"expected"`
 	} `json:"testCases"`
+	MappingCases []struct {
+		Name  string  `json:"name"`
+		Input string  `json:"input"`
+		Risky bool    `json:"risky"`
+		Org   string  `json:"org"`
+		ID    *string `json:"id"`
+		Src   string  `json:"src"`
+	} `json:"mappingCases"`
 }
 
 func loadNormalizationSpec(t *testing.T) normalizationSpec {
@@ -68,6 +76,31 @@ func TestNormalizeLicenseNameEveryQuoteCharacter(t *testing.T) {
 	}
 }
 
+func TestSharedCaseInsensitiveMappings(t *testing.T) {
+	t.Parallel()
+
+	for _, testCase := range loadNormalizationSpec(t).MappingCases {
+		t.Run(testCase.Name, func(t *testing.T) {
+			t.Parallel()
+			var opts []Option
+			if testCase.Risky {
+				opts = append(opts, WithRisky())
+			}
+			if testCase.Org != "" {
+				opts = append(opts, WithOrganization(Organization(testCase.Org)))
+			}
+			got, ok := Map(testCase.Input, opts...)
+			if testCase.ID == nil {
+				if ok || got != (LicenseObject{}) {
+					t.Fatalf("expected no match, got %+v ok=%v", got, ok)
+				}
+			} else if !ok || got.ID != *testCase.ID || got.Src != testCase.Src {
+				t.Fatalf("got %+v ok=%v, want ID=%q Src=%q", got, ok, *testCase.ID, testCase.Src)
+			}
+		})
+	}
+}
+
 func TestNormalizeLicenseNameEveryTrimCharacter(t *testing.T) {
 	t.Parallel()
 
@@ -87,7 +120,7 @@ func TestMapTrimsSurroundingWhitespace(t *testing.T) {
 	t.Parallel()
 
 	testMaps := licenseMaps{
-		stable: map[string]LicenseObject{"MIT": {ID: "MIT", Src: string(SourceSPDX)}},
+		stable: map[string]LicenseObject{"mit": {ID: "MIT", Src: string(SourceSPDX)}},
 	}
 
 	got, ok := mapWithLicenseMaps("  \tMIT \r\n", testMaps)

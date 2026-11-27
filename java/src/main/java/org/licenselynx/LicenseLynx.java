@@ -4,12 +4,14 @@
  */
 package org.licenselynx;
 
+import java.util.Locale;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 
 
 /**
- * LicenseLynx class to map license names to their corresponding data from a JSON file.
+ * Maps license names using locale-independent Unicode lowercase.
+ * Canonical identifiers and sources retain their original casing.
  */
 public final class LicenseLynx
 {
@@ -109,7 +111,7 @@ public final class LicenseLynx
     static String normalizeLicenseName(@CheckForNull final String pLicenseName)
     {
         final String quotesNormalized = QuotesHandler.normalizeQuotes(pLicenseName);
-        return quotesNormalized == null ? null : quotesNormalized.trim();
+        return quotesNormalized == null ? null : quotesNormalized.trim().toLowerCase(Locale.ROOT);
     }
 
 

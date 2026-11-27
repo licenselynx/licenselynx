@@ -48,6 +48,27 @@ public class LicenseLynxTest
 
 
 
+    @Test
+    public void testCaseInsensitiveLookupPreservesCanonicalValues()
+    {
+        LicenseMap licenseMap = createTestLicenseMap();
+        LicenseObject stable = LicenseLynx.map("TEST-LICENSE", false, null, licenseMap);
+        LicenseObject risky = LicenseLynx.map("TEST-RISKY-LICENSE", true, null, licenseMap);
+        LicenseObject org = LicenseLynx.map("TEST-ORG-LICENSE", false, Organization.Siemens, licenseMap);
+
+        Assertions.assertNotNull(stable);
+        Assertions.assertEquals(CANONICAL_ID_SPDX, stable.getId());
+        Assertions.assertEquals(LicenseSource.Spdx, stable.getCanonicalSource());
+        Assertions.assertNotNull(risky);
+        Assertions.assertEquals(CANONICAL_ID_SCANCODE, risky.getId());
+        Assertions.assertNotNull(org);
+        Assertions.assertEquals(CANONICAL_ID_TEST_ORG, org.getId());
+        Assertions.assertNull(LicenseLynx.map("TEST-RISKY-LICENSE", false, Organization.Siemens, licenseMap));
+        Assertions.assertNull(LicenseLynx.map("TEST-ORG-LICENSE", true, null, licenseMap));
+    }
+
+
+
     /**
      * Tests mapping of a non-existing license name.
      */

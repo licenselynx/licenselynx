@@ -1,9 +1,11 @@
 #
 # Copyright (c) Siemens AG 2025 ALL RIGHTS RESERVED
 #
+import json
 import logging
 import pytest
 from unittest.mock import patch, mock_open, MagicMock
+from src.load.merge_data import normalize_license_name, read_data
 from src.update.BaseDataUpdate import BaseDataUpdate
 
 
@@ -93,6 +95,59 @@ def test_update_license_file_rejected_and_risky(mock_json_dump, mock_open, mock_
     assert caplog.text.__contains__("For test_license the alias 'risky_alias' is already in risky list")
     assert caplog.text.__contains__("For test_license the alias 'rejected_alias' is already in rejected list")
     mock_json_dump.assert_called_once_with(expected_data, mock_open(), indent=4)
+
+
+@pytest.mark.parametrize("excluded_field", ["risky", "rejected"])
+@pytest.mark.parametrize("excluded_alias, incoming_alias", [
+    ("LIbpng License v2", "Libpng License v2"),
+    ("Rejected License", "REJECTED LICENSE"),
+    ("‘Example’ License", "  'EXAMPLE' LICENSE \t"),
+    ("Trimmed License", "\u00a0TRIMMED LICENSE\u00a0"),
+    ("LICENÇA", "licença"),
+    ("İ", "i\u0307"),
+    ("ΟΣ", "ος"),
+])
+def test_update_license_file_preserves_normalized_exclusions(base_data_update, tmp_path, monkeypatch,
+                                                             excluded_field, excluded_alias, incoming_alias):
+    canonical = {"id": "Example-License", "src": "custom"}
+    data = {"canonical": canonical, "aliases": {"custom": []}, "risky": [], "rejected": []}
+    data[excluded_field] = [excluded_alias]
+    filepath = tmp_path / "Example-License.json"
+    filepath.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+    monkeypatch.setattr(base_data_update, "_DATA_DIR", str(tmp_path))
+
+    base_data_update.update_license_file(canonical["id"], [incoming_alias], alias_key="scancodeLicensedb")
+
+    assert json.loads(filepath.read_text("utf-8")) == data
+    maps = read_data(str(tmp_path))
+    assert maps["stableMap"] == {"example-license": canonical}
+    expected_risky = {normalize_license_name(excluded_alias): canonical} if excluded_field == "risky" else {}
+    assert maps["riskyMap"] == expected_risky
+
+
+@pytest.mark.parametrize("excluded_field", ["risky", "rejected"])
+@pytest.mark.parametrize("source_alias, excluded_alias", [
+    ("Allowed License", "ALLOWED LICENCE"),
+    ("'Allowed'", '"ALLOWED"'),
+    ('"Allowed"', "'ALLOWED'"),
+])
+def test_update_license_file_skips_excluded_generated_aliases(base_data_update, tmp_path, monkeypatch,
+                                                              excluded_field, source_alias, excluded_alias):
+    canonical = {"id": "Example-License", "src": "custom"}
+    data = {"canonical": canonical, "aliases": {"custom": []}, "risky": [], "rejected": []}
+    data[excluded_field] = [excluded_alias]
+    filepath = tmp_path / "Example-License.json"
+    filepath.write_text(json.dumps(data), encoding="utf-8")
+    monkeypatch.setattr(base_data_update, "_DATA_DIR", str(tmp_path))
+
+    base_data_update.update_license_file(canonical["id"], [source_alias], alias_key="scancodeLicensedb")
+
+    data["aliases"]["scancodeLicensedb"] = [source_alias]
+    assert json.loads(filepath.read_text("utf-8")) == data
+    maps = read_data(str(tmp_path))
+    assert maps["stableMap"] == {"example-license": canonical, normalize_license_name(source_alias): canonical}
+    expected_risky = {normalize_license_name(excluded_alias): canonical} if excluded_field == "risky" else {}
+    assert maps["riskyMap"] == expected_risky
 
 
 @patch("os.path.join", return_value="/path/to/data/license.json")

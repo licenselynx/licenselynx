@@ -4,7 +4,7 @@
 
 These scripts manage our data.
 
-- **Load**: Creates and updates the `merged_data.json` files, which map all aliases to their canonical names.
+- **Load**: Creates and updates the `merged_data.json` files, which map normalized lowercase aliases to their canonical names.
 - **Update**: Updates the data folder from the data and also updates the statistics in the root readme file.
 - **Validate**: Checks if the data files meet our [constraints](#constraints).
 - **web_api**: Creates in the pipeline for the GitLab pages-job the json-files to imitate a Web API based on the directory structure.
@@ -24,7 +24,9 @@ These scripts manage our data.
 
 #### 2. Unique Aliases Check
 
-- Aliases within each JSON file must be globally unique across all JSON files.
+- Canonical IDs and aliases must be unique after quote normalization, trimming, and Unicode lowercasing.
+- The merger deduplicates identical targets and rejects conflicting keys within each map, preserving canonical values.
+- Stable, risky, and organization maps remain separate; organization keys must not overlap OSS keys after normalization.
 
 #### 3. Canonical Name Check
 - The canonical identifier must be the equal to canonical identifier from the source of the JSON file.

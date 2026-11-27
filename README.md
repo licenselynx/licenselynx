@@ -81,6 +81,9 @@ The structure of a stored license looks like this:
 | rejected  | List of rejected aliases                                                                             |
 | risky     | List of risky aliases                                                                                |
 
+Source files retain their original spellings. Generated mappings use lowercase lookup keys,
+deduplicate identical targets, and reject conflicting normalized keys within each map.
+
 ### Organization Licenses
 
 Organization-specific (internal) license files are stored in `data/orgs/<org_name>/` and use the same JSON format as OSS license files. The key difference is that `canonical.src` must match the organization folder name (e.g., `"siemens"` for files in `data/orgs/siemens/`).
@@ -117,7 +120,7 @@ To have LicenseLynx support your organization's internal licenses, follow these 
     - Aliases must use the `custom` key.
     - Canonical IDs must be at most 100 characters and must not contain forbidden characters (`#$%=[]?<>:/\|*` or spaces).
 
-3. **Ensure no overlap** between your organization's license identifiers/aliases and existing OSS license data. The CI pipeline will reject any collisions.
+3. **Ensure no overlap** between your organization's license identifiers/aliases and existing OSS license data after quote normalization, trimming, and Unicode lowercasing. The CI pipeline will reject any collisions.
 4. **Submit a Pull Request**. The data validation pipeline will automatically verify the structure, naming, and uniqueness constraints of your contribution.
 5. **Library update**. In the same PR, the `Organization` enum in the Python, Java, and TypeScript libraries must be updated to include your new organization.
 6. **Verify your identity**. To confirm that you are a valid representative of the organization, you must either have a verified email address from that organization or have the organization listed officially on your GitHub profile.

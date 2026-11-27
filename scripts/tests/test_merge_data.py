@@ -4,9 +4,51 @@
 import json
 import os
 import tempfile
+from pathlib import Path
 
 import pytest
-from src.load.merge_data import read_data, write_data, main, _build_maps_from_dir, read_org_data
+from src.load.merge_data import (
+    read_data, write_data, main, _build_maps_from_dir, read_org_data, merge_data_to_paths, normalize_license_name
+)
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+SPEC = json.loads((REPO_ROOT / "fixtures" / "normalization.json").read_text("utf-8"))
+
+
+@pytest.mark.parametrize("case", SPEC["testCases"], ids=lambda case: case["name"])
+def test_shared_normalization_cases(case):
+    assert normalize_license_name(case["input"]) == case["expected"]
+
+
+@pytest.mark.parametrize("quote", SPEC["quoteCharacters"])
+def test_shared_quote_characters(quote):
+    assert normalize_license_name(f"A{quote}B") == "a'b"
+
+
+@pytest.mark.parametrize("char", SPEC["trimCharacters"])
+def test_shared_trim_characters(char):
+    assert normalize_license_name(char + "MIT" + char) == "mit"
+
+
+@pytest.fixture(scope="module")
+def repository_maps():
+    data = read_data(str(REPO_ROOT / "data"))
+    data.update(read_org_data(str(REPO_ROOT / "data")))
+    return data
+
+
+@pytest.mark.parametrize("case", SPEC["mappingCases"], ids=lambda case: case["name"])
+def test_shared_case_insensitive_mappings(repository_maps, case):
+    key = normalize_license_name(case["input"])
+    result = repository_maps["stableMap"].get(key)
+    if result is None and case.get("risky", False):
+        result = repository_maps["riskyMap"].get(key)
+    if result is None and "org" in case:
+        result = repository_maps[case["org"]].get(key)
+    if case["id"] is None:
+        assert result is None
+    else:
+        assert result == {"id": case["id"], "src": case["src"]}
 
 
 @pytest.fixture
@@ -119,31 +161,31 @@ def test_main_integration(temp_data_dir, temp_output_file, monkeypatch):
     # Expected alias mappings
     expected_output = {
         "stableMap": {
-            "MIT": {
+            "mit": {
                 "id": "MIT",
                 "src": "spdx"
             },
-            "MIT License": {
+            "mit license": {
                 "id": "MIT",
                 "src": "spdx"
             },
-            "MIT Open Source License": {
+            "mit open source license": {
                 "id": "MIT",
                 "src": "spdx"
             },
-            "GNU General Public License": {
+            "gnu general public license": {
                 "id": "GPL",
                 "src": "spdx"
             },
-            "GPL v3": {
+            "gpl v3": {
                 "id": "GPL",
                 "src": "spdx"
             },
-            "GPLv3": {
+            "gplv3": {
                 "id": "GPL",
                 "src": "spdx"
             },
-            "GPL": {
+            "gpl": {
                 "id": "GPL",
                 "src": "spdx"
             },
@@ -178,18 +220,18 @@ def test_build_maps_from_dir(tmpdir):
     canonical_dict, risky_dict = _build_maps_from_dir(str(tmpdir))
 
     # Canonical IDs present
-    assert "MIT" in canonical_dict
-    assert "Apache-2.0" in canonical_dict
+    assert "mit" in canonical_dict
+    assert "apache-2.0" in canonical_dict
 
     # Aliases present
-    assert "MIT License" in canonical_dict
-    assert "Apache License 2.0" in canonical_dict
-    assert "Apache2" in canonical_dict
+    assert "mit license" in canonical_dict
+    assert "apache license 2.0" in canonical_dict
+    assert "apache2" in canonical_dict
 
     # Canonical dict maps to correct objects
-    assert canonical_dict["MIT"] == {"id": "MIT"}
-    assert canonical_dict["MIT License"] == {"id": "MIT"}
-    assert canonical_dict["Apache-2.0"] == {"id": "Apache-2.0"}
+    assert canonical_dict["mit"] == {"id": "MIT"}
+    assert canonical_dict["mit license"] == {"id": "MIT"}
+    assert canonical_dict["apache-2.0"] == {"id": "Apache-2.0"}
 
     # Risky entries
     assert "mit-risky" in risky_dict
@@ -212,8 +254,8 @@ def test_build_maps_from_dir_skips_non_json(tmpdir):
     canonical_dict, risky_dict = _build_maps_from_dir(str(tmpdir))
 
     # Only JSON file processed
-    assert "MIT" in canonical_dict
-    assert "MIT License" in canonical_dict
+    assert "mit" in canonical_dict
+    assert "mit license" in canonical_dict
     assert len(canonical_dict) == 2
     assert len(risky_dict) == 0
 
@@ -236,16 +278,16 @@ def test_read_org_data_single_org(tmpdir):
     test_org_map = result["testOrg"]
 
     # Canonical ID present
-    assert "testOrgId" in test_org_map
-    assert test_org_map["testOrgId"] == {"id": "testOrgId", "src": "testOrg"}
+    assert "testorgid" in test_org_map
+    assert test_org_map["testorgid"] == {"id": "testOrgId", "src": "testOrg"}
 
     # Alias present
-    assert "testOrg License" in test_org_map
-    assert test_org_map["testOrg License"] == {"id": "testOrgId", "src": "testOrg"}
+    assert "testorg license" in test_org_map
+    assert test_org_map["testorg license"] == {"id": "testOrgId", "src": "testOrg"}
 
     # Risky entries merged into org map
-    assert "testOrg-risky" in test_org_map
-    assert test_org_map["testOrg-risky"] == {"id": "testOrgId", "src": "testOrg"}
+    assert "testorg-risky" in test_org_map
+    assert test_org_map["testorg-risky"] == {"id": "testOrgId", "src": "testOrg"}
 
 
 def test_read_org_data_multiple_orgs(tmpdir):
@@ -327,18 +369,155 @@ def test_main_integration_with_orgs(monkeypatch):
             assert "testOrg" in output_data
 
             # Verify stableMap content
-            assert "MIT" in output_data["stableMap"]
-            assert "MIT License" in output_data["stableMap"]
+            assert "mit" in output_data["stableMap"]
+            assert "mit license" in output_data["stableMap"]
 
             # Verify riskyMap content
             assert "mit-risky" in output_data["riskyMap"]
 
             # Verify testOrg content (canonical + aliases + risky merged)
-            assert "testOrgId" in output_data["testOrg"]
-            assert "testOrg License" in output_data["testOrg"]
-            assert "testOrg-risky" in output_data["testOrg"]
+            assert "testorgid" in output_data["testOrg"]
+            assert "testorg license" in output_data["testOrg"]
+            assert "testorg-risky" in output_data["testOrg"]
         finally:
             os.remove(output_path)
+
+
+def test_merge_deduplicates_keys_without_changing_canonical_values(tmp_path):
+    canonical = {"id": "MiXeD-1.0", "src": "TestSource"}
+    license_data = {
+        "canonical": canonical,
+        "aliases": {"custom": ["MIXED LICENSE", "mixed license", "  Mixed License  "], "spdx": ["MiXeD-1.0"]},
+        "risky": ["MIXED RISKY", "mixed risky"],
+    }
+    (tmp_path / "MiXeD-1.0.json").write_text(json.dumps(license_data), encoding="utf-8")
+
+    result = read_data(str(tmp_path))
+    assert result == {
+        "stableMap": {"mixed-1.0": canonical, "mixed license": canonical},
+        "riskyMap": {"mixed risky": canonical},
+    }
+    assert json.loads((tmp_path / "MiXeD-1.0.json").read_text("utf-8")) == license_data
+
+
+@pytest.mark.parametrize("first, second", [
+    ("Expat", "expat"), ("LICENÇA", "licença"), ("İ", "i\u0307"), ("ΟΣ", "ος"),
+    ("‘Example’", "'example'"), ("  Example  ", "example"),
+])
+def test_merge_rejects_ambiguous_normalized_aliases(tmp_path, first, second):
+    for canonical_id, alias in [("License-A", first), ("License-B", second)]:
+        data = {"canonical": {"id": canonical_id, "src": "spdx"}, "aliases": {"custom": [alias]}}
+        (tmp_path / f"{canonical_id}.json").write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+    with pytest.raises(ValueError, match="Conflicting stable mapping") as exc:
+        read_data(str(tmp_path))
+    assert repr(normalize_license_name(first)) in str(exc.value)
+    assert "License-A" in str(exc.value)
+    assert "License-B.json" in str(exc.value)
+
+
+def test_merge_rejects_canonical_alias_collision(tmp_path):
+    for filename, data in {
+        "MIT.json": {"canonical": {"id": "MIT", "src": "spdx"}, "aliases": {}},
+        "Other.json": {"canonical": {"id": "Other", "src": "custom"}, "aliases": {"custom": ["mIt"]}},
+    }.items():
+        (tmp_path / filename).write_text(json.dumps(data), encoding="utf-8")
+    with pytest.raises(ValueError, match="Conflicting stable mapping"):
+        read_data(str(tmp_path))
+
+
+def test_merge_rejects_same_id_with_different_sources(tmp_path):
+    for source in ["spdx", "custom"]:
+        data = {"canonical": {"id": "MIT", "src": source}, "aliases": {}}
+        (tmp_path / f"{source}.json").write_text(json.dumps(data), encoding="utf-8")
+    with pytest.raises(ValueError, match="Conflicting stable mapping"):
+        read_data(str(tmp_path))
+
+
+def test_merge_rejects_risky_collision_without_overwriting_output(tmp_path):
+    source_dir = tmp_path / "data"
+    source_dir.mkdir()
+    for canonical_id, alias in [("License-A", "Ambiguous"), ("License-B", "AMBIGUOUS")]:
+        data = {"canonical": {"id": canonical_id, "src": "spdx"}, "aliases": {}, "risky": [alias]}
+        (source_dir / f"{canonical_id}.json").write_text(json.dumps(data), encoding="utf-8")
+    output = tmp_path / "mapping.json"
+    output.write_text("existing output", encoding="utf-8")
+    with pytest.raises(ValueError, match="Conflicting risky mapping"):
+        merge_data_to_paths(str(source_dir), str(output))
+    assert output.read_text("utf-8") == "existing output"
+
+
+def test_merge_keeps_stable_and_risky_scopes_separate(tmp_path):
+    stable = {"id": "License-A", "src": "spdx"}
+    risky = {"id": "License-B", "src": "spdx"}
+    (tmp_path / "License-A.json").write_text(json.dumps({"canonical": stable, "aliases": {"custom": ["Shared"]}}))
+    (tmp_path / "License-B.json").write_text(json.dumps({"canonical": risky, "aliases": {}, "risky": ["SHARED"]}))
+    result = read_data(str(tmp_path))
+    assert result["stableMap"]["shared"] == stable
+    assert result["riskyMap"]["shared"] == risky
+
+
+def test_merge_rejects_org_stable_risky_collision(tmp_path):
+    org_dir = tmp_path / "orgs" / "acme"
+    org_dir.mkdir(parents=True)
+    for canonical_id, field in [("Org-A", "aliases"), ("Org-B", "risky")]:
+        data = {"canonical": {"id": canonical_id, "src": "acme"}, "aliases": {}}
+        data[field] = {"custom": ["Shared"]} if field == "aliases" else ["SHARED"]
+        (org_dir / f"{canonical_id}.json").write_text(json.dumps(data), encoding="utf-8")
+    with pytest.raises(ValueError, match="Conflicting organization 'acme' mapping"):
+        read_org_data(str(tmp_path))
+
+
+def test_merge_deduplicates_org_stable_risky_keys(tmp_path):
+    org_dir = tmp_path / "orgs" / "acme"
+    org_dir.mkdir(parents=True)
+    canonical = {"id": "Org-A", "src": "acme"}
+    data = {"canonical": canonical, "aliases": {"custom": ["Shared"]}, "risky": ["SHARED"]}
+    (org_dir / "Org-A.json").write_text(json.dumps(data), encoding="utf-8")
+    assert read_org_data(str(tmp_path)) == {"acme": {"org-a": canonical, "shared": canonical}}
+
+
+def test_merge_keeps_organizations_separate(tmp_path):
+    for org in ["acme", "other"]:
+        org_dir = tmp_path / "orgs" / org
+        org_dir.mkdir(parents=True)
+        data = {"canonical": {"id": "Shared", "src": org}, "aliases": {"custom": ["SHARED"]}}
+        (org_dir / "Shared.json").write_text(json.dumps(data), encoding="utf-8")
+    assert read_org_data(str(tmp_path)) == {
+        org: {"shared": {"id": "Shared", "src": org}} for org in ["acme", "other"]
+    }
+
+
+@pytest.mark.parametrize("field", ["canonical", "alias", "risky"])
+@pytest.mark.parametrize("identifier", ["", " \t\n ", "\u00a0"])
+def test_merge_rejects_empty_normalized_keys_without_overwriting_output(tmp_path, field, identifier):
+    source_dir = tmp_path / "data"
+    source_dir.mkdir()
+    data = {
+        "canonical": {"id": "Example-License", "src": "custom"},
+        "aliases": {"custom": ["Allowed Name"]},
+        "risky": [],
+    }
+    if field == "canonical":
+        data["canonical"]["id"] = identifier
+    elif field == "alias":
+        data["aliases"]["custom"] = [identifier]
+    else:
+        data["risky"] = [identifier]
+    (source_dir / "Example-License.json").write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+    output = tmp_path / "mapping.json"
+    output.write_text("existing output", encoding="utf-8")
+    with pytest.raises(ValueError, match="Empty normalized lookup key"):
+        merge_data_to_paths(str(source_dir), str(output))
+    assert output.read_text("utf-8") == "existing output"
+
+
+def test_merge_rejects_blank_organization_lookup_key(tmp_path):
+    org_dir = tmp_path / "orgs" / "acme"
+    org_dir.mkdir(parents=True)
+    data = {"canonical": {"id": "Org-License", "src": "acme"}, "aliases": {"custom": [" \t\n "]}}
+    (org_dir / "Org-License.json").write_text(json.dumps(data), encoding="utf-8")
+    with pytest.raises(ValueError, match="Empty normalized lookup key"):
+        read_org_data(str(tmp_path))
 
 
 if __name__ == '__main__':

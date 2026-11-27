@@ -1,28 +1,28 @@
 {
     "stableMap": {
-        "BSD Zero Clause": {
+        "bsd zero clause": {
             "id": "0BSD",
             "src": "spdx"
         },
-        "BSD 'Zero' Clause": {
+        "bsd 'zero' clause": {
             "id": "0BSD",
             "src": "spdx"
         },
-        "License only in scancode": {
+        "license only in scancode": {
             "id": "only-scancode",
             "src": "scancode-licensedb"
         },
-        "Custom License": {
+        "custom license": {
             "id": "custom-license",
             "src": "custom"
         },
-        "Incomplete License": {
+        "incomplete license": {
             "id": "",
             "src": "spdx"
         }
     },
     "riskyMap": {
-        "BSD Zero Clause Risky": {
+        "bsd zero clause risky": {
             "id": "0BSD",
             "src": "spdx"
         }

@@ -25,6 +25,21 @@ test('should return data when license exists', () => {
     assert.equal(isScancodeLicensedbIdentifier(licenseObject), false);
 });
 
+for (const input of ['bsd zero clause', 'BSD ZERO CLAUSE', 'bSd ZeRo ClAuSe']) {
+    test(`should resolve case-insensitively: ${input}`, () => {
+        assert.deepEqual(map(input), { id: '0BSD', src: 'spdx' });
+    });
+}
+
+test('case-insensitive lookup keeps risky and organization scopes separate', () => {
+    assert.throws(() => map('BSD ZERO CLAUSE RISKY'));
+    assert.throws(() => map('BSD ZERO CLAUSE RISKY', false, 'testOrg'));
+    assert.throws(() => map('TEST-ORG-LICENSE'));
+    assert.throws(() => map('TEST-ORG-LICENSE', true));
+    assert.deepEqual(map('BSD ZERO CLAUSE RISKY', true), { id: '0BSD', src: 'spdx' });
+    assert.deepEqual(map('TEST-ORG-LICENSE', false, 'testOrg'), { id: 'testOrgId', src: 'testOrg' });
+});
+
 test('should return Scancode LicenseDB data when license exists', () => {
     const licenseObject = map('License only in scancode');
     assert.notEqual(licenseObject, null);
