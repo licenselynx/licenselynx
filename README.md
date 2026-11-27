@@ -29,13 +29,6 @@ The most valuable data comes from the community with custom aliases for license 
 Additionally, we offer libraries for Python, Java, Go, and TypeScript to streamline the process of mapping licenses to their canonical names,
 typically represented by SPDX IDs.
 
-## Matching Behavior
-
-All four libraries normalize Unicode quotes, trim surrounding whitespace, and apply locale-independent
-Unicode lowercase before lookup. `Expat`, `expat`, and `eXpAt` all resolve to `MIT`, preserving canonical
-`id` and `src` casing. Risky and organization lookups remain opt-in.
-See [Matching Behavior](website/docs/data/matching-behavior.md) for the rules and Unicode limitations.
-
 ## Folder Structure
 
 The folders **Go**, **Java**, **Python**, and **TypeScript** are providing libraries to use in code.
